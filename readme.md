@@ -1,5 +1,11 @@
 # dotfiles
 
+## Basic
+
+- [zsh](https://www.zsh.org)
+- [vim](https://www.vim.org)
+- [tmux](https://github.com/tmux/tmux/wiki/Installing)
+
 ## Tools
 
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
