@@ -1,0 +1,79 @@
+"no arrow key
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+"define ctrl-p to find files
+nnoremap <C-p> :find *
+
+"define leader
+let mapleader=','
+
+"set cursor to line in insert mode and to block in normal mode
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+"cursor should change quickly
+set ttimeout
+set ttimeoutlen=1
+set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set ttyfast
+
+"colors
+:highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
+
+nnoremap <Leader>html :-1read $HOME/.vim/snippets/html/html<CR>9j
+nnoremap <Leader>fun :-1read $HOME/.vim/snippets/php/fun<CR>
+
+set clipboard+=unnamed
+set number
+set backspace=indent,eol,start
+
+"highlight search keywords
+set hlsearch
+"display keywords immedeately
+set incsearch
+"dehighlight keywords
+nmap <Leader><space> :nohlsearch<cr>
+
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set smartindent
+
+syntax enable
+"colorscheme flattened_light
+
+set path+=**
+set wildmenu
+
+" relative/hybrid line numbers
+set number relativenumber
+set nu rnu
+
+"tab switching with leader<num>
+noremap <Leader>1 1gt
+noremap <Leader>2 2gt
+noremap <Leader>3 3gt
+noremap <Leader>4 4gt
+noremap <Leader>5 5gt
+noremap <Leader>6 6gt
+noremap <Leader>7 7gt
+noremap <Leader>8 8gt
+noremap <Leader>9 9gt
+noremap <Leader>0 :tabnew<cr> 
+
+iabbrev ret return;<Left>
+iabbrev ns namespace;<Left>
+
+inoremap <Leader>** /**/<Left><Left><CR><CR><Up>*<Space>
+inoremap <Leader>fun public function name($value = null): void<CR>{<CR><CR>}<Up><Tab>
+inoremap <Leader>fox The quick brown fox jumps over the lazy dog.
+inoremap <Leader>fe foreach ($variable as $key => $value)<CR>{<CR><CR>}<Up><Tab>
+inoremap <Leader>lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+"phpcs linter
+let g:ale_sign_column_always = 1
+let g:ale_php_phpcs_standard = 'psr12'
