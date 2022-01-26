@@ -6,10 +6,12 @@ DOTFILESDIR="$( cd "$( dirname $SCRIPTPATH )/.." && pwd )"
 mkdir -p ~/.config
 
 ln -nfs $DOTFILESDIR/zsh            ~/.config/zsh
+ln -nfs $DOTFILESDIR/p10k           ~/.config/p10k
 ln -nfs $DOTFILESDIR/tmux           ~/.config/tmux
 ln -nfs $DOTFILESDIR/vim           ~/.config/vim
 
 ln -nfs $DOTFILESDIR/rc/zshrc       ~/.zshrc
+ln -nfs $DOTFILESDIR/rc/p10k.zsh    ~/.p10k.zsh
 ln -nfs $DOTFILESDIR/rc/tmux.conf   ~/.tmux.conf
 ln -nfs $DOTFILESDIR/rc/vimrc       ~/.vimrc
 
