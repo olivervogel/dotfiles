@@ -1,3 +1,12 @@
+_tmux_create() {
+    sessionname=$(_slugify $(basename $(pwd)))
+    tmux -2 new-session -c $(pwd) -d -s $sessionname
+    tmux split-window -h -c $(pwd)
+    tmux split-window -h -c $(pwd)
+    tmux select-layout tiled
+    tmux -2 attach-session -t $sessionname
+}
+
 _tmux_attach() { 
     if [ $1 ]; then
         tmux attach -t $1
@@ -123,3 +132,8 @@ _random_string() {
 
     openssl rand -base64 48 | sed "s/[^A-Za-z0-9]//g" | cut -c -$length
 }
+
+_slugify () {
+    echo "$1" | iconv -c -t ascii//TRANSLIT | sed -E 's/[~^]+//g' | sed -E 's/[^a-zA-Z0-9]+/-/g' | sed -E 's/^-+|-+$//g' | tr A-Z a-z
+}
+
