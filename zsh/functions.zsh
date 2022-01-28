@@ -4,6 +4,10 @@ _tmux_create() {
     tmux split-window -h -c $(pwd)
     tmux split-window -h -c $(pwd)
     tmux select-layout tiled
+    tmux select-pane -t 0
+    tmux split-window -h -c $(pwd)
+    tmux select-pane -t 0
+    tmux kill-pane -t 0
     tmux -2 attach-session -t $sessionname
 }
 
