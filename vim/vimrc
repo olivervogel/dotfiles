@@ -68,6 +68,7 @@ noremap <Leader>l :tabnext<cr>
 
 iabbrev ret return;<Left>
 iabbrev ns namespace;<Left>
+iabbrev php <?php<CR>
 
 inoremap <Leader>** /**/<Left><Left><CR><CR><Up>*<Space>
 inoremap <Leader>fun public function name($value = null): void<CR>{<CR><CR>}<Up><Tab>
