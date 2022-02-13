@@ -23,6 +23,8 @@ set ttyfast
 
 "colors
 :highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
+:highlight Pmenu ctermbg=darkgray guibg=darkgray
+:highlight PmenuSel ctermbg=gray guibg=gray ctermfg=0
 
 nnoremap <Leader>html :-1read $HOME/.vim/snippets/html/html<CR>9j
 nnoremap <Leader>fun :-1read $HOME/.vim/snippets/php/fun<CR>
@@ -30,6 +32,10 @@ nnoremap <Leader>fun :-1read $HOME/.vim/snippets/php/fun<CR>
 set clipboard+=unnamed
 set number
 set backspace=indent,eol,start
+
+" autocompletion
+set complete+=kspell
+set completeopt=menuone,noinsert
 
 "highlight search keywords
 set hlsearch
