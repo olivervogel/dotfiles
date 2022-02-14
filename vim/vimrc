@@ -7,6 +7,9 @@ noremap <Right> <Nop>
 "define ctrl-p to find files
 nnoremap <C-p> :tabf *
 
+"define ctrl-s to explore
+nnoremap <C-s> :Explore<cr>
+
 "define leader
 let mapleader=','
 
