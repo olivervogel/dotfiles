@@ -4,6 +4,10 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+"set ruler at columns
+set colorcolumn=80,120
+highlight ColorColumn ctermbg=0 guibg=236 ctermbg=236
+
 "define ctrl-p to find files
 nnoremap <C-p> :tabf *
 
@@ -28,6 +32,7 @@ set ttyfast
 :highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
 :highlight Pmenu ctermbg=darkgray guibg=darkgray
 :highlight PmenuSel ctermbg=gray guibg=gray ctermfg=0
+highlight ALEWarning ctermbg=238
 
 nnoremap <Leader>html :-1read $HOME/.vim/snippets/html/html<CR>9j
 nnoremap <Leader>fun :-1read $HOME/.vim/snippets/php/fun<CR>
