@@ -6,6 +6,9 @@ export PATH=~/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 HISTFILE=~/.zsh_history
 HISTSIZE=2000
 SAVEHIST=1000
