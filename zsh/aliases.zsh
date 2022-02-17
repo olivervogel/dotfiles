@@ -1,5 +1,5 @@
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias v="vim"
+alias e="nvim"
 alias ls="exa --long --group --sort=name --group-directories-first"
 alias la="exa --long --group --all --sort=name --group-directories-first"
 alias ..="cd .."
