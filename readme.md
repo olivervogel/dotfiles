@@ -8,6 +8,7 @@
     - [fzf](https://github.com/junegunn/fzf)
     - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 - [neovim](https://www.neovim.io)
-    - [ALE](https://github.com/dense-analysis/ale)
+    - [vim-plug](https://github.com/junegunn/vim-plug)
+        - [ALE](https://github.com/dense-analysis/ale)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
