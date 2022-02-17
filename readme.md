@@ -10,5 +10,6 @@
 - [neovim](https://www.neovim.io)
     - [vim-plug](https://github.com/junegunn/vim-plug)
         - [ALE](https://github.com/dense-analysis/ale)
+        - [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
