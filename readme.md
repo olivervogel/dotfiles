@@ -11,5 +11,7 @@
     - [vim-plug](https://github.com/junegunn/vim-plug)
         - [ALE](https://github.com/dense-analysis/ale)
         - [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
+        - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+        - [material.nvim](https://github.com/nvim-treesitter/nvim-treesitter)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
