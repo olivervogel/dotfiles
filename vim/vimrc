@@ -8,6 +8,9 @@ noremap <Right> <Nop>
 set colorcolumn=80,120
 highlight ColorColumn ctermbg=0 guibg=236 ctermbg=236
 
+"hightlight current line
+set cursorline
+
 "define ctrl-p to find files
 nnoremap <C-p> :tabf *
 
