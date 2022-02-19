@@ -85,10 +85,11 @@ noremap <Leader>9 9gt
 noremap <Leader>0 :tabnew<cr>
 noremap <Leader>l :tabnext<cr>
 
-noremap gd :PhpactorGotoDefinition tabnew<cr>
-noremap gt :PhpactorGotoType tabnew<cr>
-noremap <C-i> :PhpactorImportClass<cr>
-
+" phpactor keys
+noremap <Leader>u :PhpactorImportClass<cr>
+noremap <Leader>e :PhpactorClassExpand<cr>
+noremap <Leader>o :PhpactorGotoDefinition tabnew<cr>
+noremap <Leader>mm :PhpactorContextMenu<cr>
 
 iabbrev ret return;<Left>
 iabbrev ns namespace;<Left>
