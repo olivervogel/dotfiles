@@ -77,6 +77,19 @@ _git_commit() {
     fi    
 }
 
+_git_commit_append() {
+    if [ $1 ]; then
+        git commit --fixup=$1
+        git rebase --interactive --autosquash $1^
+    else
+        preview="git diff-tree --color=always -p {1}"
+        selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf -m --ansi --preview $preview)
+        commit=$(echo $selected|cut -c 1-7)
+        git commit --fixup=$commit
+        git rebase --interactive --autosquash $commit^
+    fi
+}
+
 _git_restore() {
     root=$(git rev-parse --show-toplevel)
     if [ $1 ]; then
