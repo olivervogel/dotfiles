@@ -11,9 +11,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
-    " ALE Linting
-    Plug 'dense-analysis/ale'
-
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
