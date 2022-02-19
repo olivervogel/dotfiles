@@ -85,6 +85,11 @@ noremap <Leader>9 9gt
 noremap <Leader>0 :tabnew<cr>
 noremap <Leader>l :tabnext<cr>
 
+noremap gd :PhpactorGotoDefinition tabnew<cr>
+noremap gt :PhpactorGotoType tabnew<cr>
+noremap <C-i> :PhpactorImportClass<cr>
+
+
 iabbrev ret return;<Left>
 iabbrev ns namespace;<Left>
 iabbrev php <?php<CR>

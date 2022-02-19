@@ -17,4 +17,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " material theme
     Plug 'marko-cerovac/material.nvim'
 
+    " phpactor
+    Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+
 call plug#end()
