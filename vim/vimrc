@@ -54,6 +54,9 @@ set hlsearch
 set incsearch
 "dehighlight keywords
 nmap <Leader><space> :nohlsearch<cr>
+"search will be case-sensitive if it contains an uppercase letter
+set ignorecase
+set smartcase
 
 set expandtab
 set softtabstop=4
