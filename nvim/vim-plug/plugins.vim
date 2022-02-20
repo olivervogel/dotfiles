@@ -19,9 +19,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " phpactor
     Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
-
+    
+    " terminal inside vim
     Plug 'akinsho/toggleterm.nvim'
-
+    
+    " snippets
     Plug 'SirVer/ultisnips'
+
+    " ale for linting
+    Plug 'dense-analysis/ale'
 
 call plug#end()
