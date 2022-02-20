@@ -85,6 +85,8 @@ noremap <Leader>9 9gt
 noremap <Leader>0 :tabnew<cr>
 noremap <Leader>l :tabnext<cr>
 
+nnoremap ö ;
+
 iabbrev ret return;<Left>
 iabbrev ns namespace;<Left>
 iabbrev php <?php<CR>
