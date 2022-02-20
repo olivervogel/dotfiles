@@ -37,9 +37,6 @@ set ttyfast
 :highlight PmenuSel ctermbg=gray guibg=gray ctermfg=0
 highlight ALEWarning ctermbg=238
 
-nnoremap <Leader>html :-1read $HOME/.vim/snippets/html/html<CR>9j
-nnoremap <Leader>fun :-1read $HOME/.vim/snippets/php/fun<CR>
-
 set clipboard+=unnamed
 set number
 set backspace=indent,eol,start
@@ -91,15 +88,13 @@ noremap <Leader>e :PhpactorClassExpand<cr>
 noremap <Leader>o :PhpactorGotoDefinition tabnew<cr>
 noremap <Leader>mm :PhpactorContextMenu<cr>
 
+" snippet keys
+let g:UltiSnipsExpandTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-c>"
+
 nnoremap ö ;
 
-iabbrev ret return;<Left>
-iabbrev ns namespace;<Left>
-iabbrev php <?php<CR>
-
-inoremap <Leader>** /**/<Left><Left><CR><CR><Up>*<Space>
-inoremap <Leader>fun public function name(): void<CR>{<CR><CR>}<Up><Tab>
 inoremap <Leader>fox The quick brown fox jumps over the lazy dog.
-inoremap <Leader>for foreach ($variable as $key => $value)<CR>{<CR><CR>}<Up><Tab>
 inoremap <Leader>lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
