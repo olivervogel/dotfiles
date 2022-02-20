@@ -91,6 +91,8 @@ noremap <Leader>e :PhpactorClassExpand<cr>
 noremap <Leader>o :PhpactorGotoDefinition tabnew<cr>
 noremap <Leader>mm :PhpactorContextMenu<cr>
 
+nnoremap ö ;
+
 iabbrev ret return;<Left>
 iabbrev ns namespace;<Left>
 iabbrev php <?php<CR>
