@@ -1,0 +1,60 @@
+snippet <?
+<?php
+endsnippet
+
+snippet ns
+namespace ${1:Namespace};
+endsnippet
+
+snippet constr
+public function __construct($1)
+{
+    ${0://}
+}
+endsnippet
+
+snippet const
+public const ${1:CONSTANT_NAME} = ${2:"${3:value}"};
+endsnippet
+
+snippet fn "" i
+function ($1) {$2}
+endsnippet
+
+snippet -> "this" i
+\$${1:this}->$0
+endsnippet
+
+snippet fun
+${1:public} function ${2:functionName}(): ${3:void}
+{
+    ${0:# code...}
+}
+endsnippet
+
+snippet if
+if (${1:condition}) {
+    ${2:# code...}
+}
+endsnippet
+
+snippet ret "" i
+return ${1:\$value};
+endsnippet
+
+snippet e "" i
+echo ${1:\$var};
+endsnippet
+
+snippet #c "" i
+# ${1:code}...
+endsnippet
+
+snippet => "" i
+'$1' => '$2'${3:,}
+endsnippet
+
+snippet a "array"
+[$0]${1:;}
+endsnippet
+

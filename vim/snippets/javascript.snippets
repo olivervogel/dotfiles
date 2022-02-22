@@ -1,0 +1,29 @@
+snippet cl
+console.log($1);
+endsnippet
+
+snippet if
+if (${1:condition}) {
+    ${2://}
+}
+endsnippet
+
+snippet fun
+function ${1:myFunction}(${2:argument}) {
+    ${3://}
+}
+endsnippet
+
+snippet fn "" i
+($1) => {$2}
+endsnippet
+
+snippet imp
+import ${1:{ ${2:createApp} }} from '${3:vue}';
+endsnippet
+
+snippet foreach "" i
+forEach((${1:item}) => {
+    ${2://}
+})
+endsnippet

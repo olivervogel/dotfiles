@@ -92,6 +92,7 @@ noremap <Leader>mm :PhpactorContextMenu<cr>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-c>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/vim/snippets']
 
 " map ö to ; to jump f results quicker
 nnoremap ö ;
