@@ -11,14 +11,11 @@ highlight ColorColumn ctermbg=0 guibg=236 ctermbg=236
 "hightlight current line
 set cursorline
 
-"define ctrl-p to find files
-nnoremap <C-p> :tabf *
-
 "define ctrl-s to explore
 nnoremap <C-s> :Explore<cr>
 
 "define leader
-let mapleader=','
+let mapleader=","
 
 "set cursor to line in insert mode and to block in normal mode
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -47,10 +44,13 @@ set completeopt=menuone,noinsert
 
 "highlight search keywords
 set hlsearch
+
 "display keywords immedeately
 set incsearch
+
 "dehighlight keywords
 nmap <Leader><space> :nohlsearch<cr>
+
 "search will be case-sensitive if it contains an uppercase letter
 set ignorecase
 set smartcase
@@ -89,15 +89,23 @@ noremap <Leader>o :PhpactorGotoDefinition tabnew<cr>
 noremap <Leader>mm :PhpactorContextMenu<cr>
 
 " snippet keys
-let g:UltiSnipsExpandTrigger="<c-b>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-c>"
 
+" map ö to ; to jump f results quicker
 nnoremap ö ;
 
 inoremap <Leader>fox The quick brown fox jumps over the lazy dog.
 inoremap <Leader>lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+" ctrlp settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,vendor
+
+" ale settings
 let g:ale_linters_explicit = 1
 let g:ale_linters = {'php': ['phpcs']}
 let g:ale_php_phpcs_standard = 'psr12'

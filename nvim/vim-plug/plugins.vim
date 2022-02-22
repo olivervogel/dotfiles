@@ -29,4 +29,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " ale for linting
     Plug 'dense-analysis/ale'
 
+    Plug 'ctrlpvim/ctrlp.vim'
+    
+
 call plug#end()
