@@ -13,5 +13,9 @@
         - [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
         - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
         - [material.nvim](https://github.com/nvim-treesitter/nvim-treesitter)
+        - [Phpactor](https://github.com/phpactor/phpactor)
+        - [UltiSnips](https://github.com/SirVer/ultisnips)
+        - [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
+        - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
