@@ -80,7 +80,8 @@ noremap <Leader>7 7gt
 noremap <Leader>8 8gt
 noremap <Leader>9 9gt
 noremap <Leader>0 :tabnew<cr>
-noremap <Leader>l :tabnext<cr>
+noremap <c-l> :tabnext<cr>
+noremap <c-h> :tabprev<cr>
 
 " phpactor keys
 noremap <Leader>u :PhpactorImportClass<cr>
