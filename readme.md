@@ -12,7 +12,7 @@
         - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
         - [material.nvim](https://github.com/nvim-treesitter/nvim-treesitter)
         - [ALE](https://github.com/dense-analysis/ale)
-        - [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
+        - [delimitMate](https://github.com/Raimondi/delimitMate)
         - [Phpactor](https://github.com/phpactor/phpactor)
         - [UltiSnips](https://github.com/SirVer/ultisnips)
         - [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)

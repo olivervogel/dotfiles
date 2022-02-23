@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
+    Plug 'Raimondi/delimitMate'
 
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
