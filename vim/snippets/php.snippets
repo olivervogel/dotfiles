@@ -2,6 +2,12 @@ snippet <?
 <?php
 endsnippet
 
+snippet php
+<?php
+
+
+endsnippet
+
 snippet ns
 namespace ${1:Namespace};
 endsnippet
@@ -42,7 +48,7 @@ snippet ret "" i
 return ${1:\$value};
 endsnippet
 
-snippet e "" i
+snippet e ""
 echo ${1:\$var};
 endsnippet
 
@@ -58,3 +64,11 @@ snippet a "array"
 [$0]${1:;}
 endsnippet
 
+snippet /**
+/**
+ * ${1:[document description]}
+ *
+ * @param  ${2:____}
+ * @return ${3:____}
+ */
+endsnippet
