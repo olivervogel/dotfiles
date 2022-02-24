@@ -99,19 +99,12 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/vim/snippets']
 " remaping for german keyboard
 set langmap=^`,#',ö\\;
 
-inoremap <Leader>fox The quick brown fox jumps over the lazy dog.
-inoremap <Leader>lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-" ctrlp settings
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,vendor
-" make ctrlp open files in new tab
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>'],
-\ }
+" fzf settings
+nnoremap <c-p> :FZF<cr>
+let g:fzf_action = {
+  \ 'enter': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 " ale settings
 let g:ale_linters_explicit = 1
