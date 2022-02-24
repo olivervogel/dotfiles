@@ -9,7 +9,6 @@ require("nvim-treesitter.configs").setup {
 }
 vim.cmd 'colorscheme material'
 
-
 require("toggleterm").setup{
     open_mapping = [[<c-_>]],
     direction = 'horizontal',
@@ -17,3 +16,7 @@ require("toggleterm").setup{
 }
 
 EOF
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevelstart=99
