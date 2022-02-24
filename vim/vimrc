@@ -70,6 +70,9 @@ set wildmenu
 set number relativenumber
 set nu rnu
 
+" macros
+nnoremap <Leader>da F dt=xda"
+
 "tab switching with leader<num>
 noremap <Leader>1 1gt
 noremap <Leader>2 2gt
