@@ -46,7 +46,7 @@ set backspace=indent,eol,start
 
 " autocompletion
 set complete+=kspell
-set completeopt=menuone,noinsert
+set completeopt=menu,preview
 
 "highlight search keywords
 set hlsearch
