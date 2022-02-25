@@ -4,6 +4,8 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+set encoding=utf-8
+
 "set ruler at columns
 set colorcolumn=80,120
 highlight ColorColumn ctermbg=0 guibg=236 ctermbg=236
