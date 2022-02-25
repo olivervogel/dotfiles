@@ -12,6 +12,13 @@ snippet ns
 namespace ${1:Namespace};
 endsnippet
 
+snippet class
+class ${1:ClassName}${2: extends ${3:BaseClass}}
+{
+	${0://}
+}
+endsnippet
+
 snippet constr
 public function __construct($1)
 {
