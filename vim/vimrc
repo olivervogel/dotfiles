@@ -57,11 +57,15 @@ nmap <Leader><space> :nohlsearch<cr>
 set ignorecase
 set smartcase
 
-filetype plugin indent on
+filetype indent on
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set smartindent
+set autoindent
+
+autocmd FileType php setlocal smartindent autoindent indentexpr=""
 
 syntax enable
 
