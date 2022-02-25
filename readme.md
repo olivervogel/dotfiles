@@ -12,10 +12,10 @@
         - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
         - [material.nvim](https://github.com/nvim-treesitter/nvim-treesitter)
         - [ALE](https://github.com/dense-analysis/ale)
-        - [delimitMate](https://github.com/Raimondi/delimitMate)
+        - [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
         - [Phpactor](https://github.com/phpactor/phpactor)
         - [UltiSnips](https://github.com/SirVer/ultisnips)
-        - [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
+        - [fzf](https://github.com/junegunn/fzf)
         - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
