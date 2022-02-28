@@ -13,8 +13,8 @@ highlight ColorColumn ctermbg=0 guibg=236 ctermbg=236
 "hightlight current line
 set cursorline
 
-"define ctrl-s to explore
-nnoremap <C-s> :Explore<cr>
+"define ctrl-s to explore via nerdtree
+nnoremap <C-s> :NERDTreeToggle<cr>
 
 "define leader
 let mapleader=","

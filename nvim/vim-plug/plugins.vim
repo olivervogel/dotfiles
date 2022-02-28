@@ -29,6 +29,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " ale for linting
     Plug 'dense-analysis/ale'
 
+    " nerdtree
+    Plug 'preservim/nerdtree'
+
     " Plug 'ctrlpvim/ctrlp.vim'
     Plug '~/.zsh/pack/fzf'
     
