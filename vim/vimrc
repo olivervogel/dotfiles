@@ -127,3 +127,8 @@ let g:fzf_action = {
 let g:ale_linters_explicit = 1
 let g:ale_linters = {'php': ['phpcs']}
 let g:ale_php_phpcs_standard = 'psr12'
+
+" nerdtree settings
+" open new files in tabs
+let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
+
