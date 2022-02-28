@@ -79,3 +79,14 @@ snippet /**
  * @return ${3:____}
  */
 endsnippet
+
+snippet pp
+echo "<pre>";
+var_dump($${1:var});
+echo "</pre>";
+exit;
+endsnippet
+
+snippet .. "" i
+" . $0 . "
+endsnippet
