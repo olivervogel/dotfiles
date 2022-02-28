@@ -10,7 +10,7 @@ require("nvim-treesitter.configs").setup {
 vim.cmd 'colorscheme material'
 
 require("toggleterm").setup{
-    open_mapping = [[<c-_>]],
+    open_mapping = [[<c-y>]],
     direction = 'horizontal',
     size = 20
 }
