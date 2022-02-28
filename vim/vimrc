@@ -120,17 +120,11 @@ set langmap=^`,#',ö\\;
 " fzf settings
 nnoremap <c-p> :FZF<cr>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 0 } }
-let g:fzf_action = {
-  \ 'enter': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
 
 " ale settings
 let g:ale_linters_explicit = 1
 let g:ale_linters = {'php': ['phpcs']}
 let g:ale_php_phpcs_standard = 'psr12'
 
-" nerdtree settings
-" open new files in tabs
-let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
-
+" close nerdtree after opening file
+let NERDTreeQuitOnOpen=1
