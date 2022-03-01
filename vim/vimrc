@@ -71,11 +71,12 @@ set shiftwidth=4
 set smartindent
 set autoindent
 
+" turn on indenting for php
 autocmd FileType php setlocal smartindent autoindent indentexpr=""
 
 " *.ss should be handled as html
-autocmd BufNewFile,BufRead *.ss set filetype=html
-
+au BufRead,BufNewFile *.ss set filetype=ss
+autocmd BufNewFile,BufRead *.ss set syntax=html
 
 syntax enable
 
