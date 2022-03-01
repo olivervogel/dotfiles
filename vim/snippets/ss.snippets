@@ -1,0 +1,23 @@
+extends html
+
+priority 1
+snippet e
+$${0:Variable}
+endsnippet
+
+snippet et
+<%t ${1:Namespace}.${2:Entity} "${3:String to translate}" %>
+endsnippet
+
+priority 1
+snippet if
+<% if $${1:Variable} %>
+	$0
+<% end_if %>
+endsnippet
+
+snippet loop
+<% loop $${1:Variable} %>
+	$0
+<% end_loop %>
+endsnippet
