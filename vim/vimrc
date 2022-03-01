@@ -73,6 +73,10 @@ set autoindent
 
 autocmd FileType php setlocal smartindent autoindent indentexpr=""
 
+" *.ss should be handled as html
+autocmd BufNewFile,BufRead *.ss set filetype=html
+
+
 syntax enable
 
 set path+=**
