@@ -117,16 +117,18 @@ noremap <Leader>7 7gt
 noremap <Leader>8 8gt
 noremap <Leader>9 9gt
 noremap <Leader>0 :tabnew<cr>
-noremap <c-l> :tabnext<cr>
-noremap <c-h> :tabprev<cr>
 
 noremap <s-l> :bnext<cr>
 noremap <s-h> :bprevious<cr>
 
+" next/prev window
+noremap <c-l> <c-w>l
+noremap <c-h> <c-w>h
+
 " phpactor keys
 noremap <Leader>u :PhpactorImportClass<cr>
 noremap <Leader>e :PhpactorClassExpand<cr>
-noremap <Leader>o :PhpactorGotoDefinition tabnew<cr>
+noremap <Leader>o :PhpactorGotoDefinition<cr>
 noremap <Leader>mm :PhpactorContextMenu<cr>
 
 " snippet keys
