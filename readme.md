@@ -11,6 +11,8 @@
     - [vim-plug](https://github.com/junegunn/vim-plug)
         - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
         - [material.nvim](https://github.com/nvim-treesitter/nvim-treesitter)
+        - [The NERDTree](https://github.com/preservim/nerdtree)
+        - [commentary.vim](https://github.com/tpope/vim-commentary)
         - [ALE](https://github.com/dense-analysis/ale)
         - [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
         - [Phpactor](https://github.com/phpactor/phpactor)

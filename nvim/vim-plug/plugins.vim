@@ -35,7 +35,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " comments
     Plug 'tpope/vim-commentary'
     
-    " Plug 'ctrlpvim/ctrlp.vim'
+    " fzf
     Plug '~/.zsh/pack/fzf'
     
 
