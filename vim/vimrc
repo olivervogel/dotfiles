@@ -26,6 +26,15 @@ nmap <Leader>pl :e ~/.dotfiles/nvim/vim-plug/plugins.vim<cr>
 noremap <Leader>c :bd<cr>
 noremap <Leader>w :w<cr>
 noremap <Leader>n :enew<cr>
+noremap <bs> daw
+
+" alt+j (mac) to move line up
+nnoremap º :m .+1<CR>==
+nnoremap <A-j> :m .+1<CR>==
+
+" alt+k (mac) to move line down
+nnoremap ∆ :m .-2<CR>==
+nnoremap <A-k> :m .-2<CR>==
 
 "set cursor to line in insert mode and to block in normal mode
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -65,7 +74,7 @@ nmap <Leader><space> :nohlsearch<cr>
 set ignorecase
 set smartcase
 
-filetype indent on
+filetype indent plugin on
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -80,6 +89,10 @@ autocmd FileType php setlocal smartindent autoindent indentexpr=""
 au BufRead,BufNewFile *.ss set filetype=ss
 autocmd BufNewFile,BufRead *.ss set syntax=html
 
+" *.blade should be handled as html
+au BufRead,BufNewFile *.blade.php set filetype=blade
+autocmd BufNewFile,BufRead *.blade.php set syntax=html
+
 syntax enable
 
 set path+=**
@@ -91,7 +104,7 @@ set nu rnu
 
 " macros
 nnoremap <Leader>da F dt=xda"
-nnoremap fit vit<esc>
+nnoremap fit vito<esc>
 
 "tab switching with leader<num>
 noremap <Leader>1 1gt
@@ -123,7 +136,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-c>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/vim/snippets']
 
 " remaping for german keyboard
-set langmap=^`,#',ö\\;
+set langmap=^`,#',ö\\;,&^
 
 " fzf settings
 nnoremap <c-p> :FZF<cr>
