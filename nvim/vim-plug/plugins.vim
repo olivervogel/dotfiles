@@ -31,7 +31,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " nerdtree
     Plug 'preservim/nerdtree'
-
+    
+    " comments
+    Plug 'tpope/vim-commentary'
+    
     " Plug 'ctrlpvim/ctrlp.vim'
     Plug '~/.zsh/pack/fzf'
     
