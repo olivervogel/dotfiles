@@ -36,10 +36,6 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap ∆ :m .-2<CR>==
 nnoremap <A-k> :m .-2<CR>==
 
-" move in changelist
-nnoremap oo g;
-nnoremap ii g,
-
 "set cursor to line in insert mode and to block in normal mode
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
