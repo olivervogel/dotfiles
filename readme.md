@@ -19,5 +19,6 @@
         - [UltiSnips](https://github.com/SirVer/ultisnips)
         - [fzf](https://github.com/junegunn/fzf)
         - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+        - [shade.nvim](https://github.com/sunjon/Shade.nvim)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
