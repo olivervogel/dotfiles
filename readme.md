@@ -20,5 +20,6 @@
         - [fzf](https://github.com/junegunn/fzf)
         - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
         - [shade.nvim](https://github.com/sunjon/Shade.nvim)
+        - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
