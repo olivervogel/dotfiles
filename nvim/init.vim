@@ -4,14 +4,13 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 source ~/.vimrc
 
 set termguicolors
-let g:material_style = "oceanic"
 
 lua <<EOF
 require("nvim-treesitter.configs").setup {
     highlight = { enable = true },
 }
 
-vim.cmd 'colorscheme material'
+vim.cmd 'colorscheme OceanicNext'
 
 require("toggleterm").setup{
     open_mapping = [[<c-space>]],

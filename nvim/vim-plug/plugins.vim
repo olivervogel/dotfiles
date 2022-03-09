@@ -14,8 +14,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-    " material theme
-    Plug 'marko-cerovac/material.nvim'
+    " theme
+    Plug 'mhartington/oceanic-next'
 
     " phpactor
     Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
