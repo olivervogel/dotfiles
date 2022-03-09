@@ -36,6 +36,16 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap ∆ :m .-2<CR>==
 nnoremap <A-k> :m .-2<CR>==
 
+" alt+o to add new line after adding semicolon to end of current line
+nnoremap ø A;<cr>
+nnoremap <A-o> A;<cr>
+inoremap ø <esc>A;<cr>
+
+" alt-shift+o add semicolon to end of current line
+nnoremap Ø A;
+nnoremap <A-O> A;
+inoremap Ø <esc>A;
+
 "set cursor to line in insert mode and to block in normal mode
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
