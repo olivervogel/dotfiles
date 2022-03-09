@@ -38,7 +38,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " fzf
     Plug '~/.zsh/pack/fzf'
 
-    " shade
-    Plug 'sunjon/shade.nvim'
-
 call plug#end()

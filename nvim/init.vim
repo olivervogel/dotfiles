@@ -15,17 +15,6 @@ require("toggleterm").setup{
     direction = 'horizontal',
     size = 20
 }
-
-require'shade'.setup({
-  overlay_opacity = 50,
-  opacity_step = 1,
-  keys = {
-    brightness_up    = '<C-Up>',
-    brightness_down  = '<C-Down>',
-    toggle           = '<Leader>s',
-  }
-})
-
 EOF
 
 set foldmethod=expr
