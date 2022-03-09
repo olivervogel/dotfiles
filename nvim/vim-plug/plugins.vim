@@ -41,5 +41,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " shade
     Plug 'sunjon/shade.nvim'
 
-    Plug 'akinsho/bufferline.nvim'
 call plug#end()

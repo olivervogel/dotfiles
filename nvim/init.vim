@@ -16,14 +16,6 @@ require("toggleterm").setup{
     size = 20
 }
 
-require("bufferline").setup{
-    options = {
-        show_buffer_close_icons = false,
-        show_close_icon = false,
-        show_tab_indicators = false
-    }
-}
-
 require'shade'.setup({
   overlay_opacity = 50,
   opacity_step = 1,
