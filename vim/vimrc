@@ -128,12 +128,30 @@ noremap <Leader>8 8gt
 noremap <Leader>9 9gt
 noremap <Leader>0 :tabnew<cr>
 
-noremap <s-l> :bnext<cr>
-noremap <s-h> :bprevious<cr>
+" swtich buffers with tab & shift+tab
+noremap <tab> :bnext<cr>
+noremap <s-tab> :bprevious<cr>
+
+" WINDOWS
+" split window
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+" move in windows
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
 
 " next/prev window
 noremap <c-l> <c-w>l
 noremap <c-h> <c-w>h
+
+" Select all
+nmap <C-a> gg<S-v>G
+
+" Increment/decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
 
 " phpactor keys
 noremap <Leader>u :PhpactorImportClass<cr>
