@@ -10,7 +10,7 @@
 - [neovim](https://www.neovim.io)
     - [vim-plug](https://github.com/junegunn/vim-plug)
         - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-        - [material.nvim](https://github.com/nvim-treesitter/nvim-treesitter)
+        - [Oceanic-Next.vim](https://github.com/mhartington/oceanic-next)
         - [The NERDTree](https://github.com/preservim/nerdtree)
         - [commentary.vim](https://github.com/tpope/vim-commentary)
         - [ALE](https://github.com/dense-analysis/ale)
