@@ -38,4 +38,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " fzf
     Plug '~/.zsh/pack/fzf'
 
+    " bufferline
+    Plug 'akinsho/bufferline.nvim'
 call plug#end()
