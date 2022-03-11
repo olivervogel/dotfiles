@@ -23,7 +23,7 @@ _tmux_attach() {
 _git_diff_working_tree() {
     root=$(git rev-parse --show-toplevel)
     if [ $1 ]; then
-        git diff HEAD -- $root/$selected
+        git diff HEAD -- $root/$1
     else
         preview="git diff --color=always -- $root/{-1}"
         selected=$(git diff --name-only | fzf -m --ansi --preview $preview)
