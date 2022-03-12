@@ -51,6 +51,13 @@ if (${1:condition}) {
 }
 endsnippet
 
+snippet foreach
+foreach ($${1:variable} as $${2:key}${3: => \$${4:value}}) {
+    ${5:# code...}
+}
+endsnippet
+
+
 snippet ret "" i
 return ${1:\$value};
 endsnippet
