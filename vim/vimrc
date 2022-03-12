@@ -71,8 +71,12 @@ set number
 set backspace=indent,eol,start
 
 " autocompletion
-set complete+=kspell
-set completeopt=menu,preview
+set complete+=kspell,k
+set completeopt=noinsert,menuone
+inoremap <c-space> <c-n>
+
+" select with enter key when completion menu is open
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "highlight search keywords
 set hlsearch
@@ -182,3 +186,6 @@ let g:ale_php_phpcs_standard = 'psr12'
 
 " close nerdtree after opening file
 let NERDTreeQuitOnOpen=1
+
+"ncm
+autocmd BufEnter * call ncm2#enable_for_buffer()

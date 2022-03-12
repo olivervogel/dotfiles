@@ -41,5 +41,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " bufferline
     Plug 'akinsho/bufferline.nvim'
 
+    " smooth scrolling
     Plug 'karb94/neoscroll.nvim'
+
+    " ncm
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+    Plug 'phpactor/ncm2-phpactor'
+    Plug 'ncm2/ncm2-cssomni'
+
 call plug#end()
