@@ -13,7 +13,7 @@ require("nvim-treesitter.configs").setup {
 vim.cmd 'colorscheme OceanicNext'
 
 require("toggleterm").setup{
-    open_mapping = [[<c-space>]],
+    open_mapping = [[<f1>]],
     direction = 'horizontal',
     size = 20
 }
