@@ -205,7 +205,7 @@ augroup END
 " wrapper function to remap ]]
 function! NextSection()
     try
-        normal ]]
+        normal ]]zz
     catch
     endtry
 endfunction
@@ -213,7 +213,7 @@ endfunction
 " wrapper function to remap [[
 function! PrevSection()
     try
-        normal [[
+        normal [[zz
     catch
     endtry
 endfunction
