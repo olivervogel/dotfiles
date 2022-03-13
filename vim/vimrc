@@ -201,3 +201,23 @@ augroup vimrc_help
   autocmd!
   autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 augroup END
+
+" wrapper function to remap ]]
+function! NextSection()
+    try
+        normal ]]
+    catch
+    endtry
+endfunction
+
+" wrapper function to remap [[
+function! PrevSection()
+    try
+        normal [[
+    catch
+    endtry
+endfunction
+
+" remap [[ and ]]
+map <c-j> :call NextSection()<cr>
+map <c-k> :call PrevSection()<cr>
