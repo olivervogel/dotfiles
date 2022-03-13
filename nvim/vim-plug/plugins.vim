@@ -44,6 +44,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " smooth scrolling
     Plug 'karb94/neoscroll.nvim'
 
+    Plug 'lifepillar/vim-mucomplete'
     Plug 'c9s/phpunit.vim'
 
 call plug#end()

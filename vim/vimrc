@@ -72,19 +72,19 @@ set backspace=indent,eol,start
 
 " autocompletion
 set complete+=kspell,k
-set completeopt=noinsert,menuone
+set completeopt=menu
 set omnifunc=syntaxcomplete#Complete
 
-" open pum with <c-space>
-inoremap <c-space> <c-x><c-o>
+" open auto comletion with <c-space>
+let g:mucomplete#no_mappings=1
+imap <unique> <c-space> <plug>(MUcompleteFwd)
 
 " select with enter key when completion menu is open
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " cycle popup with c-space or j or k
-inoremap <expr> <c-space> pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
 inoremap <expr> j pumvisible() ? "\<c-n>" : "j"
-inoremap <expr> k pumvisible() ? "\<c-n>" : "k"
+inoremap <expr> k pumvisible() ? "\<c-p>" : "k"
 
 "highlight search keywords
 set hlsearch
@@ -152,10 +152,8 @@ noremap <s-tab> :bprevious<cr>
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
 " move in windows
-map sh <C-w>h
 map sk <C-w>k
 map sj <C-w>j
-map sl <C-w>l
 
 " next/prev window
 noremap <c-l> <c-w>l
