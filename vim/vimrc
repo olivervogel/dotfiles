@@ -195,6 +195,9 @@ let g:ale_php_phpcs_standard = 'psr12'
 " close nerdtree after opening file
 let NERDTreeQuitOnOpen=1
 
+let g:phpunit_bin = './vendor/bin/phpunit'
+nnoremap <Leader>t :PHPUnitRunAll<cr>
+
 " show help in vertical split
 augroup vimrc_help
   autocmd!
