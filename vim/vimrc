@@ -73,10 +73,18 @@ set backspace=indent,eol,start
 " autocompletion
 set complete+=kspell,k
 set completeopt=noinsert,menuone
-inoremap <c-space> <c-n>
+set omnifunc=syntaxcomplete#Complete
+
+" open pum with <c-space>
+inoremap <c-space> <c-x><c-o>
 
 " select with enter key when completion menu is open
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" cycle popup with c-space or j or k
+inoremap <expr> <c-space> pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
+inoremap <expr> j pumvisible() ? "\<c-n>" : "j"
+inoremap <expr> k pumvisible() ? "\<c-n>" : "k"
 
 "highlight search keywords
 set hlsearch
@@ -186,9 +194,6 @@ let g:ale_php_phpcs_standard = 'psr12'
 
 " close nerdtree after opening file
 let NERDTreeQuitOnOpen=1
-
-"ncm
-autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " show help in vertical split
 augroup vimrc_help
