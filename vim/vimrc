@@ -81,6 +81,7 @@ set pumheight=10
 
 " open auto comletion with <c-space>
 let g:mucomplete#no_mappings=1
+let g:mucomplete#chains = { 'default' : ['c-p', 'omni', 'path', 'keyn'] }
 imap <unique> <c-space> <plug>(MUcompleteFwd)
 
 " select with enter key when completion menu is open
