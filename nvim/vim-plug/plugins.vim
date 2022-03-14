@@ -43,5 +43,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " multi complete
     Plug 'lifepillar/vim-mucomplete'
+    Plug 'junegunn/vim-slash'
 
 call plug#end()
