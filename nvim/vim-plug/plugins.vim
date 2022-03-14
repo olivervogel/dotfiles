@@ -41,8 +41,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " bufferline
     Plug 'akinsho/bufferline.nvim'
 
-    " multi complete
-    Plug 'lifepillar/vim-mucomplete'
     Plug 'junegunn/vim-slash'
 
 call plug#end()

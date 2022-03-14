@@ -76,8 +76,7 @@ set completeopt=menu
 set omnifunc=syntaxcomplete#Complete
 
 " open auto comletion with <c-space>
-let g:mucomplete#no_mappings=1
-imap <unique> <c-space> <plug>(MUcompleteFwd)
+imap <c-space> <c-x><c-o>
 
 " select with enter key when completion menu is open
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -85,6 +84,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " cycle popup with c-space or j or k
 inoremap <expr> j pumvisible() ? "\<c-n>" : "j"
 inoremap <expr> k pumvisible() ? "\<c-p>" : "k"
+inoremap <expr> <c-space> pumvisible() ? "\<c-n>" : "\<c-x>\<c-o>"
 
 "highlight search keywords
 set hlsearch
