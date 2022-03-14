@@ -13,6 +13,9 @@ highlight ColorColumn ctermbg=0 guibg=236 ctermbg=236
 "hightlight current line
 set cursorline
 
+" scroll offset
+set scrolloff=5
+
 "define ctrl-s to explore via nerdtree
 nnoremap <C-s> :NERDTreeToggle<cr>
 
@@ -74,6 +77,7 @@ set backspace=indent,eol,start
 set complete+=kspell,k
 set completeopt=menu
 set omnifunc=syntaxcomplete#Complete
+set pumheight=10
 
 " open auto comletion with <c-space>
 imap <c-space> <c-x><c-o>
@@ -218,3 +222,6 @@ endfunction
 " remap [[ and ]]
 map <c-j> :call NextSection()<cr>
 map <c-k> :call PrevSection()<cr>
+
+" qq to record, Q to replay
+nnoremap Q @q
