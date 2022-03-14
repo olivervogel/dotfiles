@@ -26,8 +26,6 @@ require("bufferline").setup{
     }
 }
 
-require('neoscroll').setup()
-
 EOF
 
 set foldmethod=expr

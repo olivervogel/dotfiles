@@ -41,9 +41,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " bufferline
     Plug 'akinsho/bufferline.nvim'
 
-    " smooth scrolling
-    Plug 'karb94/neoscroll.nvim'
-    
     " multi complete
     Plug 'lifepillar/vim-mucomplete'
 
