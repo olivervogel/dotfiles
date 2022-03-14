@@ -15,7 +15,7 @@ vim.cmd 'colorscheme OceanicNext'
 require("toggleterm").setup{
     open_mapping = [[<f1>]],
     direction = 'horizontal',
-    size = 20
+    size = 40
 }
 
 require("bufferline").setup{
