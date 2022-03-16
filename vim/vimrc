@@ -69,7 +69,7 @@ set ttyfast
 :highlight PmenuSel ctermbg=gray guibg=gray ctermfg=0
 highlight ALEWarning ctermbg=238
 
-set clipboard+=unnamed
+set clipboard^=unnamed
 set number
 set backspace=indent,eol,start
 
