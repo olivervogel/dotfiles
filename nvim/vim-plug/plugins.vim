@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " theme
     Plug 'mhartington/oceanic-next'
+    Plug 'lifepillar/vim-solarized8'
 
     " phpactor
     Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
