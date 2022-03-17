@@ -132,20 +132,20 @@ set number relativenumber
 set nu rnu
 
 " macros
-nnoremap <Leader>da F dt=xda"
-nnoremap fit vito<esc>
+" nnoremap <Leader>da F dt=xda"
+" nnoremap fit vito<esc>
 
 "tab switching with leader<num>
-noremap <Leader>1 1gt
-noremap <Leader>2 2gt
-noremap <Leader>3 3gt
-noremap <Leader>4 4gt
-noremap <Leader>5 5gt
-noremap <Leader>6 6gt
-noremap <Leader>7 7gt
-noremap <Leader>8 8gt
-noremap <Leader>9 9gt
-noremap <Leader>0 :tabnew<cr>
+" noremap <Leader>1 1gt
+" noremap <Leader>2 2gt
+" noremap <Leader>3 3gt
+" noremap <Leader>4 4gt
+" noremap <Leader>5 5gt
+" noremap <Leader>6 6gt
+" noremap <Leader>7 7gt
+" noremap <Leader>8 8gt
+" noremap <Leader>9 9gt
+" noremap <Leader>0 :tabnew<cr>
 
 " swtich buffers with tab & shift+tab
 noremap <tab> :bnext<cr>
@@ -156,15 +156,15 @@ noremap <s-tab> :bprevious<cr>
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
 " move in windows
-map sk <C-w>k
-map sj <C-w>j
+" nmap sk <C-w>k
+" nmap sj <C-w>j
 
 " next/prev window
-noremap <c-l> <c-w>l
-noremap <c-h> <c-w>h
+" noremap <c-l> <c-w>l
+" noremap <c-h> <c-w>h
 
 " Select all
-nmap <C-a> gg<S-v>G
+" nmap <C-a> gg<S-v>G
 
 " Increment/decrement
 nnoremap + <C-a>
