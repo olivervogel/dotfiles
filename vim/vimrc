@@ -108,6 +108,7 @@ set softtabstop=4
 set shiftwidth=4
 set smartindent
 set autoindent
+set copyindent
 
 " turn on indenting for php
 autocmd FileType php setlocal smartindent autoindent indentexpr=""
