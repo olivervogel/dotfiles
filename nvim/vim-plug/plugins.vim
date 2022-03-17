@@ -45,5 +45,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " multi complete
     Plug 'lifepillar/vim-mucomplete'
     Plug 'junegunn/vim-slash'
-
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-repeat'
 call plug#end()
