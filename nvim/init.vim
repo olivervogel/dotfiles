@@ -4,15 +4,15 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 source ~/.vimrc
 
 set termguicolors
-set background=dark
-" colorscheme solarized8
+set background=light
+colorscheme solarized8
 
 lua <<EOF
-require("nvim-treesitter.configs").setup {
-    highlight = { enable = true },
-}
+--require("nvim-treesitter.configs").setup {
+--    highlight = { enable = true },
+--}
 
-vim.cmd 'colorscheme OceanicNext'
+-- vim.cmd 'colorscheme OceanicNext'
 
 require("toggleterm").setup{
     open_mapping = [[<f1>]],

@@ -9,13 +9,13 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
+    " Plug 'jiangmiao/auto-pairs'
 
     " Treesitter
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " theme
-    Plug 'mhartington/oceanic-next'
+    " Plug 'mhartington/oceanic-next'
     Plug 'lifepillar/vim-solarized8'
 
     " phpactor

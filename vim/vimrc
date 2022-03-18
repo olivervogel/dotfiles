@@ -26,8 +26,18 @@ let mapleader=","
 nmap <Leader>rc :e ~/.dotfiles/vim/vimrc<cr>
 nmap <Leader>pl :e ~/.dotfiles/nvim/vim-plug/plugins.vim<cr>
 
+" dehighlight searchterms
+nnoremap ,<space> :nohlsearch<cr>
+
+" zz for saving file
+noremap WW :update<cr>
+nnoremap <A-s> :update<cr>
+
+" keep visual mode active after indenting
+vmap > >gv
+vmap < <gv
+
 noremap <Leader>c :bd<cr>
-noremap <Leader>w :w<cr>
 noremap <Leader>n :enew<cr>
 noremap <bs> daw
 
