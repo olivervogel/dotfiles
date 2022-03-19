@@ -14,6 +14,20 @@ lua <<EOF
 
 -- vim.cmd 'colorscheme OceanicNext'
 
+require('neoscroll').setup({})
+
+local t = {}
+t['<C-u>'] = {'scroll', {'-vim.wo.scroll', 'true', '120', [['sine']]}}
+t['<C-d>'] = {'scroll', { 'vim.wo.scroll', 'true', '120', [['sine']]}}
+t['<C-b>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '250'}}
+t['<C-f>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '250'}}
+t['zz']    = {'zz', {'120'}}
+t['zt']    = {'zt', {'120'}}
+t['zb']    = {'zb', {'120'}}
+
+require('neoscroll.config').set_mappings(t)
+
+
 require("toggleterm").setup{
     open_mapping = [[<f1>]],
     direction = 'horizontal',
