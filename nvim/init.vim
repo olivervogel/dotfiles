@@ -31,7 +31,8 @@ require('neoscroll.config').set_mappings(t)
 require("toggleterm").setup{
     open_mapping = [[<f1>]],
     direction = 'horizontal',
-    size = 40
+    size = 40,
+    shade_terminals = true
 }
 
 require("bufferline").setup{
