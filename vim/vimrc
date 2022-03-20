@@ -50,14 +50,14 @@ nnoremap ∆ :m .-2<CR>==
 nnoremap <A-k> :m .-2<CR>==
 
 " alt+o to add new line after adding semicolon to end of current line
-nnoremap ø A;<cr>
-nnoremap <A-o> A;<cr>
-inoremap ø <esc>A;<cr>
+nnoremap ø A;<cr><esc>
+nnoremap <A-o> A;<cr><esc>
+inoremap ø <esc>A;<cr><esc>
 
 " alt-shift+o add semicolon to end of current line
-nnoremap Ø A;
-nnoremap <A-O> A;
-inoremap Ø <esc>A;
+nnoremap Ø A;<esc>
+nnoremap <A-O> A;<esc>
+inoremap Ø <esc>A;<esc>
 
 nnoremap n nzz
 nnoremap N Nzz
