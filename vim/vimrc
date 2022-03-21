@@ -6,6 +6,9 @@ noremap <Right> <Nop>
 
 set encoding=utf-8
 
+"define leader
+let mapleader=","
+
 "set ruler at columns
 set colorcolumn=80,120
 highlight ColorColumn ctermbg=0 guibg=236 ctermbg=236
@@ -19,9 +22,6 @@ set scrolloff=5
 "define ctrl-s to explore via nerdtree
 nnoremap <C-s> :NERDTreeToggle<cr>
 
-"define leader
-let mapleader=","
-
 " shortcut to open config files
 nmap <Leader>rc :e ~/.dotfiles/vim/vimrc<cr>
 nmap <Leader>pl :e ~/.dotfiles/nvim/vim-plug/plugins.vim<cr>
@@ -29,15 +29,16 @@ nmap <Leader>pl :e ~/.dotfiles/nvim/vim-plug/plugins.vim<cr>
 " dehighlight searchterms
 nnoremap ,<space> :nohlsearch<cr>
 
-" zz for saving file
+" WW for saving file
 noremap WW :update<cr>
-nnoremap <A-s> :update<cr>
+
+" XX for closing buffer
+noremap XX :bd<cr>
 
 " keep visual mode active after indenting
 vmap > >gv
 vmap < <gv
 
-noremap <Leader>c :bd<cr>
 noremap <Leader>n :enew<cr>
 noremap <bs> daw
 
@@ -90,9 +91,12 @@ set omnifunc=syntaxcomplete#Complete
 set pumheight=10
 
 " open auto comletion with <c-space>
-let g:mucomplete#no_mappings=1
-let g:mucomplete#chains = { 'default' : ['c-p', 'omni', 'path', 'keyn'] }
-imap <unique> <c-space> <plug>(MUcompleteFwd)
+" let g:mucomplete#no_mappings=1
+" let g:mucomplete#chains = { 'default' : ['c-p', 'omni', 'path', 'keyn'] }
+" imap <unique> <c-space> <plug>(MUcompleteFwd)
+
+" map omni completion to ctrl-space
+imap <unique> <c-space> <c-x><c-o>
 
 " select with enter key when completion menu is open
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -170,8 +174,8 @@ nmap sv :vsplit<Return><C-w>w
 " nmap sj <C-w>j
 
 " next/prev window
-" noremap <c-l> <c-w>l
-" noremap <c-h> <c-w>h
+noremap <c-l> <c-w>l
+noremap <c-h> <c-w>h
 
 " Select all
 " nmap <C-a> gg<S-v>G

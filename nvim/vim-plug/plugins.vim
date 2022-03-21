@@ -9,7 +9,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Auto pairs for '(' '[' '{'
-    " Plug 'jiangmiao/auto-pairs'
+    Plug 'jiangmiao/auto-pairs'
 
     " Treesitter
     " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -45,8 +45,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'karb94/neoscroll.nvim'
 
     " multi complete
-    Plug 'lifepillar/vim-mucomplete'
+    " Plug 'lifepillar/vim-mucomplete'
+
     Plug 'junegunn/vim-slash'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
+
 call plug#end()
