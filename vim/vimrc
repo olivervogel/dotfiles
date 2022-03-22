@@ -128,7 +128,7 @@ set autoindent
 set copyindent
 
 " turn on indenting for php
-autocmd FileType php setlocal smartindent autoindent indentexpr=""
+" autocmd FileType php setlocal smartindent autoindent indentexpr=""
 " autocmd FileType php setlocal autoindent indentexpr=""
 
 " *.ss should be handled as html
