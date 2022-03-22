@@ -9,6 +9,9 @@ set encoding=utf-8
 "define leader
 let mapleader=","
 
+" persist undo history
+" set undofile
+
 "set ruler at columns
 set colorcolumn=80,120
 highlight ColorColumn ctermbg=0 guibg=236 ctermbg=236
