@@ -240,8 +240,8 @@ function! PrevSection()
 endfunction
 
 " remap [[ and ]]
-map <c-j> :call NextSection()<cr>
-map <c-k> :call PrevSection()<cr>
+" nnoremap <c-j> <c-d>
+" nnoremap <c-k> <c-u>
 
 " qq to record, Q to replay
 nnoremap Q @q
