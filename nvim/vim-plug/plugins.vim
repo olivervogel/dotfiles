@@ -11,9 +11,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
 
-    " Treesitter
-    " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
     " theme
     " Plug 'mhartington/oceanic-next'
     Plug 'lifepillar/vim-solarized8'
@@ -42,11 +39,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " bufferline
     Plug 'akinsho/bufferline.nvim'
     
-    Plug 'karb94/neoscroll.nvim'
-
-    " multi complete
-    " Plug 'lifepillar/vim-mucomplete'
-
     Plug 'junegunn/vim-slash'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'

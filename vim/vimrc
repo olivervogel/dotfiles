@@ -6,8 +6,26 @@ noremap <Right> <Nop>
 
 set encoding=utf-8
 
+set termguicolors
+
 "define leader
 let mapleader=","
+
+syntax enable
+
+set path+=**
+set wildmenu
+
+" open splits below/right current buffer
+set splitbelow
+set splitright
+
+" relative/hybrid line numbers
+set number relativenumber
+set nu rnu
+
+" remaping for german keyboard
+set langmap=^`,#',ö\\;,&^
 
 " persist undo history
 " set undofile
@@ -22,15 +40,13 @@ set cursorline
 " scroll offset
 set scrolloff=5
 
-"define ctrl-s to explore via nerdtree
-nnoremap <C-s> :NERDTreeToggle<cr>
+" swtich buffers with tab & shift+tab
+noremap <tab> :bnext<cr>
+noremap <s-tab> :bprevious<cr>
 
-" shortcut to open config files
-nmap <Leader>rc :e ~/.dotfiles/vim/vimrc<cr>
-nmap <Leader>pl :e ~/.dotfiles/nvim/vim-plug/plugins.vim<cr>
-
-" dehighlight searchterms
-nnoremap ,<space> :nohlsearch<cr>
+" next/prev window
+noremap <c-l> <c-w>l
+noremap <c-h> <c-w>h
 
 " WW for saving file
 noremap WW :update<cr>
@@ -38,12 +54,53 @@ noremap WW :update<cr>
 " XX for closing buffer
 noremap XX :bd<cr>
 
+" shortcut to open config files
+nmap <Leader>rc :e ~/.dotfiles/vim/vimrc<cr>
+nmap <Leader>pl :e ~/.dotfiles/nvim/vim-plug/plugins.vim<cr>
+
+" plugin install & clean
+nmap <Leader>pi :PlugInstall<cr>
+nmap <Leader>pc :PlugClean<cr>
+
+" open & quite splits
+nmap <Leader>ss :vsplit<cr><C-w>w
+nmap <Leader>sq <c-w><c-q>
+
+" open new buffer
+noremap <Leader>n :enew<cr>
+
+" html attribute pseude text object (experimental)
+xnoremap ix a"oB
+onoremap ix :<c-u>normal vix<cr>
+xnoremap ax a"oBh
+onoremap ax :<c-u>normal vax<cr>
+
+" php stuff
+noremap <Leader>u :PhpactorImportClass<cr>
+noremap <Leader>e :PhpactorClassExpand<cr>
+noremap <Leader>o :PhpactorGotoDefinition<cr>
+noremap <Leader>mm :PhpactorContextMenu<cr>
+nnoremap <Leader>tt :TermExec cmd="./vendor/bin/phpunit"<cr>
+
+" Increment/decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+" qq to record, Q to replay
+nnoremap Q @q
+
+" dehighlight searchterms
+nnoremap ,<space> :nohlsearch<cr>
+
 " keep visual mode active after indenting
 vmap > >gv
 vmap < <gv
 
-noremap <Leader>n :enew<cr>
+" delete around word with backspace
 noremap <bs> daw
+
+"define ctrl-s to explore via nerdtree
+nnoremap <C-s> :NERDTreeToggle<cr>
 
 " alt+j (mac) to move line up
 nnoremap º :m .+1<CR>==
@@ -63,6 +120,7 @@ nnoremap Ø A;<esc>
 nnoremap <A-O> A;<esc>
 inoremap Ø <esc>A;<esc>
 
+" autocenter while jumping to search results
 nnoremap n nzz
 nnoremap N Nzz
 
@@ -78,9 +136,9 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set ttyfast
 
 "colors
-:highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
-:highlight Pmenu ctermbg=darkgray guibg=darkgray
-:highlight PmenuSel ctermbg=gray guibg=gray ctermfg=0
+highlight MatchParen cterm=underline ctermbg=black ctermfg=NONE
+highlight Pmenu ctermbg=darkgray guibg=darkgray
+highlight PmenuSel ctermbg=gray guibg=gray ctermfg=0
 highlight ALEWarning ctermbg=238
 
 set clipboard^=unnamed
@@ -131,6 +189,9 @@ set copyindent
 " autocmd FileType php setlocal smartindent autoindent indentexpr=""
 " autocmd FileType php setlocal autoindent indentexpr=""
 
+" lsp autocomplete
+" autocmd FileType php set omnifunc=v:lua.vim.lsp.omnifunc
+
 " *.ss should be handled as html
 au BufRead,BufNewFile *.ss set filetype=ss
 autocmd BufNewFile,BufRead *.ss set syntax=html
@@ -143,68 +204,14 @@ autocmd BufNewFile,BufRead *.vue set syntax=javascript
 au BufRead,BufNewFile *.blade.php set filetype=blade
 autocmd BufNewFile,BufRead *.blade.php set syntax=html
 
-syntax enable
-
-set path+=**
-set wildmenu
-
-" relative/hybrid line numbers
-set number relativenumber
-set nu rnu
-
-" macros
-" nnoremap <Leader>da F dt=xda"
-" nnoremap fit vito<esc>
-
-"tab switching with leader<num>
-" noremap <Leader>1 1gt
-" noremap <Leader>2 2gt
-" noremap <Leader>3 3gt
-" noremap <Leader>4 4gt
-" noremap <Leader>5 5gt
-" noremap <Leader>6 6gt
-" noremap <Leader>7 7gt
-" noremap <Leader>8 8gt
-" noremap <Leader>9 9gt
-" noremap <Leader>0 :tabnew<cr>
-
-" swtich buffers with tab & shift+tab
-noremap <tab> :bnext<cr>
-noremap <s-tab> :bprevious<cr>
-
-" WINDOWS
-" split window
-nmap ss :split<Return><C-w>w
-nmap sv :vsplit<Return><C-w>w
-" move in windows
-" nmap sk <C-w>k
-" nmap sj <C-w>j
-
-" next/prev window
-noremap <c-l> <c-w>l
-noremap <c-h> <c-w>h
-
 " Select all
 " nmap <C-a> gg<S-v>G
-
-" Increment/decrement
-nnoremap + <C-a>
-nnoremap - <C-x>
-
-" phpactor keys
-noremap <Leader>u :PhpactorImportClass<cr>
-noremap <Leader>e :PhpactorClassExpand<cr>
-noremap <Leader>o :PhpactorGotoDefinition<cr>
-noremap <Leader>mm :PhpactorContextMenu<cr>
 
 " snippet keys
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-c>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/vim/snippets']
-
-" remaping for german keyboard
-set langmap=^`,#',ö\\;,&^
 
 " fzf settings
 nnoremap <c-p> :FZF<cr>
@@ -217,9 +224,6 @@ let g:ale_php_phpcs_standard = 'psr12'
 
 " close nerdtree after opening file
 let NERDTreeQuitOnOpen=1
-
-" run phpunit in toggleterminal
-nnoremap <Leader>tt :TermExec cmd="./vendor/bin/phpunit"<cr>
 
 " show help in vertical split
 augroup vimrc_help
@@ -247,5 +251,3 @@ endfunction
 " nnoremap <c-j> <c-d>
 " nnoremap <c-k> <c-u>
 
-" qq to record, Q to replay
-nnoremap Q @q
