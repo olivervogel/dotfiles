@@ -161,17 +161,8 @@ set pumheight=10
 "ncm settings
 autocmd BufEnter * call ncm2#enable_for_buffer()
 let g:ncm2#auto_popup = 0
-inoremap <expr> <c-space> pumvisible() ? "\<c-n>" : "\<c-space>"
-inoremap <c-space> <c-r>=ncm2#manual_trigger()<cr>
+inoremap <expr> <c-space> pumvisible() ? "\<esc>" : "\<c-r>=ncm2#manual_trigger()\<cr>"
 set shortmess+=c
-
-" open auto comletion with <c-space>
-" let g:mucomplete#no_mappings=1
-" let g:mucomplete#chains = { 'default' : ['c-p', 'omni', 'path', 'keyn'] }
-" imap <unique> <c-space> <plug>(MUcompleteFwd)
-
-" map omni completion to ctrl-space
-" imap <unique> <c-space> <c-x><c-o>
 
 " select with enter key when completion menu is open
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -202,9 +193,6 @@ set copyindent
 " turn on indenting for php
 " autocmd FileType php setlocal smartindent autoindent indentexpr=""
 " autocmd FileType php setlocal autoindent indentexpr=""
-
-" lsp autocomplete
-" autocmd FileType php set omnifunc=v:lua.vim.lsp.omnifunc
 
 " *.ss should be handled as html
 au BufRead,BufNewFile *.ss set filetype=ss

@@ -10,7 +10,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-
+    
     " theme
     " Plug 'mhartington/oceanic-next'
     Plug 'lifepillar/vim-solarized8'
