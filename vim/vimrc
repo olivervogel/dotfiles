@@ -80,6 +80,7 @@ noremap <Leader>u :PhpactorImportClass<cr>
 noremap <Leader>e :PhpactorClassExpand<cr>
 noremap <Leader>o :PhpactorGotoDefinition<cr>
 noremap <Leader>mm :PhpactorContextMenu<cr>
+nnoremap <Leader>i :PhpactorHover<cr>
 nnoremap <Leader>tt :TermExec cmd="./vendor/bin/phpunit"<cr>
 
 " Increment/decrement
@@ -145,17 +146,18 @@ set clipboard^=unnamed
 set number
 set backspace=indent,eol,start
 
-"ncm settings
-autocmd BufEnter * call ncm2#enable_for_buffer()
-" let g:ncm2#auto_popup = 0
-" inoremap <c-space> <c-r>=ncm2#manual_trigger()<cr>
-set shortmess+=c
-
 " autocompletion
 set complete+=kspell,k
 set completeopt=noinsert,menuone
 " set omnifunc=syntaxcomplete#Complete
 set pumheight=10
+
+"ncm settings
+autocmd BufEnter * call ncm2#enable_for_buffer()
+let g:ncm2#auto_popup = 0
+inoremap <expr> <c-space> pumvisible() ? "\<c-n>" : "\<c-space>"
+inoremap <c-space> <c-r>=ncm2#manual_trigger()<cr>
+set shortmess+=c
 
 " open auto comletion with <c-space>
 " let g:mucomplete#no_mappings=1
