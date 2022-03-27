@@ -9,7 +9,7 @@ set encoding=utf-8
 set termguicolors
 
 "define leader
-let mapleader=","
+let mapleader=" "
 
 syntax enable
 
