@@ -145,10 +145,16 @@ set clipboard^=unnamed
 set number
 set backspace=indent,eol,start
 
+"ncm settings
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" let g:ncm2#auto_popup = 0
+" inoremap <c-space> <c-r>=ncm2#manual_trigger()<cr>
+set shortmess+=c
+
 " autocompletion
 set complete+=kspell,k
-set completeopt=menu
-set omnifunc=syntaxcomplete#Complete
+set completeopt=noinsert,menuone
+" set omnifunc=syntaxcomplete#Complete
 set pumheight=10
 
 " open auto comletion with <c-space>
@@ -157,7 +163,7 @@ set pumheight=10
 " imap <unique> <c-space> <plug>(MUcompleteFwd)
 
 " map omni completion to ctrl-space
-imap <unique> <c-space> <c-x><c-o>
+" imap <unique> <c-space> <c-x><c-o>
 
 " select with enter key when completion menu is open
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

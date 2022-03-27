@@ -15,8 +15,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'mhartington/oceanic-next'
     Plug 'lifepillar/vim-solarized8'
 
+    " ncm
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+    Plug 'ncm2/ncm2-bufword'
+    Plug 'ncm2/ncm2-path'
+    Plug 'ncm2/ncm2-cssomni'
+    Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
+    Plug 'fgrsnau/ncm2-otherbuf'
+
     " phpactor
     Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+    Plug 'phpactor/ncm2-phpactor'
     
     " terminal inside vim
     Plug 'akinsho/toggleterm.nvim'
