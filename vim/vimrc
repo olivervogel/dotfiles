@@ -63,7 +63,7 @@ nmap <Leader>pi :PlugInstall<cr>
 nmap <Leader>pc :PlugClean<cr>
 
 " open & quite splits
-nmap <Leader>ss :vsplit<cr><C-w>w
+nmap <Leader>ss :vsplit<cr><C-w>l
 nmap <Leader>sq <c-w><c-q>
 
 " open new buffer
@@ -75,12 +75,18 @@ onoremap ix :<c-u>normal vix<cr>
 xnoremap ax a"oBh
 onoremap ax :<c-u>normal vax<cr>
 
+" -----------------------------------------------------------------------------
 " php stuff
-noremap <Leader>u :PhpactorImportClass<cr>
-noremap <Leader>e :PhpactorClassExpand<cr>
-noremap <Leader>o :PhpactorGotoDefinition<cr>
-noremap <Leader>mm :PhpactorContextMenu<cr>
+" -----------------------------------------------------------------------------
+nnoremap <Leader>cx :PhpactorClassExpand<cr>
+nnoremap <Leader>ci :PhpactorImportClass<cr>
 nnoremap <Leader>i :PhpactorHover<cr>
+nnoremap <Leader>v :PhpactorChangeVisibility<cr>
+nnoremap gr :PhpactorFindReferences<cr>
+
+" gd is mapped by plugin, so it has to be overwritten this way
+autocmd VimEnter * noremap gd :PhpactorGotoDefinition<cr>
+
 nnoremap <Leader>tt :TermExec cmd="./vendor/bin/phpunit"<cr>
 
 " Increment/decrement
