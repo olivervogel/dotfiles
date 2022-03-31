@@ -40,7 +40,6 @@ lua <<EOF
 -- 
 -- require('neoscroll.config').set_mappings(t)
 
-
 require("toggleterm").setup{
     open_mapping = [[<f1>]],
     direction = 'horizontal',
