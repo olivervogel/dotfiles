@@ -47,6 +47,8 @@ noremap <s-tab> :bprevious<cr>
 " next/prev window
 noremap <c-l> <c-w>l
 noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
 
 " WW for saving file
 noremap WW :update<cr>
@@ -160,8 +162,8 @@ set pumheight=10
 
 "ncm settings
 autocmd BufEnter * call ncm2#enable_for_buffer()
-let g:ncm2#auto_popup = 0
-inoremap <expr> <c-space> pumvisible() ? "\<esc>" : "\<c-r>=ncm2#manual_trigger()\<cr>"
+" let g:ncm2#auto_popup = 0
+" inoremap <expr> <c-space> pumvisible() ? "\<esc>" : "\<c-r>=ncm2#manual_trigger()\<cr>"
 set shortmess+=c
 
 " select with enter key when completion menu is open

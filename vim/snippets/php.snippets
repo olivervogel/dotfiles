@@ -63,6 +63,11 @@ foreach ($${1:variable} as $${2:key}${3: => \$${4:value}}) {
 }
 endsnippet
 
+snippet for
+for ($i = 0; $i < ${1:\$${2:var}}; $i++) {
+	$0
+}
+endsnippet
 
 snippet ret "" i
 return ${1:\$value};
