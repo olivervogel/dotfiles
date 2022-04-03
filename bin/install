@@ -14,6 +14,5 @@ ln -nfs $DOTFILESDIR/nvim           ~/.config/nvim
 ln -nfs $DOTFILESDIR/rc/zshrc       ~/.zshrc
 ln -nfs $DOTFILESDIR/rc/p10k.zsh    ~/.p10k.zsh
 ln -nfs $DOTFILESDIR/rc/tmux.conf   ~/.tmux.conf
-ln -nfs $DOTFILESDIR/rc/vimrc       ~/.vimrc
 
 touch ~/.hushlogin
