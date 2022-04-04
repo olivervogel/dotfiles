@@ -14,7 +14,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " theme
-    " Plug 'mhartington/oceanic-next'
+    Plug 'mhartington/oceanic-next'
     Plug 'lifepillar/vim-solarized8'
 
     " bufferline
@@ -94,10 +94,13 @@ require('telescope').setup {
         layout_config = {
             width = 0.9,
         },
+        mappings = {
+            i = {
+                ["<esc>"] = actions.close
+            }
+        }
     }
 }
-
-
 EOF
  
 " snippet settings
@@ -108,11 +111,16 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/nvim/ultisnips']
 
 " telescope settings
 nnoremap <c-p> <cmd>Telescope find_files<cr>
+nnoremap <a-r> <cmd>Telescope lsp_document_symbols<cr>
+nnoremap ® <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fs <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>gs <cmd>Telescope git_status<cr>
 nnoremap <leader>fr <cmd>Telescope resume<cr>
+nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 
 " -----------------------------------------------------------------------------
 " base settings 
