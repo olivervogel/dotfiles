@@ -30,6 +30,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'neovim/nvim-lspconfig'
 
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
 
 " -----------------------------------------------------------------------------
@@ -57,10 +60,22 @@ vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', op
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        signs = false,
+        underline = false,
+        virtual_text = {
+            spacing = 4,
+        }
+    }
+)
+
 local on_attach = function(client, bufnr)
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>I', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>i', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
@@ -72,6 +87,17 @@ end
 require'lspconfig'.intelephense.setup{
     on_attach = on_attach
 }
+
+local actions = require('telescope.actions')
+require('telescope').setup {
+    defaults = {
+        layout_config = {
+            width = 0.9,
+        },
+    }
+}
+
+
 EOF
  
 " snippet settings
@@ -79,6 +105,14 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-c>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/nvim/ultisnips']
+
+" telescope settings
+nnoremap <c-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fr <cmd>Telescope resume<cr>
 
 " -----------------------------------------------------------------------------
 " base settings 
@@ -131,6 +165,9 @@ set shiftwidth=4
 set autoindent
 set copyindent
 
+" set column rulers
+set colorcolumn=80,120
+
 " relative/hybrid line numbers
 set number relativenumber
 set nu rnu
@@ -153,7 +190,7 @@ nnoremap n nzz
 nnoremap N Nzz
 
 " autocompletion
-set omnifunc=syntaxcomplete#Complete
+" set omnifunc=syntaxcomplete#Complete
 set completeopt=menu
 set pumheight=10
 
@@ -186,9 +223,6 @@ noremap <c-l> <c-w>l
 noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
-
-" finding files
-map <c-p> :find *
 
 " alt+j (mac) to move line up
 nnoremap º :m .+1<CR>==
