@@ -148,14 +148,31 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/nvim/ultisnips']
 nnoremap <c-p> <cmd>Telescope find_files<cr>
 nnoremap <a-r> <cmd>Telescope lsp_document_symbols<cr>
 nnoremap ® <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fs <cmd>Telescope grep_string<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>gs <cmd>Telescope git_status<cr>
-nnoremap <leader>fr <cmd>Telescope resume<cr>
-nnoremap <leader>fq <cmd>Telescope quickfix<cr>
+nnoremap <leader>ff :Telescope find_files<cr>
+nnoremap <leader>fg :Telescope live_grep<cr>
+nnoremap <leader>fs :Telescope grep_string<cr>
+nnoremap <leader>fb :Telescope buffers<cr>
+nnoremap <leader>fh :Telescope help_tags<cr>
+nnoremap <leader>gs :Telescope git_status<cr>
+nnoremap <leader>fr :Telescope resume<cr>
+nnoremap <leader>fq :Telescope quickfix<cr>
+nnoremap <c-s> :Telescope file_browser<cr>
+
+" -----------------------------------------------------------------------------
+" file types 
+" -----------------------------------------------------------------------------
+
+" *.ss should be handled as html
+ au BufRead,BufNewFile *.ss set filetype=ss
+ autocmd BufNewFile,BufRead *.ss set syntax=html
+
+" *.vue should be handled as javascript
+au BufRead,BufNewFile *.vue set filetype=javascript
+autocmd BufNewFile,BufRead *.vue set syntax=javascript
+
+" *.blade should be handled as html
+au BufRead,BufNewFile *.blade.php set filetype=blade
+autocmd BufNewFile,BufRead *.blade.php set syntax=html
 
 " -----------------------------------------------------------------------------
 " base settings 
@@ -192,7 +209,7 @@ set langmap=^`,&^
 " noremap öö :normal [[<cr>
 " noremap ää :normal ]]<cr>
 
-set clipboard^=unnamed
+" set clipboard^=unnamed
 
 filetype plugin indent on
 
@@ -281,7 +298,3 @@ nnoremap <A-k> :m .-2<CR>==
 " switch buffers with tab & shift+tab
 noremap <tab> :bnext<cr>
 noremap <s-tab> :bprevious<cr>
-
-" open file browser
-map <c-s> :Telescope file_browser<cr>
-" autocmd BufEnter * map <c-s> :Explore<cr>
