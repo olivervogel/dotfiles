@@ -145,9 +145,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-c>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/nvim/ultisnips']
 
 " telescope settings
-nnoremap <c-p> <cmd>Telescope find_files<cr>
-nnoremap <a-r> <cmd>Telescope lsp_document_symbols<cr>
-nnoremap ® <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <c-p> :Telescope find_files<cr>
+nnoremap <a-r> :Telescope lsp_document_symbols<cr>
+nnoremap ® :Telescope lsp_document_symbols<cr>
 nnoremap <leader>ff :Telescope find_files<cr>
 nnoremap <leader>fg :Telescope live_grep<cr>
 nnoremap <leader>fs :Telescope grep_string<cr>
