@@ -41,7 +41,6 @@ call plug#end()
 " -----------------------------------------------------------------------------
 lua <<EOF
 
-
 -- Bufferline setup
 require("bufferline").setup{
     options = {
