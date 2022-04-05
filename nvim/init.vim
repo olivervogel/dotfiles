@@ -135,11 +135,11 @@ noremap <Right> <Nop>
 " colors & theme
 syntax on
 set termguicolors
-set background=light
-colorscheme solarized8
+set background=dark
+colorscheme OceanicNext
 
 " this 'fixes' the toggleterm background in a strange and unknown way
-highlight foo ctermbg=0
+highlight xxx ctermbg=0
 
 " search down into subfolders but ignore certain folders
 set path+=**
@@ -153,6 +153,9 @@ let mapleader=" "
 
 " remaping for german keyboard
 " set langmap=^`,#',ö\\;,&^
+set langmap=^`,&^
+" noremap öö :normal [[<cr>
+" noremap ää :normal ]]<cr>
 
 set clipboard^=unnamed
 
