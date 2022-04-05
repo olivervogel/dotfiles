@@ -32,6 +32,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 call plug#end()
 
@@ -39,6 +40,9 @@ call plug#end()
 " plugin settings
 " -----------------------------------------------------------------------------
 lua <<EOF
+
+
+-- Bufferline setup
 require("bufferline").setup{
     options = {
         show_buffer_close_icons = false,
@@ -47,6 +51,7 @@ require("bufferline").setup{
     }
 }
 
+--  Toggleterm setup
 require("toggleterm").setup{
     open_mapping = [[<f1>]],
     direction = 'horizontal',
@@ -54,6 +59,7 @@ require("toggleterm").setup{
     shade_terminals = true
 }
 
+-- LSP Setup
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -89,6 +95,7 @@ require'lspconfig'.intelephense.setup{
 }
 
 local actions = require('telescope.actions')
+
 require('telescope').setup {
     defaults = {
         layout_config = {
@@ -96,11 +103,40 @@ require('telescope').setup {
         },
         mappings = {
             i = {
-                ["<esc>"] = actions.close
+                ["<esc>"] = actions.close,
+                ["<C-p>"] = actions.close,
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous
+            },
+            n = {
+                ["<C-p>"] = actions.close,
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous
             }
         }
     }
 }
+
+require('telescope').setup({
+    extensions = {
+        file_browser = {
+            hidden = true,
+            grouped = true,
+            sorting_strategy = 'ascending',
+            mappings = {
+                i = {
+                    ["<C-s>"] = actions.close,
+                },
+                n = {
+                    ["<C-s>"] = actions.close,
+                }
+            }
+        },
+    },
+})
+
+require("telescope").load_extension "file_browser"
+
 EOF
  
 " snippet settings
@@ -248,5 +284,5 @@ noremap <tab> :bnext<cr>
 noremap <s-tab> :bprevious<cr>
 
 " open file browser
-" map <c-s> :Explore<cr>
-autocmd BufEnter * map <c-s> :Explore<cr>
+map <c-s> :Telescope file_browser<cr>
+" autocmd BufEnter * map <c-s> :Explore<cr>
