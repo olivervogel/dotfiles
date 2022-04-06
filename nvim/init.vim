@@ -37,6 +37,150 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 call plug#end()
 
 " -----------------------------------------------------------------------------
+" file types 
+" -----------------------------------------------------------------------------
+
+" *.ss should be handled as html
+ au BufRead,BufNewFile *.ss set filetype=ss
+ autocmd BufNewFile,BufRead *.ss set syntax=html
+
+" *.vue should be handled as javascript
+au BufRead,BufNewFile *.vue set filetype=javascript
+autocmd BufNewFile,BufRead *.vue set syntax=javascript
+
+" *.blade should be handled as html
+au BufRead,BufNewFile *.blade.php set filetype=blade
+autocmd BufNewFile,BufRead *.blade.php set syntax=html
+
+" -----------------------------------------------------------------------------
+" base settings 
+" -----------------------------------------------------------------------------
+
+" no arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" colors & theme
+syntax on
+set termguicolors
+set background=dark
+colorscheme OceanicNext
+
+" this 'fixes' the toggleterm background in a strange and unknown way
+highlight xxx ctermbg=0
+
+" search down into subfolders but ignore certain folders
+set path+=**
+set wildignore+=**/node_modules/** 
+
+" display all matching files on tab completion
+set wildmenu
+
+" define leader
+let mapleader="\<space>"
+
+" remaping for german keyboard
+" set langmap=^`,#',ö\\;,&^
+set langmap=^`,&^
+" noremap öö :normal [[<cr>
+" noremap ää :normal ]]<cr>
+
+" set clipboard^=unnamed
+
+filetype plugin indent on
+
+set hidden
+set noswapfile
+
+"search will be case-sensitive if it contains an uppercase letter
+set ignorecase
+set smartcase
+
+" tab settings
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+set copyindent
+
+" set column rulers
+set colorcolumn=80,120
+
+" relative/hybrid line numbers
+set number relativenumber
+set nu rnu
+
+" open splits below/right current buffer
+set splitright
+set splitbelow
+
+" highlight current line
+set cursorline
+
+" scroll offset
+set scrolloff=4
+
+" qq to record, Q to replay
+nnoremap Q @q
+
+" autocenter while jumping to search results
+nnoremap n nzz
+nnoremap N Nzz
+
+" autocompletion
+" set omnifunc=syntaxcomplete#Complete
+set completeopt=menu
+set pumheight=10
+
+" select with enter key when completion menu is open
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" cycle popup with c-space or j or k
+inoremap <expr> j pumvisible() ? "\<c-n>" : "j"
+inoremap <expr> k pumvisible() ? "\<c-p>" : "k"
+
+" keep visual mode active after indenting
+vmap > >gv
+vmap < <gv
+
+" show help always in vertical split
+augroup vimrc_help
+  autocmd!
+  autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
+augroup END
+
+" hide explore banner
+let g:netrw_banner=0
+
+" -----------------------------------------------------------------------------
+" shortcuts 
+" -----------------------------------------------------------------------------
+
+" navigate windows
+noremap <c-l> <c-w>l
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+
+" alt+j (mac) to move line up
+nnoremap º :m .+1<CR>==
+nnoremap <A-j> :m .+1<CR>==
+
+" alt+k (mac) to move line down
+nnoremap ∆ :m .-2<CR>==
+nnoremap <A-k> :m .-2<CR>==
+
+" switch buffers with tab & shift+tab
+noremap <tab> :bnext<cr>
+noremap <s-tab> :bprevious<cr>
+
+" deselect search
+noremap <leader><leader> :nohl<cr>
+
+" -----------------------------------------------------------------------------
 " plugin settings
 " -----------------------------------------------------------------------------
 lua <<EOF
@@ -157,144 +301,3 @@ nnoremap <leader>gs :Telescope git_status<cr>
 nnoremap <leader>fr :Telescope resume<cr>
 nnoremap <leader>fq :Telescope quickfix<cr>
 nnoremap <c-s> :Telescope file_browser<cr>
-
-" -----------------------------------------------------------------------------
-" file types 
-" -----------------------------------------------------------------------------
-
-" *.ss should be handled as html
- au BufRead,BufNewFile *.ss set filetype=ss
- autocmd BufNewFile,BufRead *.ss set syntax=html
-
-" *.vue should be handled as javascript
-au BufRead,BufNewFile *.vue set filetype=javascript
-autocmd BufNewFile,BufRead *.vue set syntax=javascript
-
-" *.blade should be handled as html
-au BufRead,BufNewFile *.blade.php set filetype=blade
-autocmd BufNewFile,BufRead *.blade.php set syntax=html
-
-" -----------------------------------------------------------------------------
-" base settings 
-" -----------------------------------------------------------------------------
-
-" no arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
-" colors & theme
-syntax on
-set termguicolors
-set background=dark
-colorscheme OceanicNext
-
-" this 'fixes' the toggleterm background in a strange and unknown way
-highlight xxx ctermbg=0
-
-" search down into subfolders but ignore certain folders
-set path+=**
-set wildignore+=**/node_modules/** 
-
-" display all matching files on tab completion
-set wildmenu
-
-" define leader
-let mapleader=" "
-
-" remaping for german keyboard
-" set langmap=^`,#',ö\\;,&^
-set langmap=^`,&^
-" noremap öö :normal [[<cr>
-" noremap ää :normal ]]<cr>
-
-" set clipboard^=unnamed
-
-filetype plugin indent on
-
-set hidden
-set noswapfile
-
-"search will be case-sensitive if it contains an uppercase letter
-set ignorecase
-set smartcase
-
-" tab settings
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set autoindent
-set copyindent
-
-" set column rulers
-set colorcolumn=80,120
-
-" relative/hybrid line numbers
-set number relativenumber
-set nu rnu
-
-" open splits below/right current buffer
-set splitright
-set splitbelow
-
-" highlight current line
-set cursorline
-
-" scroll offset
-set scrolloff=4
-
-" qq to record, Q to replay
-nnoremap Q @q
-
-" autocenter while jumping to search results
-nnoremap n nzz
-nnoremap N Nzz
-
-" autocompletion
-" set omnifunc=syntaxcomplete#Complete
-set completeopt=menu
-set pumheight=10
-
-" select with enter key when completion menu is open
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" cycle popup with c-space or j or k
-inoremap <expr> j pumvisible() ? "\<c-n>" : "j"
-inoremap <expr> k pumvisible() ? "\<c-p>" : "k"
-
-" keep visual mode active after indenting
-vmap > >gv
-vmap < <gv
-
-" show help always in vertical split
-augroup vimrc_help
-  autocmd!
-  autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
-augroup END
-
-" hide explore banner
-let g:netrw_banner=0
-
-" -----------------------------------------------------------------------------
-" shortcuts 
-" -----------------------------------------------------------------------------
-
-" navigate windows
-noremap <c-l> <c-w>l
-noremap <c-h> <c-w>h
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
-
-" alt+j (mac) to move line up
-nnoremap º :m .+1<CR>==
-nnoremap <A-j> :m .+1<CR>==
-
-" alt+k (mac) to move line down
-nnoremap ∆ :m .-2<CR>==
-nnoremap <A-k> :m .-2<CR>==
-
-" switch buffers with tab & shift+tab
-noremap <tab> :bnext<cr>
-noremap <s-tab> :bprevious<cr>
