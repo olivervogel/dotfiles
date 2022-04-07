@@ -13,9 +13,12 @@ endif
 " -----------------------------------------------------------------------------
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
     " theme
     Plug 'mhartington/oceanic-next'
     Plug 'lifepillar/vim-solarized8'
+    Plug 'marko-cerovac/material.nvim'
 
     " bufferline
     Plug 'akinsho/bufferline.nvim'
@@ -65,11 +68,19 @@ noremap <Right> <Nop>
 " colors & theme
 syntax on
 set termguicolors
-set background=dark
-colorscheme OceanicNext
 
-" this 'fixes' the toggleterm background in a strange and unknown way
-highlight xxx ctermbg=0
+lua << EOF
+require('material').setup({
+    contrast = {
+        non_current_windows = true,
+    },
+    disable = {
+		borders = true
+	},
+})
+EOF
+let g:material_style = "oceanic"
+colorscheme material
 
 " search down into subfolders but ignore certain folders
 set path+=**
@@ -194,7 +205,7 @@ noremap <leader><leader> :nohl<cr>
 " -----------------------------------------------------------------------------
 " plugin settings
 " -----------------------------------------------------------------------------
-lua <<EOF
+lua << EOF
 
 -- Bufferline setup
 require("bufferline").setup{
@@ -291,6 +302,11 @@ require('telescope').setup({
 
 require("telescope").load_extension "file_browser"
 
+require('nvim-treesitter.configs').setup {
+    highlight = {
+        enable = true,
+    },
+}
 EOF
  
 " snippet settings
