@@ -72,7 +72,8 @@ set termguicolors
 lua << EOF
 require('material').setup({
     contrast = {
-        non_current_windows = true,
+        floating_windows = true,
+        non_current_windows = true
     },
     disable = {
 		borders = true
