@@ -73,7 +73,8 @@ lua << EOF
 require('material').setup({
     contrast = {
         floating_windows = true,
-        non_current_windows = true
+        non_current_windows = true,
+        line_numbers = true
     },
     disable = {
 		borders = true
