@@ -117,6 +117,18 @@ try {
 }
 endsnippet
 
+snippet switch
+switch (${1:variable}) {
+	case ${2:'${3:value}'}:
+		${4:// code}
+		break;
+	
+	default:
+		// code
+		break;
+}
+endsnippet
+
 snippet ret0
 return false;
 endsnippet
