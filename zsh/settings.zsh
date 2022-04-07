@@ -2,8 +2,8 @@ export LANG=en_US.UTF-8
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export PATH=/usr/local/bin:$PATH
-export PATH=~/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
+export PATH=~/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 
 export EDITOR=nvim
