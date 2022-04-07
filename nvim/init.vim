@@ -203,6 +203,8 @@ noremap <c-b>w :bd<cr>
 " deselect search
 noremap <leader><leader> :nohl<cr>
 
+nmap <Leader>r :%s//g<Left><Left>
+
 " -----------------------------------------------------------------------------
 " plugin settings
 " -----------------------------------------------------------------------------
