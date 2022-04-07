@@ -70,11 +70,11 @@ for ($i = 0; $i < ${1:\$${2:var}}; $i++) {
 endsnippet
 
 snippet ret "" i
-return ${1:\$value};
+return ${1:\$${2:this}};
 endsnippet
 
 snippet e ""
-echo ${1:\$var};
+echo ${1:\$${2:this}};
 endsnippet
 
 snippet #c "" i

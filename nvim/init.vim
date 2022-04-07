@@ -26,7 +26,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " terminal inside vim
     Plug 'akinsho/toggleterm.nvim'
 
-    Plug 'jiangmiao/auto-pairs'
+    " Plug 'jiangmiao/auto-pairs'
 
     Plug 'neovim/nvim-lspconfig'
 
@@ -156,6 +156,14 @@ augroup END
 let g:netrw_banner=0
 
 " -----------------------------------------------------------------------------
+" commands and functions 
+" -----------------------------------------------------------------------------
+
+" close all buffers except current one
+command! BufCurOnly execute '%bdelete|edit#|bdelete#'
+nnoremap <c-b>o :BufCurOnly<cr>
+
+" -----------------------------------------------------------------------------
 " shortcuts 
 " -----------------------------------------------------------------------------
 
@@ -176,6 +184,9 @@ nnoremap <A-k> :m .-2<CR>==
 " switch buffers with tab & shift+tab
 noremap <tab> :bnext<cr>
 noremap <s-tab> :bprevious<cr>
+
+" delete (close) buffer
+noremap <c-b>w :bd<cr>
 
 " deselect search
 noremap <leader><leader> :nohl<cr>
