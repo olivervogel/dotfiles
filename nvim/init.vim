@@ -119,6 +119,9 @@ set shiftwidth=4
 set autoindent
 set copyindent
 
+" turn on indenting for php
+autocmd FileType php setlocal autoindent copyindent indentexpr=""
+
 " set column rulers
 set colorcolumn=80,120
 
