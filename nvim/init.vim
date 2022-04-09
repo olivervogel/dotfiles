@@ -204,7 +204,14 @@ noremap <c-b>w :bd<cr>
 " deselect search
 noremap <leader><leader> :nohl<cr>
 
-nmap <Leader>r :%s//g<Left><Left>
+nmap <Leader>s :%s//g<Left><Left>
+
+" run current buffer as php script
+autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
+
+" experimental
+nnoremap <cr> <c-d>
+nnoremap <bs> <c-u>
 
 " -----------------------------------------------------------------------------
 " plugin settings
@@ -310,7 +317,7 @@ require('nvim-treesitter.configs').setup {
     ensure_installed = { "php", "javascript", "html", "vue", "css", "markdown" },
     highlight = {
         enable = true,
-    },
+    }
 }
 EOF
  
