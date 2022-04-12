@@ -359,4 +359,4 @@ nnoremap <leader>fh :Telescope help_tags<cr>
 nnoremap <leader>gs :Telescope git_status<cr>
 nnoremap <leader>fr :Telescope resume<cr>
 nnoremap <leader>fq :Telescope quickfix<cr>
-nnoremap <c-s> :Telescope file_browser<cr>
+nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
