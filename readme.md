@@ -16,6 +16,9 @@
         - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
         - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
         - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+        - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+        - [lspconfig](https://github.com/neovim/nvim-lspconfig)
         - [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
+        - [nvim-lint](https://github.com/mfussenegger/nvim-lint)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
