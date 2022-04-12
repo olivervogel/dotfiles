@@ -157,3 +157,19 @@ _slugify () {
 _ctags_create_php () {
     ctags --tag-relative=yes -R --fields=+aimlS --languages=php --PHP-kinds=+cdfint-av --exclude="\.git" --exclude="node_modules"
 }
+
+_tree_view () {
+    if [ $1 ]; then
+        treepath=$1
+    else
+        treepath="./"
+    fi
+
+    if [ $2 ]; then
+        treedepth=$2
+    else
+        treedepth=2
+    fi
+
+    exa -T -L $treedepth $treepath
+}
