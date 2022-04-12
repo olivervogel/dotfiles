@@ -33,6 +33,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'neovim/nvim-lspconfig'
 
+    Plug 'mfussenegger/nvim-lint'
+
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
@@ -322,8 +324,23 @@ require('nvim-treesitter.configs').setup {
         enable = true,
     }
 }
+
+require('lint').linters_by_ft = {
+    php = {'phpcs'}
+}
+vim.cmd([[ au BufRead * lua require('lint').try_lint() ]])
+vim.cmd([[ au InsertLeave * lua require('lint').try_lint() ]])
+vim.cmd([[ au BufWritePost * lua require('lint').try_lint() ]])
+
+local phpcs = require('lint.linters.phpcs')
+phpcs.args = {
+    '-q',
+    '--standard=psr12',
+    '--report=json',
+    '-'
+}
 EOF
- 
+
 " snippet settings
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
