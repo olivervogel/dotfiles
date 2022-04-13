@@ -279,6 +279,12 @@ local actions = require('telescope.actions')
 
 require('telescope').setup {
     defaults = {
+        file_ignore_patterns = {
+            ".DS_Store",
+            "node_modules",
+            ".git/",
+            ".gitkeep"
+        },
         layout_config = {
             width = 0.9,
         },
