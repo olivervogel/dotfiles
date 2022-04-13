@@ -171,5 +171,5 @@ _tree_view () {
         treedepth=2
     fi
 
-    exa -T -L $treedepth $treepath
+    exa -a -T -L $treedepth $treepath
 }
