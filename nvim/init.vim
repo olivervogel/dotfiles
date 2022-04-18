@@ -26,6 +26,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " snippets
     Plug 'SirVer/ultisnips'
 
+    Plug 'numToStr/Comment.nvim'
+
     " terminal inside vim
     Plug 'akinsho/toggleterm.nvim'
 
@@ -139,7 +141,7 @@ set splitbelow
 set cursorline
 
 " scroll offset
-set scrolloff=4
+"set scrolloff=4
 
 " qq to record, Q to replay
 nnoremap Q @q
@@ -182,7 +184,7 @@ command! BufCurOnly execute '%bdelete|edit#|bdelete#'
 nnoremap <c-b>o :BufCurOnly<cr>
 
 " -----------------------------------------------------------------------------
-" shortcuts 
+" shortcuts & mappings
 " -----------------------------------------------------------------------------
 
 " navigate windows
@@ -345,6 +347,8 @@ phpcs.args = {
     '--report=json',
     '-'
 }
+
+require('Comment').setup()
 EOF
 
 " snippet settings
