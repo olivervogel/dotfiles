@@ -41,6 +41,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
 
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
 call plug#end()
 
 " -----------------------------------------------------------------------------
@@ -152,7 +158,7 @@ nnoremap N Nzz
 
 " autocompletion
 " set omnifunc=syntaxcomplete#Complete
-set completeopt=menu
+set completeopt=menu,menuone
 set pumheight=10
 
 " select with enter key when completion menu is open
@@ -349,6 +355,54 @@ phpcs.args = {
 }
 
 require('Comment').setup()
+
+-- nvim-cmp config
+local cmp = require'cmp'
+
+cmp.setup({
+    completion = {
+        autocomplete = false
+    },
+    snippet = {
+        expand = function(args)
+            vim.fn["UltiSnips#Anon"](args.body)
+        end,
+    },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<c-space>'] = cmp.mapping.complete(),
+        ['<cr>'] = cmp.mapping.confirm({ select = true }),
+        ["<c-j>"] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_next_item()
+            end
+        end, { "i", "s" }),
+        ["<c-k>"] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_prev_item()
+            end
+        end, { "i", "s" }),
+        ["<c-space>"] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                cmp.complete()
+            end
+        end, { "i", "s" }),
+        ['<c-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<c-d>'] = cmp.mapping.scroll_docs(4),
+        ['<esc>'] = cmp.mapping.abort(),
+    }),
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'ultisnips' },
+    }, {
+        { name = 'buffer' },
+    })
+})
 EOF
 
 " snippet settings
