@@ -337,7 +337,7 @@ require('lint').linters_by_ft = {
     php = {'phpcs'}
 }
 vim.cmd([[ au BufRead * lua require('lint').try_lint() ]])
-vim.cmd([[ au InsertLeave * lua require('lint').try_lint() ]])
+-- vim.cmd([[ au InsertLeave * lua require('lint').try_lint() ]])
 vim.cmd([[ au BufWritePost * lua require('lint').try_lint() ]])
 
 local phpcs = require('lint.linters.phpcs')
