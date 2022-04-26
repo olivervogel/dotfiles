@@ -43,9 +43,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/nvim-cmp'
-    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 call plug#end()
 
@@ -363,11 +361,6 @@ local cmp = require'cmp'
 cmp.setup({
     completion = {
         autocomplete = false
-    },
-    snippet = {
-        expand = function(args)
-            vim.fn["UltiSnips#Anon"](args.body)
-        end,
     },
     window = {
         completion = cmp.config.window.bordered(),
