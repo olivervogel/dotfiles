@@ -126,7 +126,7 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set copyindent
-set smartindent
+" set smartindent
 
 " turn on indenting for php
 autocmd FileType php setlocal autoindent copyindent indentexpr=""
@@ -254,16 +254,7 @@ vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', op
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        signs = false,
-        underline = false,
-        virtual_text = {
-            spacing = 4,
-        }
-    }
-)
-
+-- set shortcuts for lsp commands
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -282,8 +273,50 @@ require'lspconfig'.intelephense.setup{
     on_attach = on_attach
 }
 
-local actions = require('telescope.actions')
+-- LSP diagnostic config
+vim.diagnostic.config({
+    severity_sort = true,
+    signs = {
+        severity = 1
+    },
+    underline = false,
+    virtual_text = false
+})
 
+-- print diagnostic info in message area
+function PrintDiagnostics(opts, bufnr, line_nr, client_id)
+    bufnr = bufnr or 0
+    line_nr = line_nr or (vim.api.nvim_win_get_cursor(0)[1] - 1)
+    opts = opts or {['lnum'] = line_nr}
+
+    local line_diagnostics = vim.diagnostic.get(bufnr, opts)
+    if vim.tbl_isempty(line_diagnostics) then return end
+    local diagnostic_message = ""
+    for i, diagnostic in ipairs(line_diagnostics) do
+        if i == 1 then
+            diagnostic_message = diagnostic_message .. string.format("%d: %s", i, diagnostic.message or "")
+            print(diagnostic_message)
+        end
+    end
+    vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
+end
+vim.cmd [[ autocmd! CursorHold * lua PrintDiagnostics() ]]
+
+-- show diagnostic warning with line highlighting instead of symbol
+vim.cmd [[
+    highlight! DiagnosticLineNrError guibg=#51202A guifg=#FF0000 gui=bold
+    highlight! DiagnosticLineNrWarn guibg=#51412A guifg=#FFA500 gui=bold
+    highlight! DiagnosticLineNrInfo guibg=#1E535D guifg=#00FFFF gui=bold
+    highlight! DiagnosticLineNrHint guibg=#1E205D guifg=#0000FF gui=bold
+
+    sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+    sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+    sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+    sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
+]]
+
+-- telescope settings
+local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
         file_ignore_patterns = {
@@ -331,6 +364,7 @@ require('telescope').setup({
 
 require("telescope").load_extension "file_browser"
 
+-- treesitter config
 require('nvim-treesitter.configs').setup {
     ensure_installed = { "php", "javascript", "html", "vue", "css", "markdown" },
     highlight = {
@@ -338,12 +372,13 @@ require('nvim-treesitter.configs').setup {
     }
 }
 
+-- linting settings
 require('lint').linters_by_ft = {
     php = {'phpcs'}
 }
 vim.cmd([[ au BufRead * lua require('lint').try_lint() ]])
 vim.cmd([[ au TextChanged * lua require('lint').try_lint() ]])
--- vim.cmd([[ au InsertLeave * lua require('lint').try_lint() ]])
+vim.cmd([[ au InsertLeave * lua require('lint').try_lint() ]])
 -- vim.cmd([[ au BufWritePost * lua require('lint').try_lint() ]])
 
 local phpcs = require('lint.linters.phpcs')
@@ -354,6 +389,7 @@ phpcs.args = {
     '-'
 }
 
+-- enable numToStr/Comment plugin
 require('Comment').setup()
 
 -- nvim-cmp config
