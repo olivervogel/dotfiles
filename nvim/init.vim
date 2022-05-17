@@ -277,7 +277,7 @@ require'lspconfig'.intelephense.setup{
 vim.diagnostic.config({
     severity_sort = true,
     signs = {
-        severity = 1
+        -- severity = 1
     },
     underline = false,
     virtual_text = false
