@@ -173,3 +173,7 @@ _tree_view () {
 
     exa -a -T -L $treedepth $treepath
 }
+
+_docker_shell () {
+    docker-compose exec projects "/bin/zsh" -l
+}
