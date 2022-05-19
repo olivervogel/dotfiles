@@ -73,6 +73,14 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+" lsp needs low updatetime in this config
+set updatetime=1000
+
+" code folding settings
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevel=10
+
 " colors & theme
 syntax on
 set termguicolors
