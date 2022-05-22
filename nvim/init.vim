@@ -52,16 +52,16 @@ call plug#end()
 " -----------------------------------------------------------------------------
 
 " *.ss should be handled as html
- au BufRead,BufNewFile *.ss set filetype=ss
- autocmd BufNewFile,BufRead *.ss set syntax=html
+au BufRead,BufNewFile *.ss set filetype=ss
+au BufRead,BufNewFile *.ss set syntax=html
 
 " *.vue should be handled as javascript
 au BufRead,BufNewFile *.vue set filetype=javascript
-autocmd BufNewFile,BufRead *.vue set syntax=javascript
+au BufRead,BufNewFile *.vue set syntax=javascript
 
 " *.blade should be handled as html
-au BufRead,BufNewFile *.blade.php set filetype=blade
-autocmd BufNewFile,BufRead *.blade.php set syntax=html
+au BufRead,BufNewFile *.blade.php set filetype=html
+au BufRead,BufNewFile *.blade.php set syntax=html
 
 " -----------------------------------------------------------------------------
 " base settings 
