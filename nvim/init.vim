@@ -233,6 +233,9 @@ autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
 nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
 
+" repeat last command line command
+nnoremap <Leader>c @:
+
 " -----------------------------------------------------------------------------
 " plugin settings
 " -----------------------------------------------------------------------------
