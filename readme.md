@@ -20,5 +20,9 @@
         - [lspconfig](https://github.com/neovim/nvim-lspconfig)
         - [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
         - [nvim-lint](https://github.com/mfussenegger/nvim-lint)
+        - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
+        - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp/)
+        - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
+        - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
