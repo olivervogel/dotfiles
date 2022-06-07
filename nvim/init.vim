@@ -234,7 +234,7 @@ nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
 
 " repeat last command line command
-nnoremap <Leader>c @:
+nnoremap <Leader>zz @:
 
 " -----------------------------------------------------------------------------
 " plugin settings
