@@ -129,6 +129,13 @@ switch (${1:variable}) {
 }
 endsnippet
 
+snippet case
+case ${1:'${2:value}'}:
+	${3:// code}
+	break;
+
+endsnippet
+
 snippet ret0
 return false;
 endsnippet
@@ -137,7 +144,7 @@ snippet ret1
 return true;
 endsnippet
 
-snippet hd
+snippet hd "" i
 <<<${1:EOF}
 $0
 $1;
