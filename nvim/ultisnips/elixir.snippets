@@ -1,3 +1,15 @@
 snippet ip
-IO.puts(${1:'${2:string}'})
+IO.puts(${1:"${2:string}"})
+endsnippet
+
+snippet def
+def ${1:my_function}($2) do
+	$0
+end
+endsnippet
+
+snippet defm
+defmodule ${1:MyModule} do
+	$0
+end
 endsnippet
