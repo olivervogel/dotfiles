@@ -55,6 +55,10 @@ call plug#end()
 au BufRead,BufNewFile *.ss set filetype=ss
 au BufRead,BufNewFile *.ss set syntax=html
 
+" *.heex should be handled as html
+au BufRead,BufNewFile *.heex set filetype=heex
+au BufRead,BufNewFile *.heex set syntax=html
+
 " *.vue should be handled as javascript
 au BufRead,BufNewFile *.vue set filetype=javascript
 au BufRead,BufNewFile *.vue set syntax=javascript
