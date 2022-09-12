@@ -18,7 +18,21 @@ snippet fn "" i
 fn${1: ($2) -> $3 }end
 endsnippet
 
-snippet >>
+snippet if
+if ${1:condition} do
+	$0
+end
+endsnippet
+
+snippet ifelse
+if ${1:condition} do
+	$2
+else
+	$0
+end
+endsnippet
+
+snippet >> "" i
 |> 
 endsnippet
 
@@ -28,4 +42,32 @@ endsnippet
 
 snippet => "" i
 "$1" => "$2"
+endsnippet
+
+snippet test
+test "${1:test something}" do
+	${2:assert ${3:Example.something() == :result}}
+end
+endsnippet
+
+snippet doc
+@doc """
+${1:Title}
+
+## Parameters
+
+	- name: Description of parameter.
+
+## Examples
+
+	iex> Example.code()
+	:result
+
+"""
+endsnippet
+
+snippet mdoc
+@moduledoc """
+${1:Title}
+"""
 endsnippet
