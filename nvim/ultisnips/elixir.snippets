@@ -2,18 +2,30 @@ snippet ip
 IO.puts(${1:"${2:string}"})
 endsnippet
 
+snippet mod
+defmodule ${1:MyModule} do
+	$0
+end
+endsnippet
+
 snippet def
 def ${1:my_function}($2) do
 	$0
 end
 endsnippet
 
-snippet defm
-defmodule ${1:MyModule} do
-	$0
-end
+snippet fn "" i
+fn${1: ($2) -> $3 }end
 endsnippet
 
 snippet >>
 |> 
+endsnippet
+
+snippet map
+%{$1}
+endsnippet
+
+snippet => "" i
+"$1" => "$2"
 endsnippet

@@ -1,0 +1,15 @@
+snippet e
+<%= $1 %>
+endsnippet
+
+snippet for
+<%= for ${1:user} <- @${2:users} do %>
+	$0
+<% end %>
+endsnippet
+
+snippet if
+<%= if ${1:statement} do %>
+	<%# code... %>
+<% end %>
+endsnippet
