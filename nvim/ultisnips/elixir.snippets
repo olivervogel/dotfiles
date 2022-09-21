@@ -18,6 +18,12 @@ snippet fn "" i
 fn${1: ($2) -> $3 }end
 endsnippet
 
+snippet each
+Enum.each(1..${1:count}, fn ${2:val} ->
+	$0
+end)
+endsnippet
+
 snippet if
 if ${1:condition} do
 	$0
@@ -28,6 +34,12 @@ snippet ifelse
 if ${1:condition} do
 	$2
 else
+	$0
+end
+endsnippet
+
+snippet for
+for ${1:item} <- ${2:items} do
 	$0
 end
 endsnippet
@@ -70,4 +82,8 @@ snippet mdoc
 @moduledoc """
 ${1:Title}
 """
+endsnippet
+
+snippet spec
+@spec ${1:function_definition} :: ${2:return_type}
 endsnippet
