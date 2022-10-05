@@ -26,4 +26,4 @@
         - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
-[^1]: Installation via git in ~/.zsh/pack/powerlevel10k
+[^1]: Installation via git in ~/.zsh/pack/<package-name>
