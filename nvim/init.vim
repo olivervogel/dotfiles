@@ -234,6 +234,9 @@ nmap <Leader>s :%s//g<Left><Left>
 " run current buffer as php script
 autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
 
+" format elixir files on buffer write
+autocmd BufWritePost *.exs,*.ex silent :!mix format --check-equivalent %
+
 " experimental
 nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
