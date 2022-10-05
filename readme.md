@@ -3,10 +3,10 @@
 ## Tools
 
 - [zsh](https://www.zsh.org)
-    - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-    - [z - jump around](https://github.com/rupa/z)
-    - [fzf](https://github.com/junegunn/fzf)
-    - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
+    - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) (Installation via git in ~/.zsh/pack/powerlevel10k)
+    - [z - jump around](https://github.com/rupa/z) (Installation via git in ~/.zsh/pack/z)
+    - [fzf](https://github.com/junegunn/fzf) (Installation via git in ~/.zsh/pack/fzf)
+    - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) (Installation via git in ~/.zsh/pack/zsh-history-substring-search)
 - [neovim](https://www.neovim.io)
     - [vim-plug](https://github.com/junegunn/vim-plug)
         - [Oceanic-Next.vim](https://github.com/mhartington/oceanic-next)
