@@ -288,7 +288,14 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>r', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
-require'lspconfig'.intelephense.setup{
+-- intelephense lsp
+require('lspconfig').intelephense.setup {
+    on_attach = on_attach
+}
+
+-- elixir lsp
+require('lspconfig').elixirls.setup {
+    cmd = {"/Users/oliver/elixir-ls/language_server.sh"},
     on_attach = on_attach
 }
 
