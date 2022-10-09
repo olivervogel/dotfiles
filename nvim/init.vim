@@ -45,6 +45,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/nvim-cmp'
 
+    Plug 'tpope/vim-ragtag'
+
 call plug#end()
 
 " -----------------------------------------------------------------------------
