@@ -22,3 +22,8 @@ fi
 if [ -f ~/.zsh/pack/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
     source ~/.zsh/pack/zsh-history-substring-search/zsh-history-substring-search.zsh
 fi
+
+# asdf
+if [ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
+    . /opt/homebrew/opt/asdf/libexec/asdf.sh
+fi
