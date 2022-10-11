@@ -8,14 +8,32 @@ defmodule ${1:MyModule} do
 end
 endsnippet
 
-snippet fun
-def ${1:my_function}($2) do
+snippet def
+def ${1:my_function}(${2:args}) do
 	$0
 end
 endsnippet
 
+snippet def_
+def ${1:my_function}(${2:args}), do: ${3:body}
+endsnippet
+
+snippet defp
+defp ${1:my_function}(${2:args}) do
+	$0
+end
+endsnippet
+
+snippet defp_
+defp ${1:my_function}(${2:args}), do: ${3:body}
+endsnippet
+
 snippet fn "" i
 fn${1: ($2) -> $3 }end
+endsnippet
+
+snippet fnn "" i
+&(${1:args})
 endsnippet
 
 snippet each
@@ -49,7 +67,7 @@ snippet >> "" i
 endsnippet
 
 snippet map
-%{$1}
+%$1{$2}
 endsnippet
 
 snippet => "" i
@@ -86,4 +104,8 @@ endsnippet
 
 snippet spec
 @spec ${1:function_definition} :: ${2:return_type}
+endsnippet
+
+snippet ins
+IO.inspect(${1:arg})
 endsnippet
