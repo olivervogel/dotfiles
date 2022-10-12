@@ -177,3 +177,15 @@ _tree_view () {
 _docker_shell () {
     docker-compose exec projects "/bin/zsh" -l
 }
+
+_mix_search() {
+    if [ $1 ]; then
+        mix $1
+    else
+        line=$(mix help|fzf)
+        if [ $line ]; then
+            $(echo $line|cut -d '#' -f1)
+        fi
+    fi
+}
+
