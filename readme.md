@@ -24,6 +24,7 @@
         - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp/)
         - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
         - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+        - [tpope/vim-ragtag](https://github.com/tpope/vim-ragtag)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
 
 [^1]: Installation via git in ~/.zsh/pack/<package-name>
