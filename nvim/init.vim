@@ -46,6 +46,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'hrsh7th/nvim-cmp'
 
     Plug 'tpope/vim-ragtag'
+    Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
