@@ -47,6 +47,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'tpope/vim-ragtag'
     Plug 'Raimondi/delimitMate'
+    Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -210,10 +211,12 @@ nnoremap <c-b>o :BufCurOnly<cr>
 " -----------------------------------------------------------------------------
 
 " navigate windows
-noremap <c-l> <c-w>l
-noremap <c-h> <c-w>h
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 
 " alt+j (mac) to move line up
 nnoremap º :m .+1<CR>==
