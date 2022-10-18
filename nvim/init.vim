@@ -353,7 +353,11 @@ require('telescope').setup {
             ".DS_Store",
             "node_modules",
             ".git/",
-            ".gitkeep"
+            ".cache/",
+            ".gitkeep",
+            "deps",
+            ".elixir_ls",
+            "_build"
         },
         layout_config = {
             width = 0.9,
