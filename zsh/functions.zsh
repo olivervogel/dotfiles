@@ -1,13 +1,11 @@
 _tmux_create() {
     sessionname=$(_slugify $(basename $(pwd)))
-    tmux -2 new-session -c $(pwd) -d -s $sessionname
-    tmux split-window -h -c $(pwd)
-    tmux split-window -h -c $(pwd)
-    tmux select-layout tiled
-    tmux select-pane -t 0
-    tmux split-window -h -c $(pwd)
-    tmux select-pane -t 0
-    tmux kill-pane -t 0
+    tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
+    tmux split-window -h -c $(pwd) -l 70%
+    tmux select-pane -L
+    tmux split-window -v -c $(pwd)
+    tmux select-pane -U
+    tmux select-pane -R
     tmux -2 attach-session -t $sessionname
 }
 
