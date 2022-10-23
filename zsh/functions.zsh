@@ -50,6 +50,28 @@ _git_checkout() {
     fi
 }
 
+_git_merge() {
+    if [ $1 ]; then
+        git merge $1
+    else
+        selected=$(git branch|cut -c 3-|fzf)
+        if [ $selected ]; then
+            git merge $selected
+        fi
+    fi
+}
+
+_git_branch_delete() {
+    if [ $1 ]; then
+        git branch -d $1
+    else
+        selected=$(git branch|cut -c 3-|fzf)
+        if [ $selected ]; then
+            git branch -d $selected
+        fi
+    fi
+}
+
 _git_add() {
     root=$(git rev-parse --show-toplevel)
     if [ $1 ]; then
