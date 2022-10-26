@@ -11,6 +11,8 @@ alias gl='git log --graph --pretty=format:"%C(yellow)%h %Cblue%>(12)%ad %Cgreen%
 alias gs="git status"
 alias gf="git fetch"
 alias gpl="git pull"
+alias gst="git stash -u"
+alias gstp="git stash pop"
 alias gplm="git pull origin master"
 alias gpsm="git push origin master"
 alias gaa="git add --all"
