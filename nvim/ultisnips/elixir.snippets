@@ -109,3 +109,18 @@ endsnippet
 snippet ins
 IO.inspect($1)
 endsnippet
+
+snippet render_s
+def render(assigns) do
+	~H"""
+	$0
+	"""
+end
+endsnippet
+
+
+snippet render_v
+def render(assigns) do
+	Phoenix.View.render(${0:MyApp.MyView}, "index.html", assigns)
+end
+endsnippet
