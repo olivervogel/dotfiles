@@ -228,7 +228,8 @@ nnoremap <A-k> :m .-2<CR>==
 
 " switch buffers with tab & shift+tab
 noremap <tab> :bnext<cr>
-noremap <s-tab> :bprevious<cr>
+noremap <S-tab> :bprevious<cr>
+noremap <A-tab> :bprevious<cr>
 
 " delete (close) buffer
 noremap <c-b>w :bd<cr>
