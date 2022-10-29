@@ -16,8 +16,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " theme
-    Plug 'mhartington/oceanic-next'
-    Plug 'lifepillar/vim-solarized8'
     Plug 'marko-cerovac/material.nvim'
 
     " bufferline
