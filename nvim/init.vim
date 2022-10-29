@@ -496,3 +496,4 @@ nnoremap <leader>gs :Telescope git_status<cr>
 nnoremap <leader>fr :Telescope resume<cr>
 nnoremap <leader>fq :Telescope quickfix<cr>
 nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
+nnoremap <c-k> :Telescope oldfiles<cr>
