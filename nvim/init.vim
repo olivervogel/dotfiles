@@ -29,8 +29,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " terminal inside vim
     Plug 'akinsho/toggleterm.nvim'
 
-    " Plug 'jiangmiao/auto-pairs'
-
     Plug 'neovim/nvim-lspconfig'
 
     Plug 'mfussenegger/nvim-lint'
@@ -157,9 +155,6 @@ set splitbelow
 
 " highlight current line
 set cursorline
-
-" scroll offset
-"set scrolloff=4
 
 " qq to record, Q to replay
 nnoremap Q @q
