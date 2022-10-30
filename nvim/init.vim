@@ -119,10 +119,7 @@ set wildmenu
 let mapleader="\<space>"
 
 " remaping for german keyboard
-" set langmap=^`,#',ö\\;,&^
 set langmap=^`,&^
-" noremap öö :normal [[<cr>
-" noremap ää :normal ]]<cr>
 
 " set clipboard^=unnamed
 
