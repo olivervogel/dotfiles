@@ -241,6 +241,30 @@ nnoremap <Leader>zz @:
 
 " :W should behave the same way as :w
 command -bar -nargs=* -complete=file -range=% -bang Write <line1>,<line2>write<bang> <args>
+
+
+" -----------------------------------------------------------------------------
+" statusline settings
+" -----------------------------------------------------------------------------
+
+set statusline=
+" add space
+set statusline+=%(\ %)
+" show full file path
+set statusline+=%f
+" add space
+set statusline+=%(\ %)
+" modified flag
+set statusline+=%m
+" align right
+set statusline+=%=
+" percentual position in buffer
+set statusline+=%p%%
+" encoding
+set statusline+=%8{(&fenc!=''?&fenc:&enc)}
+" add space
+set statusline+=%(\ %)
+
 " -----------------------------------------------------------------------------
 " plugin settings
 " -----------------------------------------------------------------------------
