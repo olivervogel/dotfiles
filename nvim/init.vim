@@ -265,6 +265,7 @@ set statusline+=%=
 set statusline+=%p%%
 " encoding
 set statusline+=%8{(&fenc!=''?&fenc:&enc)}
+set statusline+=\ (%{&ff})
 " add space
 set statusline+=%(\ %)
 
