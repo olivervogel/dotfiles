@@ -247,15 +247,18 @@ command -bar -nargs=* -complete=file -range=% -bang Write <line1>,<line2>write<b
 " statusline settings
 " -----------------------------------------------------------------------------
 
+" define statusline color
+hi User1 ctermfg=007 ctermbg=239 guibg=#304448 guifg=#647376
+
 set statusline=
+" set color
+set statusline+=%1*
 " add space
 set statusline+=%(\ %)
 " show full file path
 set statusline+=%f
 " add space
 set statusline+=%(\ %)
-" modified flag
-set statusline+=%m
 " align right
 set statusline+=%=
 " percentual position in buffer
