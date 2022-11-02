@@ -224,7 +224,8 @@ noremap <A-tab> :bprevious<cr>
 " deselect search
 noremap <leader><leader> :nohl<cr>
 
-nmap <Leader>s :%s//g<Left><Left>
+" search and replace current cursor position
+nmap <Leader>s yiw:%s/<c-r>0//g<Left><Left>
 
 " run current buffer as php script
 autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
