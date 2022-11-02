@@ -221,9 +221,6 @@ noremap <tab> :bnext<cr>
 noremap <S-tab> :bprevious<cr>
 noremap <A-tab> :bprevious<cr>
 
-" delete (close) buffer
-noremap <c-b>w :bd<cr>
-
 " deselect search
 noremap <leader><leader> :nohl<cr>
 
