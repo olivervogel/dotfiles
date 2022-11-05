@@ -13,6 +13,7 @@ endif
 " -----------------------------------------------------------------------------
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+    " treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " theme
@@ -24,25 +25,35 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " snippets
     Plug 'SirVer/ultisnips'
 
+    " code commenting
     Plug 'numToStr/Comment.nvim'
 
     " terminal inside vim
     Plug 'akinsho/toggleterm.nvim'
 
+    " language server setup
     Plug 'neovim/nvim-lspconfig'
 
+    " linter to display PSR issues
     Plug 'mfussenegger/nvim-lint'
 
+    " telescope stack
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
 
+    " cmp stack
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/nvim-cmp'
 
+    " easier html tag writing
     Plug 'tpope/vim-ragtag'
+
+    " auto closing of quotes
     Plug 'Raimondi/delimitMate'
+
+    " seamless navigation between vim & tmux
     Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
