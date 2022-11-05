@@ -209,3 +209,10 @@ _mix_search() {
     fi
 }
 
+_search_mix_command() {
+    preview='mix help {-1}'
+    selected=$(mix help|cut -d "#" -f1|fzf -m --ansi --preview $preview)
+    if [ $selected ]; then
+        print -z $(echo $selected|xargs)
+    fi
+}
