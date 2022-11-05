@@ -124,3 +124,17 @@ def render(assigns) do
 	Phoenix.View.render(${0:MyApp.MyView}, "index.html", assigns)
 end
 endsnippet
+
+snippet case
+case ${1:target} do
+	$0
+	_ -> result
+end
+endsnippet
+
+snippet cond
+cond do
+	$0
+	true -> result
+end
+endsnippet
