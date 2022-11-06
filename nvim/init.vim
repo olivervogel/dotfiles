@@ -238,6 +238,7 @@ noremap <leader><leader> :nohl<cr>
 " search and replace current cursor position
 nmap <Leader>sc yiw:%s/<c-r>0//g<Left><Left>
 nmap <Leader>ss :%s//g<Left><Left>
+nmap <Leader>sl :s//g<Left><Left>
 
 " run current buffer as php script
 autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
