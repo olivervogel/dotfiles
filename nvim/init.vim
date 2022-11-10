@@ -297,9 +297,16 @@ require("bufferline").setup{
 --  Toggleterm setup
 require("toggleterm").setup{
     open_mapping = [[<f1>]],
-    direction = 'horizontal',
-    size = 40,
-    shade_terminals = true
+    direction = "float",
+    shade_terminals = false,
+    float_opts = {
+        border = "none",
+        width = 500,
+        height = 500,
+        highlights = {
+            background = "Pmenu",
+        }
+    }
 }
 
 -- LSP Setup
