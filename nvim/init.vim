@@ -94,12 +94,9 @@ noremap <Right> <Nop>
 set updatetime=1000
 
 " code folding settings
-set foldmethod=manual
-
-" visual select lines and use zz to fold
-nnoremap zu za
-onoremap zu <C-C>za
-vnoremap zu zf
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevel=10
 
 " colors & theme
 syntax on
