@@ -94,8 +94,7 @@ noremap <Right> <Nop>
 set updatetime=1000
 
 " code folding settings
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+set foldmethod=indent
 set foldlevel=10
 
 nnoremap zu za
