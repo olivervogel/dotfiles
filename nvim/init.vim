@@ -97,9 +97,9 @@ set updatetime=1000
 set foldmethod=manual
 
 " visual select lines and use zz to fold
-nnoremap zz za
-onoremap zz <C-C>za
-vnoremap zz zf
+nnoremap zu za
+onoremap zu <C-C>za
+vnoremap zu zf
 
 " colors & theme
 syntax on
