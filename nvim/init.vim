@@ -401,6 +401,17 @@ require('telescope').setup {
             ".elixir_ls",
             "_build"
         },
+        vimgrep_arguments = {
+            'rg',
+            '--hidden',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '-u'
+        },
         layout_config = {
             width = 0.9,
         },
