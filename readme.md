@@ -7,6 +7,8 @@
     - [z - jump around](https://github.com/rupa/z) [^1]
     - [fzf](https://github.com/junegunn/fzf) [^1]
     - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) [^1]
+    - [exa](https://github.com/ogham/exa)
+    - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [neovim](https://www.neovim.io)
     - [vim-plug](https://github.com/junegunn/vim-plug)
         - [material.nvim](https://github.com/marko-cerovac/material.nvim)
