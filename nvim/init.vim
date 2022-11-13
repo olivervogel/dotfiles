@@ -98,6 +98,10 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=10
 
+nnoremap zu za
+onoremap zu <C-C>za
+vnoremap zu zf
+
 " colors & theme
 syntax on
 set termguicolors
