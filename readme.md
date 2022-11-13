@@ -4,9 +4,9 @@
 
 - [zsh](https://www.zsh.org)
     - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) [^1]
+    - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) [^1]
     - [z - jump around](https://github.com/rupa/z) [^1]
     - [fzf](https://github.com/junegunn/fzf) [^1]
-    - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) [^1]
     - [exa](https://github.com/ogham/exa)
     - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [neovim](https://www.neovim.io)
@@ -28,5 +28,9 @@
         - [tpope/vim-ragtag](https://github.com/tpope/vim-ragtag)
         - [Vim Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [tmux](https://github.com/tmux/tmux/wiki/Installing)
+- [z - jump around](https://github.com/rupa/z) [^1]
+- [fzf](https://github.com/junegunn/fzf) [^1]
+- [exa](https://github.com/ogham/exa)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 [^1]: Installation via git in ~/.zsh/pack/<package-name>
