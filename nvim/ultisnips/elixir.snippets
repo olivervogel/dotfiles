@@ -11,7 +11,7 @@ def ${1:my_function}(${2:args}) do
 end
 endsnippet
 
-snippet def_
+snippet def,
 def ${1:my_function}(${2:args}), do: ${3:body}
 endsnippet
 
@@ -21,7 +21,7 @@ defp ${1:my_function}(${2:args}) do
 end
 endsnippet
 
-snippet defp_
+snippet defp,
 defp ${1:my_function}(${2:args}), do: ${3:body}
 endsnippet
 
@@ -29,7 +29,7 @@ snippet fn "" i
 fn${1: ($2) -> $3 }end
 endsnippet
 
-snippet fnn "" i
+snippet fn, "" i
 &(${1:args})
 endsnippet
 
@@ -133,5 +133,13 @@ snippet cond
 cond do
 	$0
 	true -> result
+end
+endsnippet
+
+snippet using
+defmacro __using__(opts) do
+	quote do
+		$0
+	end
 end
 endsnippet
