@@ -107,21 +107,6 @@ snippet ins
 IO.inspect($1)
 endsnippet
 
-snippet render
-def render(assigns) do
-	~H"""
-	$0
-	"""
-end
-endsnippet
-
-
-snippet renderv
-def render(assigns) do
-	Phoenix.View.render(${0:MyApp.MyView}, "index.html", assigns)
-end
-endsnippet
-
 snippet case
 case ${1:target} do
 	$0
@@ -141,5 +126,54 @@ defmacro __using__(opts) do
 	quote do
 		$0
 	end
+end
+endsnippet
+
+snippet sig
+~H"""
+$0
+"""
+endsnippet
+
+snippet sig,
+~H"$0"
+endsnippet
+
+# mount
+snippet mount
+def mount(_params, _session, socket) do
+	{:ok, socket}
+end
+endsnippet
+
+# handle event
+snippet he
+def handle_event("${1:name}", _params, socket) do
+	{:noreply, socket}
+end
+endsnippet
+
+# handle info
+snippet hi
+def handle_info("${1:name}", socket) do
+	{:noreply, socket}
+end
+endsnippet
+
+snippet ass
+socket = assign(socket, ${1:key}: ${2:value})
+endsnippet
+
+snippet render
+def render(assigns) do
+	~H"""
+	$0
+	"""
+end
+endsnippet
+
+snippet renderv
+def render(assigns) do
+	Phoenix.View.render(${0:MyApp.MyView}, "index.html", assigns)
 end
 endsnippet
