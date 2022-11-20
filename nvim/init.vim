@@ -310,7 +310,7 @@ require("bufferline").setup{
 
 --  Toggleterm setup
 require("toggleterm").setup{
-    open_mapping = [[<c-t>]],
+    open_mapping = [[<f1>]],
     direction = "float",
     shade_terminals = false,
     float_opts = {
