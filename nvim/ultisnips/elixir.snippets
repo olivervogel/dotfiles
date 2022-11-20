@@ -179,6 +179,10 @@ defmodule ${1:MyComponent} do
 end
 endsnippet
 
+snippet send
+send(self(), ${1:data})
+endsnippet
+
 # mount
 snippet mount
 def mount(_params, _session, socket) do
@@ -201,7 +205,15 @@ end
 endsnippet
 
 snippet ass
-socket = assign(socket, ${1:key}: ${2:value})
+assign(socket, ${1:key}: ${2:value})
+endsnippet
+
+snippet upd
+update(socket, ${1:key}: ${2:value})
+endsnippet
+
+snippet send
+send(self(), ${1:key}: ${2:value})
 endsnippet
 
 snippet render
