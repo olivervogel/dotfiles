@@ -56,6 +56,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " seamless navigation between vim & tmux
     Plug 'christoomey/vim-tmux-navigator'
 
+    Plug 'folke/trouble.nvim'
+
 call plug#end()
 
 " -----------------------------------------------------------------------------
@@ -366,24 +368,36 @@ vim.diagnostic.config({
     virtual_text = false
 })
 
--- print diagnostic info in message area
-function PrintDiagnostics(opts, bufnr, line_nr, client_id)
-    bufnr = bufnr or 0
-    line_nr = line_nr or (vim.api.nvim_win_get_cursor(0)[1] - 1)
-    opts = opts or {['lnum'] = line_nr}
+require("trouble").setup {
+  icons = false,
+  action_keys = {
+    jump = {"<tab>"},
+    jump_close = {"<cr>"}
+  }
+}
 
-    local line_diagnostics = vim.diagnostic.get(bufnr, opts)
-    if vim.tbl_isempty(line_diagnostics) then return end
-    local diagnostic_message = ""
-    for i, diagnostic in ipairs(line_diagnostics) do
-        if i == 1 then
-            diagnostic_message = diagnostic_message .. string.format("%d: %s", i, diagnostic.message or "")
-            print(diagnostic_message)
-        end
-    end
-    vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
-end
-vim.cmd [[ autocmd! CursorHold * lua PrintDiagnostics() ]]
+vim.keymap.set("n", "<f8>", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
+
+-- print diagnostic info in message area
+-- function PrintDiagnostics(opts, bufnr, line_nr, client_id)
+--     bufnr = bufnr or 0
+--     line_nr = line_nr or (vim.api.nvim_win_get_cursor(0)[1] - 1)
+--     opts = opts or {['lnum'] = line_nr}
+--
+--     local line_diagnostics = vim.diagnostic.get(bufnr, opts)
+--     if vim.tbl_isempty(line_diagnostics) then return end
+--     local diagnostic_message = ""
+--     for i, diagnostic in ipairs(line_diagnostics) do
+--         if i == 1 then
+--             diagnostic_message = diagnostic_message .. string.format("%d: %s", i, diagnostic.message or "")
+--             print(diagnostic_message)
+--         end
+--     end
+--     vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
+-- end
+-- vim.cmd [[ autocmd! CursorHold * lua PrintDiagnostics() ]]
 
 -- show diagnostic warning with line highlighting instead of symbol
 vim.cmd [[
