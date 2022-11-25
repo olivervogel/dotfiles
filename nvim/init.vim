@@ -56,8 +56,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " seamless navigation between vim & tmux
     Plug 'christoomey/vim-tmux-navigator'
 
-    Plug 'folke/trouble.nvim'
-
 call plug#end()
 
 " -----------------------------------------------------------------------------
@@ -367,18 +365,6 @@ vim.diagnostic.config({
     underline = false,
     virtual_text = false
 })
-
-require("trouble").setup {
-  icons = false,
-  action_keys = {
-    jump = {"<tab>"},
-    jump_close = {"<cr>"}
-  }
-}
-
-vim.keymap.set("n", "<f8>", "<cmd>TroubleToggle<cr>",
-  {silent = true, noremap = true}
-)
 
 -- print diagnostic info in message area
 -- function PrintDiagnostics(opts, bufnr, line_nr, client_id)
