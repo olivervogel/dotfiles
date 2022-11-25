@@ -408,7 +408,6 @@ require('telescope').setup {
             ".git/",
             ".cache/",
             ".gitkeep",
-            "deps",
             ".elixir_ls",
             "_build"
         },
