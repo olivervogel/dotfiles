@@ -73,6 +73,10 @@ snippet => "" i
 "$1" => "$2"
 endsnippet
 
+snippet :: "" i
+${1:attribute}: ${2:$1}
+endsnippet
+
 snippet test
 test "${1:test something}" do
 	${2:assert ${3:Example.something() == :result}}
@@ -204,8 +208,15 @@ def handle_info("${1:name}", socket) do
 end
 endsnippet
 
+# handle params
+snippet hp
+def handle_params(params, _url, socket) do
+	{:noreply, socket}
+end
+endsnippet
+
 snippet ass
-assign(socket, ${1:key}: ${2:value})
+assign(socket, ${1:key}: ${2:$1})
 endsnippet
 
 snippet upd

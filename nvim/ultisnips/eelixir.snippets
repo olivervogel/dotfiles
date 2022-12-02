@@ -19,3 +19,13 @@ endsnippet
 snippet <% "" i
 <% $0 %>
 endsnippet
+
+snippet lc
+<%= live_component ${1:MyComponent} %>
+endsnippet
+
+snippet form
+<.form let={f} for={@changeset}>
+	$0
+</.form>
+endsnippet
