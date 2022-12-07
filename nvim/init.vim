@@ -406,6 +406,7 @@ require('telescope').setup {
             ".DS_Store",
             "node_modules",
             ".git/",
+            ".vscode/",
             ".cache/",
             ".gitkeep",
             ".elixir_ls",
