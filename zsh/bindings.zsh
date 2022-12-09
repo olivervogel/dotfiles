@@ -11,13 +11,3 @@ zle -N tmuxpane-down
 zle -N tmuxpane-up
 zle -N tmuxpane-left
 zle -N tmuxpane-right
-
-bindkey '^[[1;5B' tmuxpane-down
-bindkey '^[[1;5A' tmuxpane-up
-bindkey '^[[1;5D' tmuxpane-left
-bindkey '^[[1;5C' tmuxpane-right
-
-bindkey '^[[1;3B' tmuxpane-down
-bindkey '^[[1;3A' tmuxpane-up
-bindkey '^[[1;3D' tmuxpane-left
-bindkey '^[[1;3C' tmuxpane-right
