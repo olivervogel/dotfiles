@@ -3,3 +3,5 @@
 	email = oliver@olivervogel.com
 [init]
 	defaultBranch = master
+[pull]
+    rebase = true
