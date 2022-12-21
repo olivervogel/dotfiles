@@ -287,7 +287,9 @@ set statusline+=%(\ %)
 " align right
 set statusline+=%=
 " percentual position in buffer
-set statusline+=%p%%
+set statusline+=%-5(%p%%%)
+" line & column number
+set statusline+=%-5(%l:%c%)
 " encoding
 set statusline+=%8{(&fenc!=''?&fenc:&enc)}
 set statusline+=\ (%{&ff})
