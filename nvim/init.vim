@@ -414,6 +414,7 @@ require('telescope').setup {
             ".git/",
             ".vscode/",
             ".cache/",
+            "priv/static/assets/",
             ".gitkeep",
             ".elixir_ls",
             "_build"
