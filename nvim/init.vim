@@ -410,6 +410,7 @@ require('telescope').setup {
         file_ignore_patterns = {
             ".DS_Store",
             "node_modules",
+            "deps",
             ".git/",
             ".vscode/",
             ".cache/",
@@ -444,12 +445,15 @@ require('telescope').setup {
                 ["<C-k>"] = actions.move_selection_previous
             }
         }
-    }
-}
-
-require('telescope').setup({
+    },
     extensions = {
         file_browser = {
+            file_ignore_patterns = {
+                ".git",
+                ".elixir_ls",
+                ".DS_Store",
+                ".cache"
+            },
             hidden = true,
             grouped = true,
             sorting_strategy = 'ascending',
@@ -460,10 +464,10 @@ require('telescope').setup({
                 n = {
                     ["<C-s>"] = actions.close,
                 }
+                }
             }
-        },
-    },
-})
+        }
+    }
 
 require("telescope").load_extension "file_browser"
 
