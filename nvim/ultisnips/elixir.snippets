@@ -246,3 +246,13 @@ IO.inspect("-----------------------------------------------------------------")
 IO.inspect($0)
 IO.inspect("-----------------------------------------------------------------")
 endsnippet
+
+snippet qall
+from(i in ${1:Item}) |> Repo.all()
+endsnippet
+
+snippet qone
+from(i in ${1:Item}) |> Repo.one()
+endsnippet
+
+
