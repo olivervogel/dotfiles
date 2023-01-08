@@ -249,6 +249,9 @@ noremap <tab> :bnext<cr>
 noremap <S-tab> :bprevious<cr>
 noremap <A-tab> :bprevious<cr>
 
+" yank into system clipboard
+vnoremap <C-c> "+y
+
 " deselect search
 noremap <leader><leader> :nohl<cr>
 
