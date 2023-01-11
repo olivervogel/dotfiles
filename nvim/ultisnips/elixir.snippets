@@ -255,4 +255,34 @@ snippet qone
 from(i in ${1:Item}) |> Repo.one()
 endsnippet
 
+snippet eqf
+from(${1:i in Item})
+endsnippet
 
+snippet eqw
+where(${1:id: ^id})
+endsnippet
+
+snippet eqo
+order_by(${1:asc: :id})
+endsnippet
+
+snippet eqj
+join(${1::left, [p], i in Item, on: p.item_id == i.id})
+endsnippet
+
+snippet eqs
+select([i], {i.id})
+endsnippet
+
+snippet eqg
+group_by(${1:[i], i.id})
+endsnippet
+
+snippet eqp
+preload(${1::items})
+endsnippet
+
+snippet ecount
+from(${1:User}, select: count("*")) |> Repo.one()
+endsnippet
