@@ -8,7 +8,6 @@ mkdir -p ~/.config
 ln -nfs $DOTFILESDIR/zsh            ~/.config/zsh
 ln -nfs $DOTFILESDIR/p10k           ~/.config/p10k
 ln -nfs $DOTFILESDIR/tmux           ~/.config/tmux
-ln -nfs $DOTFILESDIR/vim            ~/.config/vim
 ln -nfs $DOTFILESDIR/nvim           ~/.config/nvim
 ln -nfs $DOTFILESDIR/git            ~/.config/git
 
