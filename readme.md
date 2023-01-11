@@ -28,5 +28,6 @@
 - [fzf](https://github.com/junegunn/fzf) [^1]
 - [exa](https://github.com/ogham/exa)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [renameutils](https://www.nongnu.org/renameutils/)
 
 [^1]: Installation via git in ~/.zsh/pack/<package-name>
