@@ -478,6 +478,7 @@ require("telescope").load_extension "file_browser"
 -- treesitter config
 require('nvim-treesitter.configs').setup {
     ensure_installed = {
+        "vim",
         "php",
         "javascript",
         "typescript",
@@ -488,7 +489,8 @@ require('nvim-treesitter.configs').setup {
         "markdown",
         "erlang",
         "elixir",
-        "heex"
+        "heex",
+        "lua"
     },
     highlight = {
         enable = true,
