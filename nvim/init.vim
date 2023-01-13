@@ -14,7 +14,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " treesitter
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'tag': 'v0.7.2', 'do': ':TSUpdate'}
 
     " theme
     Plug 'marko-cerovac/material.nvim', {'commit': '88e1d132cc7b27a8304b897873384bee343b2d2c'}
