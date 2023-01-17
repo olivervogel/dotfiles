@@ -286,3 +286,7 @@ endsnippet
 snippet ecount
 from(${1:User}, select: count("*")) |> Repo.one()
 endsnippet
+
+snippet imp
+import ${1:Phoenix.HTML}${2:, only: [${3:raw: 1}]}
+endsnippet
