@@ -559,9 +559,17 @@ cmp.setup({
 })
 
 -- snippet settings
-require("luasnip.loaders.from_vscode").lazy_load({ 
-    paths = { "~/.config/nvim/luasnip" }
+local ls = require("luasnip")
+
+require("luasnip.loaders.from_lua").lazy_load({ 
+    paths = { "~/.config/nvim/luasnip/snippets" }
 })
+
+-- ls.config.setup({
+--     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
+--         html = {"javascript"}, -- also load javascript for html context
+--     })
+-- })
 EOF
 
 " telescope settings
@@ -586,14 +594,13 @@ nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
 nnoremap <c-f> :Telescope oldfiles<cr>
 
 " snippet mappings
-
 " press <Tab> to expand or jump in a snippet
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 " -1 for jumping backwards.
 " inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
 
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-" snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 
 " For changing choices in choiceNodes (not strictly necessary for a basic setup).
 imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'

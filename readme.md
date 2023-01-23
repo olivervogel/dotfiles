@@ -9,7 +9,7 @@
     - [vim-plug](https://github.com/junegunn/vim-plug)
         - [material.nvim](https://github.com/marko-cerovac/material.nvim)
         - [delimitMate](https://github.com/Raimondi/delimitMate)
-        - [UltiSnips](https://github.com/SirVer/ultisnips)
+        - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
         - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
         - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
         - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
