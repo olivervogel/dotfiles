@@ -565,11 +565,14 @@ require("luasnip.loaders.from_lua").lazy_load({
     paths = { "~/.config/nvim/luasnip/snippets" }
 })
 
--- ls.config.setup({
---     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
---         html = {"javascript"}, -- also load javascript for html context
---     })
--- })
+ls.config.setup({
+    history = true,
+    update_events = "TextChanged,TextChangedI",
+    ft_func = require("luasnip.extras.filetype_functions").from_cursor_pos,
+    load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
+        html = {"javascript"}, -- also load javascript for html context
+    }),
+})
 EOF
 
 " telescope settings
