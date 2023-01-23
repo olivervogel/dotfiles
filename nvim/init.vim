@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'akinsho/bufferline.nvim'
 
     " snippets
-    Plug 'SirVer/ultisnips'
+    Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.1.0', 'do': 'make install_jsregexp'}
 
     " code commenting
     Plug 'numToStr/Comment.nvim'
@@ -70,7 +70,6 @@ au BufRead,BufNewFile *.ss set syntax=html
 " au BufRead,BufNewFile *.heex set filetype=heex
 au BufRead,BufNewFile *.heex set filetype=eelixir
 au BufRead,BufNewFile *.heex set syntax=html
-au FileType heex UltiSnipsAddFiletypes html
 
 " *.vue should be handled as javascript
 au BufRead,BufNewFile *.vue set filetype=javascript
@@ -558,13 +557,12 @@ cmp.setup({
         { name = 'buffer' },
     })
 })
-EOF
 
-" snippet settings
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-c>"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/nvim/ultisnips']
+-- snippet settings
+require("luasnip.loaders.from_vscode").lazy_load({ 
+    paths = { "~/.config/nvim/luasnip" }
+})
+EOF
 
 " telescope settings
 nnoremap <c-p> :Telescope find_files hidden=true<cr>
@@ -586,3 +584,19 @@ nnoremap <leader>fq :Telescope quickfix<cr>
 nnoremap <leader>fm :Telescope marks<cr>
 nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
 nnoremap <c-f> :Telescope oldfiles<cr>
+
+" snippet mappings
+
+" press <Tab> to expand or jump in a snippet
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+" -1 for jumping backwards.
+" inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+" snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
+
