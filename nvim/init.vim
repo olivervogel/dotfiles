@@ -93,8 +93,12 @@ noremap <Right> <Nop>
 set updatetime=1000
 
 " code folding settings
-set foldmethod=indent
-set foldlevel=10
+" set foldmethod=indent
+" set foldlevel=10
+
+" set foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*'.&commentstring[0]
+set foldlevel=20
+set foldmethod=syntax
 
 nnoremap zu za
 onoremap zu <C-C>za
@@ -560,20 +564,66 @@ cmp.setup({
 
 -- snippet settings
 local ls = require("luasnip")
+local ls_types = require("luasnip.util.types")
 
-require("luasnip.loaders.from_lua").lazy_load({ 
-    paths = { "~/.config/nvim/luasnip/snippets" }
+-- require("luasnip.loaders.from_lua").lazy_load({ 
+--     paths = { "~/.config/nvim/luasnip/snippets/lua" }
+-- })
+
+require("luasnip.loaders.from_snipmate").lazy_load({ 
+    paths = { "~/.config/nvim/luasnip/snippets/snipmate" }
 })
 
 ls.config.setup({
-    history = true,
+    history = false,
+    enable_autosnippets = true,
     update_events = "TextChanged,TextChangedI",
-    region_check_events = 'InsertEnter,CursorMoved',
+    -- region_check_events = 'TextChanged,InsertLeave,InsertEnter,CursorMoved',
+    region_check_events = 'CursorMoved',
+    -- delete_check_events = 'TextChanged,InsertLeave,InsertEnter,CursorMoved',
     ft_func = require("luasnip.extras.filetype_functions").from_cursor_pos,
     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
         html = {"javascript"}, -- also load javascript for html context
+        elixir = {"heex"},
     }),
+    ext_opts = {
+        [ls_types.snippet] = {
+            active = {
+                hl_group = "Comment",
+            },
+            passive = {
+                hl_group = "Comment",
+            },
+            visited = {
+                hl_group = "Comment",
+            },
+            unvisited = {
+                hl_group = "Comment",
+            },
+        },
+        [ls_types.choiceNode] = {
+            active = {
+                virt_text = {{"Choice", "Exception"}}
+            },
+        }
+    },
 })
+
+function leave_snippet()
+    print "leave_snippet"
+    if
+        ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+        and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+        and not require('luasnip').session.jump_active
+    then
+        require('luasnip').unlink_current()
+    end
+end
+
+-- leave snippets when you leave to normal mode
+vim.api.nvim_command([[
+    autocmd ModeChanged * lua leave_snippet()
+]])
 EOF
 
 " telescope settings
@@ -598,15 +648,11 @@ nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
 nnoremap <c-f> :Telescope oldfiles<cr>
 
 " snippet mappings
-" press <Tab> to expand or jump in a snippet
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
-" -1 for jumping backwards.
-" inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 
-" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+" For changing choices in choiceNodes
 imap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
 smap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
 imap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'

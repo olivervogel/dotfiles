@@ -14,12 +14,10 @@ return {
 	}}
 	]], {
 		name = i(1, "myFunction"),
-		args = c(2, { t("args"), t("") }, { node_ext_opts = {
-			passive = {
-				virt_text = {{"args | nil"}}
-			}
-		}}),
-		body = c(3, { t("//"), i(1, "value") }),
-	})),
+		args = c(2, { t("args"), t("") }),
+		body = i(0, "// body"),
+	}), {
+		node_ext_opts = ext_opts
+	}),
 
 }
