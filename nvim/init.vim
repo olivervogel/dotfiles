@@ -198,7 +198,6 @@ augroup END
 " hide explore banner
 let g:netrw_banner=0
 
-
 " treat words with dash as whole word
 set iskeyword+=-
 
@@ -259,7 +258,7 @@ nmap <Leader>sl :s//g<Left><Left>
 " run current buffer as php script
 autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
 
-" experimental
+" scroll up/down with backspace/enter
 nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
 
