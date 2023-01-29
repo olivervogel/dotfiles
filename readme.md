@@ -1,5 +1,9 @@
 # dotfiles
 
+## Keyboard Layout for macOS
+
+Put `macos/No Dead Keys.bundle` into `/Library/Keyboard Layouts/` and load it via System Preferences, to remove dead keys from german ISO keyboard layout.
+
 ## Tools
 
 - [zsh](https://www.zsh.org)

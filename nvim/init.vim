@@ -129,40 +129,7 @@ set wildmenu
 let mapleader="\<space>"
 
 " remaping for german keyboard
-" set langmap=^`
 nnoremap ^ `
-
-nmap à `a
-nmap Á 'A
-nmap À `A
-nmap â ^a
-nmap Â ^A
-nmap ç 'c
-nmap Ç 'C
-nmap é 'e
-nmap è `e
-nmap É 'E
-nmap È `E
-nmap ê ^e
-nmap Ê ^E
-nmap í 'i
-nmap ì `i
-nmap Í 'I
-nmap Ì `I
-nmap î ^i
-nmap Î ^I
-nmap ó 'o
-nmap ò `o
-nmap Ó 'O
-nmap Ò `O
-nmap ô ^o
-nmap Ô ^O
-nmap ú 'u
-nmap ù `u
-nmap Ú 'U
-nmap Ù `U
-nmap û ^u
-nmap Û ^U
 
 filetype plugin indent on
 
