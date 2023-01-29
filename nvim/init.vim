@@ -93,6 +93,7 @@ set updatetime=1000
 set foldmethod=indent
 set foldlevel=10
 
+" fold toggle mapping
 nnoremap zu za
 onoremap zu <C-C>za
 vnoremap zu zf
@@ -113,6 +114,7 @@ require('material').setup({
 	},
 })
 EOF
+
 let g:material_style = "oceanic"
 colorscheme material
 
@@ -133,7 +135,10 @@ set langmap=^`,&^
 
 filetype plugin indent on
 
+" hidden buffers
 set hidden
+
+" disable swapfile
 set noswapfile
 
 "search will be case-sensitive if it contains an uppercase letter
@@ -147,7 +152,6 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set copyindent
-" set smartindent
 
 " turn on indenting for php
 autocmd FileType php setlocal autoindent copyindent indentexpr=""
@@ -210,14 +214,6 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
     end,
 })
 EOF
-
-" -----------------------------------------------------------------------------
-" commands and functions 
-" -----------------------------------------------------------------------------
-
-" close all buffers except current one
-command! BufCurOnly execute '%bdelete|edit#|bdelete#'
-nnoremap <c-b>o :BufCurOnly<cr>
 
 " -----------------------------------------------------------------------------
 " shortcuts & mappings
