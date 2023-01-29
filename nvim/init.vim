@@ -62,10 +62,6 @@ call plug#end()
 " file types 
 " -----------------------------------------------------------------------------
 
-" *.ss should be handled as html
-au BufRead,BufNewFile *.ss set filetype=ss
-au BufRead,BufNewFile *.ss set syntax=html
-
 " *.heex should be handled as html
 " au BufRead,BufNewFile *.heex set filetype=heex
 au BufRead,BufNewFile *.heex set filetype=eelixir
