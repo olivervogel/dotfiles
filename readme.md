@@ -1,9 +1,5 @@
 # dotfiles
 
-## Keyboard Layout for macOS
-
-Put `macos/No Dead Keys.bundle` into `/Library/Keyboard Layouts/` and load it via System Preferences, to remove dead keys from german ISO keyboard layout.
-
 ## Tools
 
 - [zsh](https://www.zsh.org)
@@ -34,5 +30,11 @@ Put `macos/No Dead Keys.bundle` into `/Library/Keyboard Layouts/` and load it vi
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [renameutils](https://www.nongnu.org/renameutils/)
 - [delta](https://github.com/dandavison/delta)
+
+## Keyboard Layout
+
+Depending on the region, it is possible that keyboards has so-called dead keys. For software developers, this can lead to undesired behavior during input. Especially the keyboards with ISO-DE layout have annoying dead keys which unnecessarily negatively affect the workflow in Neovim.
+
+This custom keyboard layout bundle for macOS removes the dead key behaviour. Put `macos/No Dead Keys.bundle` into `/Library/Keyboard Layouts/` and load and apply it via System Preferences afterwards.
 
 [^1]: Installation via git in ~/.zsh/pack/<package-name>
