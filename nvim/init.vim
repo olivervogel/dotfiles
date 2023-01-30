@@ -117,6 +117,11 @@ require('material').setup({
         borders = true
     },
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*" },
+    command = "normal zx",
+})
 EOF
 
 let g:material_style = "oceanic"
