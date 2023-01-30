@@ -62,9 +62,9 @@ call plug#end()
 " file types 
 " -----------------------------------------------------------------------------
 
-au BufRead,BufNewFile *.ex set filetype=elixir
+" au BufRead,BufNewFile *.ex set filetype=elixir
 au BufRead,BufNewFile *.ex set syntax=elixir
-au BufRead,BufNewFile *.exs set filetype=elixir
+" au BufRead,BufNewFile *.exs set filetype=elixir
 au BufRead,BufNewFile *.exs set syntax=elixir
 
 " *.heex should be handled as html
@@ -264,6 +264,9 @@ autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
 " scroll up/down with backspace/enter
 nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
+
+" needed to make luasnip not leave snippet mode on backspace
+snoremap <BS> <C-O>s
 
 " navigate changelist with alt-enter / alt-backspace
 nnoremap <a-cr> g,
@@ -566,10 +569,6 @@ cmp.setup({
 local ls = require("luasnip")
 local ls_types = require("luasnip.util.types")
 
--- require("luasnip.loaders.from_lua").lazy_load({ 
---     paths = { "~/.config/nvim/luasnip/snippets/lua" }
--- })
-
 require("luasnip.loaders.from_snipmate").lazy_load({ 
     paths = { "~/.config/nvim/luasnip/snippets/snipmate" }
 })
@@ -577,7 +576,7 @@ require("luasnip.loaders.from_snipmate").lazy_load({
 ls.config.setup({
     history = false,
     enable_autosnippets = true,
-    update_events = "TextChanged,TextChangedI",
+    -- update_events = "TextChanged,TextChangedI",
     -- region_check_events = 'TextChanged,InsertLeave,InsertEnter,CursorMoved',
     region_check_events = 'CursorMoved',
     -- delete_check_events = 'TextChanged,InsertLeave,InsertEnter,CursorMoved',
