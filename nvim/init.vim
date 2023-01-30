@@ -14,7 +14,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " treesitter
-    Plug 'nvim-treesitter/nvim-treesitter', {'tag': 'v0.7.2', 'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " theme
     Plug 'marko-cerovac/material.nvim', {'commit': '88e1d132cc7b27a8304b897873384bee343b2d2c'}
@@ -62,12 +62,12 @@ call plug#end()
 " file types 
 " -----------------------------------------------------------------------------
 
-" *.ss should be handled as html
-au BufRead,BufNewFile *.ss set filetype=ss
-au BufRead,BufNewFile *.ss set syntax=html
+au BufRead,BufNewFile *.ex set filetype=elixir
+au BufRead,BufNewFile *.ex set syntax=elixir
+au BufRead,BufNewFile *.exs set filetype=elixir
+au BufRead,BufNewFile *.exs set syntax=elixir
 
 " *.heex should be handled as html
-" au BufRead,BufNewFile *.heex set filetype=heex
 au BufRead,BufNewFile *.heex set filetype=eelixir
 au BufRead,BufNewFile *.heex set syntax=html
 
@@ -93,13 +93,11 @@ noremap <Right> <Nop>
 set updatetime=1000
 
 " code folding settings
-" set foldmethod=indent
-" set foldlevel=10
 
-" set foldmethod=expr foldexpr=getline(v:lnum)=~'^\\s*'.&commentstring[0]
-set foldlevel=20
 set foldmethod=syntax
+set foldlevel=10
 
+" fold toggle mapping
 nnoremap zu za
 onoremap zu <C-C>za
 vnoremap zu zf
@@ -116,10 +114,16 @@ require('material').setup({
         line_numbers = true
     },
     disable = {
-		borders = true
-	},
+        borders = true
+    },
+})
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*" },
+    command = "normal zx",
 })
 EOF
+
 let g:material_style = "oceanic"
 colorscheme material
 
@@ -134,13 +138,14 @@ set wildmenu
 let mapleader="\<space>"
 
 " remaping for german keyboard
-set langmap=^`,&^
-
-" set clipboard^=unnamed
+nnoremap ^ `
 
 filetype plugin indent on
 
+" hidden buffers
 set hidden
+
+" disable swapfile
 set noswapfile
 
 "search will be case-sensitive if it contains an uppercase letter
@@ -154,7 +159,6 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set copyindent
-" set smartindent
 
 " turn on indenting for php
 autocmd FileType php setlocal autoindent copyindent indentexpr=""
@@ -205,7 +209,6 @@ augroup END
 " hide explore banner
 let g:netrw_banner=0
 
-
 " treat words with dash as whole word
 set iskeyword+=-
 
@@ -218,14 +221,6 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
     end,
 })
 EOF
-
-" -----------------------------------------------------------------------------
-" commands and functions 
-" -----------------------------------------------------------------------------
-
-" close all buffers except current one
-command! BufCurOnly execute '%bdelete|edit#|bdelete#'
-nnoremap <c-b>o :BufCurOnly<cr>
 
 " -----------------------------------------------------------------------------
 " shortcuts & mappings
@@ -266,9 +261,13 @@ nmap <Leader>sl :s//g<Left><Left>
 " run current buffer as php script
 autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
 
-" experimental
+" scroll up/down with backspace/enter
 nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
+
+" navigate changelist with alt-enter / alt-backspace
+nnoremap <a-cr> g,
+nnoremap <a-bs> g;
 
 " repeat last command line command
 nnoremap <Leader>zz @:
@@ -493,7 +492,8 @@ require('nvim-treesitter.configs').setup {
         "erlang",
         "elixir",
         "heex",
-        "lua"
+        "lua",
+        "cpp"
     },
     highlight = {
         enable = true,
