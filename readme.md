@@ -33,5 +33,6 @@ Put `macos/No Dead Keys.bundle` into `/Library/Keyboard Layouts/` and load it vi
 - [exa](https://github.com/ogham/exa)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [renameutils](https://www.nongnu.org/renameutils/)
+- [delta](https://github.com/dandavison/delta)
 
 [^1]: Installation via git in ~/.zsh/pack/<package-name>

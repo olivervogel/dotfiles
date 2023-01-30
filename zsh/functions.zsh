@@ -23,18 +23,18 @@ _tmux_attach() {
 _git_diff_working_tree() {
     root=$(git rev-parse --show-toplevel)
     if [ $1 ]; then
-        git diff HEAD -- $root/$1
+        git diff HEAD -- $root/$1|delta
     else
-        preview="git diff --color=always -- $root/{-1}"
+        preview="git diff --color=always -- $root/{-1}|delta"
         selected=$(git diff --name-only | fzf -m --ansi --preview $preview)
         if [ $selected ]; then
-            git diff HEAD -- $root/$selected
+            git diff HEAD -- $root/$selected|delta
         fi
     fi
 }
 
 _git_diff_commit() {
-    preview="git diff-tree --color=always -p {1}"
+    preview="git diff-tree --color=always -p {1}|delta"
     selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf -m --ansi --preview $preview)
     if [ $selected ]; then
         git show $(echo $selected|cut -c 1-7)
@@ -79,7 +79,7 @@ _git_add() {
     if [ $1 ]; then
         git add $1
     else
-        preview="git diff --color=always -- ./{-1}"
+        preview="git diff --color=always -- ./{-1}|delta"
         selected=$(git ls-files --modified --others --exclude-standard $root|fzf -m --ansi --preview $preview)
         if [ $selected ]; then
             my_array=($(echo $selected | tr "," "\n"))
@@ -104,7 +104,7 @@ _git_commit_append() {
         git commit --fixup=$1
         git rebase --interactive --autosquash $1^
     else
-        preview="git diff-tree --color=always -p {1}"
+        preview="git diff-tree --color=always -p {1}|delta"
         selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf -m --ansi --preview $preview)
         commit=$(echo $selected|cut -c 1-7)
         git commit --fixup=$commit
@@ -122,14 +122,13 @@ _git_restore() {
             git restore --worktree $1
         fi
     else
-        preview="git diff --color=always -- $root/{-1}"
+        preview="git diff --color=always -- $root/{-1}|delta"
         selected=$(git status -uno --porcelain|cut -c 4-|fzf -m --ansi --preview $preview)
         if [ $selected ]; then
             my_array=($(echo $selected | tr "," "\n"))
             for string in $my_array
                 do
                     staged=$(git diff --name-only --cached|grep $string)
-                    # staged=$(git status -s|grep $string|cut -c 1)
                     if [ ${#staged} -ge 1 ]; then
                         # staged
                         git restore --staged $root/$string
@@ -147,7 +146,7 @@ _git_restore_all() {
 }
 
 _git_revert() {
-    preview="git diff-tree --color=always -p {1}"
+    preview="git diff-tree --color=always -p {1}|delta"
     selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf --ansi --preview $preview)
     if [ $selected ]; then
         git revert $(echo $selected|cut -c 1-7)
