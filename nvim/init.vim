@@ -114,8 +114,8 @@ require('material').setup({
         line_numbers = true
     },
     disable = {
-		borders = true
-	},
+        borders = true
+    },
 })
 EOF
 
