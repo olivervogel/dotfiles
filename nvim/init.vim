@@ -94,7 +94,7 @@ noremap <Right> <Nop>
 set updatetime=1000
 
 " code folding settings
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=10
 
 " fold toggle mapping
