@@ -14,7 +14,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " treesitter
-    Plug 'nvim-treesitter/nvim-treesitter', {'tag': 'v0.7.2', 'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " theme
     Plug 'marko-cerovac/material.nvim', {'commit': '88e1d132cc7b27a8304b897873384bee343b2d2c'}
@@ -62,8 +62,12 @@ call plug#end()
 " file types 
 " -----------------------------------------------------------------------------
 
+au BufRead,BufNewFile *.ex set filetype=elixir
+au BufRead,BufNewFile *.ex set syntax=elixir
+au BufRead,BufNewFile *.exs set filetype=elixir
+au BufRead,BufNewFile *.exs set syntax=elixir
+
 " *.heex should be handled as html
-" au BufRead,BufNewFile *.heex set filetype=heex
 au BufRead,BufNewFile *.heex set filetype=eelixir
 au BufRead,BufNewFile *.heex set syntax=html
 au FileType heex UltiSnipsAddFiletypes html
@@ -483,7 +487,8 @@ require('nvim-treesitter.configs').setup {
         "erlang",
         "elixir",
         "heex",
-        "lua"
+        "lua",
+        "cpp"
     },
     highlight = {
         enable = true,
