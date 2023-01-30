@@ -62,9 +62,7 @@ call plug#end()
 " file types 
 " -----------------------------------------------------------------------------
 
-" au BufRead,BufNewFile *.ex set filetype=elixir
 au BufRead,BufNewFile *.ex set syntax=elixir
-" au BufRead,BufNewFile *.exs set filetype=elixir
 au BufRead,BufNewFile *.exs set syntax=elixir
 
 " *.heex should be handled as html
@@ -78,6 +76,9 @@ au BufRead,BufNewFile *.vue set syntax=javascript
 " *.blade should be handled as html
 au BufRead,BufNewFile *.blade.php set filetype=html
 au BufRead,BufNewFile *.blade.php set syntax=html
+
+" turn on indenting for php
+au FileType php setlocal autoindent copyindent indentexpr=""
 
 " -----------------------------------------------------------------------------
 " base settings 
@@ -93,7 +94,6 @@ noremap <Right> <Nop>
 set updatetime=1000
 
 " code folding settings
-
 set foldmethod=syntax
 set foldlevel=10
 
@@ -159,9 +159,6 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set copyindent
-
-" turn on indenting for php
-autocmd FileType php setlocal autoindent copyindent indentexpr=""
 
 " set column rulers
 set colorcolumn=80,120
@@ -265,9 +262,6 @@ autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
 nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
 
-" needed to make luasnip not leave snippet mode on backspace
-snoremap <BS> <C-O>s
-
 " navigate changelist with alt-enter / alt-backspace
 nnoremap <a-cr> g,
 nnoremap <a-bs> g;
@@ -277,7 +271,6 @@ nnoremap <Leader>zz @:
 
 " :W should behave the same way as :w
 command -bar -nargs=* -complete=file -range=% -bang Write <line1>,<line2>write<bang> <args>
-
 
 " -----------------------------------------------------------------------------
 " statusline settings
@@ -569,17 +562,18 @@ cmp.setup({
 local ls = require("luasnip")
 local ls_types = require("luasnip.util.types")
 
-require("luasnip.loaders.from_snipmate").lazy_load({ 
-    paths = { "~/.config/nvim/luasnip/snippets/snipmate" }
+-- require("luasnip.loaders.from_snipmate").lazy_load({ 
+--     paths = { "~/.config/nvim/luasnip/snippets/snipmate" }
+-- })
+
+require("luasnip.loaders.from_lua").lazy_load({ 
+    paths = { "~/.config/nvim/luasnip/snippets/lua" }
 })
 
 ls.config.setup({
     history = false,
     enable_autosnippets = true,
-    -- update_events = "TextChanged,TextChangedI",
-    -- region_check_events = 'TextChanged,InsertLeave,InsertEnter,CursorMoved',
-    region_check_events = 'CursorMoved',
-    -- delete_check_events = 'TextChanged,InsertLeave,InsertEnter,CursorMoved',
+    -- region_check_events = 'CursorMoved',
     ft_func = require("luasnip.extras.filetype_functions").from_cursor_pos,
     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
         html = {"javascript"}, -- also load javascript for html context
@@ -602,16 +596,15 @@ ls.config.setup({
         },
         [ls_types.choiceNode] = {
             active = {
-                virt_text = {{"Choice", "Exception"}}
+                virt_text = {{"", "Variable"}}
             },
         }
     },
 })
 
-function leave_snippet()
-    print "leave_snippet"
+function maybe_leave_snippet()
     if
-        ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+        (vim.v.event.new_mode == 'n')
         and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
         and not require('luasnip').session.jump_active
     then
@@ -621,7 +614,7 @@ end
 
 -- leave snippets when you leave to normal mode
 vim.api.nvim_command([[
-    autocmd ModeChanged * lua leave_snippet()
+    autocmd ModeChanged * lua maybe_leave_snippet()
 ]])
 EOF
 
