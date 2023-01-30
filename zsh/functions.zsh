@@ -45,7 +45,8 @@ _git_checkout() {
     if [ $1 ]; then
         git checkout $1
     else
-        selected=$(git branch|cut -c 3-|fzf)
+        preview="git diff --color=always -p {1}|delta"
+        selected=$(git branch --sort=-committerdate|cut -c 3-|fzf --preview $preview)
         if [ $selected ]; then
             git checkout $selected
         fi
