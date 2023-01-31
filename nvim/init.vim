@@ -490,7 +490,16 @@ require('nvim-treesitter.configs').setup {
     },
     indent = {
         enable = true
-      }
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "∂", -- set to `false` to disable one of the mappings
+            node_incremental = "∂",
+            scope_incremental = false,
+            node_decremental = "≈",
+        },
+    },
 }
 
 -- linting settings
