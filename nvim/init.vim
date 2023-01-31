@@ -573,8 +573,8 @@ require("luasnip.loaders.from_lua").lazy_load({
 ls.config.setup({
     history = false,
     enable_autosnippets = true,
-    -- region_check_events = 'CursorMoved',
-    ft_func = require("luasnip.extras.filetype_functions").from_cursor_pos,
+    update_events = 'TextChanged,TextChangedI',
+    ft_func = require("luasnip.extras.filetype_functions").from_pos_or_filetype,
     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
         html = {"javascript"}, -- also load javascript for html context
         elixir = {"heex"},

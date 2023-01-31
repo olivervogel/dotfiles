@@ -157,10 +157,6 @@ return {
 		t(")"),
 	}),
 
-	-- -----------------------------------------------------------------------
-	-- inspect
-	-- -----------------------------------------------------------------------
-
 	s("pp", fmt([[
 	IO.inspect("-----------------------------------------------------------------")
 	IO.inspect({value})
@@ -190,12 +186,149 @@ return {
 		i(1, "key"),
 		t("\" => "),
 		d(2, function(args)
-            return sn(nil, {
-                i(1, args[1])
-            })
-        end, {1}),
+		    return sn(nil, {
+			i(1, args[1])
+		    })
+		end, {1}),
+	})),
+	
+	-- -----------------------------------------------------------------------
+	-- import
+	-- -----------------------------------------------------------------------
+
+	s("imp", {
+		t("import "),
+		i(1, "Phoenix.HTML"),
+		c(2, {
+			sn(nil, {
+				t(", only: ["),
+				i(1, "raw"),
+				t(": "),
+				i(2, "1"),
+				t("]"),
+			}),
+			sn(nil, {
+				i(1, ""),
+			}),
+		}),
+	}),
+
+	-- -----------------------------------------------------------------------
+	-- Ecto
+	-- -----------------------------------------------------------------------
+
+	s("eqf", {
+		t("from("),
+		f(function(args, snip)
+			return args[1][1]:sub(1, 1):lower() end, 1
+		),
+		t(" in "),
+		i(1, "Item"),
+		t(")"),
+	}),
+
+	s("eqw", {
+		t("where("),
+		i(1, "id"),
+		t(": ^"),
+		d(2, function(args)
+			return sn(nil, {
+				i(1, args[1])
+			}) end, 1
+		),
+		t(")"),
+	}),
+
+	s("eqo", {
+		t("order_by("),
+		c(2, {
+			t("asc:"),
+			t("desc:"),
+		}),
+		t(" :"),
+		i(1, "name"),
+		t(")"),
+	}),
+
+
+	s("eqj", {
+		t("join(:"),
+		i(2, "left"),
+		t(", ["),
+		i(3, "c"),
+		t("], "),
+		f(function(args, snip)
+			return args[1][1]:sub(1, 1):lower() end, 1
+		),
+		t(" in "),
+		i(1, "Item"),
+		t(", on: "),
+		rep(3),
+		t("."),
+		f(function(args, snip)
+			return args[1][1]:lower() end, 1
+		),
+		t("_id == "),
+		f(function(args, snip)
+			return args[1][1]:sub(1, 1):lower() end, 1
+		),
+		t(".id"),
+		t(")"),
+	}),
+
+	s("eqs", {
+		t("select(["),
+		i(1, "i"),
+		t("], {"),
+		rep(1),
+		t("."),
+		i(2, "name"),
+		t("})"),
+	}),
+
+	s("eqg", {
+		t("group_by(["),
+		i(1, "i"),
+		t("], "),
+		rep(1),
+		t("."),
+		i(2, "id"),
+		t(")"),
+	}),
+
+	s("eqp", {
+		t("preload(:"),
+		i(1, "items"),
+		t(")"),
+	}),
+
+	-- -----------------------------------------------------------------------
+	-- live view
+	-- -----------------------------------------------------------------------
+
+	s("he", fmt([[
+	def handle_event("{name}", _params, socket) do
+		{{:noreply, socket}}
+	end
+	]], {
+		name = i(0, "event_name"),
 	})),
 
+	s("hi", fmt([[
+	def handle_info("{name}", socket) do
+		{{:noreply, socket}}
+	end
+	]], {
+		name = i(0, "event_name"),
+	})),
+
+	s("hp", fmt([[
+	def handle_params({params}, _url, socket) do
+		{{:noreply, socket}}
+	end
+	]], {
+		params = i(0, "params"),
+	})),
 }, {
 
 	-- -----------------------------------------------------------------------
