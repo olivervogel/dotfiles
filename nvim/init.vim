@@ -556,12 +556,8 @@ cmp.setup({
 local ls = require("luasnip")
 local ls_types = require("luasnip.util.types")
 
--- require("luasnip.loaders.from_snipmate").lazy_load({ 
---     paths = { "~/.config/nvim/luasnip/snippets/snipmate" }
--- })
-
 require("luasnip.loaders.from_lua").lazy_load({ 
-    paths = { "~/.config/nvim/luasnip/snippets/lua" }
+    paths = { "~/.config/nvim/luasnip/snippets" }
 })
 
 ls.config.setup({
