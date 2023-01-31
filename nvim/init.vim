@@ -70,9 +70,6 @@ au BufRead,BufNewFile *.vue set syntax=javascript
 au BufRead,BufNewFile *.blade.php set filetype=html
 au BufRead,BufNewFile *.blade.php set syntax=html
 
-" turn on indenting for php
-au FileType php setlocal autoindent copyindent indentexpr=""
-
 " -----------------------------------------------------------------------------
 " base settings 
 " -----------------------------------------------------------------------------
@@ -87,7 +84,7 @@ noremap <Right> <Nop>
 set updatetime=1000
 
 " code folding settings
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevel=10
 
 " fold toggle mapping
