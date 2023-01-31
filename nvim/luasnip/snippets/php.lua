@@ -209,4 +209,17 @@ return {
 	-- -----------------------------------------------------------------------
 
 	s("ret0", t("return false;")),
+
+	s("doc", fmt([[
+	/**
+	 * {title}
+	 *
+	 * @param  string $var
+	 * @return {ret_value}
+	 */
+	]], {
+		title = i(1, "Title"),
+		ret_value = i(2, "void")
+	}))
+
 }
