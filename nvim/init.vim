@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " theme
-    Plug 'marko-cerovac/material.nvim', {'commit': '88e1d132cc7b27a8304b897873384bee343b2d2c'}
+    Plug 'marko-cerovac/material.nvim'
 
     " bufferline
     Plug 'akinsho/bufferline.nvim'
@@ -61,13 +61,6 @@ call plug#end()
 " -----------------------------------------------------------------------------
 " file types 
 " -----------------------------------------------------------------------------
-
-au BufRead,BufNewFile *.ex set syntax=elixir
-au BufRead,BufNewFile *.exs set syntax=elixir
-
-" *.heex should be handled as html
-au BufRead,BufNewFile *.heex set filetype=eelixir
-au BufRead,BufNewFile *.heex set syntax=html
 
 " *.vue should be handled as javascript
 au BufRead,BufNewFile *.vue set filetype=javascript
@@ -493,7 +486,8 @@ require('nvim-treesitter.configs').setup {
     },
     highlight = {
         enable = true,
-    }
+        additional_vim_regex_highlighting = false
+    },
 }
 
 -- linting settings
@@ -576,7 +570,7 @@ ls.config.setup({
     update_events = 'TextChanged,TextChangedI',
     ft_func = require("luasnip.extras.filetype_functions").from_pos_or_filetype,
     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
-        html = {"javascript"}, -- also load javascript for html context
+        html = {"javascript", "php"}, -- also load javascript for html context
         elixir = {"heex"},
     }),
     ext_opts = {
