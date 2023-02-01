@@ -116,6 +116,10 @@ require('material').setup({
             bold = false
         }
     },
+    plugins = {
+       "nvim-cmp",
+       "telescope",
+    },
     -- custom_colors = function(colors)
     --     colors.editor.bg = "#263136"
     --     colors.editor.active = "#2c383c"
