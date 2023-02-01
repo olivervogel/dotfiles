@@ -104,8 +104,23 @@ require('material').setup({
         line_numbers = true
     },
     disable = {
-        borders = true
+        borders = true,
     },
+    high_visibility = {
+        lighter = false,
+        darker = false,
+    },
+    styles = {
+        comments = {
+            italic = true,
+            bold = false
+        }
+    },
+    -- custom_colors = function(colors)
+    --     colors.editor.bg = "#263136"
+    --     colors.editor.active = "#2c383c"
+    --     colors.backgrounds.cursor_line = "#303d42"
+    -- end
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
@@ -308,7 +323,7 @@ require("bufferline").setup{
 require("toggleterm").setup{
     open_mapping = [[<f1>]],
     direction = "float",
-    shade_terminals = false,
+    shade_terminals = true,
     float_opts = {
         border = "none",
         width = 500,
