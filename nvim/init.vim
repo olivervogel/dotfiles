@@ -620,6 +620,8 @@ ls.config.setup({
     },
 })
 
+ls.filetype_extend("heex", {"html"})
+
 function maybe_leave_snippet()
     if
         (vim.v.event.new_mode == 'n')
