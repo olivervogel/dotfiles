@@ -625,13 +625,15 @@ ls.config.setup({
         trim = function(string)
             return string:match "^%s*(.-)%s*$"
         end,
-        -- customize default settings of default node
+        -- customize default behaviour of default node
         s = ls.extend_decorator.apply(snippet_node, {}, { 
-            -- set default behaviour: snippets expand only when trigger word
-            -- is first word of line or is preceded with whitespace, also
-            -- snippets dont expand inside an active snippet
+            -- set default behaviour: snippets expand only if trigger word
+            -- is the first word on the line or is preceded by one or more whitespace characters.
+            -- Also snippets dont expand inside an active snippet
             condition = function(line_to_cursor, matched_trigger, captures)
-                return ls.in_snippet() == false and line_to_cursor:match "^%s*(.-)%s*$" == matched_trigger
+                local trigger_pos, _ = string.find(line_to_cursor, matched_trigger)
+                local char_before_trigger = string.sub(line_to_cursor, trigger_pos - 1, trigger_pos -1)
+                return ls.in_snippet() == false and (char_before_trigger == " " or char_before_trigger == "")
             end
         }),
         -- create inline node
