@@ -583,6 +583,8 @@ cmp.setup({
 -- snippet settings
 local ls = require("luasnip")
 local ls_types = require("luasnip.util.types")
+local snippet_node = require("luasnip.nodes.snippet").S
+local fmt = require("luasnip.extras.fmt").fmt
 
 require("luasnip.loaders.from_lua").lazy_load({ 
     paths = { "~/.config/nvim/luasnip/snippets" }
@@ -597,6 +599,48 @@ ls.config.setup({
         html = {"javascript", "php"}, -- also load javascript for html context
         elixir = {"heex"},
     }),
+    snip_env = {
+        -- just copied because of https://github.com/L3MON4D3/LuaSnip/issues/566#issuecomment-1233022044
+        sn = require("luasnip.nodes.snippet").SN,
+        t = require("luasnip.nodes.textNode").T,
+        f = require("luasnip.nodes.functionNode").F,
+        i = require("luasnip.nodes.insertNode").I,
+        c = require("luasnip.nodes.choiceNode").C,
+        d = require("luasnip.nodes.dynamicNode").D,
+        r = require("luasnip.nodes.restoreNode").R,
+        l = require("luasnip.extras").lambda,
+        rep = require("luasnip.extras").rep,
+        p = require("luasnip.extras").partial,
+        m = require("luasnip.extras").match,
+        n = require("luasnip.extras").nonempty,
+        dl = require("luasnip.extras").dynamic_lambda,
+        fmt = require("luasnip.extras.fmt").fmt,
+        fmta = require("luasnip.extras.fmt").fmta,
+        conds = require("luasnip.extras.expand_conditions"),
+        types = require("luasnip.util.types"),
+        events = require("luasnip.util.events"),
+        parse = require("luasnip.util.parser").parse_snippet,
+        ai = require("luasnip.nodes.absolute_indexer"),
+        -- custom below here
+        trim = function(string)
+            return string:match "^%s*(.-)%s*$"
+        end,
+        -- customize default settings of default node
+        s = ls.extend_decorator.apply(snippet_node, {}, { 
+            -- set default behaviour: snippets expand only when trigger word
+            -- is first word of line or is preceded with whitespace
+            condition = function(line_to_cursor, matched_trigger, captures)
+                return line_to_cursor:match "^%s*(.-)%s*$" == matched_trigger
+            end
+        }),
+        -- create inline node
+        s_inline = ls.extend_decorator.apply(snippet_node, {}, { 
+            -- set inline behaviour: snippets expand everywhere
+            condition = function(line_to_cursor, matched_trigger, captures)
+                return true
+            end
+        })
+    },
     ext_opts = {
         [ls_types.snippet] = {
             active = {
