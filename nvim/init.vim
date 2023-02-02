@@ -148,6 +148,7 @@ let mapleader="\<space>"
 
 " remaping for german keyboard
 nnoremap ^ `
+nnoremap & ^
 
 filetype plugin indent on
 
