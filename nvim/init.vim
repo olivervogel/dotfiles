@@ -120,11 +120,9 @@ require('material').setup({
        "nvim-cmp",
        "telescope",
     },
-    -- custom_colors = function(colors)
-    --     colors.editor.bg = "#263136"
-    --     colors.editor.active = "#2c383c"
-    --     colors.backgrounds.cursor_line = "#303d42"
-    -- end
+    custom_colors = function(colors)
+        colors.editor.disabled = "#2e464b"
+    end
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
