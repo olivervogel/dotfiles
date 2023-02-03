@@ -272,8 +272,8 @@ nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
 
 " navigate changelist with alt-enter / alt-backspace
-nnoremap <a-cr> g,
-nnoremap <a-bs> g;
+nnoremap <c-cr> g,
+nnoremap <c-bs> g;
 
 " repeat last command line command
 nnoremap <Leader>zz @:
