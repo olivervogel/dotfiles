@@ -364,6 +364,13 @@ return {
 		params = i(0, "params"),
 	})),
 
+	s("mount", fmt([[
+	def mount(_params, _session, socket) do
+		{{:ok, socket}}
+	end
+	]], {
+	})),
+
 	s("render", fmt([[
   def render(assigns) do
     ~H"""
