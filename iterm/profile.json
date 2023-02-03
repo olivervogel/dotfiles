@@ -1,12 +1,6 @@
 {
   "Badge Text" : "",
-  "Ansi 5 Color" : {
-    "Red Component" : 0.82745099067687988,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.50980395078659058,
-    "Alpha Component" : 1,
-    "Green Component" : 0.21176470816135406
-  },
+  "Custom Directory" : "No",
   "Working Directory" : "\/Users\/oliver",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -597,13 +591,7 @@
   "Name" : "olivervogel",
   "Blinking Cursor" : false,
   "Guid" : "9B4B67D8-E6D2-4D91-9768-96144B5BF6E2",
-  "Ansi 8 Color" : {
-    "Red Component" : 0,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.21176470816135406,
-    "Alpha Component" : 1,
-    "Green Component" : 0.16862745583057404
-  },
+  "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Red Component" : 0.34509804844856262,
     "Color Space" : "sRGB",
@@ -611,7 +599,13 @@
     "Alpha Component" : 1,
     "Green Component" : 0.43137255311012268
   },
-  "Idle Code" : 0,
+  "Ansi 8 Color" : {
+    "Red Component" : 0,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.21176470816135406,
+    "Alpha Component" : 1,
+    "Green Component" : 0.16862745583057404
+  },
   "Badge Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
@@ -643,7 +637,7 @@
   "Command" : "",
   "Terminal Type" : "xterm-256color",
   "Horizontal Spacing" : 1,
-  "Option Key Sends" : 0,
+  "Option Key Sends" : 2,
   "Only The Default BG Color Uses Transparency" : false,
   "HotKey Window Animates" : true,
   "HotKey Modifier Flags" : 524288,
@@ -690,7 +684,13 @@
 
   ],
   "Visual Bell" : false,
-  "Custom Directory" : "No",
   "ASCII Ligatures" : true,
-  "Thin Strokes" : 0
+  "Thin Strokes" : 0,
+  "Ansi 5 Color" : {
+    "Red Component" : 0.82745099067687988,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.50980395078659058,
+    "Alpha Component" : 1,
+    "Green Component" : 0.21176470816135406
+  }
 }
