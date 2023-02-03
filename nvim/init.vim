@@ -122,6 +122,7 @@ require('material').setup({
     },
     custom_colors = function(colors)
         colors.editor.disabled = "#2e464b"
+        colors.backgrounds.floating_windows = "#162326"
     end
 })
 
