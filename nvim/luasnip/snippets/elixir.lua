@@ -33,7 +33,7 @@ return {
 	-- live view
 	-- -----------------------------------------------------------------------
 
-	s("phx", fmt([[
+	s("modu", fmt([[
 	defmodule {app}Web.{module} do
 		@moduledoc false
 
