@@ -271,9 +271,9 @@ autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
 nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
 
-" navigate changelist with alt-enter / alt-backspace
-nnoremap <c-cr> g,
-nnoremap <c-bs> g;
+" navigate changelist with alt-# and alt-+ on Macos
+nnoremap ‘ g,
+nnoremap ± g;
 
 " repeat last command line command
 nnoremap <Leader>zz @:
