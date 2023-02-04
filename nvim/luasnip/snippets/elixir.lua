@@ -33,26 +33,64 @@ return {
 	-- live view
 	-- -----------------------------------------------------------------------
 
-	s("modu", fmt([[
+	s("modp", fmt([[
 	defmodule {app}Web.{module} do
 		@moduledoc false
 
 	  use {app_use}Web, {type}
-
 		{body}
 	end
 	]], {
 		app = i(1, "Foo"),
 		app_use = rep(1),
-		module = i(2, "Module"),
-		type = c(3, {
+		module = f(function(args, snip)
+			local fn = snip.env.TM_FILENAME
+			local i, j = string.find(fn, "%.")
+			fn = string.sub(fn, 1, j - 1)
+
+			local function title_case_word(s)
+				return string.upper(string.sub(s,1,1))..string.sub(s,2)
+			end
+
+			local function tocamel(s)
+				return (string.gsub(s,"_(%w+)", title_case_word))
+			end
+
+			return title_case_word(tocamel(fn))
+		end, {}),
+		type = c(2, {
 			t(":live_view"),
 			t(":component"),
 			t(":live_component"),
 			t(":controller"),
 			t(":view"),
 		}),
-		body = i(0, ""),
+		body = d(3, function(args)
+			if args[1][1] == ":live_view" or args[1][1] == ":live_component" then
+					return sn(nil, 
+						t({
+							"",
+							"  def render(assigns) do",
+							"    ~H\"\"\"",
+							"    \"\"\"",
+							"  end",
+						})
+					)
+				elseif args[1][1] == ":controller" then
+					return sn(nil, 
+						t({
+							"",
+							"  def index(conn, _params) do",
+							"    render(conn, \"index.html\")",
+							"  end",
+						})
+					)
+				else
+					return sn(nil, {
+						t("")
+					})
+			end
+		end, 2),
 	})),
 
 	-- -----------------------------------------------------------------------
@@ -66,7 +104,7 @@ return {
 	]], {
 		name = i(1, "my_function"),
 		args = i(2, ""),
-		body = i(0, ""),
+		body = i(0),
 	})),
 
 	s("doc", {
