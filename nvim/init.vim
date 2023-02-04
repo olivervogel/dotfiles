@@ -274,8 +274,8 @@ nnoremap <bs> <c-u>
 " navigate changelist
 " nnoremap <M-cr> g,
 " nnoremap <M-BS> g;
-nnoremap ^<cr> g,
-nnoremap ^<bs> g;
+nnoremap … g,
+nnoremap ∞ g;
 
 " repeat last command line command
 nnoremap <Leader>zz @:
