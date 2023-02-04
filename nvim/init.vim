@@ -154,6 +154,9 @@ filetype plugin indent on
 " hidden buffers
 set hidden
 
+" delete buffer and keep split with :Bd
+command Bd bp\|bd \#
+
 " disable swapfile
 set noswapfile
 
@@ -271,11 +274,11 @@ autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
 nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
 
-" navigate changelist
-" nnoremap <M-cr> g,
-" nnoremap <M-BS> g;
-nnoremap … g,
+" navigate back changelist 
+" back with alt-backspace which is mapped by iterm2 to this special
 nnoremap ∞ g;
+" forward with alt-enter
+nnoremap … g,
 
 " repeat last command line command
 nnoremap <Leader>zz @:

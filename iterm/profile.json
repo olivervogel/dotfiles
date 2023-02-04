@@ -1,12 +1,6 @@
 {
   "Badge Text" : "",
-  "Ansi 5 Color" : {
-    "Red Component" : 0.82745099067687988,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.50980395078659058,
-    "Alpha Component" : 1,
-    "Green Component" : 0.21176470816135406
-  },
+  "ASCII Ligatures" : true,
   "Working Directory" : "\/Users\/oliver",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -147,6 +141,12 @@
       "Text" : "d",
       "Label" : ""
     },
+    "0x7f-0x80000-0x33" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "E2 88 9E",
+      "Label" : ""
+    },
     "0xf70e-0x20000-0x0" : {
       "Version" : 0,
       "Action" : 10,
@@ -271,12 +271,6 @@
       "Version" : 0,
       "Action" : 11,
       "Text" : "0x1",
-      "Label" : ""
-    },
-    "0x7f-0x80000-0x0" : {
-      "Version" : 0,
-      "Action" : 11,
-      "Text" : "0x1b 0x7f",
       "Label" : ""
     },
     "0xf703-0x380000-0x7c" : {
@@ -513,6 +507,12 @@
       "Text" : "[1;5A",
       "Label" : ""
     },
+    "0xd-0x80000-0x24" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "E2 80 A6",
+      "Label" : ""
+    },
     "0xd-0x20000-0x24" : {
       "Version" : 1,
       "Action" : 10,
@@ -597,13 +597,7 @@
   "Name" : "olivervogel",
   "Blinking Cursor" : false,
   "Guid" : "9B4B67D8-E6D2-4D91-9768-96144B5BF6E2",
-  "Ansi 8 Color" : {
-    "Red Component" : 0,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.21176470816135406,
-    "Alpha Component" : 1,
-    "Green Component" : 0.16862745583057404
-  },
+  "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Red Component" : 0.34509804844856262,
     "Color Space" : "sRGB",
@@ -611,7 +605,13 @@
     "Alpha Component" : 1,
     "Green Component" : 0.43137255311012268
   },
-  "Idle Code" : 0,
+  "Ansi 8 Color" : {
+    "Red Component" : 0,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.21176470816135406,
+    "Alpha Component" : 1,
+    "Green Component" : 0.16862745583057404
+  },
   "Badge Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
@@ -628,9 +628,10 @@
     "Alpha Component" : 1,
     "Green Component" : 0.21176470816135406
   },
-  "Blur" : true,
+  "Left Option Key Changeable" : true,
   "Normal Font" : "JetBrainsMonoNerdFontComplete-Regular 14",
   "Vertical Spacing" : 1.2,
+  "Blur" : true,
   "Ansi 7 Color" : {
     "Red Component" : 0.93333333730697632,
     "Color Space" : "sRGB",
@@ -691,6 +692,12 @@
   ],
   "Visual Bell" : false,
   "Custom Directory" : "No",
-  "ASCII Ligatures" : true,
-  "Thin Strokes" : 0
+  "Thin Strokes" : 0,
+  "Ansi 5 Color" : {
+    "Red Component" : 0.82745099067687988,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.50980395078659058,
+    "Alpha Component" : 1,
+    "Green Component" : 0.21176470816135406
+  }
 }
