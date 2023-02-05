@@ -275,9 +275,9 @@ nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
 
 " navigate back changelist 
-" back with alt-backspace which is mapped by iterm2 to this special
-nnoremap ∞ g;
-" forward with alt-enter
+" back with alt-backspace
+nnoremap <M-BS> g;
+" forward with alt-enter which is mapped by iterm to special char
 nnoremap … g,
 
 " repeat last command line command

@@ -1,6 +1,12 @@
 {
   "Badge Text" : "",
-  "ASCII Ligatures" : true,
+  "Ansi 5 Color" : {
+    "Red Component" : 0.82745099067687988,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.50980395078659058,
+    "Alpha Component" : 1,
+    "Green Component" : 0.21176470816135406
+  },
   "Working Directory" : "\/Users\/oliver",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -144,7 +150,7 @@
     "0x7f-0x80000-0x33" : {
       "Version" : 1,
       "Action" : 11,
-      "Text" : "E2 88 9E",
+      "Text" : "0x1b 0x7f",
       "Label" : ""
     },
     "0xf70e-0x20000-0x0" : {
@@ -691,13 +697,7 @@
 
   ],
   "Visual Bell" : false,
+  "ASCII Ligatures" : true,
   "Custom Directory" : "No",
-  "Thin Strokes" : 0,
-  "Ansi 5 Color" : {
-    "Red Component" : 0.82745099067687988,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.50980395078659058,
-    "Alpha Component" : 1,
-    "Green Component" : 0.21176470816135406
-  }
+  "Thin Strokes" : 0
 }
