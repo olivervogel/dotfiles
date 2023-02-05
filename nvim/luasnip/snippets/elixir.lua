@@ -471,14 +471,22 @@ return {
 		end, {1}),
 		t(")")
 	}),
-}, {
 
 	-- -----------------------------------------------------------------------
 	-- pipe operator
 	-- -----------------------------------------------------------------------
 
-	s_inline({trig= "(%s?)>>", regTrig = true}, { 
-		t(" |> ")
+	s_inline({trig = "(.*)>>", regTrig = true}, { 
+		f(function(args, snip)
+			local char_before_trigger = snip.captures[1]:sub(-1)
+			if char_before_trigger == " " then
+				return snip.captures[1] .. "|> "
+			else
+				return snip.captures[1] .. " |> "
+			end
+		end, {})
 	}),
+
+}, {
 
 }
