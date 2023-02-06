@@ -145,7 +145,7 @@ return {
 	-- ifelse condition
 	-- -----------------------------------------------------------------------
 
-	s("ifelse", fmt([[
+	s("ife", fmt([[
 	if {condition} do
 		{body}
 	else
