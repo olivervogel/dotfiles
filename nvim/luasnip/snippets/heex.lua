@@ -10,6 +10,13 @@ return {
 		value = i(0),
 	})),
 
+	s_inline("eor", fmt([[
+	<%= assigns[:{key}] || "{default}" %>
+	]], {
+		key = i(1, "key"),
+		default = i(0, "Default"),
+	})),
+
 	s_inline("raw", fmt([[
 	<%= raw "{value}" %>
 	]], {
