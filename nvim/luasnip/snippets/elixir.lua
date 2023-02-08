@@ -108,6 +108,14 @@ return {
 		body = i(0),
 	})),
 
+	s_inline("fn", {
+		t("fn "),
+		i(1, "value"),
+		t(" -> "),
+		i(0),
+		t(" end")
+	}),
+
 	s("doc", {
 		t({"@doc \"\"\"", ""}),
 		i(0),
