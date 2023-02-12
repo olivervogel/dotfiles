@@ -468,6 +468,13 @@ return {
 	]], {
 	})),
 
+	s("update", fmt([[
+	def update(_assigns, socket) do
+		{{:ok, socket}}
+	end
+	]], {
+	})),
+
 	s("render", fmt([[
   def render(assigns) do
     ~H"""
