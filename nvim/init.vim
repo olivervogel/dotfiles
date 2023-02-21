@@ -56,8 +56,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " seamless navigation between vim & tmux
     Plug 'christoomey/vim-tmux-navigator'
 
-    Plug 'karb94/neoscroll.nvim'
-
 call plug#end()
 
 " -----------------------------------------------------------------------------
@@ -690,17 +688,6 @@ end
 vim.api.nvim_command([[
     autocmd ModeChanged * lua maybe_leave_snippet()
 ]])
-
-require('neoscroll').setup({})
-
-local t = {}
-t['<bs>'] = {'scroll', {'-vim.wo.scroll', 'true', '120', [['sine']]}}
-t['<enter>'] = {'scroll', { 'vim.wo.scroll', 'true', '120', [['sine']]}}
-t['zz']    = {'zz', {'120'}}
-t['zt']    = {'zt', {'120'}}
-t['zb']    = {'zb', {'120'}}
-
-require('neoscroll.config').set_mappings(t)
 EOF
 
 " telescope settings
