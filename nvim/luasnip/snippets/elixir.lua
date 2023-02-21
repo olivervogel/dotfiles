@@ -560,7 +560,7 @@ return {
 		end, {})
 	}),
 
-	s_inline("ff", {
+	s_inline("&&", {
 		t("&(&1"),
 		i(0),
 		t(")")
