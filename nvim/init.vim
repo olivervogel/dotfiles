@@ -62,9 +62,9 @@ call plug#end()
 " file types 
 " -----------------------------------------------------------------------------
 
-" *.vue should be handled as javascript
-au BufRead,BufNewFile *.vue set filetype=javascript
-au BufRead,BufNewFile *.vue set syntax=javascript
+" *.vue should be handled as html
+au BufRead,BufNewFile *.vue set filetype=html
+au BufRead,BufNewFile *.vue set syntax=html
 
 " *.blade should be handled as html
 au BufRead,BufNewFile *.blade.php set filetype=html
