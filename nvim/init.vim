@@ -578,6 +578,12 @@ cmp.setup({
         ['<c-u>'] = cmp.mapping.scroll_docs(-4),
         ['<c-d>'] = cmp.mapping.scroll_docs(4),
         ['<esc>'] = cmp.mapping.abort(),
+        ['<c-n>'] = {
+            i = cmp.config.disable
+        },
+        ['<c-p>'] = {
+            i = cmp.config.disable
+        }
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
