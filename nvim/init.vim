@@ -70,6 +70,9 @@ au BufRead,BufNewFile *.vue set syntax=html
 au BufRead,BufNewFile *.blade.php set filetype=html
 au BufRead,BufNewFile *.blade.php set syntax=html
 
+" syntax needs to be on for php files to keep indentation correct
+au BufRead,BufNewFile *.php set syntax=on
+
 " -----------------------------------------------------------------------------
 " base settings 
 " -----------------------------------------------------------------------------
@@ -168,7 +171,7 @@ set smartcase
 set expandtab
 set tabstop=4
 set softtabstop=4
-set shiftwidth=4
+set shiftwidth=0
 set autoindent
 set copyindent
 
@@ -266,9 +269,6 @@ noremap <leader><leader> :nohl<cr>
 nmap <Leader>sc yiw:%s/<c-r>0//g<Left><Left>
 nmap <Leader>ss :%s//g<Left><Left>
 nmap <Leader>sl :s//g<Left><Left>
-
-" run current buffer as php script
-autocmd FileType php noremap <leader>p :w!<cr>:!/opt/homebrew/bin/php %<cr>
 
 " scroll up/down with backspace/enter
 nnoremap <cr> <c-d>
