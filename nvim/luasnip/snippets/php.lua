@@ -246,7 +246,7 @@ return {
 	
 	s("pp", fmt([[
 	echo "<pre>";
-	var_dump(${var})
+	var_dump(${var});
 	echo "</pre>";
 	exit;
 	]], {
