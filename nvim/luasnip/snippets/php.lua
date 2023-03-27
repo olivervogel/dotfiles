@@ -131,7 +131,7 @@ return {
 	s("try", fmt([[
 	try {{
 		{body}
-	}} catch(Exception $e) {{
+	}} catch (Exception $e) {{
 		# code ...
 	}}
 	]], {
