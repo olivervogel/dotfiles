@@ -39,9 +39,9 @@ return {
 
 	s("class", fmt([[
 	class {name} {{
-        constructor() {{
-            {body}
-        }}
+		constructor() {{
+			{body}
+		}}
 	}}
 	]], {
 		name = i(1, "ClassName"),
