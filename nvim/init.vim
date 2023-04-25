@@ -699,6 +699,7 @@ ls.config.setup({
 })
 
 ls.filetype_extend("heex", {"html"})
+ls.filetype_extend("typescript", {"javascript"})
 
 function maybe_leave_snippet()
     if
