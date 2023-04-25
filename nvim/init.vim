@@ -389,6 +389,11 @@ require('lspconfig').elixirls.setup {
     on_attach = on_attach
 }
 
+-- typescript lsp
+require('lspconfig').tsserver.setup {
+    on_attach = on_attach
+}
+
 -- LSP diagnostic config
 vim.diagnostic.config({
     severity_sort = true,
@@ -517,7 +522,8 @@ require('nvim-treesitter.configs').setup {
         "elixir",
         "heex",
         "lua",
-        "cpp"
+        "cpp",
+        "typescript"
     },
     highlight = {
         enable = true,
