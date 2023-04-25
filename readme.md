@@ -31,6 +31,12 @@
 - [renameutils](https://www.nongnu.org/renameutils/)
 - [delta](https://github.com/dandavison/delta)
 
+## Language Servers
+
+- [intelephense](https://intelephense.com)
+- [elixir-ls](https://github.com/elixir-lsp/elixir-ls)
+- [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server)
+
 ## Keyboard Layout
 
 Depending on the region, it is possible that keyboards have so-called dead keys. For software developers, this can lead to undesired input behavior. Especially the keyboards with ISO-DE layout have annoying dead keys which unnecessarily negatively affect the workflow in Neovim.
