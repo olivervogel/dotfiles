@@ -62,10 +62,6 @@ call plug#end()
 " file types 
 " -----------------------------------------------------------------------------
 
-" *.vue should be handled as html
-au BufRead,BufNewFile *.vue set filetype=html
-au BufRead,BufNewFile *.vue set syntax=html
-
 " *.blade should be handled as html
 au BufRead,BufNewFile *.blade.php set filetype=html
 au BufRead,BufNewFile *.blade.php set syntax=html
@@ -628,6 +624,7 @@ ls.config.setup({
     ft_func = require("luasnip.extras.filetype_functions").from_pos_or_filetype,
     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
         html = {"javascript", "php"}, -- also load javascript for html context
+        vue = {"javascript", "typescript", "html"},
         elixir = {"heex"},
     }),
     snip_env = {
@@ -699,6 +696,7 @@ ls.config.setup({
 })
 
 ls.filetype_extend("heex", {"html"})
+ls.filetype_extend("vue", {"html"})
 ls.filetype_extend("typescript", {"javascript"})
 
 function maybe_leave_snippet()
