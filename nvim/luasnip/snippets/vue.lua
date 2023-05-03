@@ -10,6 +10,8 @@ return {
     </template>
 
     <script>
+    export default {{
+    }}
     </script>
     ]], {
         template = i(0),
