@@ -31,12 +31,12 @@ return {
 		body = i(0, "//")
 	})),
 
-	s("fn", fmt([[
-	({args}) => {{
+	s_inline("fn", fmt([[
+	{args} => {{
 		{body}
 	}}
 	]], {
-		args = i(1, "arguments"),
+		args = i(1, "args"),
 		body = i(0, "//")
 	})),
 	
@@ -76,6 +76,12 @@ return {
 		name = i(1, "ClassName"),
 		body = i(0, "//")
 	})),
+
+	s("prom", {
+		t("new Promise("),
+		i(0),
+		t(")")
+	}),
 
 	-- -----------------------------------------------------------------------
 	-- import
