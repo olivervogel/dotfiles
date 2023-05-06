@@ -77,6 +77,42 @@ return {
 		body = i(0, "//")
 	})),
 
+	s("met", fmt([[
+	{visibility}{name}({args}) {{
+		{body}
+	}}
+	]], {
+		name = i(1, "myMethod"),
+		args = i(2),
+		visibility = c(3, {
+			t(""),
+			t("public "),
+			t("protected "),
+			t("private "),
+		}),
+		body = i(0, "//")
+	})),
+
+	s("get", fmt([[
+	get {name}() {{
+		{body}
+	}}
+	]], {
+		name = i(1, "myGetter"),
+		body = i(0, "//")
+	})),
+
+	s("set", fmt([[
+	set {name}({args}) {{
+		this.{member} = {mval};
+	}}
+	]], {
+		name = i(1, "mySetter"),
+		args = i(2, "value"),
+		member = rep(2),
+		mval = rep(2),
+	})),
+
 	s("prom", {
 		t("new Promise("),
 		i(0),
