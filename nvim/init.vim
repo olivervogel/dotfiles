@@ -321,6 +321,23 @@ nnoremap <silent><leader>7 <cmd>lua require("bufferline").go_to_buffer(7, true)<
 nnoremap <silent><leader>8 <cmd>lua require("bufferline").go_to_buffer(8, true)<cr>
 nnoremap <silent><leader>9 <cmd>lua require("bufferline").go_to_buffer(9, true)<cr>
 
+" toggle quickfix list
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+" bind toggle quickfix list
+nnoremap <silent><F2> :call ToggleQuickFix()<cr>
+
+" switch to next item in quickfix list with alt-q
+nnoremap <silent>« :cnext<cr>
+" switch to prev. item in quickfix list with alt-shift-q
+nnoremap <silent>» :cprev<cr>
+
 " -----------------------------------------------------------------------------
 " plugin settings
 " -----------------------------------------------------------------------------
