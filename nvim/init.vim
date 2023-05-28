@@ -338,6 +338,9 @@ nnoremap <silent>« :cnext<cr>
 " switch to prev. item in quickfix list with alt-shift-q
 nnoremap <silent>» :cprev<cr>
 
+" reload file to saved state
+nnoremap <silent><F5> :e!<cr>
+
 " -----------------------------------------------------------------------------
 " plugin settings
 " -----------------------------------------------------------------------------
