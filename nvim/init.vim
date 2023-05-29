@@ -331,12 +331,12 @@ function! ToggleQuickFix()
 endfunction
 
 " bind toggle quickfix list
-nnoremap <silent><F2> :call ToggleQuickFix()<cr>
+nnoremap <silent>» :call ToggleQuickFix()<cr>
 
 " switch to next item in quickfix list with alt-q
 nnoremap <silent>« :cnext<cr>
 " switch to prev. item in quickfix list with alt-shift-q
-nnoremap <silent>» :cprev<cr>
+nnoremap <silent>å :cprev<cr>
 
 " reload file to saved state
 nnoremap <silent><F5> :e!<cr>
