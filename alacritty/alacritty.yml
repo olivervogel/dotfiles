@@ -1,6 +1,7 @@
+alt_send_esc: false
 window:
   dimensions:
-    columns: 284
+    columns: 260
     lines: 62
   opacity: 0.95
   decorations: none
@@ -33,9 +34,10 @@ key_bindings:
   - {key: Left, mods: Control|Command|Option, chars: "\x1b[1;2D"} # tmux previous session
   - {key: Return, mods: Command|Option, chars: "\x1f"} # vim changelist navigation
   - {key: Return, mods: Option, chars: "…"} # tmux zoom pane
-  - { key: Left, mods: Alt, chars: "\x1bb"} # Skip word left
-  - { key: Right, mods: Alt, chars: "\x1bf"} # Skip word right
-  - { key: Left, mods: Command, chars: "\x1bOH", mode: AppCursor} # Home
-  - { key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor} # End
-  - { key: Back, mods: Command, chars: "\x15"} # Delete line
-  - { key: Back, mods: Alt, chars: "\x1b\x7f"} # Delete word
+  - {key: Return, mods: Shift, chars: "\x1b[13;2u"} # shift-enter
+  - {key: Left, mods: Alt, chars: "\x1bb"} # Skip word left
+  - {key: Right, mods: Alt, chars: "\x1bf"} # Skip word right
+  - {key: Left, mods: Command, chars: "\x1bOH", mode: AppCursor} # Home
+  - {key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor} # End
+  - {key: Back, mods: Command, chars: "\x15"} # Delete line
+  - {key: Back, mods: Alt, chars: "\x1b\x7f"} # Delete word 
