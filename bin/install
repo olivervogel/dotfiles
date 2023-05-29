@@ -10,6 +10,7 @@ ln -nfs $DOTFILESDIR/p10k           ~/.config/p10k
 ln -nfs $DOTFILESDIR/tmux           ~/.config/tmux
 ln -nfs $DOTFILESDIR/nvim           ~/.config/nvim
 ln -nfs $DOTFILESDIR/git            ~/.config/git
+ln -nfs $DOTFILESDIR/alacritty      ~/.config/alacritty
 
 ln -nfs $DOTFILESDIR/rc/zshrc       ~/.zshrc
 ln -nfs $DOTFILESDIR/rc/p10k.zsh    ~/.p10k.zsh
