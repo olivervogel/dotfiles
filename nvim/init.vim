@@ -201,8 +201,8 @@ set pumheight=10
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " cycle popup with c-space or j or k
-inoremap <expr> j pumvisible() ? "\<c-n>" : "j"
-inoremap <expr> k pumvisible() ? "\<c-p>" : "k"
+" inoremap <expr> j pumvisible() ? "\<c-n>" : "j"
+" inoremap <expr> k pumvisible() ? "\<c-p>" : "k"
 
 " keep visual mode active after indenting
 vmap > >gv
@@ -584,35 +584,26 @@ local cmp = require'cmp'
 
 cmp.setup({
     completion = {
-        autocomplete = false
+        -- autocomplete = false
     },
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-        ['<c-space>'] = cmp.mapping.complete(),
         ['<cr>'] = cmp.mapping.confirm({ select = true }),
-        ["<c-j>"] = cmp.mapping(function()
-            if cmp.visible() then
-                cmp.select_next_item()
-            end
-        end, { "i", "s" }),
+        ['<c-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<c-d>'] = cmp.mapping.scroll_docs(4),
         ["<c-k>"] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.select_prev_item()
             end
         end, { "i", "s" }),
-        ["<c-space>"] = cmp.mapping(function()
+        ["<c-j>"] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.select_next_item()
-            else
-                cmp.complete()
             end
         end, { "i", "s" }),
-        ['<c-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<c-d>'] = cmp.mapping.scroll_docs(4),
-        ['<esc>'] = cmp.mapping.abort(),
         ['<c-n>'] = {
             i = cmp.config.disable
         },
@@ -621,9 +612,9 @@ cmp.setup({
         }
     }),
     sources = cmp.config.sources({
+        { name = 'buffer' },
         { name = 'nvim_lsp' },
     }, {
-        { name = 'buffer' },
     })
 })
 
