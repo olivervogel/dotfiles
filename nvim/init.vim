@@ -579,46 +579,10 @@ phpcs.args = {
 -- enable numToStr/Comment plugin
 require('Comment').setup()
 
--- nvim-cmp config
-local cmp = require'cmp'
-
-cmp.setup({
-    completion = {
-        -- autocomplete = false
-    },
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-        ['<cr>'] = cmp.mapping.confirm({ select = true }),
-        ['<c-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<c-d>'] = cmp.mapping.scroll_docs(4),
-        ["<c-k>"] = cmp.mapping(function()
-            if cmp.visible() then
-                cmp.select_prev_item()
-            end
-        end, { "i", "s" }),
-        ["<c-j>"] = cmp.mapping(function()
-            if cmp.visible() then
-                cmp.select_next_item()
-            end
-        end, { "i", "s" }),
-        ['<c-n>'] = {
-            i = cmp.config.disable
-        },
-        ['<c-p>'] = {
-            i = cmp.config.disable
-        }
-    }),
-    sources = cmp.config.sources({
-        { name = 'buffer' },
-        { name = 'nvim_lsp' },
-    }, {
-    })
-})
-
+-- ----------------------------------------------
 -- snippet settings
+-- ----------------------------------------------
+
 local ls = require("luasnip")
 local ls_types = require("luasnip.util.types")
 local snippet_node = require("luasnip.nodes.snippet").S
@@ -724,6 +688,67 @@ end
 vim.api.nvim_command([[
     autocmd ModeChanged * lua maybe_leave_snippet()
 ]])
+
+-- ----------------------------------------------
+-- nvim-cmp config
+-- ----------------------------------------------
+local cmp = require'cmp'
+
+cmp.setup({
+    completion = {
+        -- autocomplete = false
+    },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<cr>'] = cmp.mapping.confirm({ select = true }),
+        ['<c-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<c-d>'] = cmp.mapping.scroll_docs(4),
+        ["<c-p>"] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif ls.choice_active() then
+                ls.change_choice(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+        ["<c-n>"] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif ls.choice_active() then
+                ls.change_choice(1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+        -- ['<c-n>'] = {
+        --     i = cmp.config.disable
+        -- },
+        -- ['<c-p>'] = {
+        --     i = cmp.config.disable
+        -- },
+        ['<c-space>'] = cmp.config.disable 
+    }),
+    sources = cmp.config.sources({
+        {
+            name = 'buffer',
+            option = {
+                get_bufnrs = function()
+                    -- search all buffers
+                    return vim.api.nvim_list_bufs()
+                end
+            }
+        },
+        {
+            name = 'nvim_lsp'
+        },
+    }, {
+    })
+})
+
 EOF
 
 " telescope settings
@@ -753,7 +778,7 @@ snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 
 " For changing choices in choiceNodes
-imap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
-smap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
-imap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'
-smap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'
+" imap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
+" smap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
+" imap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'
+" smap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'

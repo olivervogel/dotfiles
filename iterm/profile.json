@@ -255,6 +255,12 @@
       "Text" : "0x1e",
       "Label" : ""
     },
+    "0x20-0x40000-0x31" : {
+      "Version" : 1,
+      "Action" : 13,
+      "Text" : "",
+      "Label" : ""
+    },
     "0xf701-0x380000-0x7d" : {
       "Version" : 1,
       "Action" : 10,
