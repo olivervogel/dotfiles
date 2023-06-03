@@ -341,6 +341,9 @@ nnoremap <silent>˛ :cprev<cr>
 " reload file to saved state
 nnoremap <silent><F5> :e!<cr>
 
+" delete buffer (option-shift-[w])
+nnoremap <silent>„ :bd<cr>
+
 " -----------------------------------------------------------------------------
 " plugin settings
 " -----------------------------------------------------------------------------
