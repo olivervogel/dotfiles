@@ -17,7 +17,10 @@ return {
 	s("class", fmt([[
 	class {name}{extends}
 	{{
-		{body}
+		public function __construct()
+		{{
+			{body}
+		}}
 	}}
 	]], {
 		name = i(1, "ClassName"),
@@ -159,8 +162,21 @@ return {
 				i(2, "value"),
 			})
 		}),
-		body = i(0, "# code"),
+		body = i(0, "//"),
 	})),
+
+	s("for", fmt([[
+	for (${var1} = 0; ${var2} < {count}; ${var3}++) {{
+		{body}
+	}}
+	]], {
+		var1 = i(1, "i"),
+		var2 = rep(1),
+		var3 = rep(1),
+		count = i(2, "9"),
+		body = i(0, "//"),
+	})),
+
 
 	-- -----------------------------------------------------------------------
 	-- try/catch
