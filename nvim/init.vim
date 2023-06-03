@@ -423,25 +423,6 @@ vim.diagnostic.config({
     virtual_text = false
 })
 
--- print diagnostic info in message area
--- function PrintDiagnostics(opts, bufnr, line_nr, client_id)
---     bufnr = bufnr or 0
---     line_nr = line_nr or (vim.api.nvim_win_get_cursor(0)[1] - 1)
---     opts = opts or {['lnum'] = line_nr}
---
---     local line_diagnostics = vim.diagnostic.get(bufnr, opts)
---     if vim.tbl_isempty(line_diagnostics) then return end
---     local diagnostic_message = ""
---     for i, diagnostic in ipairs(line_diagnostics) do
---         if i == 1 then
---             diagnostic_message = diagnostic_message .. string.format("%d: %s", i, diagnostic.message or "")
---             print(diagnostic_message)
---         end
---     end
---     vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
--- end
--- vim.cmd [[ autocmd! CursorHold * lua PrintDiagnostics() ]]
-
 -- show diagnostic warning with line highlighting instead of symbol
 vim.cmd [[
     highlight! DiagnosticLineNrError guibg=#51202A guifg=#FF0000 gui=bold
@@ -729,12 +710,6 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-        -- ['<c-n>'] = {
-        --     i = cmp.config.disable
-        -- },
-        -- ['<c-p>'] = {
-        --     i = cmp.config.disable
-        -- },
         ['<c-space>'] = cmp.config.disable 
     }),
     sources = cmp.config.sources({
@@ -753,7 +728,6 @@ cmp.setup({
     }, {
     })
 })
-
 EOF
 
 " telescope settings
@@ -781,9 +755,3 @@ nnoremap <c-f> :Telescope oldfiles<cr>
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
-
-" For changing choices in choiceNodes
-" imap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
-" smap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-n>'
-" imap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'
-" smap <silent><expr> <C-p> luasnip#choice_active() ? '<Plug>luasnip-prev-choice' : '<C-p>'
