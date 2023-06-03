@@ -66,6 +66,8 @@ call plug#end()
 au BufRead,BufNewFile *.blade.php set filetype=html
 au BufRead,BufNewFile *.blade.php set syntax=html
 
+au BufRead,BufNewFile *.ss set filetype=silverstripe
+
 " syntax needs to be on for php files to keep indentation correct
 au BufRead,BufNewFile *.php set syntax=on
 
@@ -658,6 +660,7 @@ ls.config.setup({
 ls.filetype_extend("heex", {"html"})
 ls.filetype_extend("vue", {"html"})
 ls.filetype_extend("typescript", {"javascript"})
+ls.filetype_extend("silverstripe", {"html", "silverstripe"})
 
 function maybe_leave_snippet()
     if
@@ -728,6 +731,7 @@ cmp.setup({
     }, {
     })
 })
+
 EOF
 
 " telescope settings
