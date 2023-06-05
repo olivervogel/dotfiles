@@ -367,11 +367,7 @@ require("bufferline").setup{
 require("toggleterm").setup{
     open_mapping = [[<f1>]],
     direction = "float",
-    shade_terminals = true,
     float_opts = {
-        border = "none",
-        width = 500,
-        height = 500,
         highlights = {
             background = "Pmenu",
         }
