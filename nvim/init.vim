@@ -685,7 +685,7 @@ local cmp = require'cmp'
 cmp.setup({
     completion = {
         -- autocomplete = false
-        keyword_length = 3
+        keyword_length = 2
     },
     window = {
         completion = cmp.config.window.bordered(),
