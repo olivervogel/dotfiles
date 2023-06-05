@@ -238,6 +238,7 @@ EOF
 
 " navigate windows
 let g:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_preserve_zoom = 1
 
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
