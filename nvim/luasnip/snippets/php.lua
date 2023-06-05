@@ -245,7 +245,7 @@ return {
 
 	s("use", {
 		t("use "),
-		i(0),
+		i(0, "TraitName"),
 		t(";")
 	}),
 
