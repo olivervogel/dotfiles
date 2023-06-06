@@ -242,6 +242,7 @@ return {
 	s("rett", {
 		t("return $"),
 		i(1, "this"),
+		i(0),
 		t(";")
 	}),
 
