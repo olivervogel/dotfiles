@@ -31,6 +31,10 @@
 - [renameutils](https://www.nongnu.org/renameutils/)
 - [delta](https://github.com/dandavison/delta)
 
+## Font
+
+- [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads)
+
 ## Language Servers
 
 - [intelephense](https://intelephense.com)
