@@ -692,7 +692,7 @@ cmp.setup({
         ['<cr>'] = cmp.mapping.confirm({ select = true }),
         ['<c-u>'] = cmp.mapping.scroll_docs(-4),
         ['<c-d>'] = cmp.mapping.scroll_docs(4),
-        ["<c-p>"] = cmp.mapping(function()
+        ["<c-p>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif ls.choice_active() then
@@ -701,7 +701,7 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-        ["<c-n>"] = cmp.mapping(function()
+        ["<c-n>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif ls.choice_active() then
