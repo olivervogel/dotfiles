@@ -752,6 +752,10 @@ nnoremap <leader>fm :Telescope marks<cr>
 nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
 nnoremap <c-f> :Telescope oldfiles<cr>
 
+" run commands in certain tmux pane (experimental)
+nnoremap <silent> <leader>ts :silent !tmux send -t 1 'docker-compose run --rm tests' Enter<cr>
+nnoremap <silent> <leader>bb :silent !tmux send -t 1 'docker-compose exec app php app/vendor/silverstripe/framework/cli-script.php dev/build' Enter<cr>
+
 " snippet mappings
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
