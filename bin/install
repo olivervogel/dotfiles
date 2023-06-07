@@ -17,3 +17,5 @@ ln -nfs $DOTFILESDIR/rc/p10k.zsh    ~/.p10k.zsh
 ln -nfs $DOTFILESDIR/rc/tmux.conf   ~/.tmux.conf
 
 touch ~/.hushlogin
+
+defaults write -g NSWindowShouldDragOnGesture -bool true
