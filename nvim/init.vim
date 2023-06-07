@@ -754,7 +754,7 @@ nnoremap <c-f> :Telescope oldfiles<cr>
 
 " run commands in certain tmux pane (experimental)
 nnoremap <silent> <leader>ts :silent !tmux send -t 1 'docker-compose run --rm tests' Enter<cr>
-nnoremap <silent> <leader>bb :silent !tmux send -t 1 'docker-compose exec app php app/vendor/silverstripe/framework/cli-script.php dev/build' Enter<cr>
+nnoremap <silent> <leader>bb :silent !tmux send -t 1 'docker-compose exec --user=www-data app php app/vendor/silverstripe/framework/cli-script.php dev/build "flush=1"' Enter<cr>
 
 " snippet mappings
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
