@@ -28,9 +28,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " code commenting
     Plug 'numToStr/Comment.nvim'
 
-    " terminal inside vim
-    Plug 'akinsho/toggleterm.nvim'
-
     " language server setup
     Plug 'neovim/nvim-lspconfig'
 
@@ -360,17 +357,6 @@ require("bufferline").setup{
         show_tab_indicators = false,
         sort_by = "insert_at_end",
         numbers = "ordinal"
-    }
-}
-
---  Toggleterm setup
-require("toggleterm").setup{
-    open_mapping = [[<f1>]],
-    direction = "float",
-    float_opts = {
-        highlights = {
-            background = "Pmenu",
-        }
     }
 }
 
