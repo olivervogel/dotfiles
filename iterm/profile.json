@@ -1,12 +1,6 @@
 {
   "Badge Text" : "",
-  "Ansi 5 Color" : {
-    "Red Component" : 0.82745099067687988,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.50980395078659058,
-    "Alpha Component" : 1,
-    "Green Component" : 0.21176470816135406
-  },
+  "Custom Directory" : "No",
   "Working Directory" : "\/Users\/oliver",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -16,7 +10,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.63137257099151611
   },
-  "Rows" : 61,
+  "Rows" : 64,
   "Ansi 11 Color" : {
     "Red Component" : 0.3960784375667572,
     "Color Space" : "sRGB",
@@ -698,12 +692,18 @@
     "Alpha Component" : 1,
     "Green Component" : 0.44313725829124451
   },
-  "Columns" : 315,
+  "Columns" : 318,
   "HotKey Alternate Shortcuts" : [
 
   ],
   "Visual Bell" : false,
   "ASCII Ligatures" : true,
-  "Custom Directory" : "No",
-  "Thin Strokes" : 0
+  "Thin Strokes" : 0,
+  "Ansi 5 Color" : {
+    "Red Component" : 0.82745099067687988,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.50980395078659058,
+    "Alpha Component" : 1,
+    "Green Component" : 0.21176470816135406
+  }
 }
