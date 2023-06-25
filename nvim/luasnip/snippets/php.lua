@@ -351,10 +351,10 @@ return {
 	
 	s("pp", fmt([[
 	echo "<pre>";
-	var_dump({var});
+	var_dump(${var});
 	echo "</pre>";
 	exit;
 	]], {
-		var = i(0, "$data"),
+		var = i(1, "data"),
 	})),
 }
