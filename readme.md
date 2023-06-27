@@ -30,6 +30,7 @@
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [renameutils](https://www.nongnu.org/renameutils/)
 - [delta](https://github.com/dandavison/delta)
+- [jq](https://jqlang.github.io/jq/)
 
 ## Font
 
