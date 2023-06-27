@@ -216,9 +216,6 @@ augroup END
 " hide explore banner
 let g:netrw_banner=0
 
-" treat words with dash as whole word
-set iskeyword+=-
-
 lua << EOF
 -- Restore cursor position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
