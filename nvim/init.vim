@@ -341,6 +341,10 @@ nnoremap <silent><F5> :e!<cr>
 " delete buffer (option-shift-[w])
 nnoremap <silent>„ :bd<cr>
 
+" add semicolor to end of line (option-shift-a)
+nnoremap <silent>Å A;<esc>
+inoremap <silent>Å <esc>A;<esc>
+
 " -----------------------------------------------------------------------------
 " plugin settings
 " -----------------------------------------------------------------------------
