@@ -68,6 +68,9 @@ au BufRead,BufNewFile *.ss set filetype=silverstripe
 " syntax needs to be on for php files to keep indentation correct
 au BufRead,BufNewFile *.php set syntax=on
 
+" Makefiles need tab indentation
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
 " -----------------------------------------------------------------------------
 " base settings 
 " -----------------------------------------------------------------------------
