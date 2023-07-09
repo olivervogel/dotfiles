@@ -60,10 +60,11 @@ call plug#end()
 " -----------------------------------------------------------------------------
 
 " *.blade should be handled as html
-au BufRead,BufNewFile *.blade.php set filetype=html
+" au BufRead,BufNewFile *.blade.php set filetype=html
 au BufRead,BufNewFile *.blade.php set syntax=html
 
-au BufRead,BufNewFile *.ss set filetype=silverstripe
+" *.ss (silverstripe) should be syntaxed as html
+au BufRead,BufNewFile *.ss set syntax=html
 
 " syntax needs to be on for php files to keep indentation correct
 au BufRead,BufNewFile *.php set syntax=on
@@ -574,7 +575,7 @@ ls.config.setup({
     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
         html = {"javascript", "php"}, -- also load javascript for html context
         vue = {"javascript", "typescript", "html"},
-        elixir = {"heex"},
+        elixir = {"heex"}
     }),
     snip_env = {
         -- just copied because of https://github.com/L3MON4D3/LuaSnip/issues/566#issuecomment-1233022044
@@ -647,7 +648,7 @@ ls.config.setup({
 ls.filetype_extend("heex", {"html"})
 ls.filetype_extend("vue", {"html"})
 ls.filetype_extend("typescript", {"javascript"})
-ls.filetype_extend("silverstripe", {"html", "silverstripe"})
+ls.filetype_extend("html", {"silverstripe"})
 
 function maybe_leave_snippet()
     if
@@ -717,6 +718,14 @@ cmp.setup({
         },
     }, {
     })
+})
+
+vim.filetype.add({
+    extension = {
+        ss = function(path, bufnr)
+            return 'html.silverstripe'
+        end,
+    }
 })
 
 EOF
