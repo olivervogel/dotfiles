@@ -474,10 +474,10 @@ require('telescope').setup {
     extensions = {
         file_browser = {
             file_ignore_patterns = {
-                ".git",
-                ".elixir_ls",
-                ".DS_Store",
-                ".cache"
+                "%.git",
+                "%.elixir_ls",
+                "%.DS_Store",
+                "%.cache"
             },
             hidden = true,
             grouped = true,
