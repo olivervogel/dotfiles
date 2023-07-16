@@ -39,7 +39,6 @@
 ## Language Servers
 
 - [intelephense](https://intelephense.com)
-- [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server)
 
 ## Keyboard Layout
 

@@ -392,11 +392,6 @@ require('lspconfig').intelephense.setup {
     on_attach = on_attach
 }
 
--- typescript lsp
-require('lspconfig').tsserver.setup {
-    on_attach = on_attach
-}
-
 -- LSP diagnostic config
 vim.diagnostic.config({
     severity_sort = true,
@@ -500,8 +495,7 @@ require('nvim-treesitter.configs').setup {
         "scss",
         "markdown",
         "lua",
-        "cpp",
-        "typescript"
+        "cpp"
     },
     highlight = {
         enable = true,
@@ -561,7 +555,7 @@ ls.config.setup({
     ft_func = require("luasnip.extras.filetype_functions").from_pos_or_filetype,
     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
         html = {"javascript", "php"}, -- also load javascript for html context
-        vue = {"javascript", "typescript", "html"}
+        vue = {"javascript", "html"}
     }),
     snip_env = {
         -- just copied because of https://github.com/L3MON4D3/LuaSnip/issues/566#issuecomment-1233022044
@@ -632,7 +626,6 @@ ls.config.setup({
 })
 
 ls.filetype_extend("vue", {"html"})
-ls.filetype_extend("typescript", {"javascript"})
 ls.filetype_extend("html", {"silverstripe"})
 
 function maybe_leave_snippet()
