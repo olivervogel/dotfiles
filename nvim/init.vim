@@ -392,12 +392,6 @@ require('lspconfig').intelephense.setup {
     on_attach = on_attach
 }
 
--- elixir lsp
-require('lspconfig').elixirls.setup {
-    cmd = {"/Users/oliver/elixir-ls/language_server.sh"},
-    on_attach = on_attach
-}
-
 -- typescript lsp
 require('lspconfig').tsserver.setup {
     on_attach = on_attach
@@ -438,10 +432,7 @@ require('telescope').setup {
             ".git/",
             ".vscode/",
             ".cache/",
-            "priv/static/assets/",
             ".gitkeep",
-            ".elixir_ls",
-            "_build"
         },
         vimgrep_arguments = {
             'rg',
@@ -475,7 +466,6 @@ require('telescope').setup {
         file_browser = {
             file_ignore_patterns = {
                 "%.git",
-                "%.elixir_ls",
                 "%.DS_Store",
                 "%.cache"
             },
@@ -509,9 +499,6 @@ require('nvim-treesitter.configs').setup {
         "css",
         "scss",
         "markdown",
-        "erlang",
-        "elixir",
-        "heex",
         "lua",
         "cpp",
         "typescript"
@@ -574,8 +561,7 @@ ls.config.setup({
     ft_func = require("luasnip.extras.filetype_functions").from_pos_or_filetype,
     load_ft_func = require("luasnip.extras.filetype_functions").extend_load_ft({
         html = {"javascript", "php"}, -- also load javascript for html context
-        vue = {"javascript", "typescript", "html"},
-        elixir = {"heex"}
+        vue = {"javascript", "typescript", "html"}
     }),
     snip_env = {
         -- just copied because of https://github.com/L3MON4D3/LuaSnip/issues/566#issuecomment-1233022044
@@ -645,7 +631,6 @@ ls.config.setup({
     },
 })
 
-ls.filetype_extend("heex", {"html"})
 ls.filetype_extend("vue", {"html"})
 ls.filetype_extend("typescript", {"javascript"})
 ls.filetype_extend("html", {"silverstripe"})
