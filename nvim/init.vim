@@ -737,3 +737,13 @@ nnoremap <silent> <leader>bb :silent !tmux send -t 1 'docker-compose exec --user
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+" register mappings
+noremap <f5> "w
+noremap <f6> "e
+noremap <f7> "r
+noremap <f8> "t
+imap <f5> <c-r>w
+imap <f6> <c-r>e
+imap <f7> <c-r>r
+imap <f8> <c-r>t
