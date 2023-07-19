@@ -59,8 +59,14 @@ return {
 		t("')"),
 	}),
 	
+	s("yld", { 
+		t("@yield('"),
+		i(1, "section"),
+		t("')"),
+	}),
+	
 	s("sec", fmt([[
-	@section({name})
+	@section('{name}')
 		{body}
 	@endsection
 	]], {
@@ -68,7 +74,15 @@ return {
 		body = i(0),
 	})),
 	
-	s_inline("com", { 
+	s("auth", fmt([[
+	@auth
+		{body}
+	@endauth
+	]], {
+		body = i(0),
+	})),
+	
+	s("com", { 
 		t("<x-"),
 		i(0, "component-name"),
 		t("/>"),
