@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'akinsho/bufferline.nvim'
 
     " snippets
-    Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.1.0', 'do': 'make install_jsregexp'}
+    Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.0.0', 'do': 'make install_jsregexp'}
 
     " code commenting
     Plug 'numToStr/Comment.nvim'
@@ -59,18 +59,19 @@ call plug#end()
 " file types 
 " -----------------------------------------------------------------------------
 
-" *.blade should be handled as html
-" au BufRead,BufNewFile *.blade.php set filetype=html
-au BufRead,BufNewFile *.blade.php set syntax=html
-
-" *.ss (silverstripe) should be syntaxed as html
-au BufRead,BufNewFile *.ss set syntax=html
-
 " syntax needs to be on for php files to keep indentation correct
 au BufRead,BufNewFile *.php set syntax=on
 
 " Makefiles need tab indentation
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
+" Laravel templates
+au BufRead,BufNewFile *.blade.php set filetype=html.blade
+au BufRead,BufNewFile *.blade.php set syntax=html
+
+" Silverstripe templates
+au BufRead,BufNewFile *.ss set filetype=html.silverstripe
+au BufRead,BufNewFile *.ss set syntax=html
 
 " -----------------------------------------------------------------------------
 " base settings 
@@ -626,7 +627,6 @@ ls.config.setup({
 })
 
 ls.filetype_extend("vue", {"html"})
-ls.filetype_extend("html", {"silverstripe"})
 
 function maybe_leave_snippet()
     if
@@ -696,14 +696,6 @@ cmp.setup({
         },
     }, {
     })
-})
-
-vim.filetype.add({
-    extension = {
-        ss = function(path, bufnr)
-            return 'html.silverstripe'
-        end,
-    }
 })
 
 EOF
