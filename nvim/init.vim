@@ -735,12 +735,12 @@ imap <f6> <c-r>e
 imap <f7> <c-r>r
 imap <f8> <c-r>t
 
-" mark mappings
-nnoremap <leader><f1> mw
-nnoremap <f1> `wzz
-nnoremap <leader><f2> me
-nnoremap <f2> `ezz
-nnoremap <leader><f3> mW
-nnoremap <f3> `Wzz
-nnoremap <leader><f4> mE
-nnoremap <f4> `Ezz
+" mark template mapping
+nnoremap <leader><f1> mW
+nnoremap <f1> `Wzz
+nnoremap <leader><f2> mE
+nnoremap <f2> `Ezz
+nnoremap <leader><f3> mR
+nnoremap <f3> `Rzz
+nnoremap <leader><f4> mT
+nnoremap <f4> `Tzz
