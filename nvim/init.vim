@@ -197,16 +197,11 @@ nnoremap n nzz
 nnoremap N Nzz
 
 " autocompletion
-" set omnifunc=syntaxcomplete#Complete
 set completeopt=menu,menuone
 set pumheight=10
 
 " select with enter key when completion menu is open
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" cycle popup with c-space or j or k
-" inoremap <expr> j pumvisible() ? "\<c-n>" : "j"
-" inoremap <expr> k pumvisible() ? "\<c-p>" : "k"
 
 " keep visual mode active after indenting
 vmap > >gv
