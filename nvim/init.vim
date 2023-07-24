@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
     " theme
-    Plug 'marko-cerovac/material.nvim'
+    Plug 'EdenEast/nightfox.nvim'
 
     " bufferline
     Plug 'akinsho/bufferline.nvim'
@@ -100,43 +100,13 @@ syntax on
 set termguicolors
 
 lua << EOF
-require('material').setup({
-    contrast = {
-        floating_windows = true,
-        non_current_windows = true,
-        line_numbers = true
-    },
-    disable = {
-        borders = true,
-    },
-    high_visibility = {
-        lighter = false,
-        darker = false,
-    },
-    styles = {
-        comments = {
-            italic = true,
-            bold = false
-        }
-    },
-    plugins = {
-       "nvim-cmp",
-       "telescope",
-    },
-    custom_colors = function(colors)
-        colors.editor.disabled = "#2e464b"
-        colors.backgrounds.floating_windows = "#162326"
-    end
-})
-
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*" },
     command = "normal zx",
 })
 EOF
 
-let g:material_style = "oceanic"
-colorscheme material
+colorscheme nordfox
 
 " search down into subfolders but ignore certain folders
 set path+=**
@@ -284,7 +254,7 @@ command -bar -nargs=* -complete=file -range=% -bang Write <line1>,<line2>write<b
 " -----------------------------------------------------------------------------
 
 " define statusline color
-hi User1 ctermfg=007 ctermbg=239 guibg=#304448 guifg=#647376
+hi User1 ctermfg=007 ctermbg=239 guibg=#21262f guifg=#4e5158
 
 set statusline=
 " set color

@@ -7,7 +7,7 @@
     - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) [^1]
 - [neovim](https://www.neovim.io)
     - [vim-plug](https://github.com/junegunn/vim-plug)
-        - [material.nvim](https://github.com/marko-cerovac/material.nvim)
+        - [Nightfox](https://github.com/EdenEast/nightfox.nvim)
         - [delimitMate](https://github.com/Raimondi/delimitMate)
         - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
         - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
