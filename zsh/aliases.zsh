@@ -1,6 +1,7 @@
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias e="nvim"
 alias vim="nvim"
+alias tw="timew"
 alias ls="exa --long --group --sort=name --group-directories-first"
 alias la="exa --long --group --all --sort=name --group-directories-first"
 alias tree="exa -a -T -L 2"
