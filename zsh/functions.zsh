@@ -176,33 +176,6 @@ _slugify () {
     echo "$1" | iconv -c -t ascii//TRANSLIT | sed -E 's/[~^]+//g' | sed -E 's/[^a-zA-Z0-9]+/-/g' | sed -E 's/^-+|-+$//g' | tr A-Z a-z
 }
 
-_ctags_create_php () {
-    ctags --tag-relative=yes -R --fields=+aimlS --languages=php --PHP-kinds=+cdfint-av --exclude="\.git" --exclude="node_modules"
-}
-
-_docker_shell () {
-    docker-compose exec projects "/bin/zsh" -l
-}
-
-_mix_search() {
-    if [ $1 ]; then
-        mix $1
-    else
-        line=$(mix help|fzf)
-        if [ $line ]; then
-            $(echo $line|cut -d '#' -f1)
-        fi
-    fi
-}
-
-_search_mix_command() {
-    preview='mix help {-1}'
-    selected=$(mix help|cut -d "#" -f1|fzf -m --ansi --preview $preview)
-    if [ $selected ]; then
-        print -z $(echo $selected|xargs)
-    fi
-}
-
 _convert_hex_color() {
   hex=$1
   if [[ $hex == "#"* ]]; then
