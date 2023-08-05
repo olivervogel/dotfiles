@@ -17,10 +17,7 @@ return {
 	s("class", fmt([[
 	class {name}{extends}
 	{{
-		public function __construct()
-		{{
-			{body}
-		}}
+		{body}
 	}}
 	]], {
 		name = i(1, "ClassName"),
@@ -313,6 +310,15 @@ return {
 			}),
 		})
 	})),
+
+	-- -----------------------------------------------------------------------
+	-- error reporting
+	-- -----------------------------------------------------------------------
+
+	s("err", fmt([[
+	error_reporting(E_ALL ^ E_NOTICE);
+	ini_set('display_errors', true);
+	]], {})),
 
 	-- -----------------------------------------------------------------------
 	-- return true
