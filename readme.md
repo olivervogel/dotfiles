@@ -31,6 +31,7 @@
 - [renameutils](https://www.nongnu.org/renameutils/)
 - [delta](https://github.com/dandavison/delta)
 - [jq](https://jqlang.github.io/jq/)
+- [pass](https://www.passwordstore.org)
 
 ## Font
 
