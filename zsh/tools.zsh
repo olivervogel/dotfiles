@@ -1,9 +1,3 @@
-# configure homebrew completions
-if type brew &>/dev/null 
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-fi
-
 # z - jump around
 if [ -f ~/.zsh/pack/z/z.sh ]; then
     . ~/.zsh/pack/z/z.sh
@@ -34,5 +28,10 @@ if [ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then
     . /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
 
-# enable git autocompletion
+# homebrew completions
+if [ -d /opt/homebrew/share/zsh/site-functions ]; then
+  FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+fi
+
+# enable autocompletion
 autoload -Uz compinit && compinit
