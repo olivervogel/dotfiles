@@ -187,3 +187,26 @@ _convert_hex_color() {
   echo -e `printf "%03d" "$(((r<75?0:(r-35)/40)*6*6+(g<75?0:(g-35)/40)*6+(b<75?0:(b-35)/40)+16))"`
 }
 
+_pass_select_and_copy_password() {
+    if [ $1 ]; then
+        pass show $@
+    else
+        count=$(($(realpath ~/.password-store | wc -c) + 1))
+        selected=$(find ~/.password-store -type f -name "*.gpg" |cut -c $count- |rev |cut -c 5- |rev|fzf)
+        if [ $selected ]; then
+            pass show -c $selected
+        fi
+    fi
+}
+
+_pass_select_and_show_password() {
+    if [ $1 ]; then
+        pass show $@
+    else
+        count=$(($(realpath ~/.password-store | wc -c) + 1))
+        selected=$(find ~/.password-store -type f -name "*.gpg" |cut -c $count- |rev |cut -c 5- |rev|fzf)
+        if [ $selected ]; then
+            pass show $selected
+        fi
+    fi
+}
