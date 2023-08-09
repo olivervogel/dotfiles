@@ -1,3 +1,9 @@
+# configure homebrew completions
+if type brew &>/dev/null 
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
 # z - jump around
 if [ -f ~/.zsh/pack/z/z.sh ]; then
     . ~/.zsh/pack/z/z.sh
