@@ -35,3 +35,6 @@ fi
 
 # enable autocompletion
 autoload -Uz compinit && compinit
+
+# run script to resize kitty window to fullscreen
+osascript ~/.dotfiles/macos/AppleScript/SetKittyWindow.scpt
