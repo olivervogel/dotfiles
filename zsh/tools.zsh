@@ -35,3 +35,7 @@ fi
 
 # enable autocompletion
 autoload -Uz compinit && compinit
+
+# configure autocompletion
+setopt completealiases
+compdef _pass psc
