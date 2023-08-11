@@ -154,6 +154,11 @@ _git_revert() {
     fi
 }
 
+_git_push_current_branch_to_origin() {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    git push origin $current_branch
+}
+
 _zip_selected() {
     if [ $# -eq 0 ]; then
         find * -type f|fzf -m|zip -r Archiv.zip -@
