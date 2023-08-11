@@ -189,7 +189,7 @@ _convert_hex_color() {
 
 _pass_select_and_copy_password() {
     if [ $1 ]; then
-        pass show $@
+        pass show -c $@
     else
         count=$(($(realpath ~/.password-store | wc -c) + 1))
         selected=$(find ~/.password-store -type f -name "*.gpg" |cut -c $count- |rev |cut -c 5- |rev|fzf)
