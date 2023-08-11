@@ -33,6 +33,9 @@ if [ -d /opt/homebrew/share/zsh/site-functions ]; then
   FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
 fi
 
+# custom completions
+FPATH="${HOME}/.dotfiles/zsh/completions:${FPATH}"
+
 # enable autocompletion
 autoload -Uz compinit && compinit
 

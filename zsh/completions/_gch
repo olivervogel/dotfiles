@@ -1,0 +1,18 @@
+#compdef gch
+
+_gch_get_command_list() {
+    git branch --sort=-committerdate|cut -c 3-
+}
+
+_gch() {
+  local -a commands
+  commands=(`_gch_get_command_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_gch
