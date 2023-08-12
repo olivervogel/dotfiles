@@ -36,7 +36,14 @@ return {
 		{body}
 	}}
 	]], {
-		args = i(1, "args"),
+		args = c(1, {
+			sn(nil, {
+				t("("),
+				i(1, "args"),
+				t(")")
+			}),
+			i(1, "args"),
+		}),
 		body = i(0, "//")
 	})),
 	
