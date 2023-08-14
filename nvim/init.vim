@@ -177,6 +177,9 @@ require('nightfox').setup({
             TelescopeNormal = { bg = "#1f242c", fg = "palette.white" },
             TelescopeBorder = { bg = "#1f242c" },
 
+            Search = { bg = "palette.orange", fg = "palette.bg1" },
+            IncSearch = { bg = "palette.orange.dim", fg = "palette.bg1" },
+
             ["@type"] = { fg = "palette.magenta" }, -- FooController
             ["@type.builtin"] = { fg = "palette.magenta" }, -- string, array
             ["@type.definition"] = { fg = "palette.magenta" }, -- as SpecialType
