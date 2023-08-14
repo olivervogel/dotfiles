@@ -114,7 +114,7 @@ require('nightfox').setup({
     },
     palettes = {
         nightfox = {
-            bg1 = "#28313D", -- main bg
+            bg1 = "#27313F", -- main bg
             bg0 = "#242E39", -- Dark bg (status line and float)
             bg2 = "#262E3A", -- Lighter bg (colorcolm folds)
             bg3 = "#2E3745", -- Lighter bg (cursor line)
