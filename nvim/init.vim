@@ -100,6 +100,9 @@ syntax on
 set termguicolors
 
 lua << EOF
+-- disable mouse
+vim.opt.mouse = ""
+
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*" },
     command = "normal zx",
