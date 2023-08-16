@@ -47,6 +47,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " easier html tag writing
     Plug 'tpope/vim-ragtag'
 
+    " splitting/joining blocks of code
+    Plug 'Wansmer/treesj'
+
     " auto closing of quotes
     Plug 'Raimondi/delimitMate'
 
@@ -765,6 +768,24 @@ cmp.setup({
     }, {
     })
 })
+
+-- trees setup
+local tsj = require('treesj')
+local langs = {--[[ configuration for languages ]]}
+tsj.setup({
+  use_default_keymaps = false,
+  check_syntax_error = true,
+  max_join_length = 120,
+  cursor_behavior = 'hold',
+  notify = true,
+  -- langs = lu._prepare_presets(langs.presets),
+  dot_repeat = true,
+})
+
+vim.keymap.set('n', '<leader>m', tsj.toggle)
+vim.keymap.set('n', '<leader>M', function()
+    tsj.toggle({ split = { recursive = true } })
+end)
 
 EOF
 
