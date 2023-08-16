@@ -115,9 +115,9 @@ require('nightfox').setup({
     palettes = {
         nightfox = {
             bg1 = "#27313F", -- main bg
-            bg0 = "#242E39", -- Dark bg (status line and float)
-            bg2 = "#262E3A", -- Lighter bg (colorcolm folds)
-            bg3 = "#2E3745", -- Lighter bg (cursor line)
+            bg0 = "#1F2732", -- Dark bg (status line and float)
+            bg2 = "#252F3C", -- Lighter bg (colorcolm folds)
+            bg3 = "#2D3848", -- Lighter bg (cursor line)
             bg4 = "#43556A", -- Conceal, border fg
 
             comment = "#42586E",
@@ -177,8 +177,8 @@ require('nightfox').setup({
             TelescopeNormal = { bg = "#1f242c", fg = "palette.white" },
             TelescopeBorder = { bg = "#1f242c" },
 
-            Search = { bg = "palette.white", fg = "palette.bg1" },
-            IncSearch = { bg = "palette.orange", fg = "palette.bg1" },
+            Search = { bg = "palette.white.dim", fg = "palette.bg1" },
+            IncSearch = { bg = "palette.white", fg = "palette.bg1" },
 
             ["@type"] = { fg = "palette.magenta" }, -- FooController
             ["@type.builtin"] = { fg = "palette.magenta" }, -- string, array
