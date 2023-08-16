@@ -182,7 +182,7 @@ require('nightfox').setup({
             TelescopeBorder = { bg = "#1f242c" },
 
             Search = { bg = "palette.white.dim", fg = "palette.bg1" },
-            IncSearch = { bg = "palette.white", fg = "palette.bg1" },
+            IncSearch = { bg = "palette.white.bright", fg = "palette.bg1" },
             StatusLine = { bg = "palette.bg0", fg = "#3B4B5F" },
             WildMenu = { bg = "palette.bg0", fg = "#3B4B5F" },
 
