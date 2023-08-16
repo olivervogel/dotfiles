@@ -171,6 +171,7 @@ require('nightfox').setup({
         nightfox = {
             LineNr = { fg = "palette.comment" },
             CursorLineNr = { fg = "palette.white.dim" },
+            Normal = { fg = "palette.white" },
             NormalFloat = { bg = "#1E262F" },
             NormalNC = { bg = "#222B35" },
             EndOfBuffer = { fg = "palette.comment" },
@@ -179,6 +180,8 @@ require('nightfox').setup({
 
             Search = { bg = "palette.white.dim", fg = "palette.bg1" },
             IncSearch = { bg = "palette.white", fg = "palette.bg1" },
+            StatusLine = { bg = "palette.bg0", fg = "#3B4B5F" },
+            WildMenu = { bg = "palette.bg0", fg = "#3B4B5F" },
 
             ["@type"] = { fg = "palette.magenta" }, -- FooController
             ["@type.builtin"] = { fg = "palette.magenta" }, -- string, array
