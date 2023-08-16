@@ -101,33 +101,36 @@ set termguicolors
 
 lua << EOF
 require('material').setup({
-    contrast = {
-        floating_windows = true,
-        non_current_windows = true,
-        line_numbers = true
+contrast = {
+    floating_windows = true,
+    non_current_windows = true,
+    line_numbers = true
+},
+disable = {
+    borders = true,
+},
+high_visibility = {
+    lighter = false,
+    darker = false,
+},
+styles = {
+    comments = {
+        italic = true,
+        bold = false
+    }
     },
-    disable = {
-        borders = true,
-    },
-    high_visibility = {
-        lighter = false,
-        darker = false,
-    },
-    styles = {
-        comments = {
-            italic = true,
-            bold = false
-        }
-    },
-    plugins = {
-       "nvim-cmp",
-       "telescope",
-    },
-    custom_colors = function(colors)
-        colors.editor.disabled = "#2e464b"
-        colors.backgrounds.floating_windows = "#162326"
-    end
+plugins = {
+    "nvim-cmp",
+    "telescope",
+},
+custom_colors = function(colors)
+colors.editor.disabled = "#2e464b"
+colors.backgrounds.floating_windows = "#162326"
+end
 })
+
+-- disable mouse
+vim.opt.mouse = ""
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*" },
