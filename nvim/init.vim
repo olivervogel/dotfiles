@@ -363,6 +363,9 @@ nnoremap <Leader>zz @:
 " :W should behave the same way as :w
 command -bar -nargs=* -complete=file -range=% -bang Write <line1>,<line2>write<bang> <args>
 
+" :Q should behave the same way as :q
+command! Q :q
+
 " -----------------------------------------------------------------------------
 " statusline settings
 " -----------------------------------------------------------------------------
