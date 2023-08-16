@@ -50,6 +50,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " splitting/joining blocks of code
     Plug 'Wansmer/treesj'
 
+    " surround selections (ys, ds, cs)
+    Plug 'kylechui/nvim-surround'
+
     " auto closing of quotes
     Plug 'Raimondi/delimitMate'
 
@@ -786,6 +789,9 @@ vim.keymap.set('n', '<leader>m', tsj.toggle)
 vim.keymap.set('n', '<leader>M', function()
     tsj.toggle({ split = { recursive = true } })
 end)
+
+-- nvim-surround setup
+require("nvim-surround").setup({})
 
 EOF
 
