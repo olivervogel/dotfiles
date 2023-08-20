@@ -354,7 +354,7 @@ nnoremap <bs> <c-u>
 " navigate back changelist 
 " back with alt-backspace
 nnoremap <M-BS> g;
-" forward with alt-enter which is mapped by iterm to special char
+" forward with alt-enter which is mapped by terminal to special char
 nnoremap … g,
 
 " repeat last command line command
