@@ -1,0 +1,29 @@
+#compdef wide
+
+_wide_get_command_list() {
+    printf "\
+        start\n\
+        stop\n\
+        status\n\
+        build\n\
+        logs\n\
+        php\n\
+        composer\n\
+        shell\n\
+        sync\n\
+        dev-build\n\
+        self-update\n"
+}
+
+_wide() {
+  local -a commands
+  commands=(`_wide_get_command_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_wide
