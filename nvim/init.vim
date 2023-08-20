@@ -819,9 +819,8 @@ nnoremap <leader>fm :Telescope marks<cr>
 nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
 nnoremap <c-f> :Telescope oldfiles<cr>
 
-" run commands in certain tmux pane (experimental)
-nnoremap <silent> <leader>ts :silent !tmux send -t 1 'docker-compose run --rm tests' Enter<cr>
-nnoremap <silent> <leader>bb :silent !tmux send -t 1 'docker-compose exec --user=www-data app php app/vendor/silverstripe/framework/cli-script.php dev/build "flush=1"' Enter<cr>
+" mappings to run commands in certain tmux panes
+nnoremap <silent> <leader>db :silent !tmux send -t 1 'wide dev-build' Enter<cr>
 
 " snippet mappings
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
