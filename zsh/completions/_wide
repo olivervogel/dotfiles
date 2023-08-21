@@ -9,6 +9,7 @@ _wide_get_command_list() {
         logs\n\
         php\n\
         composer\n\
+        artisan\n\
         shell\n\
         sync\n\
         dev-build\n\
