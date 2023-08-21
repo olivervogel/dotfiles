@@ -191,6 +191,7 @@ require('nightfox').setup({
             IncSearch = { bg = "palette.white.bright", fg = "palette.bg1" },
             StatusLine = { bg = "palette.bg0", fg = "#3B4B5F" },
             WildMenu = { bg = "palette.bg0", fg = "#3B4B5F" },
+            Todo = { bg = "none" },
 
             ["@type"] = { fg = "palette.magenta" }, -- FooController
             ["@type.builtin"] = { fg = "palette.magenta" }, -- string, array
@@ -214,7 +215,6 @@ require('nightfox').setup({
             ["@punctuation.delimiter"] = { fg = "palette.white.dim" }, -- For delimiters ie: semicolon
             ["@punctuation.bracket"] = { fg = "palette.blue.dim" }, -- For brackets and parenthesis.
             ["@boolean"] = { fg = "palette.orange" },
-
         }
     }
 })
