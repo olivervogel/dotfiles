@@ -1,6 +1,7 @@
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[^?' backward-kill-word
+bindkey '^[' vi-cmd-mode
 
 tmuxpane-down() { tmux select-pane -D }
 tmuxpane-up() { tmux select-pane -U }
