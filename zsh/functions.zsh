@@ -215,3 +215,11 @@ custom_pass_select_and_show_password() {
         fi
     fi
 }
+
+custom_wetter() {
+    if [ $1 ]; then
+        curl http://wttr.in/$@
+    else
+        curl http://wttr.in/Kiel
+    fi
+}
