@@ -36,9 +36,10 @@
     - [jq](https://jqlang.github.io/jq/)
     - [pass](https://www.passwordstore.org)
 
-## Font
+## Fonts
 
-- [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads)
+- [JetBrains Mono](https://www.jetbrains.com/mono/)
+- [Symbols-2048-em Nerd Font Complete Mono](https://github.com/ryanoasis/nerd-fonts)
 
 ## Language Servers
 
