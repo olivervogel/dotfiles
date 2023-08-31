@@ -5,14 +5,15 @@ _wide_get_command_list() {
         start\n\
         stop\n\
         status\n\
+        up\n\
         build\n\
+        recreate\n\
         logs\n\
         php\n\
         composer\n\
         artisan\n\
         shell\n\
         sync\n\
-        dev-build\n\
         self-update\n"
 }
 
