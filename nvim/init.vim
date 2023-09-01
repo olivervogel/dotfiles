@@ -820,7 +820,7 @@ nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
 nnoremap <c-f> :Telescope oldfiles<cr>
 
 " mappings to run commands in certain tmux panes
-nnoremap <silent> <leader>bd :silent !tmux send -t 1 'wide dev-build' Enter<cr>
+nnoremap <silent> <leader>bd :silent !tmux send -t 1 'wide build' Enter<cr>
 nnoremap <silent> <leader>rt :silent !tmux send -t 1 'docker-compose run --rm --build tests' Enter<cr>
 
 " snippet mappings
