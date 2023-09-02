@@ -216,6 +216,32 @@ custom_pass_select_and_show_password() {
     fi
 }
 
+custom_2fa() {
+    if [ $1 ]; then
+        secret=$(pass show $@|grep 2fa|cut -c 13-)
+        if [ $secret ]; then
+            code=$(oathtool --totp --base32 $secret)
+            echo $code|pbcopy
+            printf "Copied 2FA code $code for $@ to clipboard.\n"
+        else
+            printf "No 2FA secret found for $@.\n"
+        fi
+    else
+        count=$(($(realpath ~/.password-store | wc -c) + 1))
+        selected=$(find ~/.password-store -type f -name "*.gpg" |cut -c $count- |rev |cut -c 5- |rev|fzf)
+        if [ $selected ]; then
+            secret=$(pass show $selected|grep 2fa|cut -c 13-)
+            if [ $secret ]; then
+                code=$(oathtool --totp --base32 $secret)
+                echo $code|pbcopy
+                printf "Copied 2FA code $code for $selected to clipboard.\n"
+            else
+                printf "No 2FA secret found for $selected.\n"
+            fi
+        fi
+    fi
+}
+
 custom_wetter() {
     if [ $1 ]; then
         curl http://wttr.in/$@
