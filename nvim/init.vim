@@ -15,6 +15,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
     " theme
     Plug 'EdenEast/nightfox.nvim'
@@ -612,6 +613,18 @@ require('nvim-treesitter.configs').setup {
             node_decremental = "Û",
         },
     },
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+            },
+        },
+    }
 }
 
 -- linting settings

@@ -16,6 +16,7 @@
             - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
             - [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
             - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+            - [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
             - [lspconfig](https://github.com/neovim/nvim-lspconfig)
             - [nvim-lint](https://github.com/mfussenegger/nvim-lint)
             - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
