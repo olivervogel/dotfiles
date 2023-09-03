@@ -495,6 +495,26 @@ vim.cmd [[
 
 -- telescope settings
 local actions = require('telescope.actions')
+
+-- telescope: ignore large files in preview
+local previewers = require("telescope.previewers")
+local previewers_utils = require('telescope.previewers.utils')
+local preview_maker_ignore_large_files = function(filepath, bufnr, opts)
+  opts = opts or {}
+  filepath = vim.fn.expand(filepath)
+  vim.loop.fs_stat(filepath, function(_, stat)
+    if not stat then return end
+    if stat.size > 100000 then
+        previewers_utils.job_maker({
+            "echo",
+            "Preview not available. File is too large.",
+        }, bufnr, opts)
+    else
+        previewers.buffer_previewer_maker(filepath, bufnr, opts)
+    end
+  end)
+end
+
 require('telescope').setup {
     defaults = {
         file_ignore_patterns = {
@@ -518,6 +538,7 @@ require('telescope').setup {
             '--smart-case',
             '-u'
         },
+        buffer_previewer_maker = preview_maker_ignore_large_files,
         layout_config = {
             width = 0.9,
         },
