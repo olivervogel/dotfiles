@@ -40,7 +40,7 @@
 ## Fonts
 
 - [JetBrains Mono](https://www.jetbrains.com/mono/)
-- [Symbols-2048-em Nerd Font Complete](https://github.com/ryanoasis/nerd-fonts)
+- [Symbols-2048-em Nerd Font Complete Mono](https://github.com/ryanoasis/nerd-fonts)
 
 ## Language Servers
 
