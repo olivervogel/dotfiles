@@ -109,6 +109,7 @@ lua << EOF
 -- disable mouse
 vim.opt.mouse = ""
 
+-- Theme setup
 local Shade = require("nightfox.lib.shade")
 require('nightfox').setup({
     options = {
