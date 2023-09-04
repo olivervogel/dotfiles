@@ -106,9 +106,6 @@ syntax on
 set termguicolors
 
 lua << EOF
--- disable mouse
-vim.opt.mouse = ""
-
 -- Theme setup
 local Shade = require("nightfox.lib.shade")
 require('nightfox').setup({
@@ -297,6 +294,9 @@ augroup END
 let g:netrw_banner=0
 
 lua << EOF
+-- disable mouse
+vim.opt.mouse = ""
+
 -- Restore cursor position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
     pattern = { "*" },
