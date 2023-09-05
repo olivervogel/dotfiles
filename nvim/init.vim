@@ -844,13 +844,3 @@ nnoremap <silent> <leader>rt :silent !tmux send -t 1 'docker-compose run --rm --
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
-
-" mark template mapping
-nnoremap <leader><f1> mW
-nnoremap <f1> `Wzz
-nnoremap <leader><f2> mE
-nnoremap <f2> `Ezz
-nnoremap <leader><f3> mR
-nnoremap <f3> `Rzz
-nnoremap <leader><f4> mT
-nnoremap <f4> `Tzz
