@@ -428,10 +428,24 @@ return {
 	
 	s("pp", fmt([[
 	echo "<pre>";
-	var_dump(${var});
+	var_dump({output});
 	echo "</pre>";
 	exit;
 	]], {
-		var = i(1, "data"),
+		-- output = i(1, "$data"),
+		output = c(1, {
+			d(nil, function(args)
+				return sn(nil, {
+					t('$'),
+					i(1, "var")
+				})
+			end),
+			sn(nil, {
+				t("\""),
+				i(1, "text"),
+				t("\""),
+			}),
+			t("")
+		})
 	})),
 }
