@@ -29,7 +29,7 @@
     - [tmux](https://github.com/tmux/tmux/wiki/Installing)
     - [z - jump around](https://github.com/rupa/z) [^1]
     - [fzf](https://github.com/junegunn/fzf) [^1]
-    - [exa](https://github.com/ogham/exa)
+    - [eza](https://github.com/eza-community/eza/)
     - [ripgrep](https://github.com/BurntSushi/ripgrep)
     - [renameutils](https://www.nongnu.org/renameutils/)
     - [delta](https://github.com/dandavison/delta)
