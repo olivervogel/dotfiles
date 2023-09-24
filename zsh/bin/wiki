@@ -71,7 +71,7 @@ cmd_default() {
 git_commit() {
     cd $BASE_DIR && \
         git add $1 && \
-        git commit -m "Edit file $1" && \
+        git commit -m "Commit changes to $1" && \
         cd -
 }
 
@@ -79,7 +79,6 @@ case "$1" in
     insert) shift;              cmd_insert "$@" ;;
     edit) shift;                cmd_edit "$@" ;;
     list) shift;                cmd_list "$@" ;;
-    show) shift;                cmd_view "$@" ;;
     view) shift;                cmd_view "$@" ;;
     browse) shift;              cmd_browse "$@" ;;
     *)                          cmd_default "$@" ;;

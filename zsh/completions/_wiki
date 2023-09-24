@@ -1,0 +1,22 @@
+#compdef wiki
+
+_wiki_list_articles() {
+    count=$(($(realpath ~/.wiki | wc -c) + 1))
+    find ~/.wiki -type f -name "*.md" |cut -c $count- |rev |cut -c 4- |rev
+}
+
+_wiki() {
+    local -a commands articles
+    commands=("insert" "view" "browse" "edit" "list")
+    articles=(`_wiki_list_articles`)
+
+    if (( CURRENT == 2 )); then
+        _describe -t commands 'commands' commands
+    elif (( CURRENT == 3 )); then
+        _describe -t articles 'articles' articles
+    fi
+
+    return 0
+}
+
+_wiki
