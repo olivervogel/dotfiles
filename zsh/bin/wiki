@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+WIKI_REPOSITORY_SHOW_URL="https://github.com/olivervogel/wiki"
+BASE_DIR="$HOME/.wiki"
+TMP_DIR="$BASE_DIR/.tmp"
+
+cmd_insert() {
+    local article_path article_folder
+    article_path=$1.md
+    article_folder=$(dirname $article_path)
+
+    if [[ -f $BASE_DIR/$article_path ]]; then
+        printf "Wiki article already exists.\n"
+        exit 1
+    else
+        # create and edit tmp content
+        mkdir -p $TMP_DIR/$article_folder && \
+        $EDITOR $TMP_DIR/$article_path >/dev/tty
+
+        # transfer tmp content to actual content & delete tmp content
+        if [[ -f $TMP_DIR/$article_path ]]; then
+            mkdir -p $BASE_DIR/$article_folder && \
+            cat $TMP_DIR/$article_path > $BASE_DIR/$article_path && \
+            rm -rf $TMP_DIR/$article_folder && \
+            git_commit $article_path && \
+            printf "New wiki article created.\n"
+        else
+            printf "No wiki article was created.\n"
+        fi
+    fi
+}
+
+cmd_edit() {
+    local checksum_before checksum_after article_path
+    article_path=$1.md
+
+    if [[ -f $BASE_DIR/$article_path ]]; then
+
+        checksum_before=($(md5sum $BASE_DIR/$article_path))
+        $EDITOR $BASE_DIR/$article_path
+        checksum_after=($(md5sum $BASE_DIR/$article_path))
+
+        if [ "$checksum_before" != "$checksum_after" ]; then
+            git_commit $article_path
+        else
+            printf "Nothing has changed.\n"
+        fi
+
+    else
+        printf "No such file\n"
+        exit 1
+    fi
+}
+
+cmd_list() {
+    printf "List it\n"
+}
+
+cmd_browse() {
+    open $WIKI_REPOSITORY_SHOW_URL/blob/main/$1.md
+}
+
+cmd_view() {
+    less $BASE_DIR/$1.md
+}
+
+cmd_default() {
+    printf "default\n"
+}
+
+git_commit() {
+    cd $BASE_DIR && \
+        git add $1 && \
+        git commit -m "Edit file $1" && \
+        cd -
+}
+
+case "$1" in
+    insert) shift;              cmd_insert "$@" ;;
+    edit) shift;                cmd_edit "$@" ;;
+    list) shift;                cmd_list "$@" ;;
+    show) shift;                cmd_view "$@" ;;
+    view) shift;                cmd_view "$@" ;;
+    browse) shift;              cmd_browse "$@" ;;
+    *)                          cmd_default "$@" ;;
+esac
+
+exit 0
