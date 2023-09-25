@@ -7,7 +7,7 @@ _wiki_list_articles() {
 
 _wiki() {
     local -a commands articles
-    commands=("insert" "view" "browse" "edit" "list")
+    commands=("insert" "view" "browse" "edit" "list" "git")
     articles=(`_wiki_list_articles`)
 
     if (( CURRENT == 2 )); then

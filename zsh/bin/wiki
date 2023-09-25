@@ -68,6 +68,17 @@ cmd_default() {
     printf "default\n"
 }
 
+cmd_git() {
+   case $1 in
+       push)
+           git -C $BASE_DIR push origin main
+           ;;
+       pull)
+           git -C $BASE_DIR pull origin main
+           ;;
+   esac
+}
+
 git_commit() {
     cd $BASE_DIR && \
         git add $1 && \
@@ -81,6 +92,7 @@ case "$1" in
     list) shift;                cmd_list "$@" ;;
     view) shift;                cmd_view "$@" ;;
     browse) shift;              cmd_browse "$@" ;;
+    git) shift;                 cmd_git "$@" ;;
     *)                          cmd_default "$@" ;;
 esac
 
