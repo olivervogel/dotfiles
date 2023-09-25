@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 VERSION="1.0.0"
-WIKI_REPOSITORY_SHOW_URL="https://github.com/olivervogel/wiki"
 BASE_DIR="$HOME/.wiki"
 TMP_DIR="$BASE_DIR/.tmp"
+GIT_BRANCH="main"
+WIKI_REPOSITORY_SHOW_URL="https://github.com/olivervogel/wiki"
 
 # colors
 ESC_SEQ="\x1b["
@@ -86,7 +87,7 @@ cmd_browse() {
     fi
 
     if [[ -f $BASE_DIR/$article_path ]]; then
-        open $WIKI_REPOSITORY_SHOW_URL/blob/main/$1.md
+        open $WIKI_REPOSITORY_SHOW_URL/blob/$GIT_BRANCH/$1.md
     else
         printf "No such file\n"
         exit 1
@@ -113,10 +114,10 @@ cmd_view() {
 cmd_git() {
    case $1 in
        push)
-           git -C $BASE_DIR push origin main
+           git -C $BASE_DIR push origin $GIT_BRANCH
            ;;
        pull)
-           git -C $BASE_DIR pull origin main
+           git -C $BASE_DIR pull origin $GIT_BRANCH
            ;;
    esac
 }
