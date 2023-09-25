@@ -9,6 +9,11 @@ cmd_insert() {
     article_path=$1.md
     article_folder=$(dirname $article_path)
 
+    if [[ ! $1 ]]; then
+        printf "Usage: wiki insert <article-name>\n"
+        exit 1 
+    fi
+
     if [[ -f $BASE_DIR/$article_path ]]; then
         printf "Wiki article already exists.\n"
         exit 1
@@ -34,6 +39,11 @@ cmd_edit() {
     local checksum_before checksum_after article_path
     article_path=$1.md
 
+    if [[ ! $1 ]]; then
+        printf "Usage: wiki edit <article-name>\n"
+        exit 1 
+    fi
+
     if [[ -f $BASE_DIR/$article_path ]]; then
 
         checksum_before=($(md5sum $BASE_DIR/$article_path))
@@ -57,11 +67,37 @@ cmd_list() {
 }
 
 cmd_browse() {
-    open $WIKI_REPOSITORY_SHOW_URL/blob/main/$1.md
+    local article_path
+    article_path=$1.md
+
+    if [[ ! $1 ]]; then
+        printf "Usage: wiki browse <article-name>\n"
+        exit 1 
+    fi
+
+    if [[ -f $BASE_DIR/$article_path ]]; then
+        open $WIKI_REPOSITORY_SHOW_URL/blob/main/$1.md
+    else
+        printf "No such file\n"
+        exit 1
+    fi
 }
 
 cmd_view() {
-    less $BASE_DIR/$1.md
+    local article_path
+    article_path=$1.md
+
+    if [[ ! $1 ]]; then
+        printf "Usage: wiki view <article-name>\n"
+        exit 1 
+    fi
+
+    if [[ -f $BASE_DIR/$article_path ]]; then
+        less $BASE_DIR/$1.md
+    else
+        printf "No such file\n"
+        exit 1
+    fi
 }
 
 cmd_default() {
