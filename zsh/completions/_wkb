@@ -1,0 +1,19 @@
+#compdef wkb
+
+_wkb_get_command_list() {
+    count=$(($(realpath ~/.wiki | wc -c) + 1))
+    find ~/.wiki -type f -name "*.md" |cut -c $count- |rev |cut -c 4- |rev
+}
+
+_wkb() {
+  local -a commands
+  commands=(`_wkb_get_command_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_wkb

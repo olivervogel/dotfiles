@@ -249,3 +249,27 @@ custom_wetter() {
         curl http://wttr.in/Kiel
     fi
 }
+
+custom_edit_wiki() {
+    if [ $1 ]; then
+        wiki edit $@
+    else
+        count=$(($(realpath ~/.wiki | wc -c) + 1))
+        selected=$(find ~/.wiki -type f -name "*.md" |cut -c $count- |rev |cut -c 4- |rev|fzf)
+        if [ $selected ]; then
+            wiki edit $selected
+        fi
+    fi
+}
+
+custom_browse_wiki() {
+    if [ $1 ]; then
+        wiki browse $@
+    else
+        count=$(($(realpath ~/.wiki | wc -c) + 1))
+        selected=$(find ~/.wiki -type f -name "*.md" |cut -c $count- |rev |cut -c 4- |rev|fzf)
+        if [ $selected ]; then
+            wiki browse $selected
+        fi
+    fi
+}
