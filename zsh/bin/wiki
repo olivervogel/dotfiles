@@ -74,7 +74,7 @@ cmd_edit() {
 }
 
 cmd_list() {
-    printf "List it\n"
+    git -C $BASE_DIR ls-files|rev|cut -c 4-|rev
 }
 
 cmd_browse() {
