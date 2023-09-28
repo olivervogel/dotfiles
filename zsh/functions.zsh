@@ -246,7 +246,7 @@ custom_wetter() {
     if [ $1 ]; then
         curl http://wttr.in/$@
     else
-        curl http://wttr.in/Kiel
+        curl 'http://wttr.in/Kiel?m&lang=de'
     fi
 }
 
