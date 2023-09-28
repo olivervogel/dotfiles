@@ -721,6 +721,7 @@ ls.config.setup({
 })
 
 ls.filetype_extend("vue", {"html"})
+ls.filetype_extend("zsh", {"sh"})
 
 function maybe_leave_snippet()
     if
