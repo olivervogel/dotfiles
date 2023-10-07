@@ -2,11 +2,13 @@
 
 _wide_get_command_list() {
     printf "\
+        help\n\
         start\n\
         stop\n\
         status\n\
         up\n\
         build\n\
+        restart\n\
         recreate\n\
         logs\n\
         php\n\
