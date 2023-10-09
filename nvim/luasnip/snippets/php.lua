@@ -243,14 +243,14 @@ return {
 		# code ...
 	}}
 	]], {
-		body = i(0, "//"),
+		body = i(0, '//'),
 	})),
 
 
 	s("tr", fmt([[
-	throw new {name}("{message}");
+	throw new {name}Exception('{message}');
 	]], {
-		name = i(1, "Expection"),
+		name = i(1, "Custom"),
 		message = i(0, "Division by zero."),
 	})),
 
@@ -278,14 +278,14 @@ return {
 
 	s("match", fmt([[
 	match ({var}) {{
-		{case} => {return_value},
-		default => {default_return_value},
+		{case} => '{return_value}',
+		default => '{default_return_value}',
 	}};
 	]], {
 		var = i(1, "variable"),
 		case = i(2, "case"),
-		return_value = i(3, "rett"),
-		default_return_value = i(0, "rett"),
+		return_value = i(3, "value"),
+		default_return_value = i(0, "value"),
 	})),
 
 	-- -----------------------------------------------------------------------
@@ -309,6 +309,10 @@ return {
 		t(";")
 	}),
 
+	s("retn", {
+		t("return null;"),
+	}),
+
 	s("rett", {
 		t("return $"),
 		i(1, "this"),
@@ -316,6 +320,11 @@ return {
 		t(";")
 	}),
 
+	s("reta", {
+		t("return ["),
+		i(1),
+		t("];")
+	}),
 
 	-- -----------------------------------------------------------------------
 	-- use
@@ -425,6 +434,17 @@ return {
 	]], {
 		title = i(1, "Title"),
 		ret_value = i(2, "void")
+	})),
+
+
+	s("doci", fmt([[
+	/**
+	 * {{@inheritdoc}}
+	 *
+	 * @see {see}
+	 */
+	]], {
+		see = i(1, "Interface::function()"),
 	})),
 
 	-- -----------------------------------------------------------------------
