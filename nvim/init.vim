@@ -341,7 +341,7 @@ noremap <leader><leader> :nohl<cr>
 " search and replace current cursor position
 nmap <Leader>sc yiw:%s/<c-r>0//g<Left><Left>
 nmap <Leader>ss :%s//g<Left><Left>
-nmap <Leader>sl :s//g<Left><Left>
+nmap <Leader>sl yiw:s/<c-r>0//g<Left><Left>
 
 " scroll up/down with backspace/enter
 nnoremap <cr> <c-d>
