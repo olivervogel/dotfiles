@@ -156,7 +156,12 @@ custom_git_revert() {
 
 custom_git_push_current_branch_to_origin() {
     current_branch=$(git rev-parse --abbrev-ref HEAD)
-    git push origin $current_branch
+    git push -u origin $current_branch
+}
+
+custom_git_pull_current_branch_to_origin() {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    git pull origin $current_branch
 }
 
 custom_zip_selected() {
