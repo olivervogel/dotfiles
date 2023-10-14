@@ -16,7 +16,9 @@ _wide_get_command_list() {
         artisan\n\
         shell\n\
         sync\n\
-        self-update\n"
+        self-update\n
+        copy2host\n
+        copy2container\n"
 }
 
 _wide() {
