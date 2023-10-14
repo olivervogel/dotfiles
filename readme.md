@@ -36,6 +36,7 @@
     - [jq](https://jqlang.github.io/jq/)
     - [pass](https://www.passwordstore.org)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
+    - [zbar](https://github.com/mchehab/zbar)
 
 ## Fonts
 
