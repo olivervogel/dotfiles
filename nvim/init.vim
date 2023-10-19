@@ -834,6 +834,7 @@ nnoremap <leader>gs :Telescope git_status<cr>
 nnoremap <leader>fr :Telescope resume<cr>
 nnoremap <leader>fq :Telescope quickfix<cr>
 nnoremap <leader>fm :Telescope marks<cr>
+nnoremap <leader>fz :Telescope current_buffer_fuzzy_find<cr>
 nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
 nnoremap <c-f> :Telescope oldfiles<cr>
 
