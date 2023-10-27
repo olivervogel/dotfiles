@@ -343,6 +343,7 @@ nmap <Leader>sc yiw:%s/<c-r>0//g<Left><Left>
 nmap <Leader>ss :%s//g<Left><Left>
 nmap <Leader>sl yiw:s/<c-r>0//g<Left><Left>
 
+
 " scroll up/down with backspace/enter
 nnoremap <cr> <c-d>
 nnoremap <bs> <c-u>
@@ -352,6 +353,10 @@ nnoremap <bs> <c-u>
 nnoremap <M-BS> g;
 " forward with alt-enter which is mapped by terminal to special char
 nnoremap … g,
+
+" navigation to next/prev function with alt-#/alt-plus
+nnoremap ‘ ]mzz
+nnoremap ± [mzz
 
 " repeat last command line command
 nnoremap <Leader>zz @:
