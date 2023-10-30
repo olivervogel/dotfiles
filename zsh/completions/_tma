@@ -1,0 +1,18 @@
+#compdef tma
+
+_tma_get_session_list() {
+  tmux ls
+}
+
+_tma() {
+  local -a commands
+  commands=(`_tma_get_session_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_tma
