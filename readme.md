@@ -11,7 +11,6 @@
             - [nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) (customized)
             - [delimitMate](https://github.com/Raimondi/delimitMate)
             - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-            - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
             - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
             - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
             - [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
