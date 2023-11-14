@@ -481,16 +481,19 @@ return {
 	})),
 
 	s("banner", fmt([[
-    /* ───────────────────────────────────────────────────────────────────────── *
-     * {space1}{title}{space2} *
-     * ───────────────────────────────────────────────────────────────────────── */
+    /* ------------------------------------------------------------------------- *
+     * {space1}{stars}{title}{stars}{space2} *
+     * ------------------------------------------------------------------------- */
 	]], {
 		title = i(1),
 		space1 = f(function(args, snip)
-			return string.rep(" ", math.floor((76 - args[1][1]:len()) / 2) - 2) end, 1
+			return string.rep(" ", math.floor((76 - args[1][1]:len()) / 2) - 9) end, 1
 		),
 		space2 = f(function(args, snip)
-			return string.rep(" ", math.ceil((76 - args[1][1]:len()) / 2) - 1) end, 1
+			return string.rep(" ", math.ceil((76 - args[1][1]:len()) / 2) - 8) end, 1
+		),
+		stars = f(function(args, snip)
+			return " + + + " end, 1
 		),
 	})),
 
