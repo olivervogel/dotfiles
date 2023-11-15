@@ -12,6 +12,8 @@ _wide_get_command_list() {
         recreate\n\
         logs\n\
         php\n\
+        node\n\
+        npm\n\
         composer\n\
         artisan\n\
         shell\n\
