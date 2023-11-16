@@ -16,8 +16,7 @@ return {
 
 	s("class", fmt([[
 	class {name}{extends}
-	{{
-		{body}
+	{{{body}
 	}}
 	]], {
 		name = i(1, "ClassName"),
@@ -61,8 +60,7 @@ return {
 
 	s("trait", fmt([[
 	trait {name}
-	{{
-		{body}
+	{{{body}
 	}}
 	]], {
 		name = i(1, "TraitName"),
@@ -75,8 +73,7 @@ return {
 
 	s("constr", fmt([[
 	public function __construct({args})
-	{{
-		{body}
+	{{{body}
 	}}
 	]], {
 		args = i(1, ""),
@@ -89,8 +86,7 @@ return {
 
 	s("inter", fmt([[
 	interface {name}
-	{{
-		{body}
+	{{{body}
 	}}
 	]], {
 		name = i(1, "InterfaceName"),
@@ -130,8 +126,7 @@ return {
 
 	s("fun", fmt([[
 	{visibility} function {name}({args}): {ret}
-	{{
-		{body}
+	{{{body}
 	}}
 	]], {
 		visibility = c(1, {
@@ -197,8 +192,7 @@ return {
 	-- -----------------------------------------------------------------------
 
 	s("if", fmt([[
-	if ({condition}) {{
-		{body}
+	if ({condition}) {{{body}
 	}}
 	]], {
 		condition = i(1, "condition"),
@@ -218,8 +212,7 @@ return {
 	-- -----------------------------------------------------------------------
 
 	s("foreach", fmt([[
-	foreach (${items} as {item}) {{
-		{body}
+	foreach (${items} as {item}) {{{body}
 	}}
 	]], {
 		items = i(1, "items"),
@@ -239,8 +232,7 @@ return {
 	})),
 
 	s("for", fmt([[
-	for (${var1} = 0; ${var2} < {count}; ${var3}++) {{
-		{body}
+	for (${var1} = 0; ${var2} < {count}; ${var3}++) {{{body}
 	}}
 	]], {
 		var1 = i(1, "i"),
@@ -256,8 +248,7 @@ return {
 	-- -----------------------------------------------------------------------
 
 	s("try", fmt([[
-	try {{
-		{body}
+	try {{{body}
 	}} catch (Exception $e) {{
 		# code ...
 	}}
