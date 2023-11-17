@@ -278,3 +278,25 @@ custom_browse_wiki() {
         fi
     fi
 }
+
+custom_brep() {
+    origin=$(git remote -v|grep "origin"|grep "(fetch)")
+    regex="git@(.+):(.+)/(.+)\.git"
+
+    if [[ "$origin" =~ $regex ]]; then
+        host="${match[1]}"
+        project="${match[2]}"
+        repo="${match[3]}"
+
+        case $host in
+            "bitbucket.org")
+                open "https://$host/$project/$repo/"
+                ;;
+            *)
+                echo "Can not build uri from host $host"
+                ;;
+        esac
+    else
+        echo "Error: Unable to parse the git origin."
+    fi
+}
