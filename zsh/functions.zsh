@@ -289,7 +289,7 @@ custom_brep() {
         repo="${match[3]}"
 
         case $host in
-            "bitbucket.org")
+            "bitbucket.org"|"github.com")
                 open "https://$host/$project/$repo/"
                 ;;
             *)
