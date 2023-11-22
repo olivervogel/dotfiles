@@ -19,7 +19,11 @@ return {
 	{{{body}
 	}}
 	]], {
-		name = i(1, "ClassName"),
+		name = d(1, function(args, snip)
+			return sn(nil, {
+				i(1, string.sub(snip.env.TM_FILENAME, 1, -5))
+			})
+		end, {}),
 		extends = c(2, {
 			t(""),
 			sn(nil, {
