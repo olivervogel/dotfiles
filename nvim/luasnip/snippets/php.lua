@@ -67,7 +67,11 @@ return {
 	{{{body}
 	}}
 	]], {
-		name = i(1, "TraitName"),
+		name = d(1, function(args, snip)
+			return sn(nil, {
+				i(1, string.sub(snip.env.TM_FILENAME, 1, -5))
+			})
+		end, {}),
 		body = i(0)
 	})),
 
@@ -93,7 +97,11 @@ return {
 	{{{body}
 	}}
 	]], {
-		name = i(1, "InterfaceName"),
+		name = d(1, function(args, snip)
+			return sn(nil, {
+				i(1, string.sub(snip.env.TM_FILENAME, 1, -5))
+			})
+		end, {}),
 		body = i(0)
 	})),
 
@@ -107,7 +115,11 @@ return {
 		case {case_name}{case_value};
 	}}
 	]], {
-		name = i(1, "Name"),
+		name = d(1, function(args, snip)
+			return sn(nil, {
+				i(1, string.sub(snip.env.TM_FILENAME, 1, -5))
+			})
+		end, {}),
 		type = c(2, {
 			t(""),
 			t(": string"),
