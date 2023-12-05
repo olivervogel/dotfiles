@@ -118,7 +118,7 @@ return {
 	s("ul", fmt([[
 	<ul>
 		<li>{}</li>
-	</ul
+	</ul>
 	]], {
 		i(1)
 	})),
