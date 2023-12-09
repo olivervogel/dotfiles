@@ -520,7 +520,7 @@ return {
 			d(nil, function(args)
 				return sn(nil, {
 					t('$'),
-					i(1, "var")
+					i(1, "res")
 				})
 			end),
 			sn(nil, {
