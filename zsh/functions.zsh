@@ -41,6 +41,14 @@ custom_git_diff_commit() {
     fi
 }
 
+custom_git_diff_commit_files() {
+    preview="git diff-tree --no-commit-id --name-only {1} -r"
+    selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf -m --ansi --preview $preview)
+    if [ $selected ]; then
+        git diff-tree --no-commit-id --name-only $(echo $selected|cut -c 1-7) -r
+    fi
+}
+
 custom_git_checkout() {
     if [ $1 ]; then
         git checkout $1
