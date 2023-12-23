@@ -32,6 +32,7 @@
     - [ripgrep](https://github.com/BurntSushi/ripgrep)
     - [renameutils](https://www.nongnu.org/renameutils/)
     - [delta](https://github.com/dandavison/delta)
+    - [bat](https://github.com/sharkdp/bat)
     - [jq](https://jqlang.github.io/jq/)
     - [pass](https://www.passwordstore.org)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
