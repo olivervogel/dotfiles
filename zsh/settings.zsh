@@ -10,6 +10,8 @@ export PATH=/opt/homebrew/bin:$PATH
 export EDITOR=nvim
 export VISUAL=nvim
 
+export BAT_THEME="Solarized (dark)"
+
 HISTFILE=~/.zsh_history
 HISTSIZE=2000
 SAVEHIST=1000
