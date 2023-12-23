@@ -51,7 +51,7 @@ custom_git_diff_commit_files() {
 
 custom_git_diff_file() {
     if [ $1 ]; then
-        preview="git diff --color=always -p {1}^..{1} $1|delta"
+        preview="git show {1}:$1"
         selected=$(git log --follow --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges -- $1|fzf -m --ansi --preview $preview)
         if [ $selected ]; then
             git diff $(echo $selected|cut -c 1-7) $1
