@@ -37,6 +37,7 @@
     - [pass](https://www.passwordstore.org)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
     - [zbar](https://github.com/mchehab/zbar)
+    - [btop](https://github.com/aristocratos/btop)
 
 ## Fonts
 
