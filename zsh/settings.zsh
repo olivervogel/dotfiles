@@ -17,6 +17,8 @@ HISTSIZE=2000
 SAVEHIST=1000
 setopt SHARE_HISTORY
 
+setopt NO_BEEP
+
 export EXA_COLORS="\
 fi=38;5;110:\
 di=38;5;39;1:\
