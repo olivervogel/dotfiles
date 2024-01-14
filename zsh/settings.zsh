@@ -12,7 +12,7 @@ export VISUAL=nvim
 
 export BAT_THEME="Solarized (dark)"
 
-HISTFILE=~/.zsh_history
+HISTFILE=~/.cache/zsh/history
 HISTSIZE=2000
 SAVEHIST=1000
 setopt SHARE_HISTORY
