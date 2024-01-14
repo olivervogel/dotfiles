@@ -10,6 +10,8 @@ export PATH=/opt/homebrew/bin:$PATH
 export EDITOR=nvim
 export VISUAL=nvim
 
+export KEYTIMEOUT=1
+
 export BAT_THEME="Solarized (dark)"
 
 HISTFILE=~/.cache/zsh/history
