@@ -37,7 +37,9 @@ fi
 FPATH="${HOME}/.dotfiles/zsh/completions:${FPATH}"
 
 # enable autocompletion
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+zstyle ":completion:*" menu select
+compinit
 
 # configure autocompletion
 setopt completealiases
