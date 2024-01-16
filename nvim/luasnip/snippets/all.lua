@@ -8,6 +8,8 @@ return {
 		t({
 			"<?php",
 			"",
+			"declare(strict_types=1);",
+			"",
 			"",
 		}),
 		t("namespace "),
