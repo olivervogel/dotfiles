@@ -1,0 +1,3 @@
+# Disable in kitty
+filter_exec: kitty
+enable: false

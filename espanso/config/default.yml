@@ -1,0 +1,4 @@
+# espanso configuration file
+
+# hide icon in status bar
+show_icon: false

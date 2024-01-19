@@ -1,0 +1,13 @@
+# espanso match file
+matches:
+  - trigger: ":em"
+    replace: "oliver@olivervogel.com"
+
+  - trigger: ":bg"
+    replace: "Beste Grüße\nOliver"
+
+  - trigger: ":sg"
+    replace: "Schöne Grüße\nOliver"
+
+  - trigger: ":mfg"
+    replace: "Mit freundlichen Grüßen\nOliver Vogel Vogel"
