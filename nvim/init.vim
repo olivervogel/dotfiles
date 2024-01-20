@@ -101,6 +101,9 @@ nnoremap zu za
 onoremap zu <C-C>za
 vnoremap zu zf
 
+nnoremap gL $
+nnoremap gl ^
+
 " colors & theme
 syntax on
 set termguicolors
