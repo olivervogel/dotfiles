@@ -36,9 +36,10 @@
     - [jq](https://jqlang.github.io/jq/)
     - [pass](https://www.passwordstore.org)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
-    - [espanso](https://github.com/espanso/espanso)
     - [zbar](https://github.com/mchehab/zbar)
     - [btop](https://github.com/aristocratos/btop)
+    - [espanso](https://github.com/espanso/espanso)
+    - [skhd](https://github.com/koekeishiya/skhd)
 
 ## Fonts
 

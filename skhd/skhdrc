@@ -1,0 +1,5 @@
+# open terminal
+cmd - return : open -a /Applications/kitty.app/Contents/MacOS/kitty
+
+# open browser
+cmd - backspace : open -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser

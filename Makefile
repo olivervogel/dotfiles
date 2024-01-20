@@ -8,6 +8,7 @@ install:
 		@ln -nfs $$(pwd)/git ~/.config/git
 		@ln -nfs $$(pwd)/kitty ~/.config/kitty
 		@ln -nfs $$(pwd)/btop ~/.config/btop
+		@ln -nfs $$(pwd)/skhd ~/.config/skhd
 		@ln -nfs $$(pwd)/rc/zshrc ~/.zshrc
 		@ln -nfs $$(pwd)/rc/p10k.zsh ~/.p10k.zsh
 		@ln -nfs $$(pwd)/rc/tmux.conf ~/.tmux.conf
