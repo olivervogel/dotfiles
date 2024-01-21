@@ -16,6 +16,3 @@ zle -N tmuxpane-right
 # edit line in $EDITOR with ctrl-e
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
-
-# ctrl-i clears screen
-bindkey '^i' clear-screen
