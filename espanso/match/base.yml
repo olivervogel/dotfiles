@@ -14,3 +14,73 @@ matches:
 
   - trigger: ":lor"
     replace: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  - trigger: ":fkn"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker name"
+  - trigger: ":fkfn"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker firstname"
+  - trigger: ":fkln"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker lastname"
+  - trigger: ":fks"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker street"
+  - trigger: ":fkz"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker zip"
+  - trigger: ":fkc"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker city"
+  - trigger: ":fkp"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker phone"
+  - trigger: ":fkcomp"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker company"
+  - trigger: ":fkiban"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker iban"
+  - trigger: ":fkbic"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker bic"
