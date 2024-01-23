@@ -9,6 +9,9 @@ matches:
   - trigger: ":mfg"
     replace: "Mit freundlichen Grüßen\nOliver Vogel"
 
+  - trigger: ":ty"
+    replace: "Thank you"
+
   - trigger: ":fx"
     replace: "The quick brown fox jumps over the lazy dog"
 
