@@ -164,6 +164,13 @@ custom_git_restore_all() {
     git restore --stage --worktree .
 }
 
+custom_git_rebase() {
+    if [ $1 ]; then
+        git rebase -i HEAD~$1
+    fi
+}
+
+
 custom_git_revert() {
     preview="git diff-tree --color=always -p {1}|delta"
     selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf --ansi --preview $preview)
