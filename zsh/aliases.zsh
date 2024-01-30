@@ -1,6 +1,7 @@
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias e="nvim"
 alias vim="nvim"
+alias cat="bat"
 alias tw="timew"
 alias ls="eza --long --group --sort=name --group-directories-first"
 alias la="eza --long --group --all --sort=name --group-directories-first"
