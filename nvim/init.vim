@@ -201,7 +201,7 @@ require('nightfox').setup({
             ["@constant"] = { fg = "palette.blue.bright" }, -- For constants
             ["@constant.builtin"] = { fg = "palette.magenta" }, -- For constant that are built in the language: nil in Lua.
 
-            ["@namespace"] = { fg = "palette.yellow" }, -- For identifiers referring to modules and namespaces.
+            ["@module"] = { fg = "palette.yellow" }, -- For identifiers referring to modules and namespaces.
             ["@symbol"] = { fg = "palette.green" },
 
             ["@method"] = { fg = "palette.blue" }, -- For method calls and definitions.
