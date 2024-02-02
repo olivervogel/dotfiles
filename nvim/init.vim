@@ -54,7 +54,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kylechui/nvim-surround'
 
     " auto closing of quotes
-    Plug 'Raimondi/delimitMate'
+    Plug 'windwp/nvim-autopairs'
 
     " seamless navigation between vim & tmux
     Plug 'christoomey/vim-tmux-navigator'
@@ -445,6 +445,11 @@ inoremap <silent>Å <esc>A;<esc>
 " plugin settings
 " -----------------------------------------------------------------------------
 lua << EOF
+
+-- windwp/nvim-autopairs setup
+require('nvim-autopairs').setup({
+    enable_check_bracket_line = false
+})
 
 -- Bufferline setup
 require("bufferline").setup{

@@ -9,7 +9,7 @@
     - [neovim](https://www.neovim.io)
         - [vim-plug](https://github.com/junegunn/vim-plug)
             - [nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) (customized)
-            - [delimitMate](https://github.com/Raimondi/delimitMate)
+            - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
             - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
             - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
             - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
