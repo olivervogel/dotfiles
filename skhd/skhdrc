@@ -2,3 +2,5 @@
 meh - t : open -a /Applications/kitty.app/Contents/MacOS/kitty
 # open browser
 meh - b : open -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
+# open mail
+meh - m : open -a /System/Applications/Mail.app/Contents/MacOS/Mail
