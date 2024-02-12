@@ -1,2 +1,4 @@
 # open terminal
-cmd - return : open -a /Applications/kitty.app/Contents/MacOS/kitty
+meh - t : open -a /Applications/kitty.app/Contents/MacOS/kitty
+# open browser
+meh - b : open -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
