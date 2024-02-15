@@ -454,7 +454,7 @@ return {
 	/**
 	 * {title}
 	 *
-	 * @param  string $var
+	 * @param string $var
 	 * @return {ret_value}
 	 */
 	]], {
