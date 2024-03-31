@@ -38,6 +38,13 @@ matches:
         type: shell
         params:
           cmd: "~/.dotfiles/zsh/bin/faker lastname"
+  - trigger: ":fkem"
+    replace: "{{faker}}"
+    vars:
+      - name: faker
+        type: shell
+        params:
+          cmd: "~/.dotfiles/zsh/bin/faker email"
   - trigger: ":fks"
     replace: "{{faker}}"
     vars:

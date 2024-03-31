@@ -71,6 +71,29 @@ case "$1" in
            "Hoffmann"
        )
        ;;
+   "email")
+       local values=(
+           "dhuber@gmail.com"
+           "rauch.oskar@stadler.org"
+           "valentina.hummel@mertens.de"
+           "andre.sauter@nagel.net"
+           "yusuf.geyer@mail.de"
+           "john56@hotmail.com"
+           "gunda.frank@t-online.de"
+           "simona50@posteo.de"
+           "rudi70@aol.com"
+           "peer15@menzel.de"
+           "peer15@menzel.de"
+           "roberto99@wartburg.de"
+           "reimund00@rupp.de"
+           "conny21@live.de"
+           "simon.kristin@bauer-immobilien.de"
+           "gernot21@hotmail.de"
+           "bender.wolfram@gmx.de"
+           "kessler.klaus@mail.de"
+           "hanschristian52@brunner.de"
+       )
+       ;;
    "street")
        local values=(
            "Petersenstraße"
