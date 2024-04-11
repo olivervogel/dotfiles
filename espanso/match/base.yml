@@ -38,7 +38,7 @@ matches:
         type: shell
         params:
           cmd: "~/.dotfiles/zsh/bin/faker lastname"
-  - trigger: ":fkem"
+  - trigger: ":fke"
     replace: "{{faker}}"
     vars:
       - name: faker
