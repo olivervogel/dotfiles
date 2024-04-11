@@ -17,8 +17,9 @@ export BAT_THEME="Solarized (dark)"
 export GPG_TTY=$(tty)
 
 HISTFILE=~/.cache/zsh/history
-HISTSIZE=2000
-SAVEHIST=1000
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTORY_IGNORE="(ls|cd|pwd|exit|cd)*"
 setopt SHARE_HISTORY
 
 setopt NO_BEEP
