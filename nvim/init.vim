@@ -357,9 +357,9 @@ nmap <Leader>ss :%s//g<Left><Left>
 nmap <Leader>sl yiw:s/<c-r>0//g<Left><Left>
 
 
-" scroll up/down with backspace/enter
-nnoremap <cr> <c-d>
-nnoremap <bs> <c-u>
+" scroll up/down with pg_up/pg_down
+nnoremap <Down> <c-d>
+nnoremap <Up> <c-u>
 
 " navigate back changelist 
 " back with alt-backspace
