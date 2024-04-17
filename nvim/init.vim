@@ -340,10 +340,9 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap ∆ :m .-2<CR>==
 nnoremap <A-k> :m .-2<CR>==
 
-" switch buffers with tab & shift+tab
-noremap <tab> :bnext<cr>
-noremap <S-tab> :bprevious<cr>
-noremap <A-tab> :bprevious<cr>
+" switch buffers with ctrl-tab & ctrl-shift-tab
+noremap <C-Tab> :bnext<cr>
+noremap <C-S-Tab> :bprevious<cr>
 
 " yank into system clipboard
 vnoremap <C-c> "+y
