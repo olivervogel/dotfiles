@@ -1017,9 +1017,11 @@ require("nvim-surround").setup({})
 EOF
 
 " telescope settings
-nnoremap <c-p> :Telescope find_files hidden=true<cr>
-nnoremap <a-r> :Telescope lsp_document_symbols<cr>
-nnoremap ® :Telescope lsp_document_symbols<cr>
+" nnoremap <c-p> :Telescope find_files hidden=true<cr>
+" nnoremap <a-r> :Telescope lsp_document_symbols<cr>
+" nnoremap ® :Telescope lsp_document_symbols<cr>
+" nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
+" nnoremap <c-f> :Telescope oldfiles<cr>
 nnoremap <leader>ff :Telescope find_files hidden=true<cr>
 
 " telescope (f)ind (s)tring
@@ -1035,8 +1037,6 @@ nnoremap <leader>fr :Telescope resume<cr>
 nnoremap <leader>fq :Telescope quickfix<cr>
 nnoremap <leader>fm :Telescope marks<cr>
 nnoremap <leader>fz :Telescope current_buffer_fuzzy_find<cr>
-nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
-nnoremap <c-f> :Telescope oldfiles<cr>
 
 " mappings to run commands in certain tmux panes
 nnoremap <silent> <leader>bd :silent !tmux send -t 1 'wide build' Enter<cr>
