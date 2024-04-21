@@ -340,6 +340,8 @@ nnoremap <A-k> :m .-2<CR>==
 noremap <C-Tab> :bnext<cr>
 noremap <C-S-Tab> :bprevious<cr>
 
+noremap WW :w<cr>
+
 " yank into system clipboard
 vnoremap <C-c> "+y
 
