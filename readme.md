@@ -55,7 +55,7 @@ I use a highly customized layout, which is based on the US standard layout. In
 order to have access to German umlauts, these have been added to the following
 Mac OS keyboard.
 
-To install this, simply place the bundle file under `/Libray/Keyboard Layouts`.
+To install this, simply place the bundle file under `/Library/Keyboard Layouts`.
 You can then select the keyboard via the system settings.
 
 [^1]: Installation via `git clone` in ~/.zsh/pack/<package-name>
