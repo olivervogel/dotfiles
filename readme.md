@@ -49,15 +49,13 @@
 
 - [intelephense](https://intelephense.com)
 
-## Keyboard Layout
+## Keyboard
 
-Depending on the region, it is possible that keyboards have so-called dead
-keys. For software developers, this can lead to undesired input behavior.
-Especially the keyboards with ISO-DE layout have annoying dead keys which
-unnecessarily negatively affect the workflow in Neovim.
+I use a highly customized layout, which is based on the US standard layout. In
+order to have access to German umlauts, these have been added to the following
+Mac OS keyboard.
 
-This custom keyboard layout bundle for macOS removes the dead key behaviour.
-Put `macos/No Dead Keys.bundle` into `/Library/Keyboard Layouts/` and load and
-apply it via System Preferences afterwards.
+To install this, simply place the bundle file under `/Libray/Keyboard Layouts`.
+You can then select the keyboard via the system settings.
 
 [^1]: Installation via `git clone` in ~/.zsh/pack/<package-name>
