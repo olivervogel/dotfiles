@@ -1024,16 +1024,17 @@ EOF
 " nnoremap ® :Telescope lsp_document_symbols<cr>
 " nnoremap <c-s> :Telescope file_browser path=%:p:h<cr>
 " nnoremap <c-f> :Telescope oldfiles<cr>
-nnoremap <leader>ff :Telescope find_files hidden=true<cr>
 
 " telescope (f)ind (s)tring
-nnoremap <leader>fs :Telescope live_grep<cr>
 
 " telescope (f)ind string under (c)ursor
 nnoremap <leader>fc :Telescope grep_string<cr>
 
+nnoremap <leader>ff :Telescope find_files hidden=true<cr>
+nnoremap <leader>fd :Telescope file_browser path=%:p:h<cr>
+nnoremap <leader>fs :Telescope live_grep<cr>
 nnoremap <leader>fb :Telescope buffers<cr>
-nnoremap <leader>fh :Telescope help_tags<cr>
+nnoremap <leader>fh :Telescope oldfiles<cr>
 nnoremap <leader>gs :Telescope git_status<cr>
 nnoremap <leader>fr :Telescope resume<cr>
 nnoremap <leader>fq :Telescope quickfix<cr>
