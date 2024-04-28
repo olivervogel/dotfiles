@@ -353,20 +353,10 @@ nmap <Leader>sc yiw:%s/<c-r>0//g<Left><Left>
 nmap <Leader>ss :%s//g<Left><Left>
 nmap <Leader>sl yiw:s/<c-r>0//g<Left><Left>
 
-
-" scroll up/down with pg_up/pg_down
-nnoremap <Down> <c-d>
-nnoremap <Up> <c-u>
-
-" navigate back changelist 
-" back with alt-backspace
-nnoremap <M-BS> g;
-" forward with alt-enter which is mapped by terminal to special char
+" navigate changelist BACK with cmd-h (mapped via skhd in terminal)
+nnoremap Þ g;
+" navigate changelist FORWARD with cmd-l (mapped via skhd in terminal)
 nnoremap … g,
-
-" navigation to next/prev function with alt-#/alt-plus
-nnoremap ‘ ]mzz
-nnoremap ± [mzz
 
 " repeat last command line command
 nnoremap <Leader>zz @:
@@ -1034,7 +1024,7 @@ nnoremap <leader>ff :Telescope find_files hidden=true<cr>
 nnoremap <leader>fd :Telescope file_browser path=%:p:h<cr>
 nnoremap <leader>fs :Telescope live_grep<cr>
 nnoremap <leader>fb :Telescope buffers<cr>
-nnoremap <leader>fh :Telescope oldfiles<cr>
+nnoremap <leader>fo :Telescope oldfiles<cr>
 nnoremap <leader>gs :Telescope git_status<cr>
 nnoremap <leader>fr :Telescope resume<cr>
 nnoremap <leader>fq :Telescope quickfix<cr>

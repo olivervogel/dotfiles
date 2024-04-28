@@ -1,6 +1,40 @@
 # open terminal
 meh - t : open -a /Applications/kitty.app/Contents/MacOS/kitty
+
 # open browser
 meh - b : open -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
+
 # open mail
 meh - e : open -a /System/Applications/Mail.app/Contents/MacOS/Mail
+
+# cmd up: (half) page up
+cmd - down [
+    "kitty" : skhd -k "ctrl - d"
+    * : skhd -k "pagedown"
+]
+
+# cmd down: (half) page down
+cmd - up [
+    "kitty" : skhd -k "ctrl - u"
+    * : skhd -k "pageup"
+]
+
+# cmd left
+cmd - left [
+    "kitty" : skhd -t "Þ"
+]
+
+# cmd right
+cmd - right [
+    "kitty" : skhd -t "…"
+]
+
+# alt up
+alt - up [
+    "kitty" : skhd -t "∆"
+]
+
+# alt down
+alt - down [
+    "kitty" : skhd -t "º"
+]
