@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'akinsho/bufferline.nvim'
 
     " snippets
-    Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.0.0', 'do': 'make install_jsregexp'}
+    Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.3.0', 'do': 'make install_jsregexp'}
 
     " code commenting
     Plug 'numToStr/Comment.nvim'
@@ -72,11 +72,11 @@ au BufRead,BufNewFile *.php set syntax=on
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 " Laravel templates
-au BufRead,BufNewFile *.blade.php set filetype=html.blade
+au BufRead,BufNewFile *.blade.php set filetype=blade
 au BufRead,BufNewFile *.blade.php set syntax=html
 
 " Silverstripe templates
-au BufRead,BufNewFile *.ss set filetype=html.silverstripe
+au BufRead,BufNewFile *.ss set filetype=silverstripe
 au BufRead,BufNewFile *.ss set syntax=html
 
 " -----------------------------------------------------------------------------
@@ -926,6 +926,8 @@ ls.config.setup({
 })
 
 ls.filetype_extend("vue", {"html"})
+ls.filetype_extend("blade", {"html"})
+ls.filetype_extend("silverstripe", {"html"})
 ls.filetype_extend("zsh", {"sh"})
 
 function maybe_leave_snippet()
