@@ -985,9 +985,6 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         {
-            name = 'nvim_lsp'
-        },
-        {
             name = 'buffer',
             option = {
                 get_bufnrs = function()
@@ -996,6 +993,10 @@ cmp.setup({
                 end
             }
         },
+        {
+            name = 'nvim_lsp'
+        },
+
     }, {
     })
 })
