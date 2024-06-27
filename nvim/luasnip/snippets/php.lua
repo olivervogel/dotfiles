@@ -85,6 +85,11 @@ return {
 	}}
 	]], {
 		args = i(1, ""),
+		args = c(1, {
+			t(""),
+			t("protected int $var"),
+			t("protected ?int $var = null"),
+		}),
 		body = i(0)
 	})),
 
