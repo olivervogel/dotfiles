@@ -832,8 +832,10 @@ phpcs.args = {
     '-'
 }
 
--- enable numToStr/Comment plugin
+-- setup numToStr/Comment plugin
 require('Comment').setup()
+local comment = require('Comment.ft')
+comment({'blade', 'silverstripe'}, comment.get('html'))
 
 -- ----------------------------------------------
 -- snippet settings
