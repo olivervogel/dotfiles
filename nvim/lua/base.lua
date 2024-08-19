@@ -1,9 +1,9 @@
 -- code folding settings
-vim.opt.foldmethod = 'manual'
+vim.opt.foldmethod = "manual"
 vim.opt.foldlevel = 10
 
 -- search down into subfolders
-vim.opt.path:append '**'
+vim.opt.path:append "**"
 
 -- display all matching files on tab completion
 vim.opt.wildmenu = true
@@ -27,7 +27,7 @@ vim.opt.autoindent = true
 vim.opt.copyindent = true
 
 -- set column rulers
-vim.opt.colorcolumn = '80,120'
+vim.opt.colorcolumn = "80,120"
 
 -- relative/hybrid line numbers
 vim.opt.number = true
@@ -51,13 +51,3 @@ vim.g.netrw_banner = 0
 
 -- disable mouse
 vim.opt.mouse = ""
-
--- statusline
-vim.opt.statusline = " "
-vim.opt.statusline:append("%f") -- full file path
-vim.opt.statusline:append(" ")
-vim.opt.statusline:append("%=") -- align right
-vim.opt.statusline:append("%-5(%p%%%)") -- percentual position in buffer
-vim.opt.statusline:append("%-5(%l:%c%)") -- line & column number
-vim.opt.statusline:append("%8{(&fenc!=''?&fenc:&enc)} (%{&ff})") -- encoding
-vim.opt.statusline:append(" ")

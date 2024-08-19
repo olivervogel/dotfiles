@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { "*.blade.php" },
     callback = function()
         local buf = vim.api.nvim_get_current_buf()
-        vim.api.nvim_buf_set_option(buf, "filetype", "html.blade")
+        vim.api.nvim_buf_set_option(buf, "filetype", "blade")
         vim.api.nvim_buf_set_option(buf, "syntax", "html")
     end,
 })
@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { "*.ss" },
     callback = function()
-        vim.api.nvim_buf_set_option(buf, "filetype", "html.silverstripe")
+        vim.api.nvim_buf_set_option(buf, "filetype", "silverstripe")
         vim.api.nvim_buf_set_option(buf, "syntax", "html")
     end,
 })

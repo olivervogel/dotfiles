@@ -1,11 +1,11 @@
 return {
     "EdenEast/nightfox.nvim",
+    version = "^3.10",
     lazy = false,
     priority = 1000,
-    config = function(_, opts)
-        require("nightfox").setup(opts)
+    init = function()
         vim.cmd([[colorscheme nightfox]])
-        -- vim.cmd([[syntax on]])
+        vim.cmd([[syntax on]])
         vim.opt.termguicolors = true
     end,
     opts = function()
@@ -28,7 +28,6 @@ return {
                     white = { base = "#B4BDC3", bright = "#EEF0F1", dim = "#7D8C97" },
                     blue = { base = "#4A8AEA", bright = "#86AADF", dim = "#5978A6" },
                     magenta = Shade.new("#1A6BE5", 0, 0),
-                    magenta = Shade.new("#1A6BE5", 0, 0),
                     orange = { base = "#D88142", bright = "#EFC9AF", dim = "#965E36" },
                     yellow = { base = "#C6A339", bright = "#E4CB81", dim = "#8F7A3D" },
                     green = { base = "#8AA88A", bright = "#BDDBBD", dim = "#6A7A6A" },
@@ -50,7 +49,7 @@ return {
                         builtin1 = "white", -- Illuminate
                         keyword = "blue.bright", -- class, extends
                         bracket = "white.dim",
-                        comment = "comment",
+                        comment     = "comment",
                         func = "blue",
                         preproc = "blue.bright", -- use
                         string = "green",
@@ -100,7 +99,7 @@ return {
                     ["@constant"] = { fg = "palette.blue.bright" }, -- For constants
                     ["@constant.builtin"] = { fg = "palette.magenta" }, -- For constant that are built in the language: nil in Lua.
 
-                    ["@namespace"] = { fg = "palette.yellow" }, -- For identifiers referring to modules and namespaces.
+                    ["@module"] = { fg = "palette.yellow" }, -- For identifiers referring to modules and namespaces.
                     ["@symbol"] = { fg = "palette.green" },
 
                     ["@method"] = { fg = "palette.blue" }, -- For method calls and definitions.
