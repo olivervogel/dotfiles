@@ -56,4 +56,3 @@ Depending on the region, it is possible that keyboards have so-called dead keys.
 This custom keyboard layout bundle for macOS removes the dead key behaviour. Put `macos/No Dead Keys.bundle` into `/Library/Keyboard Layouts/` and load and apply it via System Preferences afterwards.
 
 [^1]: Installation via `git clone` in ~/.zsh/pack/<package-name>
-
