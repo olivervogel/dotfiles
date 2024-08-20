@@ -45,6 +45,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end,
 })
 
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "gitcommit",
+--   callback = function()
+--       vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("gg", true, true, true), 'n', false)
+--   end,
+-- })
+
 -- show help always in vertical split
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*.txt" },
