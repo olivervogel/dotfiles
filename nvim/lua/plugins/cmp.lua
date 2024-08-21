@@ -30,8 +30,8 @@ return {
                 ["<c-p>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item()
-                    elseif ls.choice_active() then
-                        ls.change_choice(-1)
+                    elseif require("luasnip").choice_active() then
+                        require("luasnip").change_choice(-1)
                     else
                         fallback()
                     end
@@ -39,8 +39,8 @@ return {
                 ["<c-n>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()
-                    elseif ls.choice_active() then
-                        ls.change_choice(1)
+                    elseif require("luasnip").choice_active() then
+                        require("luasnip").change_choice(1)
                     else
                         fallback()
                     end
