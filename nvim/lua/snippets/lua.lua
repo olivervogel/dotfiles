@@ -11,4 +11,18 @@ return {
 		),
 	})),
 
+	s("ret", {
+		t("return "),
+		i(0),
+	}),
+
+	s("fn", fmt([[
+	function({args})
+    {body}
+    end
+	]], {
+		args = i(1, ""),
+		body = i(0)
+	})),
+
 }

@@ -7,7 +7,7 @@
         - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) [^1]
         - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) [^1]
     - [neovim](https://www.neovim.io)
-        - [vim-plug](https://github.com/junegunn/vim-plug)
+        - [lazy.nvim](https://github.com/folke/lazy.nvim)
             - [nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) (customized)
             - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
             - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
