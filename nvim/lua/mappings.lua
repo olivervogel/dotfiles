@@ -46,8 +46,8 @@ vim.api.nvim_set_keymap('n', '<cr>', '<c-d>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<bs>', '<c-u>', { noremap = true })
 
 -- navigate back changelist (back with alt-backspace. forward with alt-enter)
-vim.api.nvim_set_keymap('n', '<m-bs>', 'g;', { noremap = true })
-vim.api.nvim_set_keymap('n', '…', 'g,', { noremap = true })
+vim.api.nvim_set_keymap('n', '<m-bs>', 'g;zz', { noremap = true })
+vim.api.nvim_set_keymap('n', '…', 'g,zz', { noremap = true })
 
 -- navigation to next/prev function with alt-#/alt-plus
 vim.api.nvim_set_keymap('n', '‘', ']mzz', { noremap = true })
