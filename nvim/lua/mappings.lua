@@ -8,6 +8,9 @@ vim.api.nvim_set_keymap('', '<Up>', '<Nop>', { noremap = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- save with <leader>w
+vim.api.nvim_set_keymap('', '<leader>w', ':w<cr>', { noremap = true })
+
 -- remaping for german keyboard
 vim.api.nvim_set_keymap('n', '^', '`', { noremap = true })
 vim.api.nvim_set_keymap('n', '&', '^', { noremap = true })
