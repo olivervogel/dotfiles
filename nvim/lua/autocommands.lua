@@ -26,6 +26,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
+-- lua
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "lua" },
+    callback = function()
+        vim.opt.tabstop = 3
+        vim.opt.softtabstop = 3
+    end,
+})
+
 -- Laravel templates
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { "*.blade.php" },

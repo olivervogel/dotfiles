@@ -102,14 +102,14 @@ command! Q :q
 
 -- toggle quickfix list
 function toggle_quickfix_list()
-    local windows = vim.fn.getwininfo()
-    for _, win in pairs(windows) do
-        if win["quickfix"] == 1 then
-            vim.cmd.cclose()
-            return
-        end
-    end
-    vim.cmd.copen()
+   local windows = vim.fn.getwininfo()
+   for _, win in pairs(windows) do
+      if win["quickfix"] == 1 then
+         vim.cmd.cclose()
+         return
+      end
+   end
+   vim.cmd.copen()
 end
 
 -- bind toggle quickfix list (option-shift-[-])

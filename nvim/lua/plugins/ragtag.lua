@@ -1,4 +1,4 @@
 return {
-    "tpope/vim-ragtag",
-    event = "InsertEnter",
+   "tpope/vim-ragtag",
+   event = "InsertEnter",
 }
