@@ -1,10 +1,10 @@
 return {
     "christoomey/vim-tmux-navigator",
     keys = {
-        { "<c-h>", ":TmuxNavigateLeft<cr>", desc = "tmux left" },
-        { "<c-j>", ":TmuxNavigateDown<cr>", desc = "tmux down" },
-        { "<c-k>", ":TmuxNavigateUp<cr>", desc = "tmux up" },
-        { "<c-l>", ":TmuxNavigateRight<cr>", desc = "tmux right" },
+        { "<c-h>", ":TmuxNavigateLeft<cr>", desc = "tmux left", silent = true },
+        { "<c-j>", ":TmuxNavigateDown<cr>", desc = "tmux down", silent = true },
+        { "<c-k>", ":TmuxNavigateUp<cr>", desc = "tmux up", silent = true },
+        { "<c-l>", ":TmuxNavigateRight<cr>", desc = "tmux right", silent = true },
     },
     init = function()
         vim.g.tmux_navigator_no_mappings = 1
