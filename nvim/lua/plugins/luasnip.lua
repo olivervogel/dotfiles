@@ -36,7 +36,7 @@ return {
 
       ls.filetype_extend("vue", {"html"})
       ls.filetype_extend("blade", {"html"})
-      ls.filetype_extend("silverstripe", {"html"})
+      ls.filetype_extend("silverstripe_html", {"html"})
       ls.filetype_extend("zsh", {"sh"})
 
       local function maybe_leave_snippet()

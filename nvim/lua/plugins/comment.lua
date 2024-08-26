@@ -5,6 +5,6 @@ return {
    config = true,
    init = function()
       local comment = require('Comment.ft')
-      comment({'blade', 'silverstripe'}, comment.get('html'))
+      comment({'blade', 'silverstripe_html'}, comment.get('html'))
    end
 }
