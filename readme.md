@@ -48,6 +48,7 @@
 ## Language Servers
 
 - [intelephense](https://intelephense.com)
+- [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
 
 ## Keyboard Layout
 

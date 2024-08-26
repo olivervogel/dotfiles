@@ -21,7 +21,6 @@ return {
          virtual_text = false
       })
 
-
       -- set shortcuts for lsp commands
       local opts = { noremap=true, silent=true }
       local on_attach = function(client, bufnr)
@@ -222,6 +221,34 @@ return {
                }
             }
          }
+      }
+
+      -- html language server
+      require('lspconfig').html.setup {
+         on_attach = on_attach,
+         cmd = { "vscode-html-language-server", "--stdio" },
+         filetypes = { "html", "silverstripe_html", "blade" },
+         init_options = {
+            configurationSection = { "html", "css", "javascript" },
+            embeddedLanguages = {
+               css = true,
+               javascript = true
+            },
+            provideFormatter = true
+         },
+      }
+
+      -- css language server
+      require('lspconfig').cssls.setup {
+         on_attach = on_attach,
+         cmd = { "vscode-css-language-server", "--stdio" },
+         filetypes = { "css", "less", "scss" },
+      }
+
+      -- javascript/typescript language server
+      require('lspconfig').eslint.setup {
+         on_attach = on_attach,
+         cmd = { "vscode-eslint-language-server", "--stdio" },
       }
 
       -- show diagnostic warning with line highlighting instead of symbol
