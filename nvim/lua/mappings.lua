@@ -29,9 +29,9 @@ vim.api.nvim_set_keymap('n', '∆', ':m .-2<cr>==', { noremap = true })
 vim.api.nvim_set_keymap('n', '<a-k>', ':m .-2<cr>==', { noremap = true })
 
 -- switch buffers with tab & shift+tab
-vim.api.nvim_set_keymap('', '<tab>', ':bnext<cr>', { noremap = true })
-vim.api.nvim_set_keymap('', '<s-tab>', ':bprevious<cr>', { noremap = true })
-vim.api.nvim_set_keymap('', '<a-tab>', ':bprevious<cr>', { noremap = true })
+vim.api.nvim_set_keymap('', '<tab>', ':bnext<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('', '<s-tab>', ':bprevious<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('', '<a-tab>', ':bprevious<cr>', { noremap = true, silent = true })
 
 -- yank into system clipboard
 vim.api.nvim_set_keymap('v', '<c-c>', '"+y"', { noremap = true })
