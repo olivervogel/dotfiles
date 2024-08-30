@@ -1,0 +1,45 @@
+#compdef timew
+
+_timew_get_commands() {
+    printf "\
+       continue\n\
+       day\n\
+       delete\n\
+       diagnostics\n\
+       export\n\
+       extensions\n\
+       gaps\n\
+       get\n\
+       help\n\
+       join\n\
+       lengthen\n\
+       modify\n\
+       month\n\
+       move\n\
+       shorten\n\
+       show\n\
+       split\n\
+       start\n\
+       stop\n\
+       summary\n\
+       tag\n\
+       tags\n\
+       track\n\
+       undo\n\
+       untag\n\
+       week\n\
+       help\n"
+}
+
+_timew() {
+  local -a commands
+  commands=(`_timew_get_commands`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_timew
