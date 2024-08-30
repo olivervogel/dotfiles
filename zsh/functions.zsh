@@ -301,3 +301,16 @@ custom_brep() {
         echo "Error: Unable to parse the git origin."
     fi
 }
+
+custom_timewarrior_create() {
+    if [ $1 ]; then
+        timew start $@
+    else
+        selected=$(cat ~/.timewarrior/data/tags.data|jq -r 'keys[] | if test(" ") then "\"\(.)\"" else . end'|fzf -m)
+        if [ $selected ]; then
+            # echo $selected | xargs timew start
+            tags_in_one_line=($(echo $selected | tr "," "\n"))
+            print -z "timew start $tags_in_one_line" # display only
+        fi
+    fi
+}

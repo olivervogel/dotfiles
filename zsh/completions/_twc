@@ -1,0 +1,22 @@
+#compdef twc
+
+_twc_get_commands() {
+    printf "\
+       foo\n\
+       bar\n\
+       baz\n"
+}
+
+_twc() {
+  local -a commands
+  commands=(`_twc_get_commands`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_twc
+
