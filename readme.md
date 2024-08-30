@@ -39,6 +39,7 @@
     - [zbar](https://github.com/mchehab/zbar)
     - [espanso](https://github.com/espanso/espanso)
     - [skhd](https://github.com/koekeishiya/skhd)
+    - [Timewarrior](https://github.com/GothenburgBitFactory/timewarrior)
 
 ## Fonts
 
