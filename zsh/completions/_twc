@@ -1,22 +1,15 @@
 #compdef twc
 
-_twc_get_commands() {
-    printf "\
-       foo\n\
-       bar\n\
-       baz\n"
-}
-
 _twc() {
-  local -a commands
-  commands=(`_twc_get_commands`)
+    local keys
+    keys=$(jq -r 'keys[]' ~/.timewarrior/data/tags.data)
+    array=(${(f)keys})
 
-  if (( CURRENT == 2 )); then
-    _describe -t commands 'commands' commands
-  fi
-
-  return 0
+    # add each value as option
+    for string in $array
+        do
+            compadd $string
+        done
 }
 
 _twc
-
