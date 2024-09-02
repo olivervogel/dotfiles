@@ -2,7 +2,7 @@
 
 _twc() {
     local keys
-    keys=$(jq -r 'keys[]' ~/.timewarrior/data/tags.data)
+    keys=$(jq -r 'keys[]' ~/.local/share/timewarrior/data/tags.data)
     array=(${(f)keys})
 
     # add each value as option
