@@ -26,7 +26,7 @@
             - [tpope/vim-ragtag](https://github.com/tpope/vim-ragtag)
             - [Vim Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator)
     - [tmux](https://github.com/tmux/tmux/wiki/Installing)
-    - [z - jump around](https://github.com/rupa/z) [^1]
+    - [z - jump around](https://github.com/rupa/z)
     - [fzf](https://github.com/junegunn/fzf)
     - [eza](https://github.com/eza-community/eza/)
     - [ripgrep](https://github.com/BurntSushi/ripgrep)
@@ -56,5 +56,3 @@
 Depending on the region, it is possible that keyboards have so-called dead keys. For software developers, this can lead to undesired input behavior. Especially the keyboards with ISO-DE layout have annoying dead keys which unnecessarily negatively affect the workflow in Neovim.
 
 This custom keyboard layout bundle for macOS removes the dead key behaviour. Put `macos/No Dead Keys.bundle` into `/Library/Keyboard Layouts/` and load and apply it via System Preferences afterwards.
-
-[^1]: Installation via `git clone` in ~/.zsh/pack/<package-name>

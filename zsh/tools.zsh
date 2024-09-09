@@ -1,6 +1,6 @@
 # z - jump around
-if [ -f ~/.zsh/pack/z/z.sh ]; then
-. ~/.zsh/pack/z/z.sh
+if [ -f $(brew --prefix)/etc/profile.d/z.sh ]; then
+    . $(brew --prefix)/etc/profile.d/z.sh
 fi
 
 # powerlevel10k
