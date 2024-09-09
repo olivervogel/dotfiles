@@ -4,8 +4,8 @@ if [ -f ~/.zsh/pack/z/z.sh ]; then
 fi
 
 # powerlevel10k
-if [ -f ~/.zsh/pack/powerlevel10k/powerlevel10k.zsh-theme ]; then
-source ~/.zsh/pack/powerlevel10k/powerlevel10k.zsh-theme
+if [ -f $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme ]; then
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 fi
 
 # powerlevel10k

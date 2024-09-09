@@ -4,7 +4,7 @@
 
 - [kitty](https://sw.kovidgoyal.net/kitty)
     - [zsh](https://www.zsh.org)
-        - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) [^1]
+        - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
         - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) [^1]
     - [neovim](https://www.neovim.io)
         - [lazy.nvim](https://github.com/folke/lazy.nvim)
