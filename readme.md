@@ -5,7 +5,7 @@
 - [kitty](https://sw.kovidgoyal.net/kitty)
     - [zsh](https://www.zsh.org)
         - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-        - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) [^1]
+        - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
     - [neovim](https://www.neovim.io)
         - [lazy.nvim](https://github.com/folke/lazy.nvim)
             - [nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) (customized)

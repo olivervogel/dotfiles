@@ -17,8 +17,8 @@ fi
 source <(fzf --zsh)
 
 # zsh history substr search
-if [ -f ~/.zsh/pack/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
-source ~/.zsh/pack/zsh-history-substring-search/zsh-history-substring-search.zsh
+if [ -f $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 fi
 
 # asdf
