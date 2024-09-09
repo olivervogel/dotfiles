@@ -27,7 +27,7 @@
             - [Vim Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator)
     - [tmux](https://github.com/tmux/tmux/wiki/Installing)
     - [z - jump around](https://github.com/rupa/z) [^1]
-    - [fzf](https://github.com/junegunn/fzf) [^1]
+    - [fzf](https://github.com/junegunn/fzf)
     - [eza](https://github.com/eza-community/eza/)
     - [ripgrep](https://github.com/BurntSushi/ripgrep)
     - [renameutils](https://www.nongnu.org/renameutils/)
