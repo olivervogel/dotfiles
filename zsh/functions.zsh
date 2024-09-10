@@ -314,3 +314,7 @@ custom_timewarrior_create() {
         fi
     fi
 }
+
+custom_fg() {
+    fg
+}
