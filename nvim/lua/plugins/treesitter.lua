@@ -19,6 +19,7 @@ return {
          "markdown",
          "lua",
          "cpp",
+         "nix",
       },
       highlight = {
          enable = true,
