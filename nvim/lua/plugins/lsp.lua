@@ -1,6 +1,6 @@
 return {
    "neovim/nvim-lspconfig",
-   version = "^0.1.8",
+   version = "^1.0",
    event = { "BufReadPre", "BufNewFile" },
    keys = {
       { "<leader>d", "<cmd>lua vim.diagnostic.open_float()<cr>", noremap = true, silent = true },
