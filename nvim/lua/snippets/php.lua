@@ -40,10 +40,12 @@ return {
 			t("private"),
 			t("public"),
 		}),
+		t(" "),
+		i(2, "string"),
 		t(" $"),
-		i(2, "propertyName"),
+		i(3, "propertyName"),
 		t(" = "),
-		i(3, "null"),
+		i(4, "null"),
 		t(";"),
 	});
 
