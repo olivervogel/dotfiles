@@ -90,6 +90,14 @@ vim.api.nvim_set_keymap('n', '<leader>bd', ':silent !tmux send -t 1 "wide build"
 vim.api.nvim_set_keymap('n', '<leader>rt', ':silent !tmux send -t 1 "docker-compose run --rm tests" Enter<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ra', ':silent !tmux send -t 1 "docker-compose run --rm analysis" Enter<cr>', { noremap = true, silent = true })
 
+-- mergetool next/prev conflict
+vim.api.nvim_set_keymap('n', 'dfj', ']c', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'dfk', '[c', { noremap = true, silent = true })
+
+-- mergetool diffget REMOTE/LOCAL
+vim.api.nvim_set_keymap('n', 'dfh', ':diffget LOCAL<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'dfl', ':diffget REMOTE<cr>', { noremap = true, silent = true })
+
 -- todo: translate to lua
 vim.cmd [[
 " :W should behave the same way as :w
