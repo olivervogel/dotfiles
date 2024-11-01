@@ -11,6 +11,19 @@ custom_tmux_create() {
     tmux -2 attach-session -t $sessionname
 }
 
+custom_tmux_create_triple() {
+    sessionname=$(custom_slugify $(basename $(pwd)))
+    tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
+    tmux split-window -h -c $(pwd) -l 70%
+    tmux select-pane -L
+    tmux split-window -v -c $(pwd) -l 33%
+    tmux select-pane -U
+    tmux split-window -v -c $(pwd)
+    tmux select-pane -U
+    tmux select-pane -R
+    tmux -2 attach-session -t $sessionname
+}
+
 custom_tmux_attach() { 
     if [ $1 ]; then
         tmux attach -t $1
