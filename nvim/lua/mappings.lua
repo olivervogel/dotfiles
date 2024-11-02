@@ -78,8 +78,8 @@ vim.api.nvim_set_keymap('n', '˛', ':cprev<cr>', { noremap = true, silent = true
 -- reload file to saved state
 vim.api.nvim_set_keymap('n', '<f5>', ':e!<cr>', { noremap = true, silent = true })
 
--- delete buffer (option-shift-[w])
-vim.api.nvim_set_keymap('n', '„', ':bd<cr>', { noremap = true, silent = true })
+-- delete buffer & and keep split layout (option-shift-[w])
+vim.api.nvim_set_keymap('n', '„', ':bp|bd #<cr>', { noremap = true, silent = true })
 
 -- add semicolor to end of line (option-shift-a)
 vim.api.nvim_set_keymap('n', 'Å', 'A;<esc>', { noremap = true, silent = true })
