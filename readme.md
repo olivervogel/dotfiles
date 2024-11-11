@@ -39,7 +39,7 @@ cd ~/.dotfiles && make install
             - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
             - [tpope/vim-ragtag](https://github.com/tpope/vim-ragtag)
             - [Vim Tmux Navigator](https://github.com/christoomey/vim-tmux-navigator)
-    - [tmux](https://github.com/tmux/tmux/wiki/Installing)
+    - [tmux](https://github.com/tmux/tmux)
     - [z - jump around](https://github.com/rupa/z)
     - [fzf](https://github.com/junegunn/fzf)
     - [eza](https://github.com/eza-community/eza/)
