@@ -54,6 +54,7 @@ cd ~/.dotfiles && make install
     - [espanso](https://github.com/espanso/espanso)
     - [skhd](https://github.com/koekeishiya/skhd)
     - [Timewarrior](https://github.com/GothenburgBitFactory/timewarrior)
+    - [Intervention Pinboard](https://github.com/Intervention/pinboard)
 
 ## Fonts
 

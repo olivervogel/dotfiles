@@ -1,0 +1,23 @@
+#compdef pinboard
+
+_pinboard_get_command_list() {
+    printf "\
+        add\n\
+        init\n\
+        pull\n\
+        search\n\
+        status\n"
+}
+
+_pinboard() {
+  local -a commands
+  commands=(`_pinboard_get_command_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_pinboard
