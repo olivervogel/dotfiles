@@ -37,3 +37,7 @@ gn=38;5;240\
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=fg=white,bold,underline
 HISTORY_SUBSTRING_SEARCH_FUZZY=1
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+
+# restic config
+export RESTIC_REPOSITORY="/Volumes/Restic/backup"
+export RESTIC_PASSWORD_COMMAND="pass show restic_backup"

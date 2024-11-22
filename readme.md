@@ -48,6 +48,7 @@ cd ~/.dotfiles && make install
     - [delta](https://github.com/dandavison/delta)
     - [bat](https://github.com/sharkdp/bat)
     - [jq](https://jqlang.github.io/jq/)
+    - [restic](https://github.com/restic/restic)
     - [pass](https://www.passwordstore.org)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
     - [zbar](https://github.com/mchehab/zbar)
