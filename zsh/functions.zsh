@@ -5,8 +5,6 @@ custom_tmux_create() {
     tmux select-pane -L
     tmux split-window -v -c $(pwd)
     tmux select-pane -U
-    # tmux split-window -v -c $(pwd)
-    # tmux select-pane -U
     tmux select-pane -R
     tmux -2 attach-session -t $sessionname
 }
