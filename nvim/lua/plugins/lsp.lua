@@ -21,6 +21,9 @@ return {
          virtual_text = false
       })
 
+      -- load capabilities from lsp
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
       -- set shortcuts for lsp commands
       local opts = { noremap=true, silent=true }
       local on_attach = function(client, bufnr)
@@ -38,6 +41,7 @@ return {
 
       -- intelephense lsp
       require('lspconfig').intelephense.setup {
+         capabilities = capabilities,
          on_attach = on_attach,
          settings = {
             intelephense = {
@@ -226,6 +230,7 @@ return {
       -- html language server
       require('lspconfig').html.setup {
          on_attach = on_attach,
+         capabilities = capabilities,
          cmd = { "vscode-html-language-server", "--stdio" },
          filetypes = { "html", "silverstripe_html", "blade" },
          init_options = {
@@ -241,6 +246,7 @@ return {
       -- css language server
       require('lspconfig').cssls.setup {
          on_attach = on_attach,
+         capabilities = capabilities,
          cmd = { "vscode-css-language-server", "--stdio" },
          filetypes = { "css", "less", "scss" },
       }
@@ -248,6 +254,7 @@ return {
       -- javascript/typescript language server
       require('lspconfig').eslint.setup {
          on_attach = on_attach,
+         capabilities = capabilities,
          cmd = { "vscode-eslint-language-server", "--stdio" },
       }
 
