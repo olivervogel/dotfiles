@@ -1,6 +1,6 @@
 return {
    "hrsh7th/nvim-cmp",
-   event = "InsertEnter",
+   event = { "BufReadPre", "BufNewFile" },
    dependencies = { 
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -47,7 +47,8 @@ return {
             end, { "i", "s" }),
             ["<c-space>"] = cmp.config.disable 
          }),
-         sources = cmp.config.sources({
+         sources = {
+            { name = "nvim_lsp" },
             {
                name = "buffer",
                option = {
@@ -56,11 +57,7 @@ return {
                   end
                }
             },
-            {
-               name = "nvim_lsp"
-            },
-         }, {
-         }),
+         },
          sorting = {
             comparators = {
                cmp.config.compare.offset,
