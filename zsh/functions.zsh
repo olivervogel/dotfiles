@@ -328,7 +328,6 @@ custom_timewarrior_create() {
 
 custom_backup() {
     restic backup --skip-if-unchanged --files-from ~/.config/restic/backup_files_from && restic forget --prune --keep-last 2
-
 }
 
 custom_fg() {
