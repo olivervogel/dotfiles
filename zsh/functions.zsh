@@ -334,3 +334,11 @@ custom_backup() {
 custom_fg() {
     fg
 }
+
+custom_ipinfo() {
+    if [ $1 ]; then
+        curl -s https://ipinfo.io/$@/json|jq
+    else
+        curl -s https://ipinfo.io/json|jq
+    fi
+}
