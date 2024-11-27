@@ -1,3 +1,6 @@
+#--------------------------------------------------------------------------
+# Create new tmux session based on current directory in default layout
+#--------------------------------------------------------------------------
 custom_tmux_create() {
     sessionname=$(custom_slugify $(basename $(pwd)))
     tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
@@ -9,6 +12,9 @@ custom_tmux_create() {
     tmux -2 attach-session -t $sessionname
 }
 
+#--------------------------------------------------------------------------
+# Create new tmux session based on current directory in 4x layout
+#--------------------------------------------------------------------------
 custom_tmux_create_triple() {
     sessionname=$(custom_slugify $(basename $(pwd)))
     tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
@@ -22,6 +28,9 @@ custom_tmux_create_triple() {
     tmux -2 attach-session -t $sessionname
 }
 
+#--------------------------------------------------------------------------
+# Attach to given tmux session or select session with fzf
+#--------------------------------------------------------------------------
 custom_tmux_attach() { 
     if [ $1 ]; then
         tmux attach -t $1
@@ -31,6 +40,9 @@ custom_tmux_attach() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Show git diff from given file or select file with fzf
+#--------------------------------------------------------------------------
 custom_git_diff_working_tree() {
     root=$(git rev-parse --show-toplevel)
     if [ $1 ]; then
@@ -44,6 +56,9 @@ custom_git_diff_working_tree() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Show git diff from given commit or select commit with fzf
+#--------------------------------------------------------------------------
 custom_git_diff_commit() {
     preview="git diff-tree --color=always -p {1}|delta"
     selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf -m --ansi --preview $preview)
@@ -52,6 +67,9 @@ custom_git_diff_commit() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Show changed files of given commit or select commit with fzf
+#--------------------------------------------------------------------------
 custom_git_diff_commit_files() {
     preview="git diff-tree --no-commit-id --name-only {1} -r"
     selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf -m --ansi --preview $preview)
@@ -60,6 +78,9 @@ custom_git_diff_commit_files() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Show git commit history of given file
+#--------------------------------------------------------------------------
 custom_git_diff_file() {
     if [ $1 ]; then
         preview="git show --color=always {1}:$1|bat --color=always"
@@ -70,6 +91,9 @@ custom_git_diff_file() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Checkout given git branch or select branch to checkout with fzf
+#--------------------------------------------------------------------------
 custom_git_checkout() {
     if [ $1 ]; then
         git checkout $1
@@ -82,6 +106,9 @@ custom_git_checkout() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Merge given git branch or select branch to merge with fzf
+#--------------------------------------------------------------------------
 custom_git_merge() {
     if [ $1 ]; then
         git merge $1
@@ -93,6 +120,9 @@ custom_git_merge() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Delete given git branch or select branch to delete with fzf
+#--------------------------------------------------------------------------
 custom_git_branch_delete() {
     if [ $1 ]; then
         git branch -d $1
@@ -104,6 +134,9 @@ custom_git_branch_delete() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Add given file to git index or select file with fzf
+#--------------------------------------------------------------------------
 custom_git_add() {
     root=$(git rev-parse --show-toplevel)
     if [ $1 ]; then
@@ -121,6 +154,9 @@ custom_git_add() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Create git commit with given message or enter message with $EDITOR
+#--------------------------------------------------------------------------
 custom_git_commit() {
     if [ $1 ]; then
         git commit -m $1
@@ -129,6 +165,9 @@ custom_git_commit() {
     fi    
 }
 
+#--------------------------------------------------------------------------
+# unused
+#--------------------------------------------------------------------------
 custom_git_commit_append() {
     if [ $1 ]; then
         git commit --fixup=$1
@@ -142,6 +181,9 @@ custom_git_commit_append() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Restore given file or select file to restore with fzf
+#--------------------------------------------------------------------------
 custom_git_restore() {
     root=$(git rev-parse --show-toplevel)
     if [ $1 ]; then
@@ -171,35 +213,56 @@ custom_git_restore() {
     fi       
 }
 
+#--------------------------------------------------------------------------
+# Restore all unstaged modifications
+#--------------------------------------------------------------------------
 custom_git_restore_all() {
     git restore --stage --worktree .
 }
 
+#--------------------------------------------------------------------------
+# Interactively rebase commits back to given number of commits
+#--------------------------------------------------------------------------
 custom_git_rebase() {
     if [ $1 ]; then
         git rebase -i HEAD~$1
     fi
 }
 
-
+#--------------------------------------------------------------------------
+# Revert given git commit or select commit with fzf
+#--------------------------------------------------------------------------
 custom_git_revert() {
-    preview="git diff-tree --color=always -p {1}|delta"
-    selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf --ansi --preview $preview)
-    if [ $selected ]; then
-        git revert $(echo $selected|cut -c 1-7)
-    fi
+    if [ $1 ]; then
+        git revert $1
+    else
+        preview="git diff-tree --color=always -p {1}|delta"
+        selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf --ansi --preview $preview)
+        if [ $selected ]; then
+            git revert $(echo $selected|cut -c 1-7)
+        fi
+    fi    
 }
 
+#--------------------------------------------------------------------------
+# Push current git branch to origin's branch with same name
+#--------------------------------------------------------------------------
 custom_git_push_current_branch_to_origin() {
     current_branch=$(git rev-parse --abbrev-ref HEAD)
     git push -u origin $current_branch
 }
 
+#--------------------------------------------------------------------------
+# Pull current git branch from origin's branch with same name
+#--------------------------------------------------------------------------
 custom_git_pull_current_branch_to_origin() {
     current_branch=$(git rev-parse --abbrev-ref HEAD)
     git pull origin $current_branch
 }
 
+#--------------------------------------------------------------------------
+# Zip given file or select files to archive with fzf
+#--------------------------------------------------------------------------
 custom_zip_selected() {
     if [ $# -eq 0 ]; then
         find * -type f|fzf -m|zip -r Archiv.zip -@
@@ -208,6 +271,9 @@ custom_zip_selected() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Generate random string with given length (default length: 20)
+#--------------------------------------------------------------------------
 custom_random_string() {
     if [ $1 ]; then
         length=$1
@@ -218,6 +284,9 @@ custom_random_string() {
     openssl rand -base64 48 | sed "s/[^A-Za-z0-9]//g" | cut -c -$length
 }
 
+#--------------------------------------------------------------------------
+# Generate "slug" from given string input
+#--------------------------------------------------------------------------
 custom_slugify () {
     echo "$1" | iconv -c -t ascii//TRANSLIT | sed -E 's/[~^]+//g' | sed -E 's/[^a-zA-Z0-9]+/-/g' | sed -E 's/^-+|-+$//g' | tr A-Z a-z
 }
@@ -233,6 +302,9 @@ custom_convert_hex_color() {
   echo -e `printf "%03d" "$(((r<75?0:(r-35)/40)*6*6+(g<75?0:(g-35)/40)*6+(b<75?0:(b-35)/40)+16))"`
 }
 
+#--------------------------------------------------------------------------
+# Copy password to clipboard via "pass" from given entry or select with fzf
+#--------------------------------------------------------------------------
 custom_pass_select_and_copy_password() {
     if [ $1 ]; then
         pass show -c $@
@@ -245,6 +317,9 @@ custom_pass_select_and_copy_password() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Output password via "pass" from given entry or select with fzf
+#--------------------------------------------------------------------------
 custom_pass_select_and_show_password() {
     if [ $1 ]; then
         pass show $@
@@ -257,6 +332,9 @@ custom_pass_select_and_show_password() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Generate 2fa code from given entry and copy to clipboard or select via fzf
+#--------------------------------------------------------------------------
 custom_2fa() {
     if [ $1 ]; then
         secret=$(pass show $@|grep 2fa|cut -c 13-)
@@ -283,6 +361,9 @@ custom_2fa() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Show weather of given loaction (default: "Kiel")
+#--------------------------------------------------------------------------
 custom_wetter() {
     if [ $1 ]; then
         curl http://wttr.in/$@
@@ -291,6 +372,9 @@ custom_wetter() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Open broser with git respository host (i.e. GitHub, Bitbucket etc.) of current folder
+#--------------------------------------------------------------------------
 custom_brep() {
     origin=$(git remote -v|grep "origin"|grep "(fetch)")
     regex="git@(.+):(.+)/(.+)\.git"
@@ -313,6 +397,9 @@ custom_brep() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Create new timewwarrior entry with given tag or select tag with fzf
+#--------------------------------------------------------------------------
 custom_timewarrior_create() {
     if [ $1 ]; then
         timew start $@
@@ -326,14 +413,23 @@ custom_timewarrior_create() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Create backup
+#--------------------------------------------------------------------------
 custom_backup() {
     restic backup --skip-if-unchanged --files-from ~/.config/restic/backup_files_from && restic forget --prune --keep-last 2
 }
 
+#--------------------------------------------------------------------------
+# Switch suspended application to foreground
+#--------------------------------------------------------------------------
 custom_fg() {
     fg
 }
 
+#--------------------------------------------------------------------------
+# Get info on given ip (own ip by default)
+#--------------------------------------------------------------------------
 custom_ipinfo() {
     if [ $1 ]; then
         curl -s https://ipinfo.io/$@/json|jq
