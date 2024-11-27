@@ -166,7 +166,7 @@ custom_git_commit() {
 }
 
 #--------------------------------------------------------------------------
-# unused
+# unused & undocumented
 #--------------------------------------------------------------------------
 custom_git_commit_append() {
     if [ $1 ]; then
@@ -289,17 +289,6 @@ custom_random_string() {
 #--------------------------------------------------------------------------
 custom_slugify () {
     echo "$1" | iconv -c -t ascii//TRANSLIT | sed -E 's/[~^]+//g' | sed -E 's/[^a-zA-Z0-9]+/-/g' | sed -E 's/^-+|-+$//g' | tr A-Z a-z
-}
-
-custom_convert_hex_color() {
-  hex=$1
-  if [[ $hex == "#"* ]]; then
-    hex=$(echo $1 | awk '{print substr($0,2)}')
-  fi
-  r=$(printf '0x%0.2s' "$hex")
-  g=$(printf '0x%0.2s' ${hex#??})
-  b=$(printf '0x%0.2s' ${hex#????})
-  echo -e `printf "%03d" "$(((r<75?0:(r-35)/40)*6*6+(g<75?0:(g-35)/40)*6+(b<75?0:(b-35)/40)+16))"`
 }
 
 #--------------------------------------------------------------------------
