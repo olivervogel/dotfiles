@@ -534,7 +534,7 @@ return {
 	echo "<pre>";
 	var_dump({output});
 	echo "</pre>";
-	exit;
+	exit();
 	]], {
 		-- output = i(1, "$data"),
 		output = c(1, {
