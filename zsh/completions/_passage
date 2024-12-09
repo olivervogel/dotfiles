@@ -1,0 +1,19 @@
+#compdef passage
+
+_passage_get_command_list() {
+    count=$(($(realpath ~/.passage/store | wc -c) + 1))
+    find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev
+}
+
+_passage() {
+  local -a commands
+  commands=(`_passage_get_command_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_passage
