@@ -292,16 +292,16 @@ custom_slugify () {
 }
 
 #--------------------------------------------------------------------------
-# Copy password to clipboard via "pass" from given entry or select with fzf
+# Copy password to clipboard via "passage" from given entry or select with fzf
 #--------------------------------------------------------------------------
-custom_pass_select_and_copy_password() {
+custom_passage_select_and_copy_password() {
     if [ $1 ]; then
-        pass show -c $@
+        passage -c1 $@
     else
-        count=$(($(realpath ~/.password-store | wc -c) + 1))
-        selected=$(find ~/.password-store -type f -name "*.gpg" |cut -c $count- |rev |cut -c 5- |rev|fzf)
+        count=$(($(realpath ~/.passage/store | wc -c) + 1))
+        selected=$(find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev|fzf)
         if [ $selected ]; then
-            pass show -c $selected
+            passage -c1 $selected
         fi
     fi
 }
@@ -309,14 +309,14 @@ custom_pass_select_and_copy_password() {
 #--------------------------------------------------------------------------
 # Output password via "pass" from given entry or select with fzf
 #--------------------------------------------------------------------------
-custom_pass_select_and_show_password() {
+custom_passage_select_and_show_password() {
     if [ $1 ]; then
-        pass show $@
+        passage show $@
     else
-        count=$(($(realpath ~/.password-store | wc -c) + 1))
-        selected=$(find ~/.password-store -type f -name "*.gpg" |cut -c $count- |rev |cut -c 5- |rev|fzf)
+        count=$(($(realpath ~/.passage/store | wc -c) + 1))
+        selected=$(find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev|fzf)
         if [ $selected ]; then
-            pass show $selected
+            passage show $selected
         fi
     fi
 }
@@ -326,7 +326,7 @@ custom_pass_select_and_show_password() {
 #--------------------------------------------------------------------------
 custom_2fa() {
     if [ $1 ]; then
-        secret=$(pass show $@|grep 2fa|cut -c 13-)
+        secret=$(passage show $@|grep 2fa_secret|cut -c 13-)
         if [ $secret ]; then
             code=$(oathtool --totp --base32 $secret)
             echo $code|pbcopy
@@ -335,10 +335,10 @@ custom_2fa() {
             printf "No 2FA secret found for $@.\n"
         fi
     else
-        count=$(($(realpath ~/.password-store | wc -c) + 1))
-        selected=$(find ~/.password-store -type f -name "*.gpg" |cut -c $count- |rev |cut -c 5- |rev|fzf)
+        count=$(($(realpath ~/.passage/store | wc -c) + 1))
+        selected=$(find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev|fzf)
         if [ $selected ]; then
-            secret=$(pass show $selected|grep 2fa|cut -c 13-)
+            secret=$(passage show $selected|grep 2fa_secret|cut -c 13-)
             if [ $secret ]; then
                 code=$(oathtool --totp --base32 $secret)
                 echo $code|pbcopy

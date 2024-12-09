@@ -1,13 +1,13 @@
-#compdef pss
+#compdef passage
 
-_pss_get_command_list() {
+_passage_get_command_list() {
     count=$(($(realpath ~/.passage/store | wc -c) + 1))
     find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev
 }
 
-_pss() {
+_passage() {
   local -a commands
-  commands=(`_pss_get_command_list`)
+  commands=(`_passage_get_command_list`)
 
   if (( CURRENT == 2 )); then
     _describe -t commands 'commands' commands
@@ -16,4 +16,4 @@ _pss() {
   return 0
 }
 
-_pss
+_passage
