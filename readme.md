@@ -70,7 +70,7 @@ cd ~/.dotfiles && make install
 
 ## Language Servers
 
-- [intelephense](https://intelephense.com)
+- [intelephense](https://github.com/bmewburn/vscode-intelephense)
 - [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
 
 ## Keyboard Layout
