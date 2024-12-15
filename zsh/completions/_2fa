@@ -1,8 +1,8 @@
 #compdef 2fa
 
 _2fa_get_command_list() {
-    count=$(($(realpath ~/.password-store | wc -c) + 1))
-    find ~/.password-store -type f -name "*.gpg" |cut -c $count- |rev |cut -c 5- |rev
+    count=$(($(realpath ~/.passage/store | wc -c) + 1))
+    find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev
 }
 
 _2fa() {

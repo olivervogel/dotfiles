@@ -48,8 +48,14 @@ cd ~/.dotfiles && make install
     - [delta](https://github.com/dandavison/delta)
     - [bat](https://github.com/sharkdp/bat)
     - [jq](https://jqlang.github.io/jq/)
+    - [ykman](https://developers.yubico.com/yubikey-manager/)
     - [restic](https://github.com/restic/restic)
-    - [pass](https://www.passwordstore.org)
+    - [age](https://github.com/FiloSottile/age)
+    - [passage](https://github.com/FiloSottile/passage)
+        - [gnu-getopt](https://formulae.brew.sh/formula/gnu-getopt)
+        - [tree](https://github.com/Old-Man-Programmer/tree)
+        - [libqrencode](https://github.com/fukuchi/libqrencode)
+    - [age-plugin-yubikey](https://github.com/str4d/age-plugin-yubikey)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
     - [zbar](https://github.com/mchehab/zbar)
     - [espanso](https://github.com/espanso/espanso)
@@ -64,7 +70,7 @@ cd ~/.dotfiles && make install
 
 ## Language Servers
 
-- [intelephense](https://intelephense.com)
+- [intelephense](https://github.com/bmewburn/vscode-intelephense)
 - [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
 
 ## Keyboard Layout
