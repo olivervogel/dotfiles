@@ -57,7 +57,6 @@ cd ~/.dotfiles && make install
         - [libqrencode](https://github.com/fukuchi/libqrencode)
     - [age-plugin-yubikey](https://github.com/str4d/age-plugin-yubikey)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
-    - [zbar](https://github.com/mchehab/zbar)
     - [espanso](https://github.com/espanso/espanso)
     - [skhd](https://github.com/koekeishiya/skhd)
     - [Timewarrior](https://github.com/GothenburgBitFactory/timewarrior)
