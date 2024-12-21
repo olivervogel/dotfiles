@@ -307,6 +307,33 @@ custom_passage_select_and_copy_password() {
 }
 
 #--------------------------------------------------------------------------
+# Copy username to clipboard via "passage" from given entry or select with fzf
+#--------------------------------------------------------------------------
+custom_passage_select_and_copy_username() {
+    if [ $1 ]; then
+        name=$(passage show $@|grep username|cut -c 11-)
+        if [ $name ]; then
+            echo $name|pbcopy
+            printf "Copied username for $@ to clipboard.\n"
+        else
+            printf "No username for $@ found.\n"
+        fi
+    else
+        count=$(($(realpath ~/.passage/store | wc -c) + 1))
+        selected=$(find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev|fzf)
+        if [ $selected ]; then
+            name=$(passage show $selected|grep username|cut -c 11-)
+            if [ $name ]; then
+                echo $name|pbcopy
+                printf "Copied username for $selected to clipboard.\n"
+            else
+                printf "No username for $selected found.\n"
+            fi
+        fi
+    fi
+}
+
+#--------------------------------------------------------------------------
 # Output password via "pass" from given entry or select with fzf
 #--------------------------------------------------------------------------
 custom_passage_select_and_show_password() {
