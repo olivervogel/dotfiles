@@ -203,7 +203,7 @@ return {
 	}),
 	
 	s_inline("ff", {
-		t("fn ("),
+		t("fn("),
 		i(1, ""),
 		t(") => "),
 		rep(1),
