@@ -197,7 +197,9 @@ return {
 	s_inline("fn", {
 		t("function ("),
 		i(1, ""),
-		t("): void {"),
+		t("): "),
+		i(2, "void"),
+		t(" {"),
 		i(0, ""),
 		t("}"),
 	}),
@@ -205,7 +207,9 @@ return {
 	s_inline("ff", {
 		t("fn("),
 		i(1, ""),
-		t("): void => "),
+		t("): "),
+		i(2, "void"),
+		t(" => "),
 		rep(1),
 		i(0, ""),
 	}),
