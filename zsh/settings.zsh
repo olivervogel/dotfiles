@@ -41,7 +41,7 @@ HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 # passage config
 export PASSAGE_RECIPIENTS_FILE="$HOME/.passage/recipients"
 export PASSAGE_IDENTITIES_FILE="$HOME/.passage/identities"
-export PASSWORD_STORE_GENERATED_LENGTH=32
+export PASSWORD_STORE_GENERATED_LENGTH=50
 
 # restic config
 export RESTIC_REPOSITORY="/Volumes/Backup/restic"
