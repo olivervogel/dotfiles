@@ -317,7 +317,7 @@ return {
 	match ({var}) {{
 		{case} => '{return_value}',
 		default => '{default_return_value}',
-	}};
+	}}
 	]], {
 		var = i(1, "variable"),
 		case = i(2, "case"),
