@@ -90,6 +90,7 @@ vim.api.nvim_set_keymap('n', '<leader>bd', ':silent !tmux send -t 1 "wide build"
 vim.api.nvim_set_keymap('n', '<leader>rt', ':silent !tmux send -t 1 "docker-compose run --rm tests" Enter<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ra', ':silent !tmux send -t 1 "docker-compose run --rm analysis" Enter<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rs', ':silent !tmux send -t 1 "docker-compose run --rm standards" Enter<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>rp', ':silent !tmux send-keys -t 1 Up Enter <cr>', { noremap = true, silent = true })
 
 -- mergetool next/prev conflict
 vim.api.nvim_set_keymap('n', 'dfj', ']c', { noremap = true, silent = true })
