@@ -108,6 +108,9 @@ command -bar -nargs=* -complete=file -range=% -bang Write <line1>,<line2>write<b
 " git blame for current line
 nnoremap <silent> <leader>bl :silent exe "!tmux send -t 1 'git blame % -L " . eval(line('.')) . "," . eval(line('.')) . "' Enter"<cr>
 
+" git diff for current buffer
+nnoremap <silent> <leader>gd :silent exe "!tmux send -t 1 'git diff --color=always -- $(git rev-parse --show-toplevel)/%' Enter"<cr>
+
 " :Q should behave the same way as :q
 command! Q :q
 ]]
