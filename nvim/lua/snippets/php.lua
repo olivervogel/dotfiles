@@ -464,6 +464,14 @@ return {
 	s("doc", fmt([[
 	/**
 	 * {title}
+	 */
+	]], {
+		title = i(1, "Title")
+	})),
+
+	s("docc", fmt([[
+	/**
+	 * {title}
 	 *
 	 * @param string $var
 	 * @return {ret_value}
@@ -472,7 +480,6 @@ return {
 		title = i(1, "Title"),
 		ret_value = i(2, "void")
 	})),
-
 
 	s("doci", fmt([[
 	/**
