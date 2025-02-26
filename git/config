@@ -1,6 +1,9 @@
 [core]
     pager = delta
 
+[column]
+    ui = auto
+
 [user]
 	name = "Oliver Vogel"
 	email = oliver@olivervogel.com
@@ -20,6 +23,9 @@
 
 [pull]
     rebase = true
+
+[push]
+    default = simple
 
 [interactive]
     diffFilter = delta --color-only
@@ -41,6 +47,10 @@
 
 [diff]
     colorMoved = default
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 
 [branch]
     sort = -committerdate
