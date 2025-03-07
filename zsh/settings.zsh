@@ -46,3 +46,6 @@ export PASSWORD_STORE_GENERATED_LENGTH=50
 # restic config
 export RESTIC_REPOSITORY="/Volumes/Backup/restic"
 export RESTIC_PASSWORD_COMMAND="passage show restic_backup"
+
+# docker config
+export COMPOSE_MENU=0
