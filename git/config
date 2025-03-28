@@ -1,9 +1,6 @@
 [core]
     pager = delta
 
-[column]
-    ui = auto
-
 [user]
 	name = "Oliver Vogel"
 	email = oliver@olivervogel.com
