@@ -1,7 +1,7 @@
 -- no arrow keys
 vim.api.nvim_set_keymap('', '<Up>', '<Nop>', { noremap = true })
 vim.api.nvim_set_keymap('', '<Down>', '<Nop>', { noremap = true })
-vim.api.nvim_set_keymap('', '<Left >', '<Nop>', { noremap = true })
+vim.api.nvim_set_keymap('', '<Left>', '<Nop>', { noremap = true })
 vim.api.nvim_set_keymap('', '<Up>', '<Nop>', { noremap = true })
 
 -- set leader to space
