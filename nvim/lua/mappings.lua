@@ -44,10 +44,6 @@ vim.api.nvim_set_keymap('n', '<leader>sc', 'yiw:%s/<c-r>0//g<left><left>', {})
 vim.api.nvim_set_keymap('n', '<leader>ss', ':%s//g<Left><Left>', {})
 vim.api.nvim_set_keymap('n', '<leader>sl', 'yiw:s/<c-r>0//g<Left><Left>', {})
 
--- scroll up/down with backspace/enter
-vim.api.nvim_set_keymap('n', '<cr>', '<c-d>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<bs>', '<c-u>', { noremap = true })
-
 -- navigate back changelist (back with alt-backspace. forward with alt-enter)
 vim.api.nvim_set_keymap('n', '<m-bs>', 'g;zz', { noremap = true })
 vim.api.nvim_set_keymap('n', '…', 'g,zz', { noremap = true })
