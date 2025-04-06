@@ -197,8 +197,14 @@ return {
 	s_inline("fn", {
 		t("function ("),
 		i(1, ""),
-		t("): "),
-		i(2, "void"),
+      t(")"),
+		c(2, {
+			t(""),
+			sn(nil, {
+				t(": "),
+				i(1, "void"),
+			})
+		}),
 		t(" {"),
 		i(0, ""),
 		t("}"),
@@ -207,10 +213,20 @@ return {
 	s_inline("ff", {
 		t("fn("),
 		i(1, ""),
-		t("): "),
-		i(2, "void"),
+      t(")"),
+		c(2, {
+			t(""),
+			sn(nil, {
+				t(": "),
+				i(1, "void"),
+			})
+		}),
 		t(" => "),
-		rep(1),
+      d(3, function(args)
+         return sn(nil, {
+            i(1, args[1])
+         })
+      end, {1}),
 		i(0, ""),
 	}),
 
