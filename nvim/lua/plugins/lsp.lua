@@ -259,16 +259,27 @@ return {
       }
 
       -- show diagnostic warning with line highlighting instead of symbol
-      vim.cmd [[
-      highlight! DiagnosticLineNrError guibg=#51202A guifg=#FF0000 gui=bold
-      highlight! DiagnosticLineNrWarn guibg=#51412A guifg=#FFA500 gui=bold
-      highlight! DiagnosticLineNrInfo guibg=#1E535D guifg=#00FFFF gui=bold
-      highlight! DiagnosticLineNrHint guibg=#1E205D guifg=#0000FF gui=bold
+      vim.api.nvim_set_hl(0, "DiagnosticLineNrError", { bg = "#51202A", fg = "#FF0000", bold = true })
+      vim.api.nvim_set_hl(0, "DiagnosticLineNrWarn",  { bg = "#51412A", fg = "#FFA500", bold = true })
+      vim.api.nvim_set_hl(0, "DiagnosticLineNrInfo",  { bg = "#1E535D", fg = "#00FFFF", bold = true })
+      vim.api.nvim_set_hl(0, "DiagnosticLineNrHint",  { bg = "#1E205D", fg = "#0000FF", bold = true })
 
-      sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
-      sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
-      sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
-      sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
-      ]]
+      -- show diagnostic warning with line highlighting instead of symbol
+      vim.diagnostic.config({
+         signs = {
+            text = {
+               [vim.diagnostic.severity.ERROR] = "",
+               [vim.diagnostic.severity.WARN] = "",
+               [vim.diagnostic.severity.INFO] = "",
+               [vim.diagnostic.severity.HINT] = "",
+            },
+            numhl = {
+               [vim.diagnostic.severity.ERROR] = "DiagnosticLineNrError",
+               [vim.diagnostic.severity.WARN] = "DiagnosticLineNrWarn",
+               [vim.diagnostic.severity.HINT] = "DiagnosticLineNrHint",
+               [vim.diagnostic.severity.INFO] = "DiagnosticLineNrInfo",
+            },
+         },
+      })
    end
 }
