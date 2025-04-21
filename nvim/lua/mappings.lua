@@ -48,9 +48,9 @@ vim.api.nvim_set_keymap('n', '<leader>sl', 'yiw:s/<c-r>0//g<Left><Left>', {})
 vim.api.nvim_set_keymap('n', '<m-bs>', 'g;zz', { noremap = true })
 vim.api.nvim_set_keymap('n', '…', 'g,zz', { noremap = true })
 
--- navigation to next/prev function with alt-#/alt-plus
-vim.api.nvim_set_keymap('n', '‘', ']mzz', { noremap = true })
-vim.api.nvim_set_keymap('n', '±', '[mzz', { noremap = true })
+-- navigation to next/prev method/function with ctrl-opt-d & ctrl-opt-u
+vim.api.nvim_set_keymap('n', '∂', ']m', { noremap = true })
+vim.api.nvim_set_keymap('n', '¨', '[m', { noremap = true })
 
 -- repeat last command line command
 vim.api.nvim_set_keymap('n', '<leader>zz', '@:', { noremap = true })
