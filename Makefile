@@ -1,6 +1,7 @@
 install:
 		@DOTFILES_PATH=$$(pwd); echo $$DOTFILES_PATH
 		@mkdir -p ~/.config
+		@ln -nfs $$(pwd)/Brewfile ~/Brewfile
 		@ln -nfs $$(pwd)/zsh ~/.config/zsh
 		@ln -nfs $$(pwd)/p10k ~/.config/p10k
 		@ln -nfs $$(pwd)/tmux ~/.config/tmux

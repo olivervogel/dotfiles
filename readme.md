@@ -14,6 +14,12 @@ The script to initialize the configuration directories can then be invoked.
 cd ~/.dotfiles && make install
 ```
 
+Install [Homebrew](https://brew.sh/) and continue as follows.
+
+```bash
+brew bundle install
+```
+
 ## Tools
 
 - [kitty](https://sw.kovidgoyal.net/kitty)
