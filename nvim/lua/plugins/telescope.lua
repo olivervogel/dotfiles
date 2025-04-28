@@ -17,7 +17,7 @@ return {
       { "<leader>fc", ":Telescope grep_string<cr>", desc = "Find string under cursor" },
       { "<leader>fb", ":Telescope buffers<cr>", desc = "Find buffer" },
       { "<leader>fh", ":Telescope help_tags<cr>", desc = "Find in help" },
-      { "<leader>gs", ":Telescope git_status<cr>", desc = "Find git status" },
+      { "<leader>fg", ":Telescope git_status<cr>", desc = "Find git status" },
       { "<leader>fr", ":Telescope resume<cr>", desc = "Resume last search results" },
       { "<leader>fq", ":Telescope quickfix<cr>", desc = "Find quickfix list" },
       { "<leader>fm", ":Telescope marks<cr>", desc = "Find mark" },
