@@ -25,11 +25,11 @@ return {
 			})
 		end, {}),
 		extends = c(2, {
-			t(""),
 			sn(nil, {
 				t(" extends "),
 				i(1, "BaseClass"),
-			})
+			}),
+         t("")
 		}),
 		body = i(0)
 	})),
