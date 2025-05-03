@@ -56,6 +56,11 @@ return {
                ".vscode/",
                ".cache/",
                ".gitkeep",
+               "laravel.log",
+               "composer.lock",
+               "package-lock.json",
+               "storage/framework/views/",
+               "public/build/assets/",
             },
             vimgrep_arguments = {
                'rg',
