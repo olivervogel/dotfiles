@@ -38,6 +38,7 @@ return {
       ls.filetype_extend("blade", {"html"})
       ls.filetype_extend("silverstripe_html", {"html"})
       ls.filetype_extend("zsh", {"sh"})
+      ls.filetype_extend("markdown_inline", {"markdown"})
 
       local function maybe_leave_snippet()
          if
