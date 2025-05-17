@@ -316,8 +316,8 @@ custom_passage_select_and_copy_username() {
             echo $name|pbcopy
             printf "Copied username for $@ to clipboard.\n"
         else
+            printf "No username for $@ found.\n"
         fi
-        printf "No username for $@ found.\n"
     else
         count=$(($(realpath ~/.passage/store | wc -c) + 1))
         selected=$(find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev|fzf)
