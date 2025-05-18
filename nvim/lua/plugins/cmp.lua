@@ -1,82 +1,93 @@
 return {
-   "hrsh7th/nvim-cmp",
-   event = { "BufReadPre", "BufNewFile" },
-   dependencies = { 
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-   },
+   "saghen/blink.cmp",
+   version = '1.*',
+   -- event = { "BufReadPre", "BufNewFile" }
    init = function()
-      vim.opt.completeopt = "menu,menuone"
-      vim.opt.pumheight = 10
-      vim.cmd([[
-      inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-      ]])
+      vim.api.nvim_set_hl(0, 'BlinkCmpMenu', { fg = '#5978A6', bg = '#27313F', bold = false, italic = false })
+      vim.api.nvim_set_hl(0, 'BlinkCmpKind', { fg = '#5978A6', bg = '#27313F', bold = false, italic = false })
+      vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { fg = '#4A8AEA', bg = '#2D3848', bold = false, italic = false })
+      vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { fg = '#7D8C97', bg = '#27313F', bold = false, italic = false })
    end,
-   opts = function()
-      local cmp = require("cmp")
-
-      return {
-         completion = {
-            keyword_length = 2
+   opts = {
+      keymap = {
+         preset = 'enter',
+         ['<Tab>'] = {}, -- configured via luasnip
+         ['<C-n>'] = {}, -- configured via luasnip
+         ['<C-p>'] = {}, -- configured via luasnip
+         ['<C-x>'] = { -- close completion menu on <C-x>
+            function(cmp)
+               cmp.cancel()
+               return
+            end,
+            'fallback'
+         }, 
+      },
+      sources = {
+         min_keyword_length = 2, -- show completion only after at least two characters has been typed
+         default = {
+            'lsp',
+            'buffer',
+            'path',
          },
-         window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
-         },
-         mapping = cmp.mapping.preset.insert({
-            ["<cr>"] = cmp.mapping.confirm({ select = true }),
-            ["<c-u>"] = cmp.mapping.scroll_docs(-4),
-            ["<c-d>"] = cmp.mapping.scroll_docs(4),
-            ["<c-p>"] = cmp.mapping(function(fallback)
-               if cmp.visible() then
-                  cmp.select_prev_item()
-               elseif require("luasnip").choice_active() then
-                  require("luasnip").change_choice(-1)
-               else
-                  fallback()
-               end
-            end, { "i", "s" }),
-            ["<c-n>"] = cmp.mapping(function(fallback)
-               if cmp.visible() then
-                  cmp.select_next_item()
-               elseif require("luasnip").choice_active() then
-                  require("luasnip").change_choice(1)
-               else
-                  fallback()
-               end
-            end, { "i", "s" }),
-            ["<c-space>"] = cmp.config.disable 
-         }),
-         sources = {
-            { name = "nvim_lsp" },
-            {
-               name = "buffer",
-               option = {
+         providers = {
+            lsp = { 
+               fallbacks = {} -- always show buffer sources (even if lsp has results)
+            },
+            buffer = {
+               opts = {
+                  -- buffer completion from all open buffers: filter to only "normal" buffers
                   get_bufnrs = function()
-                     return vim.api.nvim_list_bufs() -- search all buffers
+                     return vim.tbl_filter(function(bufnr)
+                        return vim.bo[bufnr].buftype == ''
+                     end, vim.api.nvim_list_bufs())
                   end
                }
             },
-         },
-         sorting = {
-            comparators = {
-               cmp.config.compare.offset,
-               cmp.config.compare.exact,
-               cmp.config.compare.score,
-               cmp.config.compare.recently_used,
-               cmp.config.compare.kind,
-               cmp.config.compare.sort_text,
-               cmp.config.compare.length,
-               cmp.config.compare.order,
+            lines = {
+               name = 'Lines',
+               module = 'sources.lines',
             }
-         },
-         matching = {
-            disallow_fuzzy_matching = true,
-            disallow_fullfuzzy_matching = true,
-            disallow_partial_fuzzy_matching = true,
-            disallow_partial_matching = false,
-            disallow_prefix_unmatching = true,
+         } 
       },
+      fuzzy = {
+         -- always prioritize exact matches
+         sorts = {
+            'exact',
+            -- defaults
+            'score',
+            'sort_text',
+         },
+      },
+      completion = {
+         menu = {
+            min_width = 60,
+            border = 'rounded',
+            draw = {
+               align_to = 'none',
+               columns = {
+                  { 
+                     "label",
+                     gap = 2,
+                  },
+                  {
+                     "kind",
+                     "kind_icon",
+                     gap = 2,
+                  }
+               },
+               components = {
+                  label = {
+                     text = function(ctx)
+                        if ctx.kind == 'Method' or ctx.kind == 'function' then
+                           return ctx.label .. ctx.label_detail .. "~"
+                        else
+                           return ctx.label .. ctx.label_detail
+                        end
+                     end
+                  }
+               }
+            }
+         }
       }
-   end
+   }
 }

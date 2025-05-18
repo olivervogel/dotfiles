@@ -3,26 +3,63 @@ return {
    version = "^2.3",
    build = "make install_jsregexp",
    keys = {
-      { "<tab>", function()
-         if require("luasnip").expand_or_jumpable() then
-            require("luasnip").expand_or_jump()
-         else
-            -- press tab key
-            vim.api.nvim_feedkeys(
-            vim.api.nvim_replace_termcodes("<Tab>", true, true, true),
-            "n",
-            true
-            )
-         end
-      end, mode = "i", silent = true },
-
-      { "<tab>", function()
-         require("luasnip").jump(1)
-      end, mode = "s", noremap = true, silent = true },
-
-      { "<s-tab>", function()
-         require("luasnip").jump(-1)
-      end, mode = "s", noremap = true, silent = true },
+      { 
+         "<tab>", function()
+            if require("luasnip").expand_or_jumpable() then
+               require("blink.cmp").hide()
+               require("luasnip").expand_or_jump()
+            else
+               -- press tab key
+               vim.api.nvim_feedkeys(
+                  vim.api.nvim_replace_termcodes("<Tab>", true, true, true),
+                  "n",
+                  true
+               )
+            end
+         end, mode = "i", silent = true 
+      },
+      { 
+         "<tab>", function()
+            require("luasnip").jump(1)
+         end, mode = "s", noremap = true, silent = true
+      },
+      { 
+         "<s-tab>", function()
+            require("luasnip").jump(-1)
+         end, mode = "s", noremap = true, silent = true 
+      },
+      { 
+         "<C-n>", function()
+            if require("luasnip").choice_active() then
+               require("luasnip").change_choice(1)
+            elseif require('blink.cmp').is_visible() then
+               require('blink.cmp').select_next()
+            else
+               -- default: press <C-n>
+               vim.api.nvim_feedkeys(
+                  vim.api.nvim_replace_termcodes("<C-n>", true, true, true),
+                  "n",
+                  true
+               )
+            end
+         end, mode = { "i", "s" }, noremap = true, silent = true 
+      },
+      { 
+         "<C-p>", function()
+            if require("luasnip").choice_active() then
+               require("luasnip").change_choice(-1)
+            elseif require('blink.cmp').is_visible() then
+               require('blink.cmp').select_prev()
+            else
+               -- default: press <C-p>
+               vim.api.nvim_feedkeys(
+                  vim.api.nvim_replace_termcodes("<C-p>", true, true, true),
+                  "n",
+                  true
+               )
+            end
+         end, mode = { "i", "s" }, noremap = true, silent = true 
+      },
    },
    init = function()
       local ls = require("luasnip")
