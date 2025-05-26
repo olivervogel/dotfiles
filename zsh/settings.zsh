@@ -22,6 +22,11 @@ SAVEHIST=10000000
 HISTORY_IGNORE="(ls|cd|pwd|exit|cd)*"
 setopt SHARE_HISTORY
 
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 setopt NO_BEEP
 
 export EXA_COLORS="\
