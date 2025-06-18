@@ -479,3 +479,16 @@ __ipinfo() {
 __zsh_stats() {
     history 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
 }
+
+#--------------------------------------------------------------------------
+# Create data uri scheme from file
+#--------------------------------------------------------------------------
+__datauri() {
+    if [ $1 ]; then
+        mime=$(file --mime-type -b "$1")
+        encoded=$(base64 -i "$1")
+        printf "data:%s;base64,%s\n" "$mime" "$encoded"
+    else
+        printf "Usage: datauri <filepath>\n"
+    fi
+}
