@@ -344,8 +344,7 @@ __passage_transform_password_qrcode() {
         count=$(($(realpath ~/.passage/store | wc -c) + 1))
         selected=$(find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev|fzf)
         if [ $selected ]; then
-            qrcode=$(passage show $selected|head -1|qrencode -t UTF8)
-            echo $qrcode
+            passage show $selected|head -1|qrencode -t UTF8
         fi
     fi
 }
