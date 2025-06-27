@@ -491,3 +491,14 @@ __datauri() {
         printf "Usage: datauri <filepath>\n"
     fi
 }
+
+#--------------------------------------------------------------------------
+# Encrypt given file against standard recipients
+#--------------------------------------------------------------------------
+__encrypt() {
+    if [ $1 ]; then
+        age -e -R $PASSAGE_RECIPIENTS_FILE $1 > "$1.age"
+    else
+        printf "Usage: encrypt <filepath>\n"
+    fi
+}
