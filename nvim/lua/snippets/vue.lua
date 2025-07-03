@@ -5,14 +5,18 @@ return {
 	-- -----------------------------------------------------------------------
 
     s("vue", fmt([[
-    <template>
-    {template}
-    </template>
-
     <script>
+
     export default {{
     }}
+
     </script>
+
+    <template>
+
+    {template}
+
+    </template>
     ]], {
         template = i(0),
     })),
@@ -26,4 +30,5 @@ return {
 		i(0, ""),
         t(" }}"),
 	}),
+
 }
