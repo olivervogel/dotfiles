@@ -1,6 +1,6 @@
 return {
    "saghen/blink.cmp",
-   version = '1.*',
+   version = '1.4.1',
    -- event = { "BufReadPre", "BufNewFile" }
    init = function()
       vim.api.nvim_set_hl(0, 'BlinkCmpMenu', { fg = '#5978A6', bg = '#27313F', bold = false, italic = false })
