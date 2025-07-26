@@ -261,6 +261,21 @@ __git_pull_current_branch_to_origin() {
 }
 
 #--------------------------------------------------------------------------
+# Cherry pick a certain commit
+#--------------------------------------------------------------------------
+__git_cherry_pick() {
+    if [ $1 ]; then
+        git cherry-pick $1
+    else
+        preview="git diff-tree --color=always -p {1}|delta"
+        selected=$(git log --all --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf --ansi --preview $preview)
+        if [ $selected ]; then
+            git cherry-pick $(echo $selected|cut -c 1-7)
+        fi
+    fi    
+}
+
+#--------------------------------------------------------------------------
 # Zip given file or select files to archive with fzf
 #--------------------------------------------------------------------------
 __zip_selected() {
