@@ -73,6 +73,7 @@ return {
 
       ls.filetype_extend("vue", {"html"})
       ls.filetype_extend("blade", {"html"})
+      ls.filetype_extend("twig", {"html"})
       ls.filetype_extend("silverstripe_html", {"html"})
       ls.filetype_extend("zsh", {"sh"})
       ls.filetype_extend("markdown_inline", {"markdown"})
