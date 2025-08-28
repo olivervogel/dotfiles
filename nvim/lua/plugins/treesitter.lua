@@ -19,6 +19,7 @@ return {
          "markdown",
          "lua",
          "cpp",
+         "twig",
       },
       highlight = {
          enable = true,
