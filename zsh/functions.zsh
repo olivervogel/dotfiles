@@ -3,13 +3,17 @@
 #--------------------------------------------------------------------------
 __tmux_create() {
     sessionname=$(__slugify $(basename $(pwd)))
-    tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
-    tmux split-window -h -c $(pwd) -l 70%
-    tmux select-pane -L
-    tmux split-window -v -c $(pwd)
-    tmux select-pane -U
-    tmux select-pane -R
-    tmux -2 attach-session -t $sessionname
+    if tmux has-session -t $sessionname 2>/dev/null; then
+        tmux -2 attach-session -t $sessionname
+    else
+        tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
+        tmux split-window -h -c $(pwd) -l 70%
+        tmux select-pane -L
+        tmux split-window -v -c $(pwd)
+        tmux select-pane -U
+        tmux select-pane -R
+        tmux -2 attach-session -t $sessionname
+    fi
 }
 
 #--------------------------------------------------------------------------
@@ -17,15 +21,19 @@ __tmux_create() {
 #--------------------------------------------------------------------------
 __tmux_create_triple() {
     sessionname=$(__slugify $(basename $(pwd)))
-    tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
-    tmux split-window -h -c $(pwd) -l 70%
-    tmux select-pane -L
-    tmux split-window -v -c $(pwd) -l 33%
-    tmux select-pane -U
-    tmux split-window -v -c $(pwd)
-    tmux select-pane -U
-    tmux select-pane -R
-    tmux -2 attach-session -t $sessionname
+    if tmux has-session -t $sessionname 2>/dev/null; then
+        tmux -2 attach-session -t $sessionname
+    else
+        tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
+        tmux split-window -h -c $(pwd) -l 70%
+        tmux select-pane -L
+        tmux split-window -v -c $(pwd) -l 33%
+        tmux select-pane -U
+        tmux split-window -v -c $(pwd)
+        tmux select-pane -U
+        tmux select-pane -R
+        tmux -2 attach-session -t $sessionname
+    fi
 }
 
 #--------------------------------------------------------------------------
