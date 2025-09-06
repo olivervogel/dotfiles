@@ -374,7 +374,7 @@ __passage_transform_password_qrcode() {
 }
 
 #--------------------------------------------------------------------------
-# Output password via "pass" from given entry or select with fzf
+# Output password via "passage" from given entry or select with fzf
 #--------------------------------------------------------------------------
 __passage_select_and_show_password() {
     if [ $1 ]; then
