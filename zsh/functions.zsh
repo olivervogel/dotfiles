@@ -361,13 +361,14 @@ __passage_select_and_copy_username() {
 #--------------------------------------------------------------------------
 __passage_transform_password_qrcode() {
     if [ $1 ]; then
-        qrcode=$(passage show $@|head -1|qrencode -t UTF8)
+        qrcode=$(printf "%s" "$(passage show $@|head -1)"|qrencode -t UTF8)
         echo $qrcode
     else
         count=$(($(realpath ~/.passage/store | wc -c) + 1))
         selected=$(find ~/.passage/store -type f -name "*.age" |cut -c $count- |rev |cut -c 5- |rev|fzf)
         if [ $selected ]; then
-            passage show $selected|head -1|qrencode -t UTF8
+            qrcode=$(printf "%s" "$(passage show $selected|head -1)"|qrencode -t UTF8)
+            echo $qrcode
         fi
     fi
 }
