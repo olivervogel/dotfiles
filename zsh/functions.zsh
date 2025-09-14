@@ -454,17 +454,15 @@ __brep() {
 }
 
 #--------------------------------------------------------------------------
-# Create new timewwarrior entry with given tag or select tag with fzf
+# Create new timewwarrior entry with given tag or select project with fzf
 #--------------------------------------------------------------------------
 __timewarrior_create() {
     if [ $1 ]; then
         timew start $@
     else
-        selected=$(cat ~/.local/share/timewarrior/data/tags.data|jq -r 'keys[] | if test(" ") then "\"\(.)\"" else . end'|fzf -m)
+        selected=$(tmux ls|cut -d: -f1|fzf)
         if [ $selected ]; then
-            # echo $selected | xargs timew start
-            tags_in_one_line=($(echo $selected | tr "," "\n"))
-            print -z "timew start $tags_in_one_line" # display only
+            timew start $selected
         fi
     fi
 }
