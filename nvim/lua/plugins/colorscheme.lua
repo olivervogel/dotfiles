@@ -33,8 +33,7 @@ return {
                green = { base = "#8AA88A", bright = "#BDDBBD", dim = "#6A7A6A" },
                red = { base = "#D65C5C", bright = "#EF9090", dim = "#A65A5A" },
 
-               sel0 = "#313E4D",
-               sel1 = "#3C4B5D",
+               selection = "#52607A",
 
                pink = Shade.new("#f7cd7a", 0, 0),
                cyan = { base = "#6994FF", bright = "#A4BEFF", dim = "#7895DE" },
@@ -81,7 +80,7 @@ return {
                TelescopeNormal = { bg = "#1f242c", fg = "palette.white" },
                TelescopeBorder = { bg = "#1f242c" },
 
-               Search = { bg = "palette.white.dim", fg = "palette.bg1" },
+               Search = { bg = "palette.selection", fg = "palette.white.bright" },
                IncSearch = { bg = "palette.white.bright", fg = "palette.bg1" },
                StatusLine = { bg = "palette.bg0", fg = "#3B4B5F" },
                WildMenu = { bg = "palette.bg0", fg = "#3B4B5F" },
