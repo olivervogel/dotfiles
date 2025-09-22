@@ -105,7 +105,7 @@ return {
             history = false,
             enable_autosnippets = true,
             update_events = 'TextChanged,TextChangedI',
-            ft_func = ftf.from_pos_or_filetype,
+            -- ft_func = ftf.from_pos_or_filetype,
             load_ft_func = ftf.extend_load_ft({
                html = {"javascript", "php"}, -- also load javascript for html context
                vue = {"javascript", "html"}
