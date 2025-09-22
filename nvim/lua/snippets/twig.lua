@@ -31,7 +31,9 @@ return {
 	-- block
 	-- -----------------------------------------------------------------------
 	s("block", fmt([[
-   {{% block {name} %}}{body}{{% endblock %}}
+   {{% block {name} %}}
+      {body}
+   {{% endblock %}}
 	]], {
 		name = i(1, "name"),
 		body = i(0),
