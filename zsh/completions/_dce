@@ -1,0 +1,23 @@
+#compdef dce
+
+_dce_get_command_list() {
+    printf "\
+        php\n\
+        node\n\
+        npm\n\
+        npx\n\
+        composer\n"
+}
+
+_dce() {
+  local -a commands
+  commands=(`_dce_get_command_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_dce

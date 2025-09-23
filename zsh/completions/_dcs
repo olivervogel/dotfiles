@@ -1,0 +1,18 @@
+#compdef dcs
+
+_dcs_get_command_list() {
+    docker compose ps | awk -F '[[:space:]][[:space:]]+' '{print $4}' | grep -v SERVICE
+}
+
+_dcs() {
+  local -a commands
+  commands=(`_dcs_get_command_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_dcs

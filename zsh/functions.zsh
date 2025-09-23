@@ -524,3 +524,40 @@ __encrypt() {
         printf "Usage: encrypt <filepath>\n"
     fi
 }
+
+#--------------------------------------------------------------------------
+# Extract name of docker web service
+#--------------------------------------------------------------------------
+__docker_composer_web_service() {
+    docker compose ps | grep ":80->80" | awk -F '[[:space:]][[:space:]]+' '{print $4}'
+}
+
+#--------------------------------------------------------------------------
+# Start shell in docker web service container (Alias: dcs)
+#--------------------------------------------------------------------------
+__docker_compose_shell() {
+    if [ $1 ]; then
+        docker compose exec $1 /bin/bash
+    else
+        docker compose exec $(__docker_composer_web_service) /bin/bash
+    fi
+}
+
+#--------------------------------------------------------------------------
+# Recreate docker container (Alias: dcrec)
+#--------------------------------------------------------------------------
+__docker_compose_recreate() {
+    docker compose down -v && docker compose build --no-cache
+}
+
+#--------------------------------------------------------------------------
+# Exectute command in web container (Alias: dce)
+#--------------------------------------------------------------------------
+__docker_compose_execute() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: dce <command> [args...]"
+    else
+        docker compose exec $(__docker_composer_web_service) "$@"
+    fi
+}
+
