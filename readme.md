@@ -43,7 +43,6 @@ brew bundle install
             - [telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
             - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
             - [tpope/vim-ragtag](https://github.com/tpope/vim-ragtag)
-    - [Intervention Pinboard](https://github.com/Intervention/pinboard)
     - [Timewarrior](https://github.com/GothenburgBitFactory/timewarrior)
     - [age](https://github.com/FiloSottile/age)
         - [age-plugin-yubikey](https://github.com/str4d/age-plugin-yubikey)
