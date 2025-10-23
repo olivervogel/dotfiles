@@ -83,7 +83,8 @@ return {
 
 	s("constr", fmt([[
 	public function __construct({args})
-	{{{body}
+	{{
+	    {body}
 	}}
 	]], {
 		args = i(1, ""),
@@ -92,7 +93,7 @@ return {
 			t("protected int $var"),
 			t("protected ?int $var = null"),
 		}),
-		body = i(0)
+		body = i(0, "//")
 	})),
 
 	-- -----------------------------------------------------------------------
