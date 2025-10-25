@@ -374,6 +374,13 @@ return {
 		t(";")
 	}),
 
+	s("rettt", {
+		t("return $this->"),
+		i(1, "value"),
+		i(0),
+		t(";")
+	}),
+
 	s("reta", {
 		t("return ["),
 		i(1),
