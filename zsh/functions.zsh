@@ -1,7 +1,7 @@
 #--------------------------------------------------------------------------
 # Create new directory and cd into it
 #--------------------------------------------------------------------------
-mkcd () {
+mkcd() {
     \mkdir -p "$1"
     cd "$1"
 }
@@ -9,7 +9,7 @@ mkcd () {
 #--------------------------------------------------------------------------
 # Create new temporary directory and cd into it
 #--------------------------------------------------------------------------
-tmpd () {
+tmpd() {
     cd "$(mktemp -d)"
     chmod -R 0700 .
     if [[ $# -eq 1 ]]; then
@@ -412,7 +412,7 @@ __passage_select_and_show_password() {
 #--------------------------------------------------------------------------
 # Generate 2fa code from given entry and copy to clipboard or select via fzf
 #--------------------------------------------------------------------------
-__2fa() {
+2fa() {
     if [ $1 ]; then
         secret=$(passage show $@|grep 2fa_secret|cut -c 13-)
         if [ $secret ]; then
@@ -441,7 +441,7 @@ __2fa() {
 #--------------------------------------------------------------------------
 # Show weather of given loaction (default: "Kiel")
 #--------------------------------------------------------------------------
-__wetter() {
+wetter() {
     if [ $1 ]; then
         curl http://wttr.in/$@
     else
@@ -452,7 +452,7 @@ __wetter() {
 #--------------------------------------------------------------------------
 # Open broser with git respository host (i.e. GitHub, Bitbucket etc.) of current folder
 #--------------------------------------------------------------------------
-__brep() {
+brep() {
     origin=$(git remote -v|grep "origin"|grep "(fetch)")
     regex="git@(.+):(.+)/(.+)\.git"
 
@@ -491,7 +491,7 @@ __timewarrior_create() {
 #--------------------------------------------------------------------------
 # Create backup
 #--------------------------------------------------------------------------
-__backup() {
+backup() {
     restic backup --skip-if-unchanged --files-from ~/.config/restic/backup_files_from
     restic forget --prune --keep-last 3
     restic cache --cleanup
@@ -525,7 +525,7 @@ __zsh_stats() {
 #--------------------------------------------------------------------------
 # Create data uri scheme from file
 #--------------------------------------------------------------------------
-__datauri() {
+datauri() {
     if [ $1 ]; then
         mime=$(file --mime-type -b "$1")
         encoded=$(base64 -i "$1")
@@ -538,7 +538,7 @@ __datauri() {
 #--------------------------------------------------------------------------
 # Encrypt given file against standard recipients
 #--------------------------------------------------------------------------
-__encrypt() {
+encrypt() {
     if [ $1 ]; then
         age -e -R $PASSAGE_RECIPIENTS_FILE $1 > "$1.age"
     else
