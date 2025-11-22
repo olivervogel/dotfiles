@@ -617,7 +617,7 @@ return {
 	-- pipe operator
 	-- -----------------------------------------------------------------------
 
-   s({trig= "(%s?)>>", regTrig = true, snippetType = "autosnippet"}, {
+   s_inline({trig= "(%s?)>>", regTrig = true, snippetType = "autosnippet"}, {
       t(" |> ")
    }),
 
