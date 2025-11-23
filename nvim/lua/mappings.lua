@@ -89,6 +89,9 @@ vim.api.nvim_set_keymap('n', '<leader>rs', ':silent !tmux send -t 1 "docker comp
 vim.api.nvim_set_keymap('n', '<leader>rp', ':silent !tmux send-keys -t 1 Up Enter <cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>gs', ':silent !tmux send -t 1 "git status" Enter<cr>', { noremap = true, silent = true })
 
+-- php-cs-fixer
+-- vim.api.nvim_set_keymap('n', '<leader>f', ':w<cr>:silent !php-cs-fixer fix %:p --config=/Users/oliver/.php-cs-fixer.dist.php<cr>', { noremap = true, silent = true })
+
 -- mergetool next/prev conflict
 vim.api.nvim_set_keymap('n', 'dfj', ']c', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'dfk', '[c', { noremap = true, silent = true })
