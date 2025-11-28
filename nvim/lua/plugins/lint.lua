@@ -7,9 +7,7 @@ return {
       }
       require('lint.linters.phpcs').args = {
          '-q',
-         function ()
-            return '--stdin-path=' .. vim.fn.expand('%:p:.')
-         end,
+         '--standard=psr12',
          '--report=json',
          '-'
       }
