@@ -56,6 +56,7 @@ return {
 			t("public"),
 		}),
 		t(" const "),
+		t("string "),
 		i(2, "CONSTANT_NAME"),
 		t(" = '"),
 		i(3, "value"),
@@ -304,7 +305,7 @@ return {
 	s("tr", fmt([[
 	throw new {name}Exception('{message}');
 	]], {
-		name = i(1, "Custom"),
+		name = i(1, "\\"),
 		message = i(0, "Division by zero."),
 	})),
 
