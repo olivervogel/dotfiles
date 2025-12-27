@@ -67,6 +67,7 @@ return {
                columns = {
                   { 
                      "label",
+                     "label_description",
                      gap = 2,
                   },
                   {
@@ -77,6 +78,7 @@ return {
                },
                components = {
                   label = {
+                     width = { max = 25 },
                      text = function(ctx)
                         if ctx.kind == 'Method' or ctx.kind == 'function' then
                            return ctx.label .. ctx.label_detail .. "~"
@@ -84,7 +86,12 @@ return {
                            return ctx.label .. ctx.label_detail
                         end
                      end
-                  }
+                  },
+                  label_description = {
+                     width = { max = 30 },
+                     text = function(ctx) return ctx.label_description end,
+                     highlight = 'BlinkCmpMenu',
+                  },
                }
             }
          }
