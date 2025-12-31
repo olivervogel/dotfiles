@@ -13,14 +13,15 @@ return {
       }
    },
    keys = {
-      { "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>" },
-      { "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>" },
-      { "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>" },
-      { "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>" },
-      { "<leader>5", "<cmd>BufferLineGoToBuffer 5<cr>" },
-      { "<leader>6", "<cmd>BufferLineGoToBuffer 6<cr>" },
-      { "<leader>7", "<cmd>BufferLineGoToBuffer 7<cr>" },
-      { "<leader>8", "<cmd>BufferLineGoToBuffer 8<cr>" },
-      { "<leader>9", "<cmd>BufferLineGoToBuffer 9<cr>" },
+      { "<leader>1", function() require("bufferline").go_to(1, true) end, desc = "Go to buffer 1" },
+      { "<leader>2", function() require("bufferline").go_to(2, true) end, desc = "Go to buffer 2" },
+      { "<leader>3", function() require("bufferline").go_to(3, true) end, desc = "Go to buffer 3" },
+      { "<leader>4", function() require("bufferline").go_to(4, true) end, desc = "Go to buffer 4" },
+      { "<leader>5", function() require("bufferline").go_to(5, true) end, desc = "Go to buffer 5" },
+      { "<leader>6", function() require("bufferline").go_to(6, true) end, desc = "Go to buffer 6" },
+      { "<leader>7", function() require("bufferline").go_to(7, true) end, desc = "Go to buffer 7" },
+      { "<leader>8", function() require("bufferline").go_to(8, true) end, desc = "Go to buffer 8" },
+      { "<leader>9", function() require("bufferline").go_to(9, true) end, desc = "Go to buffer 9" },
+      { "<leader>0", function() require("bufferline").go_to(10, true) end, desc = "Go to buffer 10" },
    }
 }
