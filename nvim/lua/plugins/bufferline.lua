@@ -7,7 +7,8 @@ return {
          show_buffer_close_icons = false,
          show_close_icon = false,
          show_tab_indicators = false,
-         sort_by = "insert_at_end",
+         sort_by = "id",
+         persist_buffer_sort = false,
          numbers = "ordinal"
       }
    },
