@@ -43,10 +43,6 @@ return {
                   end
                }
             },
-            lines = {
-               name = 'Lines',
-               module = 'sources.lines',
-            }
          } 
       },
       fuzzy = {
