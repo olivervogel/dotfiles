@@ -9,7 +9,14 @@ return {
          show_tab_indicators = false,
          sort_by = "id",
          persist_buffer_sort = false,
-         numbers = "ordinal"
+         numbers = "ordinal",
+         custom_filter = function(bufnr)
+            -- exclude quickfix list
+            if vim.bo[bufnr].buftype == "quickfix" then
+               return false
+            end
+            return true
+         end,
       }
    },
    keys = {
