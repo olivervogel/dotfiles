@@ -40,9 +40,9 @@ vim.api.nvim_set_keymap('v', '<c-c>', '"+y"', { noremap = true })
 vim.api.nvim_set_keymap('', '<leader><leader>', ':nohl<cr>', { noremap = true })
 
 -- search and replace current cursor position
-vim.api.nvim_set_keymap('n', '<leader>sc', 'yiw:%s/<c-r>0//g<left><left>', {})
-vim.api.nvim_set_keymap('n', '<leader>ss', ':%s//g<Left><Left>', {})
-vim.api.nvim_set_keymap('n', '<leader>sl', 'yiw:s/<c-r>0//g<Left><Left>', {})
+vim.api.nvim_set_keymap('n', '<leader>sc', 'yiw:%s/<c-r>0/&/g<left><left>', {})
+vim.api.nvim_set_keymap('n', '<leader>ss', ':%s//&/g<Left><Left><Left><Left>', {})
+vim.api.nvim_set_keymap('n', '<leader>sl', 'yiw:s/<c-r>0/&/g<Left><Left>', {})
 
 -- navigate back changelist (back with alt-backspace. forward with alt-enter)
 vim.api.nvim_set_keymap('n', '<m-bs>', 'g;zz', { noremap = true })
