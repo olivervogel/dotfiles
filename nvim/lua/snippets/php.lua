@@ -306,7 +306,7 @@ return {
 	throw new {name}Exception('{message}');
 	]], {
 		name = i(1, "\\"),
-		message = i(0, "Division by zero."),
+		message = i(0, "Not implemented"),
 	})),
 
 	-- -----------------------------------------------------------------------
