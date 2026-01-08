@@ -274,6 +274,21 @@ __git_revert() {
 }
 
 #--------------------------------------------------------------------------
+# Revert given git commit without adding revert commit
+#--------------------------------------------------------------------------
+__git_revert_extract() {
+    if [ $1 ]; then
+        git revert --no-commit $1 && git restore --staged .
+    else
+        preview="git diff-tree --color=always -p {1}|delta"
+        selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf --ansi --preview $preview)
+        if [ $selected ]; then
+            git revert --no-commit $(echo $selected|cut -c 1-7) && git restore --staged .
+        fi
+    fi    
+}
+
+#--------------------------------------------------------------------------
 # Push current git branch to origin's branch with same name
 #--------------------------------------------------------------------------
 __git_push_current_branch_to_origin() {
