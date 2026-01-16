@@ -24,7 +24,7 @@ tmpd() {
 #--------------------------------------------------------------------------
 __tmux_create() {
     sessionname=$(__slugify $(basename $(pwd)))
-    if tmux has-session -t $sessionname 2>/dev/null; then
+    if tmux has-session -t=$sessionname 2>/dev/null; then
         tmux -2 attach-session -t $sessionname
     else
         tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
@@ -42,7 +42,7 @@ __tmux_create() {
 #--------------------------------------------------------------------------
 __tmux_create_triple() {
     sessionname=$(__slugify $(basename $(pwd)))
-    if tmux has-session -t $sessionname 2>/dev/null; then
+    if tmux has-session -t=$sessionname 2>/dev/null; then
         tmux -2 attach-session -t $sessionname
     else
         tmux -2 new-session -c $(pwd) -d -s $sessionname -x $(tput cols) -y $(tput lines)
