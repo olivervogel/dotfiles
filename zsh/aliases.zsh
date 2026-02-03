@@ -2,7 +2,6 @@ alias ......="cd ../../../"
 alias ....="cd ../../"
 alias ..="cd .."
 alias cat="bat"
-alias less='bat --paging=always'
 alias cdump="composer dump-autoload --optimize"
 alias e="nvim"
 alias ga="__git_add"
