@@ -40,7 +40,7 @@ return {
       end
 
       -- intelephense lsp
-      require('lspconfig').intelephense.setup {
+      vim.lsp.config('intelephense', {
          -- capabilities = capabilities,
          on_attach = on_attach,
          settings = {
@@ -225,10 +225,10 @@ return {
                }
             }
          }
-      }
+      })
 
       -- html language server
-      require('lspconfig').html.setup {
+      vim.lsp.config('html', {
          on_attach = on_attach,
          -- capabilities = capabilities,
          cmd = { "vscode-html-language-server", "--stdio" },
@@ -241,22 +241,27 @@ return {
             },
             provideFormatter = true
          },
-      }
+      })
 
       -- css language server
-      require('lspconfig').cssls.setup {
+      vim.lsp.config('cssls', {
          on_attach = on_attach,
          -- capabilities = capabilities,
          cmd = { "vscode-css-language-server", "--stdio" },
          filetypes = { "css", "less", "scss" },
-      }
+      })
 
       -- javascript/typescript language server
-      require('lspconfig').eslint.setup {
+      vim.lsp.config('eslint', {
          on_attach = on_attach,
          -- capabilities = capabilities,
          cmd = { "vscode-eslint-language-server", "--stdio" },
-      }
+      })
+
+      vim.lsp.enable('intelephense')
+      vim.lsp.enable('html')
+      vim.lsp.enable('cssls')
+      vim.lsp.enable('eslint')
 
       -- show diagnostic warning with line highlighting instead of symbol
       vim.api.nvim_set_hl(0, "DiagnosticLineNrError", { bg = "#51202A", fg = "#FF0000", bold = true })

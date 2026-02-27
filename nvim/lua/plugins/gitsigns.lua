@@ -3,6 +3,11 @@ return {
    version = "^2",
    event = "BufReadPre",
    config = function()
+      vim.opt.signcolumn = "yes"
+      vim.api.nvim_set_hl(0, 'GitsignsAdd', { fg='#485455' })
+      vim.api.nvim_set_hl(0, 'GitsignsChange', { fg='#5d5943' })
+      vim.api.nvim_set_hl(0, 'GitsignsDelete', { fg='#583931' })
+
       require("gitsigns").setup({
          signs = {
             add          = { text = '┃' },
@@ -21,7 +26,7 @@ return {
             untracked    = { text = '┆' },
          },
          signs_staged_enable = true,
-         signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+         signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs` fooo
          numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
          linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
          word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
