@@ -57,6 +57,7 @@ brew bundle install
     - [fzf](https://github.com/junegunn/fzf)
     - [jq](https://jqlang.github.io/jq/)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
+    - [opencode](https://github.com/anomalyco/opencode)
     - [renameutils](https://www.nongnu.org/renameutils/)
     - [restic](https://github.com/restic/restic)
     - [ripgrep](https://github.com/BurntSushi/ripgrep)

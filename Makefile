@@ -1,6 +1,7 @@
 install:
 		@DOTFILES_PATH=$$(pwd); echo $$DOTFILES_PATH
 		@mkdir -p ~/.config
+		@mkdir -p ~/.config/opencode
 		@ln -nfs $$(pwd)/Brewfile ~/Brewfile
 		@ln -nfs $$(pwd)/zsh ~/.config/zsh
 		@ln -nfs $$(pwd)/p10k ~/.config/p10k
@@ -14,6 +15,8 @@ install:
 		@ln -nfs $$(pwd)/rc/zshrc ~/.zshrc
 		@ln -nfs $$(pwd)/rc/p10k.zsh ~/.p10k.zsh
 		@ln -nfs $$(pwd)/rc/tmux.conf ~/.tmux.conf
+		@ln -nfs $$(pwd)/opencode/AGENTS.md ~/.config/opencode/AGENTS.md
+		@ln -nfs $$(pwd)/opencode/opencode.json ~/.config/opencode/opencode.json
 		@touch ~/.hushlogin
 		@defaults write -g NSWindowShouldDragOnGesture -bool true
 		@echo "Installation successfully completed"
