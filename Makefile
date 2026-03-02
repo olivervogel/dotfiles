@@ -17,6 +17,7 @@ install:
 		@ln -nfs $$(pwd)/rc/tmux.conf ~/.tmux.conf
 		@ln -nfs $$(pwd)/opencode/AGENTS.md ~/.config/opencode/AGENTS.md
 		@ln -nfs $$(pwd)/opencode/opencode.json ~/.config/opencode/opencode.json
+		@ln -nfs $$(pwd)/opencode/tui.json ~/.config/opencode/tui.json
 		@touch ~/.hushlogin
 		@defaults write -g NSWindowShouldDragOnGesture -bool true
 		@echo "Installation successfully completed"
