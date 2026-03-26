@@ -24,6 +24,7 @@ alias gdc="__git_diff_commit"
 alias gdcf="__git_diff_commit_files"
 alias gdff="__git_diff_file"
 alias gf="git fetch"
+alias goc="__git_open_commit"
 alias gl='git log --graph --pretty=format:"%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=format:"%c" --all'
 alias gm="__git_merge"
 alias gpl="git pull"

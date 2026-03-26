@@ -320,6 +320,29 @@ __git_cherry_pick() {
 }
 
 #--------------------------------------------------------------------------
+# Open modified files of given commit in $EDITOR or select commit with fzf
+#--------------------------------------------------------------------------
+__git_open_commit() {
+    if [ $1 ]; then
+        commit=$1
+    else
+        preview="git diff-tree --color=always -p {1}|delta"
+        selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf -m --ansi --preview $preview)
+        if [ $selected ]; then
+            commit=$(echo $selected|cut -c 1-7)
+        else
+            return 0
+        fi
+    fi
+    files=(${(f)"$(git diff-tree --no-commit-id --name-only -r --diff-filter=d $commit)"})
+    if [ ${#files[@]} -eq 0 ]; then
+        echo "No modified files found for commit $commit"
+        return 1
+    fi
+    ${EDITOR:-vi} "${files[@]}"
+}
+
+#--------------------------------------------------------------------------
 # Zip given file or select files to archive with fzf
 #--------------------------------------------------------------------------
 __zip_selected() {
