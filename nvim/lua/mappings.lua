@@ -129,3 +129,8 @@ end
 
 -- bind toggle quickfix list (option-shift-[-])
 vim.api.nvim_set_keymap('n', '—', [[:lua toggle_quickfix_list()<cr>]], { noremap = true, silent = true })
+
+-- treesitter incremental selection (option-shift-[o] / option-shift-[u])
+vim.keymap.set("n", "Ø", "van", { remap = true, desc = "Incremental selection" })
+vim.keymap.set("x", "Ø", "an", { remap = true, desc = "Expand selection to parent node" })
+vim.keymap.set("x", "Û", "in", { remap = true, desc = "Shrink selection to child node" })
