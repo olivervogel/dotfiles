@@ -1,0 +1,22 @@
+#compdef gitmost
+
+_gitmost_get_command_list() {
+    printf "\
+        changed\n\
+        active\n\
+        fixed\n\
+        commits\n"
+}
+
+_gitmost() {
+  local -a commands
+  commands=(`_gitmost_get_command_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_gitmost

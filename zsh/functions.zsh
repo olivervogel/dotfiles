@@ -620,3 +620,41 @@ __docker_compose_execute() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Show git statistics for different criteria
+#--------------------------------------------------------------------------
+__git_most() {
+
+    if [[ $1 == "changed" ]]; then
+
+        # Show most changed files in the last year
+        git log --format=format: --name-only --since='1 year ago' | sort | uniq -c | sort -nr | head -20
+
+    elif [[ $1 == "active" ]]; then
+
+        # Show most active users in the last 6 months
+        git shortlog -sn --no-merges --since='6 months ago'
+
+    elif [[ $1 == "fixed" ]]; then
+
+        # Show most fixed files
+        git log -i -E --grep='fix|bug|broken' --name-only --format='' | sort | uniq -c | sort -nr | head -20
+
+    elif [[ $1 == "commits" ]]; then
+
+        # Show count of commits per months
+        git log --format='%ad' --date=format:'%Y-%m' | sort -r | uniq -c | less
+
+    else
+
+        printf "Usage: gitmost [changed|active|fixed|commits]\n"
+        printf "\n"
+        printf "  changed: Show most changed files in the last year\n"
+        printf "  active: Show most active users in the last 6 months\n"
+        printf "  fixed: Show most fixed files\n"
+        printf "  commits: Show count of commits per month\n"
+        printf "\n"
+
+    fi
+}
+
