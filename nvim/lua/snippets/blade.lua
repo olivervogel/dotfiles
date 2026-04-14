@@ -17,13 +17,22 @@ return {
 	}),
 
 	-- -----------------------------------------------------------------------
-	-- if
+	-- if / unless
 	-- -----------------------------------------------------------------------
 	
 	s("if", fmt([[
 	@if ({condition})
 		{body}
 	@endif
+	]], {
+		condition = i(1, "condition"),
+		body = i(0),
+	})),
+
+	s("unl", fmt([[
+	@unless ({condition})
+		{body}
+	@endunless
 	]], {
 		condition = i(1, "condition"),
 		body = i(0),
