@@ -658,3 +658,21 @@ __git_most() {
     fi
 }
 
+#--------------------------------------------------------------------------
+# Restore a file from a certain git commit
+#--------------------------------------------------------------------------
+__git_restore_file() {
+    if [ $1 ]; then
+        if [ $2 ]; then
+            git restore --source=$2 -- $1
+        else
+            preview="git diff-tree --color=always -p {1}|delta"
+            selected=$(git log --pretty=format:"%C(yellow)%h%Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" --date=short --no-merges|fzf --ansi --preview $preview)
+            if [ $selected ]; then
+                git restore --source=$(echo $selected|cut -c 1-7) -- $1
+            fi
+        fi    
+    else
+        printf "Usage: grest <file> <commit>\n"
+    fi
+}
