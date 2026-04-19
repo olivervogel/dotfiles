@@ -66,6 +66,7 @@ brew bundle install
     - [tmux](https://github.com/tmux/tmux)
     - [ykman](https://developers.yubico.com/yubikey-manager/)
     - [z - jump around](https://github.com/rupa/z)
+    - [tree-sitter & tree-sitter-cli](https://github.com/tree-sitter/tree-sitter)
 
 ## Fonts
 
