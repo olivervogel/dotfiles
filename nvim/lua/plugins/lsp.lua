@@ -45,6 +45,13 @@ return {
          on_attach = on_attach,
          settings = {
             intelephense = {
+               format = {
+                  braces = 'allman'
+               },
+               phpdoc = {
+                  returnVoid = false,
+                  textFormat = 'text'
+               },
                stubs = {
                   "ast",
                   "bcmath",
