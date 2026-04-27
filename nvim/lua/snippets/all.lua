@@ -50,4 +50,20 @@ return {
 		t("https://"),
 		i(3, "example.com"),
 	}),
+
+	s("cmd_agee", { 
+		t("age -e -R ~/.passage/recipients "),
+		i(1, "secret.txt"),
+		t(' > '),
+		rep(1),
+		t('.age'),
+	}),
+
+	s("cmd_aged", { 
+		t("age -d -i ~/.passage/identities "),
+		i(1, "secret.txt.age"),
+		t(' > '),
+		t('secret.txt'),
+	}),
+
 }
