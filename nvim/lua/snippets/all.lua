@@ -39,16 +39,10 @@ return {
 
 	s("cmd_curl", { 
 		t({"curl -X POST \\", ""}),
-		c(1, {
-			t({"-H \"Accept: text/markdown\" \\", ""}),
-			t(""),
-		}),
-		c(2, {
-			t({"-d '{\"key\": \"value\"}' \\", ""}),
-			t(""),
-		}),
+      t({"-H \"Accept: text/markdown\" \\", ""}),
+      t({"-d '{\"key\": \"value\"}' \\", ""}),
 		t("https://"),
-		i(3, "example.com"),
+		i(1, "example.com"),
 	}),
 
 	s("cmd_agee", { 
