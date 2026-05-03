@@ -388,6 +388,18 @@ return {
 		t("];")
 	}),
 
+	s("retm", fmt([[
+	return match ({var}) {{
+		{case} => '{return_value}',
+		default => '{default_return_value}',
+	}};
+	]], {
+		var = i(1, "variable"),
+		case = i(2, "case"),
+		return_value = i(3, "value"),
+		default_return_value = i(0, "value"),
+	})),
+
 	-- -----------------------------------------------------------------------
 	-- use
 	-- -----------------------------------------------------------------------
