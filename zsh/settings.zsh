@@ -54,3 +54,6 @@ export RESTIC_PASSWORD_COMMAND="passage show restic_backup"
 
 # docker config
 export COMPOSE_MENU=0
+
+# homebrew config
+HOMEBREW_NO_ANALYTICS=1
