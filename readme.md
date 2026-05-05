@@ -56,6 +56,7 @@ brew bundle install
     - [espanso](https://github.com/espanso/espanso)
     - [eza](https://github.com/eza-community/eza/)
     - [fzf](https://github.com/junegunn/fzf)
+    - [himalaya](https://github.com/pimalaya/himalaya)
     - [jq](https://jqlang.github.io/jq/)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
     - [opencode](https://github.com/anomalyco/opencode)

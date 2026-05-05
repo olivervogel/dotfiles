@@ -12,6 +12,7 @@ install:
 		@ln -nfs $$(pwd)/skhd ~/.config/skhd
 		@ln -nfs $$(pwd)/restic ~/.config/restic
 		@ln -nfs $$(pwd)/timewarrior ~/.config/timewarrior
+		@ln -nfs $$(pwd)/himalaya ~/.config/himalaya
 		@ln -nfs $$(pwd)/rc/zshrc ~/.zshrc
 		@ln -nfs $$(pwd)/rc/p10k.zsh ~/.p10k.zsh
 		@ln -nfs $$(pwd)/rc/tmux.conf ~/.tmux.conf

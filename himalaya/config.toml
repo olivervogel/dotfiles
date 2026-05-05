@@ -1,0 +1,40 @@
+################################################################################
+###[ Global configuration ]#####################################################
+################################################################################
+
+display-name = "Oliver Vogel"
+downloads-dir = "~/Downloads"
+
+################################################################################
+###[ Account configuration ]####################################################
+################################################################################
+
+[accounts.oliver]
+
+default = true
+email = "oliver@olivervogel.com"
+
+# Define mailbox aliases
+folder.aliases.inbox = "INBOX"
+folder.aliases.sent = "Sent"
+folder.aliases.drafts = "Drafts"
+folder.aliases.trash = "Trash"
+folder.aliases.archive = "Archive"
+
+# IMAP
+backend.type = "imap"
+backend.host = "imap.mailbox.org"
+backend.port = 993
+backend.encryption.type = "tls"
+backend.login = "oliver@olivervogel.com"
+backend.auth.type = "password"
+backend.auth.cmd = "passage show mailbox.org|grep himalaya|awk -F': ' '{print $2}'"
+
+# SMTP
+message.send.backend.type = "smtp"
+message.send.backend.host = "smtp.mailbox.org"
+message.send.backend.port = 587
+message.send.backend.encryption.type = "start-tls"
+message.send.backend.login = "oliver@olivervogel.com"
+message.send.backend.auth.type = "password"
+message.send.backend.auth.cmd = "passage show mailbox.org|grep himalaya|awk -F': ' '{print $2}'"
