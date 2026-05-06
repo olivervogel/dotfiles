@@ -38,3 +38,7 @@ message.send.backend.encryption.type = "start-tls"
 message.send.backend.login = "oliver@olivervogel.com"
 message.send.backend.auth.type = "password"
 message.send.backend.auth.cmd = "passage show mailbox.org|grep himalaya|awk -F': ' '{print $2}'"
+
+# settings
+envelope.list.datetime-local-tz = true
+
