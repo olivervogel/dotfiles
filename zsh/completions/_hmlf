@@ -1,0 +1,23 @@
+#compdef hmlf
+
+_hmlf_get_command_list() {
+    printf "\
+        INBOX\n\
+        Archive\n\
+        Sent\n\
+        Trash\n\
+        Junk\n"
+}
+
+_hmlf() {
+  local -a commands
+  commands=(`_hmlf_get_command_list`)
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_hmlf

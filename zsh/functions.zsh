@@ -676,3 +676,28 @@ __git_restore_file() {
         printf "Usage: grest <file> <commit>\n"
     fi
 }
+
+#--------------------------------------------------------------------------
+# Write mail with given file as attachment
+#--------------------------------------------------------------------------
+__himalaya_send_file() {
+    if [ $1 ]; then
+        himalaya message write "<#part filename=\"$1\"><#/part>"
+    else
+        printf "Usage: hmwf <file>\n"
+    fi
+}
+
+#--------------------------------------------------------------------------
+# List given imap folder
+#--------------------------------------------------------------------------
+__himalaya_list_folder() {
+
+    local page="${2:-1}"
+
+    if [ $1 ]; then
+        himalaya envelope list --page=$page --folder=$1
+    else
+        himalaya folder list
+    fi
+}
