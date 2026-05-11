@@ -60,4 +60,14 @@ return {
 		t('secret.txt'),
 	}),
 
+	s("cmd_rsync", { 
+		t("rsync -av --delete"),
+		t(" "),
+		i(1, "/local/folder"),
+		t("/ "),
+		i(2, "remote.host"),
+		t(":/"),
+		i(3, "folder"),
+	}),
+
 }
