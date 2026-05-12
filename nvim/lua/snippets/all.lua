@@ -41,6 +41,7 @@ return {
 		t({"curl -X POST \\", ""}),
       t({"-H \"Accept: text/markdown\" \\", ""}),
       t({"-d '{\"key\": \"value\"}' \\", ""}),
+      t({"-u \"user:password\" \\", ""}),
 		t("https://"),
 		i(1, "example.com"),
 	}),
