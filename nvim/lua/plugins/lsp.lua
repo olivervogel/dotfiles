@@ -5,7 +5,7 @@ return {
    keys = {
       { "<leader>d", "<cmd>lua vim.diagnostic.open_float()<cr>", noremap = true, silent = true },
       { "<leader>s", "<cmd>lua vim.diagnostic.goto_prev()<CR>", noremap = true, silent = true },
-      { "<leader>f", "<cmd>lua vim.diagnostic.goto_next()<CR>", noremap = true, silent = true },
+      -- { "<leader>f", "<cmd>lua vim.diagnostic.goto_next()<CR>", noremap = true, silent = true },
       { "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", noremap = true, silent = true },
    },
    init = function()

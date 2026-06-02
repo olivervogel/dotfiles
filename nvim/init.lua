@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("base")
 require("statusline")
+require("functions")
 require("mappings")
 require("autocommands")
 

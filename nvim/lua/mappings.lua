@@ -91,6 +91,7 @@ vim.api.nvim_set_keymap('n', '<leader>gs', ':silent !tmux send -t 1 "git status"
 
 -- php-cs-fixer
 -- vim.api.nvim_set_keymap('n', '<leader>f', ':w<cr>:silent !php-cs-fixer fix %:p --config=/Users/oliver/.php-cs-fixer.dist.php<cr>', { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>f", run_phpcbf, { desc = "Run phpcbf on current file" })
 
 -- mergetool next/prev conflict
 vim.api.nvim_set_keymap('n', 'dfj', ']c', { noremap = true, silent = true })

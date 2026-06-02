@@ -30,7 +30,7 @@ return {
       }, {
          callback = function()
             set_phpcs_args()
-            lint.try_lint("phpcs")
+            lint.try_lint()
          end,
       })
    end,
