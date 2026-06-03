@@ -71,4 +71,13 @@ return {
 		i(3, "folder"),
 	}),
 
+	s("cmd_tar", { 
+		t("tar -czvf"),
+		t(" "),
+		i(1, "archive"),
+		t(".tar.gz "),
+		t("./"),
+		i(2, "folder"),
+	}),
+
 }
