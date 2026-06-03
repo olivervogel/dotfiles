@@ -77,7 +77,15 @@ return {
 		i(1, "archive"),
 		t(".tar.gz "),
 		t("./"),
-		i(2, "folder"),
+		i(2, "src"),
+		c(3, {
+			t(""),
+			sn(nil, {
+				t(" --exclude \"./"),
+				i(1, "folder"),
+				t("\""),
+			})
+      })
 	}),
 
 	s("cmd_zip", { 
@@ -86,7 +94,15 @@ return {
 		i(1, "archive"),
 		t(".zip "),
 		t("./"),
-		i(2, "folder"),
+		i(2, "src"),
+		c(3, {
+			t(""),
+			sn(nil, {
+				t(" -x \"./"),
+				i(1, "folder"),
+				t("\""),
+			})
+      })
 	}),
 
 }
