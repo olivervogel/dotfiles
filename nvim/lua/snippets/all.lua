@@ -80,4 +80,13 @@ return {
 		i(2, "folder"),
 	}),
 
+	s("cmd_zip", { 
+		t("zip -r"),
+		t(" "),
+		i(1, "archive"),
+		t(".zip "),
+		t("./"),
+		i(2, "folder"),
+	}),
+
 }
