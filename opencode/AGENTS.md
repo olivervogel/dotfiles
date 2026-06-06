@@ -1,6 +1,7 @@
 ## Plans
 
 - Make the plan extremely concise.
+- Keep it short and precise and avoid unnecessary details
 - At the end of the plan give me a list of unresolved questions to answer, if any.
 
 ## Approach
