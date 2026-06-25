@@ -37,7 +37,13 @@ FPATH="${HOME}/.dotfiles/zsh/completions:${FPATH}"
 # enable autocompletion
 autoload -Uz compinit
 zstyle ":completion:*" menu select
-compinit
+
+# run if the cache (.zcompdump) is older than 24 hours
+if [[ -n ~/.zcompdump(#qNmh-24) ]]; then
+    compinit -C
+else
+    compinit
+fi
 
 # configure autocompletion
 setopt completealiases
