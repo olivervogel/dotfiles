@@ -1,0 +1,7 @@
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_ed25519
+    ServerAliveInterval 20
+    ServerAliveCountMax 5
+    ConnectTimeout 10
