@@ -72,13 +72,17 @@ return {
 	}),
 
 	s("cmd_rsync", { 
-		t("rsync -av --delete"),
+		t("rsync -avz --delete"),
 		t(" "),
-		i(1, "/local/folder"),
+		c(1, {
+			t(""),
+         t("-e \"ssh -p 2222\" "),
+      }),
+		i(2, "./local/folder"),
 		t("/ "),
-		i(2, "remote.host"),
+		i(3, "remote.host"),
 		t(":/"),
-		i(3, "folder"),
+		i(4, "folder"),
 	}),
 
 	s("cmd_tar", { 
