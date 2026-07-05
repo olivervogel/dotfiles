@@ -1,0 +1,52 @@
+" Enable syntax highlighting when available.
+syntax on
+
+" colorscheme
+set background=dark
+colorscheme habamax
+
+" Show line numbers.
+set number
+
+" Relative line number
+set relativenumber
+
+" Display incomplete commands.
+set showcmd
+
+" Better command-line completion.
+set wildmenu            
+
+" Always show status line
+set laststatus=2        
+
+" Leader key
+let mapleader = " "
+" highlight search matches
+set hlsearch
+
+" Case-insensitive search...
+set ignorecase
+
+" ...unless uppercase is used.
+set smartcase
+
+" Highlight matches while typing.
+set incsearch
+
+" Performance
+set updatetime=300
+set ttyfast
+
+" opening files
+set path+=**
+set wildmenu
+set wildmode=longest:full,full
+set wildignore+=*/.git/*,*/node_modules/*,*/target/*,*/dist/*,*/build/*
+
+" Mappings
+nnoremap <Leader>w :write<CR>
+nnoremap <Leader><Leader> :nohlsearch<CR>
+nnoremap ^ `
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
