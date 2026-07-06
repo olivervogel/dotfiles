@@ -254,7 +254,7 @@ __git_restore_all() {
 #--------------------------------------------------------------------------
 __git_rebase() {
     if [ $1 ]; then
-        git rebase -i HEAD~$1
+        git rebase -i HEAD~$1 && git commit --amend --no-edit --reset-author
     fi
 }
 
