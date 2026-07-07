@@ -119,4 +119,15 @@ return {
       })
 	}),
 
+	s("cmd_find", { 
+		t("find ."),
+		t(" "),
+		t("-type f "),
+		t("-iname '*.php' "),
+		c(1, {
+			t(""),
+         t("|xargs grep 'content' -sl")
+      })
+	}),
+
 }
