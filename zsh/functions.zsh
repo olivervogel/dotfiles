@@ -373,6 +373,22 @@ __zip_selected() {
 }
 
 #--------------------------------------------------------------------------
+# Find files containing content
+#--------------------------------------------------------------------------
+ff() {
+    if [ $# -lt 1 ]; then
+        echo "Usage: ff <file-pattern> [content-pattern]"
+        return 1
+    fi
+
+    if [ $# -eq 1 ]; then
+        find . -type f -iname "$1"
+    else
+        find . -type f -iname "$1" | xargs grep "$2" -sl
+    fi
+}
+
+#--------------------------------------------------------------------------
 # Generate random string with given length (default length: 20)
 #--------------------------------------------------------------------------
 __random_string() {
