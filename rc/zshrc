@@ -1,5 +1,5 @@
-. ~/.config/zsh/tools.zsh
 . ~/.config/zsh/settings.zsh
+. ~/.config/zsh/tools.zsh
 . ~/.config/zsh/bindings.zsh
 . ~/.config/zsh/aliases.zsh
 . ~/.config/zsh/functions.zsh
