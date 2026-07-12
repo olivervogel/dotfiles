@@ -71,6 +71,8 @@ brew bundle install
 
 ## Fonts
 
+Ghostty Terminal Emulator comes with built-in default fonts, which, as it happens, are exactly the ones I've always used.
+
 - [JetBrains Mono](https://www.jetbrains.com/mono/)
 - [Symbols-2048-em Nerd Font Complete Mono](https://github.com/ryanoasis/nerd-fonts)
 
