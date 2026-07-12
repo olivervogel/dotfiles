@@ -1,0 +1,84 @@
+# base
+language = en
+
+# shell
+shell-integration = zsh
+shell-integration-features = no-cursor
+
+# window
+window-decoration = none
+window-position-x = 0
+window-position-y = 0
+window-width = 300
+window-height = 60
+window-padding-y = 11,0
+quit-after-last-window-closed = true
+
+# mouse
+right-click-action = paste
+
+# font
+font-size = 15
+font-thicken = true
+font-thicken-strength = 10
+adjust-cell-height = 20%
+
+# colors
+background = #0E1216
+foreground = #839496
+
+palette = 0=#073642
+palette = 8=#002b36
+
+palette = 1=#dc322f
+palette = 9=#cb4b16
+
+palette = 2=#859900
+palette = 10=#586e75
+
+palette = 3=#b58900
+palette = 11=#657b83
+
+palette = 4=#268bd2
+palette = 12=#839496
+
+palette = 5=#d33682
+palette = 13=#6c71c4
+
+palette = 6=#2aa198
+palette = 14=#93a1a1
+
+palette = 7=#eee8d5
+palette = 15=#fdf6e3
+
+cursor-color = #b6bdc2
+cursor-text = #c6d0f5
+cursor-style = block
+cursor-style-blink = false
+
+selection-background = #7D8C97
+selection-foreground = #27313F
+
+# tmux pane navigation
+keybind = cmd+alt+left=text:\x1b[1;5D
+keybind = cmd+alt+right=text:\x1b[1;5C
+keybind = cmd+alt+up=text:\x1b[1;5A
+keybind = cmd+alt+down=text:\x1b[1;5B
+
+# tmux zoom pane
+keybind = cmd+alt+enter=text:\x1f
+
+# tmux session navigation (prev/next session)
+keybind = ctrl+cmd+alt+left=text:\x1b[1;2D
+keybind = ctrl+cmd+alt+right=text:\x1b[1;2C
+
+# tmux window navigation (prev/next window, new window)
+keybind = ctrl+alt+left=text:\x1b[5;2~
+keybind = ctrl+alt+right=text:\x1b[6;2~
+keybind = ctrl+alt+home=text:\x1b[1;2H
+
+# vim changelist navigation
+keybind = alt+enter=text:…
+
+# Shift+Enter
+keybind = shift+enter=text:\x1b[13;2u

@@ -29,4 +29,4 @@ brew "zbar"
 brew "zsh"
 brew "zsh-history-substring-search"
 
-cask "kitty"
+cask "ghostty"

@@ -8,7 +8,7 @@ install:
 		@ln -nfs $$(pwd)/tmux ~/.config/tmux
 		@ln -nfs $$(pwd)/nvim ~/.config/nvim
 		@ln -nfs $$(pwd)/git ~/.config/git
-		@ln -nfs $$(pwd)/kitty ~/.config/kitty
+		@ln -nfs $$(pwd)/ghostty ~/.config/ghostty
 		@ln -nfs $$(pwd)/skhd ~/.config/skhd
 		@ln -nfs $$(pwd)/restic ~/.config/restic
 		@ln -nfs $$(pwd)/timewarrior ~/.config/timewarrior

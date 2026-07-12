@@ -1,0 +1,3 @@
+# Disable in ghostty
+filter_exec: ghostty
+enable: false

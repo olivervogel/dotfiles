@@ -22,7 +22,7 @@ brew bundle install
 
 ## Tools
 
-- [kitty](https://sw.kovidgoyal.net/kitty)
+- [ghostty](https://ghostty.org)
     - [zsh](https://www.zsh.org)
         - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
         - [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
