@@ -15,6 +15,7 @@ link-previews = false
 # mouse
 right-click-action = paste
 mouse-hide-while-typing = true
+mouse-scroll-multiplier = 1
 
 # font
 font-size = 15
