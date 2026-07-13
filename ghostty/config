@@ -52,7 +52,7 @@ palette = 7=#eee8d5
 palette = 15=#fdf6e3
 
 cursor-color = #b6bdc2
-cursor-text = #c6d0f5
+cursor-text = #0E1216
 cursor-style = block
 cursor-style-blink = false
 
