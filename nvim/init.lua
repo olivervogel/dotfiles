@@ -21,6 +21,7 @@ require("statusline")
 require("functions")
 require("mappings")
 require("autocommands")
+require("lsp")
 
 -- Setup lazy.nvim
 require("lazy").setup({
