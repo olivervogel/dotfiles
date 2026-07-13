@@ -69,13 +69,13 @@ keybind = cmd+alt+down=text:\x1b[1;5B
 keybind = cmd+alt+enter=text:\x1f
 
 # tmux session navigation (prev/next session)
-keybind = ctrl+cmd+alt+left=text:\x1b[1;2D
-keybind = ctrl+cmd+alt+right=text:\x1b[1;2C
+keybind = ctrl+cmd+alt+h=text:\x1b[1;2D
+keybind = ctrl+cmd+alt+l=text:\x1b[1;2C
 
 # tmux window navigation (prev/next window, new window)
-keybind = ctrl+alt+left=text:\x1b[5;2~
-keybind = ctrl+alt+right=text:\x1b[6;2~
-keybind = ctrl+alt+home=text:\x1b[1;2H
+keybind = ctrl+alt+h=text:\x1b[5;2~
+keybind = ctrl+alt+l=text:\x1b[6;2~
+keybind = ctrl+alt+n=text:\x1b[1;2H
 
 # vim changelist navigation
 keybind = alt+enter=text:…
