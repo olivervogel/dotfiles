@@ -3,6 +3,7 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^[^?' backward-kill-word
 bindkey '^[' vi-cmd-mode
 bindkey '^Z' __fg
+bindkey '^Xp' push-line
 
 tmuxpane-down() { tmux select-pane -D }
 tmuxpane-up() { tmux select-pane -U }
