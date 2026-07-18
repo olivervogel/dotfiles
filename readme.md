@@ -35,7 +35,6 @@ brew bundle install
         - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
         - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
         - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
-        - [lspconfig](https://github.com/neovim/nvim-lspconfig)
         - [nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) (customized)
         - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
         - [nvim-lint](https://github.com/mfussenegger/nvim-lint)
