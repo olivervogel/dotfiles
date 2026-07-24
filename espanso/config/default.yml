@@ -2,3 +2,6 @@
 
 # hide icon in status bar
 show_icon: false
+
+# shortcut for search snippet menu
+search_shortcut: ALT+SHIFT+SPACE
