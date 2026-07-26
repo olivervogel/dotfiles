@@ -1,5 +1,7 @@
 # dotfiles
 
+A minimalist, terminal-based setup with tmux as the foundation and Neovim as the editor using as few plugins as possible.
+
 ## Initialization
 
 The repository must first be cloned on a newly installed system.
