@@ -130,4 +130,12 @@ return {
       })
 	}),
 
+	s("cmd_large", { 
+		t("du -sh"),
+		t(" "),
+		i(1, "~/Downloads"),
+		t("/* "),
+		t("2>/dev/null |sort -hr |head -20"),
+	}),
+
 }
