@@ -82,3 +82,6 @@ keybind = alt+enter=text:…
 
 # Shift+Enter
 keybind = shift+enter=text:\x1b[13;2u
+
+# reset window to default size
+keybind = cmd+shift+z=reset_window_size
