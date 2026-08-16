@@ -546,7 +546,7 @@ return {
 	 * {title}
 	 */
 	]], {
-		title = i(1, "Title")
+		title = i(1, "Create new instance.")
 	})),
 
 	s("docc", fmt([[
