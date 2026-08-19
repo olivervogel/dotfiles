@@ -59,6 +59,22 @@ cursor-style-blink = false
 selection-background = #7D8C97
 selection-foreground = #27313F
 
+# num block
+keybind = cmd+alt+7=text:7
+keybind = cmd+alt+8=text:8
+keybind = cmd+alt+9=text:9
+
+keybind = cmd+alt+u=text:4
+keybind = cmd+alt+i=text:5
+keybind = cmd+alt+o=text:6
+
+keybind = cmd+alt+j=text:1
+keybind = cmd+alt+k=text:2
+keybind = cmd+alt+l=text:3
+
+keybind = cmd+alt+m=text:0
+keybind = cmd+alt+0=text:0
+
 # tmux pane navigation
 keybind = cmd+alt+left=text:\x1b[1;5D
 keybind = cmd+alt+right=text:\x1b[1;5C
