@@ -1,0 +1,182 @@
+#!/usr/bin/env zsh
+#
+# dnscheck — check worldwide DNS propagation of a hostname.
+#
+# Queries a set of public DNS resolvers located around the world and reports,
+# per resolver, whether it agrees with the current global consensus answer.
+#
+# Usage:
+#   ./dnscheck <hostname> [record-type]      # record-type defaults to A
+#   ./dnscheck example.com
+#   ./dnscheck example.com AAAA
+#   ./dnscheck _dmarc.example.com TXT
+#
+# Exit code: 0 when every responding resolver agrees (and the answer is
+#            non-empty); 1 otherwise — so it can gate scripts/CI.
+#
+# Note on nslookup: macOS nslookup has no output-only mode, so its verbose
+# response is parsed with awk (see extract_answer). -timeout/-retry bound how
+# long a dead resolver stalls the parallel run.
+
+emulate -L zsh
+setopt no_unset pipe_fail
+
+# ---- resolvers: "IP|flag|name" --------------------------
+typeset -a RESOLVERS=(
+  "8.8.8.8|🇺🇸|Google"
+  "1.1.1.1|🇺🇸|Cloudflare"
+  "9.9.9.9|🇺🇸|Quad9"
+  "208.67.222.222|🇺🇸|OpenDNS"
+  "84.200.69.80|🇩🇪|DNS.WATCH"
+  "195.46.39.39|🇬🇧|SafeDNS"
+  "80.80.80.80|🇳🇱|Freenom"
+  "168.126.63.1|🇰🇷|KT-Korea"
+  "77.88.8.8|🇷🇺|Yandex"
+  "223.5.5.5|🇨🇳|AliDNS"
+  "114.114.114.114|🇨🇳|114DNS"
+  "1.1.1.2|🇦🇺|Cloudflare-AU"
+  "180.76.76.76|🇨🇳|Baidu"
+  "156.154.70.1|🇺🇸|Neustar"
+  "76.76.2.0|🇺🇸|ControlD"
+  "94.140.14.14|🇨🇾|AdGuard"
+  "185.222.222.222|🇷🇺|DNS.SB"
+  "45.90.28.0|🇺🇸|NextDNS"
+)
+
+# ---- args -------------------------------------------------------------------
+if [[ $# -lt 1 || $1 == "-h" || $1 == "--help" ]]; then
+  print -u2 "Usage: dnscheck <hostname> [record-type]   (record-type defaults to A)"
+  print -u2 "Examples:"
+  print -u2 "  dnscheck example.com"
+  print -u2 "  dnscheck example.com AAAA"
+  print -u2 "  dnscheck _dmarc.example.com TXT"
+  exit 1
+fi
+
+local host=$1
+local rtype=${2:-A}
+rtype=${(U)rtype}
+
+# ---- colors (auto-disable when not a TTY) -----------------------------------
+local C_RESET C_GREEN C_RED C_YELLOW C_DIM C_BOLD
+if [[ -t 1 ]]; then
+  C_RESET=$'\e[0m'; C_GREEN=$'\e[32m'; C_RED=$'\e[31m'
+  C_YELLOW=$'\e[33m'; C_DIM=$'\e[2m'; C_BOLD=$'\e[1m'
+else
+  C_RESET=""; C_GREEN=""; C_RED=""; C_YELLOW=""; C_DIM=""; C_BOLD=""
+fi
+
+# ---- parse one nslookup response into normalized answer ---------------------
+# Prints comma-joined, sorted answer values (empty string if no answer).
+extract_answer() {
+  local file=$1
+  awk '
+    # skip header block: everything up to and incl. first blank line
+    !past { if ($0 ~ /^[[:space:]]*$/) past=1; next }
+    /^Authoritative answers can be found from:/ { exit }
+    /^Non-authoritative answer:/ { next }
+    /^Name:/ { next }
+    /^[[:space:]]*$/ { next }
+    {
+      # value formats seen across record types:
+      #   "host  mail exchanger = 10 smtp..."   -> after " = "  (MX/TXT/CNAME/NS)
+      #   "host  has AAAA address 2606:..."      -> last field   (AAAA)
+      #   "host  has address 1.2.3.4"            -> last field   (A, some resolvers)
+      #   "Address: 1.2.3.4"                     -> field 2      (A, default form)
+      if (index($0, " = ")) {
+        sub(/^.* = /, "")
+        print
+      } else if ($2 == "has") {
+        print $NF
+      } else if ($1 == "Address:") {
+        print $2
+      }
+    }
+  ' "$file" | sed 's/[[:space:]]*$//' | sort | paste -sd, -
+}
+
+# ---- fire all queries in parallel -------------------------------------------
+local scratch
+scratch=$(mktemp -d "${TMPDIR:-/tmp}/dnscheck.XXXXXX") || exit 1
+trap 'rm -rf "$scratch"' EXIT
+
+local entry ip i=0
+for entry in $RESOLVERS; do
+  ip=${entry%%|*}
+  nslookup -timeout=2 -retry=1 -type=$rtype "$host" "$ip" >"$scratch/$i.out" 2>/dev/null &
+  (( i++ ))
+done
+wait
+
+# ---- collect + normalize ----------------------------------------------------
+typeset -a ANSWERS
+typeset -A TALLY
+local ans
+i=0
+for entry in $RESOLVERS; do
+  ans=$(extract_answer "$scratch/$i.out")
+  ANSWERS[$((i+1))]=$ans
+  if [[ -n $ans ]]; then
+    (( TALLY[$ans] = ${TALLY[$ans]:-0} + 1 ))
+  fi
+  (( i++ ))
+done
+
+# ---- consensus = most frequent non-empty answer -----------------------------
+local consensus="" best=0 key
+for key in ${(k)TALLY}; do
+  if (( TALLY[$key] > best )); then
+    best=${TALLY[$key]}
+    consensus=$key
+  fi
+done
+
+# ---- report -----------------------------------------------------------------
+print "${C_BOLD}DNS propagation for ${host} (${rtype})${C_RESET}"
+print "${C_DIM}$(date '+%Y-%m-%d %H:%M:%S %Z')${C_RESET}"
+print ""
+
+local agree=0 responded=0 flag name mark markcolor shown
+i=0
+for entry in $RESOLVERS; do
+  ip=${entry%%|*}
+  flag=${${entry#*|}%%|*}
+  name=${entry##*|}
+  ans=${ANSWERS[$((i+1))]}
+
+  if [[ -z $ans ]]; then
+    mark="∅"; markcolor=$C_YELLOW; shown="${C_DIM}(no answer)${C_RESET}"
+  else
+    (( responded++ ))
+    if [[ $ans == $consensus ]]; then
+      mark="✓"; markcolor=$C_GREEN; (( agree++ ))
+    else
+      mark="✗"; markcolor=$C_RED
+    fi
+    shown=${ans//,/, }
+  fi
+
+  printf "  %s%s%s  %s %-14s %-16s %s\n" \
+    "$markcolor" "$mark" "$C_RESET" "$flag" "$name" "$ip" "$shown"
+  (( i++ ))
+done
+
+print ""
+local total=${#RESOLVERS}
+local noresp=$(( total - responded ))
+local nrnote=""
+(( noresp > 0 )) && nrnote=" ${C_DIM}(${noresp} did not respond)${C_RESET}"
+
+if (( responded == 0 )); then
+  print "${C_RED}No resolver returned an answer — host may not exist or all queries timed out.${C_RESET}"
+  exit 1
+fi
+
+# Verdict is based on resolvers that actually responded; non-responders (∅) are excluded 
+if (( agree == responded )); then
+  print "${C_GREEN}${agree}/${responded} responders agree · consensus: ${consensus//,/, } · FULLY PROPAGATED${C_RESET}${nrnote}"
+  exit 0
+else
+  print "${C_YELLOW}${agree}/${responded} responders agree · consensus: ${consensus//,/, } · NOT fully propagated${C_RESET}${nrnote}"
+  exit 1
+fi
