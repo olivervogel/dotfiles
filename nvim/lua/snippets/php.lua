@@ -303,7 +303,7 @@ return {
 	s("try", fmt([[
 	try {{{body}
 	}} catch (Throwable $e) {{
-		# code ...
+		//
 	}}
 	]], {
 		body = i(0),
@@ -324,11 +324,11 @@ return {
 	s("switch", fmt([[
 	switch ({var}) {{
 		case 'value':
-			// code
+			//
 			break;
 
 		default:
-			// code
+			//
 			break;
 	}}
 	]], {
