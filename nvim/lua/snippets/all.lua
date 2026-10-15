@@ -138,4 +138,22 @@ return {
 		t("2>/dev/null |sort -hr |head -20"),
 	}),
 
+	s("cmd_dump", {
+	   t("mysqldump --no-tablespaces -h"),
+		t(" "),
+	   i(1, "127.0.0.1"),
+		t(" "),
+	   t("-u'"),
+	   i(2, "username"),
+		t("'"),
+		t(" "),
+		t("-p"),
+		t(" "),
+	   i(3, "my_database"),
+		t(" "),
+		t(">"),
+		t(" "),
+		i(4, "./dump.sql"),
+   }),
+
 }
