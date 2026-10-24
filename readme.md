@@ -61,6 +61,7 @@ brew bundle install
     - [jq](https://jqlang.github.io/jq/)
     - [oath-toolkit](https://www.nongnu.org/oath-toolkit/)
     - [opencode](https://github.com/anomalyco/opencode)
+    - [pandoc](https://github.com/jgm/pandoc)
     - [renameutils](https://www.nongnu.org/renameutils/)
     - [restic](https://github.com/restic/restic)
     - [ripgrep](https://github.com/BurntSushi/ripgrep)

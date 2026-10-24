@@ -736,3 +736,14 @@ __himalaya_list_folder() {
         himalaya folder list
     fi
 }
+
+#--------------------------------------------------------------------------
+# Convert markdown to html
+#--------------------------------------------------------------------------
+md2html() {
+    if [[ $# -gt 0 ]]; then
+        pandoc -M document-css=false -f markdown -t html --css=$HOME/.dotfiles/pandoc/markdown2html.css --embed-resources -s -- "$1"
+    else
+        pandoc -M document-css=false -f markdown -t html --css=$HOME/.dotfiles/pandoc/markdown2html.css --embed-resources -s
+    fi | base64 -w0 | sed 's|^|data:text/html;base64,|'
+}
