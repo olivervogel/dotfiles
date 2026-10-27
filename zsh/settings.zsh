@@ -6,6 +6,7 @@ export PATH=~/.composer/vendor/bin:$PATH
 export PATH=~/bin:$PATH
 export PATH=~/.dotfiles/zsh/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 export EDITOR=nvim
 export VISUAL=nvim
