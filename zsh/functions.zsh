@@ -535,6 +535,9 @@ brep() {
         repo="${match[3]}"
 
         case $host in
+            "ssh.bitbucket.org")
+                open "https://bitbucket.org/$project/$repo/"
+                ;;
             "bitbucket.org"|"github.com")
                 open "https://$host/$project/$repo/"
                 ;;
